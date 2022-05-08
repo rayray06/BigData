@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_SadGAM7jEeylS-_k4rIanw" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_SadGAc7jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_JobHistory" prompt="ProjectHadoopCluster_JobHistory?" promptNeeded="false" type="id_String" value="group3.bigdata:10020"/>
+  <contextParameter xmi:id="_SadGAs7jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_ResourceManagerScheduler" prompt="ProjectHadoopCluster_ResourceManagerScheduler?" promptNeeded="false" type="id_String" value="group3.bigdata:8030"/>
+  <contextParameter xmi:id="_SadGA87jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_hadoopConfSpecificJar" prompt="ProjectHadoopCluster_hadoopConfSpecificJar?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_SadGBM7jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_ResourceManager" prompt="ProjectHadoopCluster_ResourceManager?" promptNeeded="false" type="id_String" value="group3.bigdata:8032"/>
+  <contextParameter xmi:id="_SadGBc7jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_StagingDirectory" prompt="ProjectHadoopCluster_StagingDirectory?" promptNeeded="false" type="id_String" value="/user"/>
+  <contextParameter xmi:id="_SadGBs7jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_NameNodeUri" prompt="ProjectHadoopCluster_NameNodeUri?" promptNeeded="false" type="id_String" value="hdfs://group3.bigdata:8020"/>
+  <contextParameter xmi:id="_SadGB87jEeylS-_k4rIanw" comment="" name="ProjectHadoopCluster_User" prompt="ProjectHadoopCluster_User?" promptNeeded="false" type="id_String" value="cloudera"/>
+  <contextParameter xmi:id="_SadGCM7jEeylS-_k4rIanw" comment="" name="new1" prompt="new1?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>
