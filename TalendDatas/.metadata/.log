@@ -1,0 +1,336 @@
+!SESSION 2022-05-08 16:08:47.377 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_321
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2022-05-08 16:08:48.552
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2022-05-08 16:08:48.554
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:08:50.814
+!MESSAGE 2022-05-08 16:08:50,811 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\TOS_BD-20200219_1130-V7.3.1\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:45.380
+!MESSAGE 2022-05-08 16:16:45,379 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.660
+!MESSAGE 2022-05-08 16:16:55,660 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.791
+!MESSAGE 2022-05-08 16:16:55,790 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.838
+!MESSAGE 2022-05-08 16:16:55,838 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.841
+!MESSAGE 2022-05-08 16:16:55,841 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.874
+!MESSAGE 2022-05-08 16:16:55,873 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.901
+!MESSAGE 2022-05-08 16:16:55,901 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.954
+!MESSAGE 2022-05-08 16:16:55,953 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:55.958
+!MESSAGE 2022-05-08 16:16:55,957 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.056
+!MESSAGE 2022-05-08 16:16:56,055 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.064
+!MESSAGE 2022-05-08 16:16:56,063 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.066
+!MESSAGE 2022-05-08 16:16:56,066 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.097
+!MESSAGE 2022-05-08 16:16:56,096 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.122
+!MESSAGE 2022-05-08 16:16:56,122 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.138
+!MESSAGE 2022-05-08 16:16:56,138 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.231
+!MESSAGE 2022-05-08 16:16:56,230 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.247
+!MESSAGE 2022-05-08 16:16:56,246 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:16:56.259
+!MESSAGE 2022-05-08 16:16:56,258 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:03.719
+!MESSAGE 2022-05-08 16:17:03,718 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:03.722
+!MESSAGE 2022-05-08 16:17:03,721 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_ROUTINES/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:03.726
+!MESSAGE 2022-05-08 16:17:03,725 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:03.727
+!MESSAGE 2022-05-08 16:17:03,726 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:05.301
+!MESSAGE 2022-05-08 16:17:05,301 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Administrateur.WIN-T87HKARVT4F\Documents\Data\BigData\TalendDatas\BIGDATA_PROJECT\poms
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:05.305
+!MESSAGE 2022-05-08 16:17:05,304 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s C:\TOS_BD-20200219_1130-V7.3.1\configuration\maven_user_settings.xml install -llr -N -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:11.804
+!MESSAGE 2022-05-08 16:17:11,803 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Administrateur.WIN-T87HKARVT4F\Documents\Data\BigData\TalendDatas\BIGDATA_PROJECT\poms\code\routines
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:11.806
+!MESSAGE 2022-05-08 16:17:11,805 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s C:\TOS_BD-20200219_1130-V7.3.1\configuration\maven_user_settings.xml install -llr -Dmaven.main.skip=true -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:15.650
+!MESSAGE 2022-05-08 16:17:15,649 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - ray-hann06@hotmail.fr connecté à BigData_Project
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:16.936
+!MESSAGE 2022-05-08 16:17:16,936 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.191
+!MESSAGE 2022-05-08 16:17:17,189 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.194
+!MESSAGE 2022-05-08 16:17:17,193 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.205
+!MESSAGE 2022-05-08 16:17:17,205 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.210
+!MESSAGE 2022-05-08 16:17:17,209 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.212
+!MESSAGE 2022-05-08 16:17:17,211 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.217
+!MESSAGE 2022-05-08 16:17:17,216 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.220
+!MESSAGE 2022-05-08 16:17:17,220 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.242
+!MESSAGE 2022-05-08 16:17:17,241 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.289
+!MESSAGE 2022-05-08 16:17:17,288 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.308
+!MESSAGE 2022-05-08 16:17:17,307 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.348
+!MESSAGE 2022-05-08 16:17:17,347 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.354
+!MESSAGE 2022-05-08 16:17:17,353 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.368
+!MESSAGE 2022-05-08 16:17:17,367 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.373
+!MESSAGE 2022-05-08 16:17:17,372 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.386
+!MESSAGE 2022-05-08 16:17:17,385 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.390
+!MESSAGE 2022-05-08 16:17:17,390 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-08 16:17:17.395
+!MESSAGE 2022-05-08 16:17:17,394 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:56.204
+!MESSAGE 2022-05-08 16:17:56,203 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:56.302
+!MESSAGE 2022-05-08 16:17:56,299 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ONBOARDINGDEMOJOB_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:56.303
+!MESSAGE 2022-05-08 16:17:56,303 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_ONBOARDINGDEMOJOB_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:56.315
+!MESSAGE 2022-05-08 16:17:56,314 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ONBOARDINGDEMOJOB_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:17:56.316
+!MESSAGE 2022-05-08 16:17:56,315 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_ONBOARDINGDEMOJOB_0.1/src/test/resources
+
+
+!ENTRY org.eclipse.ui 4 0 2022-05-08 16:18:01.006
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4595)
+	at org.eclipse.swt.SWT.error(SWT.java:4510)
+	at org.eclipse.swt.SWT.error(SWT.java:4481)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Scrollable.getClientArea(Scrollable.java:208)
+	at org.talend.presentation.onboarding.ui.shells.OnBoardingShell.refresh(OnBoardingShell.java:211)
+	at org.talend.presentation.onboarding.ui.shells.OnBoardingShell$4.run(OnBoardingShell.java:200)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.talend.rcp.intro.Application.start(Application.java:280)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-08 16:18:12.487
+!MESSAGE 2022-05-08 16:18:12,486 INFO  org.talend.commons.exception.CommonExceptionHandler  - Vous n'avez pas assez de droits pour cette action
+
+!STACK 0
+org.talend.commons.exception.BusinessException: Vous n'avez pas assez de droits pour cette action
+	at org.talend.core.repository.model.ProxyRepositoryFactory.checkAvailability(ProxyRepositoryFactory.java:1050)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.deleteObjectLogical(ProxyRepositoryFactory.java:748)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.deleteObjectLogical(ProxyRepositoryFactory.java:739)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.deleteObjectLogical(ProxyRepositoryFactory.java:733)
+	at org.talend.core.repository.ui.actions.DeleteAction.deleteRepositoryNode(DeleteAction.java:713)
+	at org.talend.core.repository.ui.actions.DeleteAction.deleteFolder(DeleteAction.java:483)
+	at org.talend.core.repository.ui.actions.DeleteAction.access$4(DeleteAction.java:465)
+	at org.talend.core.repository.ui.actions.DeleteAction$1.run(DeleteAction.java:338)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.talend.core.repository.ui.actions.DeleteAction$2.run(DeleteAction.java:391)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:440)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:356)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:474)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:240)
+	at org.eclipse.ui.internal.progress.ProgressManager.run(ProgressManager.java:966)
+	at org.talend.core.repository.ui.actions.DeleteAction.doRun(DeleteAction.java:400)
+	at org.talend.repository.ui.actions.AContextualAction$2.run(AContextualAction.java:673)
+	at org.talend.repository.RepositoryWorkUnit.executeRun(RepositoryWorkUnit.java:99)
+	at org.talend.core.repository.model.AbstractRepositoryFactory.executeRepositoryWorkUnit(AbstractRepositoryFactory.java:258)
+	at org.talend.repository.localprovider.model.LocalRepositoryFactory.executeRepositoryWorkUnit(LocalRepositoryFactory.java:3553)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.executeRepositoryWorkUnit(ProxyRepositoryFactory.java:2412)
+	at org.talend.repository.ui.actions.AContextualAction.run(AContextualAction.java:686)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:476)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:568)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:400)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3944)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3547)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.talend.rcp.intro.Application.start(Application.java:280)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
