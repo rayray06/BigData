@@ -36,7 +36,7 @@
     <talend.job.name>Extract_Hospi</talend.job.name>
     <talend.job.id>_xmP3MM8xEeyjRcBXZJl0rA</talend.job.id>
     <talend.project.id>0</talend.project.id>
-    <talend.job.folder>extraction/csv_extraction/hospitalisation_extraction/</talend.job.folder>
+    <talend.job.folder>extraction/csv_extraction/hospi_extract/</talend.job.folder>
     <talend.job.framework></talend.job.framework>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <talend.job.type>Standard</talend.job.type>

@@ -239,7 +239,6 @@
                 <include>org.talend.libraries:hadoop-hdfs-2.6.0-cdh5.12.1:jar:6.0.0</include>
                 <include>org.talend.libraries:crypto-utils:jar:6.0.0-SNAPSHOT</include>
                 <include>org.talend.libraries:talend_file_enhanced_20070724:jar:6.0.0</include>
-                <include>org.talend.libraries:jakarta-oro-2.0.8:jar:6.0.0</include>
                 <include>org.talend.libraries:avro-1.7.6-cdh5.12.1:jar:6.0.0</include>
                 <include>org.talend.libraries:servlet-api-2.5:jar:6.0.0</include>
                 <include>org.talend.libraries:talendcsv:jar:6.0.0</include>

@@ -427,36 +427,6 @@ public class Death_Fetch implements TalendJob {
 		tHDFSConnection_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tRowGenerator_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tRowGenerator_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHDFSOutput_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tRowGenerator_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileList_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
 	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -464,7 +434,7 @@ public class Death_Fetch implements TalendJob {
 
 		status = "failure";
 
-		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tHDFSOutput_1_error(Exception exception, String errorComponent,
@@ -474,7 +444,7 @@ public class Death_Fetch implements TalendJob {
 
 		status = "failure";
 
-		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tHDFSConnection_1_onSubJobError(Exception exception, String errorComponent,
@@ -485,15 +455,7 @@ public class Death_Fetch implements TalendJob {
 
 	}
 
-	public void tRowGenerator_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tFileList_1_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -604,7 +566,7 @@ public class Death_Fetch implements TalendJob {
 				runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
 			}
 
-			tRowGenerator_1Process(globalMap);
+			tFileInputDelimited_1Process(globalMap);
 
 		} catch (java.lang.Exception e) {
 
@@ -638,1274 +600,6 @@ public class Death_Fetch implements TalendJob {
 		}
 
 		globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Death_Fetch = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String Nom;
-
-		public String getNom() {
-			return this.Nom;
-		}
-
-		public String Prenoms;
-
-		public String getPrenoms() {
-			return this.Prenoms;
-		}
-
-		public Character Sexe;
-
-		public Character getSexe() {
-			return this.Sexe;
-		}
-
-		public java.util.Date Date_Naissance;
-
-		public java.util.Date getDate_Naissance() {
-			return this.Date_Naissance;
-		}
-
-		public java.util.Date Date_Deces;
-
-		public java.util.Date getDate_Deces() {
-			return this.Date_Deces;
-		}
-
-		public String Pays_Source_Naissance;
-
-		public String getPays_Source_Naissance() {
-			return this.Pays_Source_Naissance;
-		}
-
-		public String Code_Source_Commune_Naissance;
-
-		public String getCode_Source_Commune_Naissance() {
-			return this.Code_Source_Commune_Naissance;
-		}
-
-		public String Nom_Source_Commune_Naissance;
-
-		public String getNom_Source_Commune_Naissance() {
-			return this.Nom_Source_Commune_Naissance;
-		}
-
-		public String Code_Actuel_Commune_Naissance;
-
-		public String getCode_Actuel_Commune_Naissance() {
-			return this.Code_Actuel_Commune_Naissance;
-		}
-
-		public String Nom_Actuel_Commune_Naissance;
-
-		public String getNom_Actuel_Commune_Naissance() {
-			return this.Nom_Actuel_Commune_Naissance;
-		}
-
-		public String Code_Actuel_Departement_Naissance;
-
-		public String getCode_Actuel_Departement_Naissance() {
-			return this.Code_Actuel_Departement_Naissance;
-		}
-
-		public String Nom_Actuel_Departement_Naissance;
-
-		public String getNom_Actuel_Departement_Naissance() {
-			return this.Nom_Actuel_Departement_Naissance;
-		}
-
-		public String Code_Actuel_Region_Naissance;
-
-		public String getCode_Actuel_Region_Naissance() {
-			return this.Code_Actuel_Region_Naissance;
-		}
-
-		public String Nom_Actuel_Region_Naissance;
-
-		public String getNom_Actuel_Region_Naissance() {
-			return this.Nom_Actuel_Region_Naissance;
-		}
-
-		public String Code_Source_Commune_Deces;
-
-		public String getCode_Source_Commune_Deces() {
-			return this.Code_Source_Commune_Deces;
-		}
-
-		public String Code_Actuel_Commune_Deces;
-
-		public String getCode_Actuel_Commune_Deces() {
-			return this.Code_Actuel_Commune_Deces;
-		}
-
-		public String Nom_Actuel_Commune_Deces;
-
-		public String getNom_Actuel_Commune_Deces() {
-			return this.Nom_Actuel_Commune_Deces;
-		}
-
-		public String Code_Actuel_Departement_Deces;
-
-		public String getCode_Actuel_Departement_Deces() {
-			return this.Code_Actuel_Departement_Deces;
-		}
-
-		public String Nom_Actuel_Departement_Deces;
-
-		public String getNom_Actuel_Departement_Deces() {
-			return this.Nom_Actuel_Departement_Deces;
-		}
-
-		public String Code_Actuel_Region_Deces;
-
-		public String getCode_Actuel_Region_Deces() {
-			return this.Code_Actuel_Region_Deces;
-		}
-
-		public String Nom_Actuel_Region_Deces;
-
-		public String getNom_Actuel_Region_Deces() {
-			return this.Nom_Actuel_Region_Deces;
-		}
-
-		public String Numero_d_acte_du_deces;
-
-		public String getNumero_d_acte_du_deces() {
-			return this.Numero_d_acte_du_deces;
-		}
-
-		public String Nom_du_fichier_source_INSEE;
-
-		public String getNom_du_fichier_source_INSEE() {
-			return this.Nom_du_fichier_source_INSEE;
-		}
-
-		public Integer Age;
-
-		public Integer getAge() {
-			return this.Age;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result
-						+ ((this.Numero_d_acte_du_deces == null) ? 0 : this.Numero_d_acte_du_deces.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row2Struct other = (row2Struct) obj;
-
-			if (this.Numero_d_acte_du_deces == null) {
-				if (other.Numero_d_acte_du_deces != null)
-					return false;
-
-			} else if (!this.Numero_d_acte_du_deces.equals(other.Numero_d_acte_du_deces))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row2Struct other) {
-
-			other.Nom = this.Nom;
-			other.Prenoms = this.Prenoms;
-			other.Sexe = this.Sexe;
-			other.Date_Naissance = this.Date_Naissance;
-			other.Date_Deces = this.Date_Deces;
-			other.Pays_Source_Naissance = this.Pays_Source_Naissance;
-			other.Code_Source_Commune_Naissance = this.Code_Source_Commune_Naissance;
-			other.Nom_Source_Commune_Naissance = this.Nom_Source_Commune_Naissance;
-			other.Code_Actuel_Commune_Naissance = this.Code_Actuel_Commune_Naissance;
-			other.Nom_Actuel_Commune_Naissance = this.Nom_Actuel_Commune_Naissance;
-			other.Code_Actuel_Departement_Naissance = this.Code_Actuel_Departement_Naissance;
-			other.Nom_Actuel_Departement_Naissance = this.Nom_Actuel_Departement_Naissance;
-			other.Code_Actuel_Region_Naissance = this.Code_Actuel_Region_Naissance;
-			other.Nom_Actuel_Region_Naissance = this.Nom_Actuel_Region_Naissance;
-			other.Code_Source_Commune_Deces = this.Code_Source_Commune_Deces;
-			other.Code_Actuel_Commune_Deces = this.Code_Actuel_Commune_Deces;
-			other.Nom_Actuel_Commune_Deces = this.Nom_Actuel_Commune_Deces;
-			other.Code_Actuel_Departement_Deces = this.Code_Actuel_Departement_Deces;
-			other.Nom_Actuel_Departement_Deces = this.Nom_Actuel_Departement_Deces;
-			other.Code_Actuel_Region_Deces = this.Code_Actuel_Region_Deces;
-			other.Nom_Actuel_Region_Deces = this.Nom_Actuel_Region_Deces;
-			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
-			other.Nom_du_fichier_source_INSEE = this.Nom_du_fichier_source_INSEE;
-			other.Age = this.Age;
-
-		}
-
-		public void copyKeysDataTo(row2Struct other) {
-
-			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_Death_Fetch.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_Death_Fetch.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_Death_Fetch, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_Death_Fetch, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_Death_Fetch) {
-
-				try {
-
-					int length = 0;
-
-					this.Nom = readString(dis);
-
-					this.Prenoms = readString(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.Sexe = null;
-					} else {
-						this.Sexe = dis.readChar();
-					}
-
-					this.Date_Naissance = readDate(dis);
-
-					this.Date_Deces = readDate(dis);
-
-					this.Pays_Source_Naissance = readString(dis);
-
-					this.Code_Source_Commune_Naissance = readString(dis);
-
-					this.Nom_Source_Commune_Naissance = readString(dis);
-
-					this.Code_Actuel_Commune_Naissance = readString(dis);
-
-					this.Nom_Actuel_Commune_Naissance = readString(dis);
-
-					this.Code_Actuel_Departement_Naissance = readString(dis);
-
-					this.Nom_Actuel_Departement_Naissance = readString(dis);
-
-					this.Code_Actuel_Region_Naissance = readString(dis);
-
-					this.Nom_Actuel_Region_Naissance = readString(dis);
-
-					this.Code_Source_Commune_Deces = readString(dis);
-
-					this.Code_Actuel_Commune_Deces = readString(dis);
-
-					this.Nom_Actuel_Commune_Deces = readString(dis);
-
-					this.Code_Actuel_Departement_Deces = readString(dis);
-
-					this.Nom_Actuel_Departement_Deces = readString(dis);
-
-					this.Code_Actuel_Region_Deces = readString(dis);
-
-					this.Nom_Actuel_Region_Deces = readString(dis);
-
-					this.Numero_d_acte_du_deces = readString(dis);
-
-					this.Nom_du_fichier_source_INSEE = readString(dis);
-
-					this.Age = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.Nom, dos);
-
-				// String
-
-				writeString(this.Prenoms, dos);
-
-				// Character
-
-				if (this.Sexe == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeChar(this.Sexe);
-				}
-
-				// java.util.Date
-
-				writeDate(this.Date_Naissance, dos);
-
-				// java.util.Date
-
-				writeDate(this.Date_Deces, dos);
-
-				// String
-
-				writeString(this.Pays_Source_Naissance, dos);
-
-				// String
-
-				writeString(this.Code_Source_Commune_Naissance, dos);
-
-				// String
-
-				writeString(this.Nom_Source_Commune_Naissance, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Commune_Naissance, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Commune_Naissance, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Departement_Naissance, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Departement_Naissance, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Region_Naissance, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Region_Naissance, dos);
-
-				// String
-
-				writeString(this.Code_Source_Commune_Deces, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Commune_Deces, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Commune_Deces, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Departement_Deces, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Departement_Deces, dos);
-
-				// String
-
-				writeString(this.Code_Actuel_Region_Deces, dos);
-
-				// String
-
-				writeString(this.Nom_Actuel_Region_Deces, dos);
-
-				// String
-
-				writeString(this.Numero_d_acte_du_deces, dos);
-
-				// String
-
-				writeString(this.Nom_du_fichier_source_INSEE, dos);
-
-				// Integer
-
-				writeInteger(this.Age, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("Nom=" + Nom);
-			sb.append(",Prenoms=" + Prenoms);
-			sb.append(",Sexe=" + String.valueOf(Sexe));
-			sb.append(",Date_Naissance=" + String.valueOf(Date_Naissance));
-			sb.append(",Date_Deces=" + String.valueOf(Date_Deces));
-			sb.append(",Pays_Source_Naissance=" + Pays_Source_Naissance);
-			sb.append(",Code_Source_Commune_Naissance=" + Code_Source_Commune_Naissance);
-			sb.append(",Nom_Source_Commune_Naissance=" + Nom_Source_Commune_Naissance);
-			sb.append(",Code_Actuel_Commune_Naissance=" + Code_Actuel_Commune_Naissance);
-			sb.append(",Nom_Actuel_Commune_Naissance=" + Nom_Actuel_Commune_Naissance);
-			sb.append(",Code_Actuel_Departement_Naissance=" + Code_Actuel_Departement_Naissance);
-			sb.append(",Nom_Actuel_Departement_Naissance=" + Nom_Actuel_Departement_Naissance);
-			sb.append(",Code_Actuel_Region_Naissance=" + Code_Actuel_Region_Naissance);
-			sb.append(",Nom_Actuel_Region_Naissance=" + Nom_Actuel_Region_Naissance);
-			sb.append(",Code_Source_Commune_Deces=" + Code_Source_Commune_Deces);
-			sb.append(",Code_Actuel_Commune_Deces=" + Code_Actuel_Commune_Deces);
-			sb.append(",Nom_Actuel_Commune_Deces=" + Nom_Actuel_Commune_Deces);
-			sb.append(",Code_Actuel_Departement_Deces=" + Code_Actuel_Departement_Deces);
-			sb.append(",Nom_Actuel_Departement_Deces=" + Nom_Actuel_Departement_Deces);
-			sb.append(",Code_Actuel_Region_Deces=" + Code_Actuel_Region_Deces);
-			sb.append(",Nom_Actuel_Region_Deces=" + Nom_Actuel_Region_Deces);
-			sb.append(",Numero_d_acte_du_deces=" + Numero_d_acte_du_deces);
-			sb.append(",Nom_du_fichier_source_INSEE=" + Nom_du_fichier_source_INSEE);
-			sb.append(",Age=" + String.valueOf(Age));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.Numero_d_acte_du_deces, other.Numero_d_acte_du_deces);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tRowGenerator_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tRowGenerator_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				row2Struct row2 = new row2Struct();
-
-				/**
-				 * [tHDFSOutput_2 begin ] start
-				 */
-
-				ok_Hash.put("tHDFSOutput_2", false);
-				start_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
-
-				currentComponent = "tHDFSOutput_2";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
-				}
-
-				int tos_count_tHDFSOutput_2 = 0;
-
-				String username_tHDFSOutput_2 = "";
-				org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
-				org.apache.hadoop.conf.Configuration conf_tHDFSOutput_2 = (org.apache.hadoop.conf.Configuration) globalMap
-						.get("conn_tHDFSConnection_1");
-
-				username_tHDFSOutput_2 = context.HadoopHDFS_HdfsUser;
-				if (username_tHDFSOutput_2 == null || "".equals(username_tHDFSOutput_2)) {
-					fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_2);
-				} else {
-					System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_2);
-					fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(
-							new java.net.URI(conf_tHDFSOutput_2.get("fs.default.name")), conf_tHDFSOutput_2,
-							username_tHDFSOutput_2);
-				}
-
-				org.apache.hadoop.fs.Path path_tHDFSOutput_2 = new org.apache.hadoop.fs.Path(
-						context.HadoopHDFS_DeathFile);
-				int nb_line_tHDFSOutput_2 = 0;
-
-				org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_2 = null;
-
-				fsDataOutputStream_tHDFSOutput_2 = fs_tHDFSOutput_2.create(path_tHDFSOutput_2, true);
-
-				java.io.Writer outtHDFSOutput_2 = null;
-				outtHDFSOutput_2 = new java.io.BufferedWriter(
-						new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_2));
-
-				/**
-				 * [tHDFSOutput_2 begin ] stop
-				 */
-
-				/**
-				 * [tRowGenerator_1 begin ] start
-				 */
-
-				ok_Hash.put("tRowGenerator_1", false);
-				start_Hash.put("tRowGenerator_1", System.currentTimeMillis());
-
-				currentComponent = "tRowGenerator_1";
-
-				int tos_count_tRowGenerator_1 = 0;
-
-				int nb_line_tRowGenerator_1 = 0;
-				int nb_max_row_tRowGenerator_1 = 0;
-
-				class tRowGenerator_1Randomizer {
-					public String getRandomNom() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomPrenoms() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public Character getRandomSexe() {
-
-						return DataOperation.CHAR(1);
-
-					}
-
-					public java.util.Date getRandomDate_Naissance() {
-
-						return TalendDate.getCurrentDate();
-
-					}
-
-					public java.util.Date getRandomDate_Deces() {
-
-						return TalendDate.getCurrentDate();
-
-					}
-
-					public String getRandomPays_Source_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Source_Commune_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Source_Commune_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Commune_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Commune_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Departement_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Departement_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Region_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Region_Naissance() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Source_Commune_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Commune_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Commune_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Departement_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Departement_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomCode_Actuel_Region_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_Actuel_Region_Deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNumero_d_acte_du_deces() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public String getRandomNom_du_fichier_source_INSEE() {
-
-						return TalendString.getAsciiRandomString(6);
-
-					}
-
-					public Integer getRandomAge() {
-
-						return Numeric.random(0, 100);
-
-					}
-				}
-				tRowGenerator_1Randomizer randtRowGenerator_1 = new tRowGenerator_1Randomizer();
-
-				for (int itRowGenerator_1 = 0; itRowGenerator_1 < nb_max_row_tRowGenerator_1; itRowGenerator_1++) {
-					row2.Nom = randtRowGenerator_1.getRandomNom();
-					row2.Prenoms = randtRowGenerator_1.getRandomPrenoms();
-					row2.Sexe = randtRowGenerator_1.getRandomSexe();
-					row2.Date_Naissance = randtRowGenerator_1.getRandomDate_Naissance();
-					row2.Date_Deces = randtRowGenerator_1.getRandomDate_Deces();
-					row2.Pays_Source_Naissance = randtRowGenerator_1.getRandomPays_Source_Naissance();
-					row2.Code_Source_Commune_Naissance = randtRowGenerator_1.getRandomCode_Source_Commune_Naissance();
-					row2.Nom_Source_Commune_Naissance = randtRowGenerator_1.getRandomNom_Source_Commune_Naissance();
-					row2.Code_Actuel_Commune_Naissance = randtRowGenerator_1.getRandomCode_Actuel_Commune_Naissance();
-					row2.Nom_Actuel_Commune_Naissance = randtRowGenerator_1.getRandomNom_Actuel_Commune_Naissance();
-					row2.Code_Actuel_Departement_Naissance = randtRowGenerator_1
-							.getRandomCode_Actuel_Departement_Naissance();
-					row2.Nom_Actuel_Departement_Naissance = randtRowGenerator_1
-							.getRandomNom_Actuel_Departement_Naissance();
-					row2.Code_Actuel_Region_Naissance = randtRowGenerator_1.getRandomCode_Actuel_Region_Naissance();
-					row2.Nom_Actuel_Region_Naissance = randtRowGenerator_1.getRandomNom_Actuel_Region_Naissance();
-					row2.Code_Source_Commune_Deces = randtRowGenerator_1.getRandomCode_Source_Commune_Deces();
-					row2.Code_Actuel_Commune_Deces = randtRowGenerator_1.getRandomCode_Actuel_Commune_Deces();
-					row2.Nom_Actuel_Commune_Deces = randtRowGenerator_1.getRandomNom_Actuel_Commune_Deces();
-					row2.Code_Actuel_Departement_Deces = randtRowGenerator_1.getRandomCode_Actuel_Departement_Deces();
-					row2.Nom_Actuel_Departement_Deces = randtRowGenerator_1.getRandomNom_Actuel_Departement_Deces();
-					row2.Code_Actuel_Region_Deces = randtRowGenerator_1.getRandomCode_Actuel_Region_Deces();
-					row2.Nom_Actuel_Region_Deces = randtRowGenerator_1.getRandomNom_Actuel_Region_Deces();
-					row2.Numero_d_acte_du_deces = randtRowGenerator_1.getRandomNumero_d_acte_du_deces();
-					row2.Nom_du_fichier_source_INSEE = randtRowGenerator_1.getRandomNom_du_fichier_source_INSEE();
-					row2.Age = randtRowGenerator_1.getRandomAge();
-					nb_line_tRowGenerator_1++;
-
-					/**
-					 * [tRowGenerator_1 begin ] stop
-					 */
-
-					/**
-					 * [tRowGenerator_1 main ] start
-					 */
-
-					currentComponent = "tRowGenerator_1";
-
-					tos_count_tRowGenerator_1++;
-
-					/**
-					 * [tRowGenerator_1 main ] stop
-					 */
-
-					/**
-					 * [tRowGenerator_1 process_data_begin ] start
-					 */
-
-					currentComponent = "tRowGenerator_1";
-
-					/**
-					 * [tRowGenerator_1 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tHDFSOutput_2 main ] start
-					 */
-
-					currentComponent = "tHDFSOutput_2";
-
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
-					}
-
-					StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
-
-					if (row2.Nom != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Prenoms != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Prenoms
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Sexe != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Sexe
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Date_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								FormatterUtils.format_Date(row2.Date_Naissance, "yyyy-MM-dd")
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Date_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								FormatterUtils.format_Date(row2.Date_Deces, "yyyy-MM-dd")
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Pays_Source_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Pays_Source_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Source_Commune_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Source_Commune_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Source_Commune_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Source_Commune_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Commune_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Commune_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Commune_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Commune_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Departement_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Departement_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Departement_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Departement_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Region_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Region_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Region_Naissance != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Region_Naissance
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Source_Commune_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Source_Commune_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Commune_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Commune_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Commune_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Commune_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Departement_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Departement_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Departement_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Departement_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Code_Actuel_Region_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Code_Actuel_Region_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_Actuel_Region_Deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_Actuel_Region_Deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Numero_d_acte_du_deces != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Numero_d_acte_du_deces
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Nom_du_fichier_source_INSEE != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Nom_du_fichier_source_INSEE
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
-
-					if (row2.Age != null) {
-
-						sb_tHDFSOutput_2.append(
-
-								row2.Age
-
-						);
-
-					}
-
-					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsRowSeparator);
-
-					outtHDFSOutput_2.write(sb_tHDFSOutput_2.toString());
-
-					nb_line_tHDFSOutput_2++;
-
-					tos_count_tHDFSOutput_2++;
-
-					/**
-					 * [tHDFSOutput_2 main ] stop
-					 */
-
-					/**
-					 * [tHDFSOutput_2 process_data_begin ] start
-					 */
-
-					currentComponent = "tHDFSOutput_2";
-
-					/**
-					 * [tHDFSOutput_2 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tHDFSOutput_2 process_data_end ] start
-					 */
-
-					currentComponent = "tHDFSOutput_2";
-
-					/**
-					 * [tHDFSOutput_2 process_data_end ] stop
-					 */
-
-					/**
-					 * [tRowGenerator_1 process_data_end ] start
-					 */
-
-					currentComponent = "tRowGenerator_1";
-
-					/**
-					 * [tRowGenerator_1 process_data_end ] stop
-					 */
-
-					/**
-					 * [tRowGenerator_1 end ] start
-					 */
-
-					currentComponent = "tRowGenerator_1";
-
-				}
-				globalMap.put("tRowGenerator_1_NB_LINE", nb_line_tRowGenerator_1);
-
-				ok_Hash.put("tRowGenerator_1", true);
-				end_Hash.put("tRowGenerator_1", System.currentTimeMillis());
-
-				/**
-				 * [tRowGenerator_1 end ] stop
-				 */
-
-				/**
-				 * [tHDFSOutput_2 end ] start
-				 */
-
-				currentComponent = "tHDFSOutput_2";
-
-				if (outtHDFSOutput_2 != null) {
-					outtHDFSOutput_2.close();
-				}
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
-				}
-
-				ok_Hash.put("tHDFSOutput_2", true);
-				end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
-
-				/**
-				 * [tHDFSOutput_2 end ] stop
-				 */
-
-			} // end the resume
-
-			if (resumeEntryMethodName == null || globalResumeTicket) {
-				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tRowGenerator_1:OnSubjobOk", "",
-						Thread.currentThread().getId() + "", "", "", "", "", "");
-			}
-
-			if (execStat) {
-				runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
-			}
-
-			tFileList_1Process(globalMap);
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tRowGenerator_1 finally ] start
-				 */
-
-				currentComponent = "tRowGenerator_1";
-
-				/**
-				 * [tRowGenerator_1 finally ] stop
-				 */
-
-				/**
-				 * [tHDFSOutput_2 finally ] start
-				 */
-
-				currentComponent = "tHDFSOutput_2";
-
-				/**
-				 * [tHDFSOutput_2 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tRowGenerator_1_SUBPROCESS_STATE", 1);
 	}
 
 	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
@@ -2457,8 +1151,8 @@ public class Death_Fetch implements TalendJob {
 
 	}
 
-	public void tFileList_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileList_1_SUBPROCESS_STATE", 0);
+	public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
 
 		final boolean execStat = this.execStat;
 
@@ -2480,865 +1174,715 @@ public class Death_Fetch implements TalendJob {
 				row1Struct row1 = new row1Struct();
 
 				/**
-				 * [tFileList_1 begin ] start
+				 * [tHDFSOutput_1 begin ] start
 				 */
 
-				int NB_ITERATE_tFileInputDelimited_1 = 0; // for statistics
+				ok_Hash.put("tHDFSOutput_1", false);
+				start_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 
-				ok_Hash.put("tFileList_1", false);
-				start_Hash.put("tFileList_1", System.currentTimeMillis());
+				currentComponent = "tHDFSOutput_1";
 
-				currentComponent = "tFileList_1";
-
-				int tos_count_tFileList_1 = 0;
-
-				String directory_tFileList_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces";
-				final java.util.List<String> maskList_tFileList_1 = new java.util.ArrayList<String>();
-				final java.util.List<java.util.regex.Pattern> patternList_tFileList_1 = new java.util.ArrayList<java.util.regex.Pattern>();
-				maskList_tFileList_1.add("*.csv");
-				for (final String filemask_tFileList_1 : maskList_tFileList_1) {
-					String filemask_compile_tFileList_1 = filemask_tFileList_1;
-
-					filemask_compile_tFileList_1 = org.apache.oro.text.GlobCompiler.globToPerl5(
-							filemask_tFileList_1.toCharArray(), org.apache.oro.text.GlobCompiler.DEFAULT_MASK);
-
-					java.util.regex.Pattern fileNamePattern_tFileList_1 = java.util.regex.Pattern
-							.compile(filemask_compile_tFileList_1);
-					patternList_tFileList_1.add(fileNamePattern_tFileList_1);
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
 				}
-				int NB_FILEtFileList_1 = 0;
 
-				final boolean case_sensitive_tFileList_1 = true;
-				final java.util.List<java.io.File> list_tFileList_1 = new java.util.ArrayList<java.io.File>();
-				final java.util.Set<String> filePath_tFileList_1 = new java.util.HashSet<String>();
-				java.io.File file_tFileList_1 = new java.io.File(directory_tFileList_1);
-
-				file_tFileList_1.listFiles(new java.io.FilenameFilter() {
-					public boolean accept(java.io.File dir, String name) {
-						java.io.File file = new java.io.File(dir, name);
-						if (!file.isDirectory()) {
-
-							String fileName_tFileList_1 = file.getName();
-							for (final java.util.regex.Pattern fileNamePattern_tFileList_1 : patternList_tFileList_1) {
-								if (fileNamePattern_tFileList_1.matcher(fileName_tFileList_1).matches()) {
-									if (!filePath_tFileList_1.contains(file.getAbsolutePath())) {
-										list_tFileList_1.add(file);
-										filePath_tFileList_1.add(file.getAbsolutePath());
-									}
-								}
-							}
-						}
-						return true;
-					}
-				});
-				java.util.Collections.sort(list_tFileList_1);
-
-				for (int i_tFileList_1 = 0; i_tFileList_1 < list_tFileList_1.size(); i_tFileList_1++) {
-					java.io.File files_tFileList_1 = list_tFileList_1.get(i_tFileList_1);
-					String fileName_tFileList_1 = files_tFileList_1.getName();
-
-					String currentFileName_tFileList_1 = files_tFileList_1.getName();
-					String currentFilePath_tFileList_1 = files_tFileList_1.getAbsolutePath();
-					String currentFileDirectory_tFileList_1 = files_tFileList_1.getParent();
-					String currentFileExtension_tFileList_1 = null;
-
-					if (files_tFileList_1.getName().contains(".") && files_tFileList_1.isFile()) {
-						currentFileExtension_tFileList_1 = files_tFileList_1.getName()
-								.substring(files_tFileList_1.getName().lastIndexOf(".") + 1);
-					} else {
-						currentFileExtension_tFileList_1 = "";
-					}
-
-					NB_FILEtFileList_1++;
-					globalMap.put("tFileList_1_CURRENT_FILE", currentFileName_tFileList_1);
-					globalMap.put("tFileList_1_CURRENT_FILEPATH", currentFilePath_tFileList_1);
-					globalMap.put("tFileList_1_CURRENT_FILEDIRECTORY", currentFileDirectory_tFileList_1);
-					globalMap.put("tFileList_1_CURRENT_FILEEXTENSION", currentFileExtension_tFileList_1);
-					globalMap.put("tFileList_1_NB_FILE", NB_FILEtFileList_1);
-
-					/**
-					 * [tFileList_1 begin ] stop
-					 */
-
-					/**
-					 * [tFileList_1 main ] start
-					 */
-
-					currentComponent = "tFileList_1";
-
-					tos_count_tFileList_1++;
-
-					/**
-					 * [tFileList_1 main ] stop
-					 */
-
-					/**
-					 * [tFileList_1 process_data_begin ] start
-					 */
-
-					currentComponent = "tFileList_1";
-
-					/**
-					 * [tFileList_1 process_data_begin ] stop
-					 */
-					NB_ITERATE_tFileInputDelimited_1++;
-
-					if (execStat) {
-						runStat.updateStatOnConnection("row1", 3, 0);
-					}
-
-					if (execStat) {
-						runStat.updateStatOnConnection("iterate1", 1, "exec" + NB_ITERATE_tFileInputDelimited_1);
-						// Thread.sleep(1000);
-					}
-
-					/**
-					 * [tHDFSOutput_1 begin ] start
-					 */
-
-					ok_Hash.put("tHDFSOutput_1", false);
-					start_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
-
-					currentComponent = "tHDFSOutput_1";
-
-					if (execStat) {
-						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-					}
-
-					int tos_count_tHDFSOutput_1 = 0;
-
-					String username_tHDFSOutput_1 = "";
-					org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
-					org.apache.hadoop.conf.Configuration conf_tHDFSOutput_1 = (org.apache.hadoop.conf.Configuration) globalMap
-							.get("conn_tHDFSConnection_1");
-
-					username_tHDFSOutput_1 = context.HadoopHDFS_HdfsUser;
-					if (username_tHDFSOutput_1 == null || "".equals(username_tHDFSOutput_1)) {
-						fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_1);
-					} else {
-						System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_1);
-						fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(
-								new java.net.URI(conf_tHDFSOutput_1.get("fs.default.name")), conf_tHDFSOutput_1,
-								username_tHDFSOutput_1);
-					}
-
-					org.apache.hadoop.fs.Path path_tHDFSOutput_1 = new org.apache.hadoop.fs.Path(
-							context.HadoopHDFS_DeathFile);
-					int nb_line_tHDFSOutput_1 = 0;
-
-					org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_1 = null;
-
-					if (!fs_tHDFSOutput_1.exists(path_tHDFSOutput_1)) {
-						fsDataOutputStream_tHDFSOutput_1 = fs_tHDFSOutput_1.create(path_tHDFSOutput_1, false);
-					} else {
-						fsDataOutputStream_tHDFSOutput_1 = fs_tHDFSOutput_1.append(path_tHDFSOutput_1);
-					}
-
-					java.io.Writer outtHDFSOutput_1 = null;
-					outtHDFSOutput_1 = new java.io.BufferedWriter(
-							new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_1));
-
-					/**
-					 * [tHDFSOutput_1 begin ] stop
-					 */
-
-					/**
-					 * [tFileInputDelimited_1 begin ] start
-					 */
-
-					ok_Hash.put("tFileInputDelimited_1", false);
-					start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
-
-					currentComponent = "tFileInputDelimited_1";
-
-					int tos_count_tFileInputDelimited_1 = 0;
-
-					final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
-
-					int nb_line_tFileInputDelimited_1 = 0;
-					org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_1 = null;
-					int limit_tFileInputDelimited_1 = -1;
-					try {
-
-						Object filename_tFileInputDelimited_1 = ((String) globalMap
-								.get("tFileList_1_CURRENT_FILEPATH"));
-						if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
-
-							int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
-							if (footer_value_tFileInputDelimited_1 > 0 || random_value_tFileInputDelimited_1 > 0) {
-								throw new java.lang.Exception(
-										"When the input source is a stream,footer and random shouldn't be bigger than 0.");
-							}
-
-						}
-						try {
-							fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
-									((String) globalMap.get("tFileList_1_CURRENT_FILEPATH")), "UTF-8", ";", "\n", false,
-									1, 0, limit_tFileInputDelimited_1, -1, false);
-						} catch (java.lang.Exception e) {
-
-							System.err.println(e.getMessage());
-
-						}
-
-						while (fid_tFileInputDelimited_1 != null && fid_tFileInputDelimited_1.nextRecord()) {
-							rowstate_tFileInputDelimited_1.reset();
-
-							row1 = null;
-
-							boolean whetherReject_tFileInputDelimited_1 = false;
-							row1 = new row1Struct();
-							try {
-
-								int columnIndexWithD_tFileInputDelimited_1 = 0;
-
-								String temp = "";
-
-								columnIndexWithD_tFileInputDelimited_1 = 0;
-
-								row1.Nom = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 1;
-
-								row1.Prenoms = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 2;
-
-								temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-								if (temp.length() > 0) {
-
-									try {
-
-										row1.Sexe = ParserUtils.parseTo_Character(temp);
-
-									} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-										rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-												"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-												"Sexe", "row1", temp, ex_tFileInputDelimited_1),
-												ex_tFileInputDelimited_1));
-									}
-
-								} else {
-
-									row1.Sexe = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 3;
-
-								temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-								if (temp.length() > 0) {
-
-									try {
-
-										row1.Date_Naissance = ParserUtils.parseTo_Date(temp, "yyyy-MM-dd");
-
-									} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-										rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-												"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-												"Date_Naissance", "row1", temp, ex_tFileInputDelimited_1),
-												ex_tFileInputDelimited_1));
-									}
-
-								} else {
-
-									row1.Date_Naissance = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 4;
-
-								temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-								if (temp.length() > 0) {
-
-									try {
-
-										row1.Date_Deces = ParserUtils.parseTo_Date(temp, "yyyy-MM-dd");
-
-									} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-										rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-												"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-												"Date_Deces", "row1", temp, ex_tFileInputDelimited_1),
-												ex_tFileInputDelimited_1));
-									}
-
-								} else {
-
-									row1.Date_Deces = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 5;
-
-								row1.Pays_Source_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 6;
-
-								row1.Code_Source_Commune_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 7;
-
-								row1.Nom_Source_Commune_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 8;
-
-								row1.Code_Actuel_Commune_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 9;
-
-								row1.Nom_Actuel_Commune_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 10;
-
-								row1.Code_Actuel_Departement_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 11;
-
-								row1.Nom_Actuel_Departement_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 12;
-
-								row1.Code_Actuel_Region_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 13;
-
-								row1.Nom_Actuel_Region_Naissance = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 14;
-
-								row1.Code_Source_Commune_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 15;
-
-								row1.Code_Actuel_Commune_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 16;
-
-								row1.Nom_Actuel_Commune_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 17;
-
-								row1.Code_Actuel_Departement_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 18;
-
-								row1.Nom_Actuel_Departement_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 19;
-
-								row1.Code_Actuel_Region_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 20;
-
-								row1.Nom_Actuel_Region_Deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 21;
-
-								row1.Numero_d_acte_du_deces = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 22;
-
-								row1.Nom_du_fichier_source_INSEE = fid_tFileInputDelimited_1
-										.get(columnIndexWithD_tFileInputDelimited_1);
-
-								columnIndexWithD_tFileInputDelimited_1 = 23;
-
-								temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-								if (temp.length() > 0) {
-
-									try {
-
-										row1.Age = ParserUtils.parseTo_Integer(temp);
-
-									} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-										rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-												"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-												"Age", "row1", temp, ex_tFileInputDelimited_1),
-												ex_tFileInputDelimited_1));
-									}
-
-								} else {
-
-									row1.Age = null;
-
-								}
-
-								if (rowstate_tFileInputDelimited_1.getException() != null) {
-									throw rowstate_tFileInputDelimited_1.getException();
-								}
-
-							} catch (java.lang.Exception e) {
-								whetherReject_tFileInputDelimited_1 = true;
-
-								System.err.println(e.getMessage());
-								row1 = null;
-
-							}
-
-							/**
-							 * [tFileInputDelimited_1 begin ] stop
-							 */
-
-							/**
-							 * [tFileInputDelimited_1 main ] start
-							 */
-
-							currentComponent = "tFileInputDelimited_1";
-
-							tos_count_tFileInputDelimited_1++;
-
-							/**
-							 * [tFileInputDelimited_1 main ] stop
-							 */
-
-							/**
-							 * [tFileInputDelimited_1 process_data_begin ] start
-							 */
-
-							currentComponent = "tFileInputDelimited_1";
-
-							/**
-							 * [tFileInputDelimited_1 process_data_begin ] stop
-							 */
-// Start of branch "row1"
-							if (row1 != null) {
-
-								/**
-								 * [tHDFSOutput_1 main ] start
-								 */
-
-								currentComponent = "tHDFSOutput_1";
-
-								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
-								}
-
-								StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
-
-								if (row1.Nom != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Prenoms != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Prenoms
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Sexe != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Sexe
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Date_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											FormatterUtils.format_Date(row1.Date_Naissance, "yyyy-MM-dd")
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Date_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											FormatterUtils.format_Date(row1.Date_Deces, "yyyy-MM-dd")
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Pays_Source_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Pays_Source_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Source_Commune_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Source_Commune_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Source_Commune_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Source_Commune_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Commune_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Commune_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Commune_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Commune_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Departement_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Departement_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Departement_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Departement_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Region_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Region_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Region_Naissance != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Region_Naissance
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Source_Commune_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Source_Commune_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Commune_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Commune_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Commune_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Commune_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Departement_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Departement_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Departement_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Departement_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Code_Actuel_Region_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Code_Actuel_Region_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_Actuel_Region_Deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_Actuel_Region_Deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Numero_d_acte_du_deces != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Numero_d_acte_du_deces
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Nom_du_fichier_source_INSEE != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Nom_du_fichier_source_INSEE
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-								if (row1.Age != null) {
-
-									sb_tHDFSOutput_1.append(
-
-											row1.Age
-
-									);
-
-								}
-
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsRowSeparator);
-
-								outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
-
-								nb_line_tHDFSOutput_1++;
-
-								tos_count_tHDFSOutput_1++;
-
-								/**
-								 * [tHDFSOutput_1 main ] stop
-								 */
-
-								/**
-								 * [tHDFSOutput_1 process_data_begin ] start
-								 */
-
-								currentComponent = "tHDFSOutput_1";
-
-								/**
-								 * [tHDFSOutput_1 process_data_begin ] stop
-								 */
-
-								/**
-								 * [tHDFSOutput_1 process_data_end ] start
-								 */
-
-								currentComponent = "tHDFSOutput_1";
-
-								/**
-								 * [tHDFSOutput_1 process_data_end ] stop
-								 */
-
-							} // End of branch "row1"
-
-							/**
-							 * [tFileInputDelimited_1 process_data_end ] start
-							 */
-
-							currentComponent = "tFileInputDelimited_1";
-
-							/**
-							 * [tFileInputDelimited_1 process_data_end ] stop
-							 */
-
-							/**
-							 * [tFileInputDelimited_1 end ] start
-							 */
-
-							currentComponent = "tFileInputDelimited_1";
-
-						}
-					} finally {
-						if (!((Object) (((String) globalMap
-								.get("tFileList_1_CURRENT_FILEPATH"))) instanceof java.io.InputStream)) {
-							if (fid_tFileInputDelimited_1 != null) {
-								fid_tFileInputDelimited_1.close();
-							}
-						}
-						if (fid_tFileInputDelimited_1 != null) {
-							globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
-
-						}
-					}
-
-					ok_Hash.put("tFileInputDelimited_1", true);
-					end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
-
-					/**
-					 * [tFileInputDelimited_1 end ] stop
-					 */
-
-					/**
-					 * [tHDFSOutput_1 end ] start
-					 */
-
-					currentComponent = "tHDFSOutput_1";
-
-					if (outtHDFSOutput_1 != null) {
-						outtHDFSOutput_1.close();
-					}
-
-					if (execStat) {
-						runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-					}
-
-					ok_Hash.put("tHDFSOutput_1", true);
-					end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
-
-					/**
-					 * [tHDFSOutput_1 end ] stop
-					 */
-
-					if (execStat) {
-						runStat.updateStatOnConnection("iterate1", 2, "exec" + NB_ITERATE_tFileInputDelimited_1);
-					}
-
-					/**
-					 * [tFileList_1 process_data_end ] start
-					 */
-
-					currentComponent = "tFileList_1";
-
-					/**
-					 * [tFileList_1 process_data_end ] stop
-					 */
-
-					/**
-					 * [tFileList_1 end ] start
-					 */
-
-					currentComponent = "tFileList_1";
-
+				int tos_count_tHDFSOutput_1 = 0;
+
+				String username_tHDFSOutput_1 = "";
+				org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
+				org.apache.hadoop.conf.Configuration conf_tHDFSOutput_1 = (org.apache.hadoop.conf.Configuration) globalMap
+						.get("conn_tHDFSConnection_1");
+
+				username_tHDFSOutput_1 = context.HadoopHDFS_HdfsUser;
+				if (username_tHDFSOutput_1 == null || "".equals(username_tHDFSOutput_1)) {
+					fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_1);
+				} else {
+					System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_1);
+					fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(
+							new java.net.URI(conf_tHDFSOutput_1.get("fs.default.name")), conf_tHDFSOutput_1,
+							username_tHDFSOutput_1);
 				}
-				globalMap.put("tFileList_1_NB_FILE", NB_FILEtFileList_1);
 
-				ok_Hash.put("tFileList_1", true);
-				end_Hash.put("tFileList_1", System.currentTimeMillis());
+				org.apache.hadoop.fs.Path path_tHDFSOutput_1 = new org.apache.hadoop.fs.Path(
+						context.HadoopHDFS_DeathFile);
+				int nb_line_tHDFSOutput_1 = 0;
+
+				org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_1 = null;
+
+				fsDataOutputStream_tHDFSOutput_1 = fs_tHDFSOutput_1.create(path_tHDFSOutput_1, true);
+
+				java.io.Writer outtHDFSOutput_1 = null;
+				outtHDFSOutput_1 = new java.io.BufferedWriter(
+						new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_1));
 
 				/**
-				 * [tFileList_1 end ] stop
+				 * [tHDFSOutput_1 begin ] stop
 				 */
+
+				/**
+				 * [tFileInputDelimited_1 begin ] start
+				 */
+
+				ok_Hash.put("tFileInputDelimited_1", false);
+				start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+
+				currentComponent = "tFileInputDelimited_1";
+
+				int tos_count_tFileInputDelimited_1 = 0;
+
+				final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
+
+				int nb_line_tFileInputDelimited_1 = 0;
+				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_1 = null;
+				int limit_tFileInputDelimited_1 = -1;
+				try {
+
+					Object filename_tFileInputDelimited_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces/liste-des-personnes-decedees-en-france-2019.csv";
+					if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
+
+						int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
+						if (footer_value_tFileInputDelimited_1 > 0 || random_value_tFileInputDelimited_1 > 0) {
+							throw new java.lang.Exception(
+									"When the input source is a stream,footer and random shouldn't be bigger than 0.");
+						}
+
+					}
+					try {
+						fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
+								"C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces/liste-des-personnes-decedees-en-france-2019.csv",
+								"UTF-8", ";", "\n", false, 1, 0, limit_tFileInputDelimited_1, -1, false);
+					} catch (java.lang.Exception e) {
+
+						System.err.println(e.getMessage());
+
+					}
+
+					while (fid_tFileInputDelimited_1 != null && fid_tFileInputDelimited_1.nextRecord()) {
+						rowstate_tFileInputDelimited_1.reset();
+
+						row1 = null;
+
+						boolean whetherReject_tFileInputDelimited_1 = false;
+						row1 = new row1Struct();
+						try {
+
+							int columnIndexWithD_tFileInputDelimited_1 = 0;
+
+							String temp = "";
+
+							columnIndexWithD_tFileInputDelimited_1 = 0;
+
+							row1.Nom = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 1;
+
+							row1.Prenoms = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 2;
+
+							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							if (temp.length() > 0) {
+
+								try {
+
+									row1.Sexe = ParserUtils.parseTo_Character(temp);
+
+								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
+											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+											"Sexe", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+								}
+
+							} else {
+
+								row1.Sexe = null;
+
+							}
+
+							columnIndexWithD_tFileInputDelimited_1 = 3;
+
+							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							if (temp.length() > 0) {
+
+								try {
+
+									row1.Date_Naissance = ParserUtils.parseTo_Date(temp, "yyyy-MM-dd");
+
+								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
+											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+											"Date_Naissance", "row1", temp, ex_tFileInputDelimited_1),
+											ex_tFileInputDelimited_1));
+								}
+
+							} else {
+
+								row1.Date_Naissance = null;
+
+							}
+
+							columnIndexWithD_tFileInputDelimited_1 = 4;
+
+							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							if (temp.length() > 0) {
+
+								try {
+
+									row1.Date_Deces = ParserUtils.parseTo_Date(temp, "yyyy-MM-dd");
+
+								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
+											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+											"Date_Deces", "row1", temp, ex_tFileInputDelimited_1),
+											ex_tFileInputDelimited_1));
+								}
+
+							} else {
+
+								row1.Date_Deces = null;
+
+							}
+
+							columnIndexWithD_tFileInputDelimited_1 = 5;
+
+							row1.Pays_Source_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 6;
+
+							row1.Code_Source_Commune_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 7;
+
+							row1.Nom_Source_Commune_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 8;
+
+							row1.Code_Actuel_Commune_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 9;
+
+							row1.Nom_Actuel_Commune_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 10;
+
+							row1.Code_Actuel_Departement_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 11;
+
+							row1.Nom_Actuel_Departement_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 12;
+
+							row1.Code_Actuel_Region_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 13;
+
+							row1.Nom_Actuel_Region_Naissance = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 14;
+
+							row1.Code_Source_Commune_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 15;
+
+							row1.Code_Actuel_Commune_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 16;
+
+							row1.Nom_Actuel_Commune_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 17;
+
+							row1.Code_Actuel_Departement_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 18;
+
+							row1.Nom_Actuel_Departement_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 19;
+
+							row1.Code_Actuel_Region_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 20;
+
+							row1.Nom_Actuel_Region_Deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 21;
+
+							row1.Numero_d_acte_du_deces = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 22;
+
+							row1.Nom_du_fichier_source_INSEE = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
+
+							columnIndexWithD_tFileInputDelimited_1 = 23;
+
+							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							if (temp.length() > 0) {
+
+								try {
+
+									row1.Age = ParserUtils.parseTo_Integer(temp);
+
+								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
+											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+											"Age", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+								}
+
+							} else {
+
+								row1.Age = null;
+
+							}
+
+							if (rowstate_tFileInputDelimited_1.getException() != null) {
+								throw rowstate_tFileInputDelimited_1.getException();
+							}
+
+						} catch (java.lang.Exception e) {
+							whetherReject_tFileInputDelimited_1 = true;
+
+							System.err.println(e.getMessage());
+							row1 = null;
+
+						}
+
+						/**
+						 * [tFileInputDelimited_1 begin ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 main ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						tos_count_tFileInputDelimited_1++;
+
+						/**
+						 * [tFileInputDelimited_1 main ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						/**
+						 * [tFileInputDelimited_1 process_data_begin ] stop
+						 */
+// Start of branch "row1"
+						if (row1 != null) {
+
+							/**
+							 * [tHDFSOutput_1 main ] start
+							 */
+
+							currentComponent = "tHDFSOutput_1";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
+							}
+
+							StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
+
+							if (row1.Nom != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Prenoms != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Prenoms
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Sexe != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Sexe
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Date_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										FormatterUtils.format_Date(row1.Date_Naissance, "yyyy-MM-dd")
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Date_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										FormatterUtils.format_Date(row1.Date_Deces, "yyyy-MM-dd")
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Pays_Source_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Pays_Source_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Source_Commune_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Source_Commune_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Source_Commune_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Source_Commune_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Commune_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Commune_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Commune_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Commune_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Departement_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Departement_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Departement_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Departement_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Region_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Region_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Region_Naissance != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Region_Naissance
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Source_Commune_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Source_Commune_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Commune_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Commune_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Commune_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Commune_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Departement_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Departement_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Departement_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Departement_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Code_Actuel_Region_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Code_Actuel_Region_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_Actuel_Region_Deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_Actuel_Region_Deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Numero_d_acte_du_deces != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Numero_d_acte_du_deces
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Nom_du_fichier_source_INSEE != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Nom_du_fichier_source_INSEE
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+							if (row1.Age != null) {
+
+								sb_tHDFSOutput_1.append(
+
+										row1.Age
+
+								);
+
+							}
+
+							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsRowSeparator);
+
+							outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
+
+							nb_line_tHDFSOutput_1++;
+
+							tos_count_tHDFSOutput_1++;
+
+							/**
+							 * [tHDFSOutput_1 main ] stop
+							 */
+
+							/**
+							 * [tHDFSOutput_1 process_data_begin ] start
+							 */
+
+							currentComponent = "tHDFSOutput_1";
+
+							/**
+							 * [tHDFSOutput_1 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tHDFSOutput_1 process_data_end ] start
+							 */
+
+							currentComponent = "tHDFSOutput_1";
+
+							/**
+							 * [tHDFSOutput_1 process_data_end ] stop
+							 */
+
+						} // End of branch "row1"
+
+						/**
+						 * [tFileInputDelimited_1 process_data_end ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						/**
+						 * [tFileInputDelimited_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 end ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+					}
+				} finally {
+					if (!((Object) ("C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces/liste-des-personnes-decedees-en-france-2019.csv") instanceof java.io.InputStream)) {
+						if (fid_tFileInputDelimited_1 != null) {
+							fid_tFileInputDelimited_1.close();
+						}
+					}
+					if (fid_tFileInputDelimited_1 != null) {
+						globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
+
+					}
+				}
+
+				ok_Hash.put("tFileInputDelimited_1", true);
+				end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+
+				/**
+				 * [tFileInputDelimited_1 end ] stop
+				 */
+
+				/**
+				 * [tHDFSOutput_1 end ] start
+				 */
+
+				currentComponent = "tHDFSOutput_1";
+
+				if (outtHDFSOutput_1 != null) {
+					outtHDFSOutput_1.close();
+				}
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tHDFSOutput_1", true);
+				end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
+
+				/**
+				 * [tHDFSOutput_1 end ] stop
+				 */
+
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
@@ -3354,16 +1898,6 @@ public class Death_Fetch implements TalendJob {
 		} finally {
 
 			try {
-
-				/**
-				 * [tFileList_1 finally ] start
-				 */
-
-				currentComponent = "tFileList_1";
-
-				/**
-				 * [tFileList_1 finally ] stop
-				 */
 
 				/**
 				 * [tFileInputDelimited_1 finally ] start
@@ -3393,7 +1927,7 @@ public class Death_Fetch implements TalendJob {
 			resourceMap = null;
 		}
 
-		globalMap.put("tFileList_1_SUBPROCESS_STATE", 1);
+		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -3831,6 +2365,6 @@ public class Death_Fetch implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 117129 characters generated by Talend Open Studio for Big Data on the 9 mai
- * 2022 08:29:14 CEST
+ * 76099 characters generated by Talend Open Studio for Big Data on the 9 mai
+ * 2022 13:45:38 CEST
  ************************************************************************************************/

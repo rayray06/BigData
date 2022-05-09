@@ -12,7 +12,7 @@
     <module>code/routines</module>
     <module>jobs/process/Extraction/CSV_Extraction/Death_Extraction/death_fetch_0.1</module>
     <module>jobs/process/Extraction/CSV_Extraction/Hospi_Extract/extract_hospi_0.1</module>
-    <module>jobs/process/Extraction/CSV_Extraction/Satis_Extract/dan_mco_extract_0.1</module>
+    <module>jobs/process/Extraction/CSV_Extraction/Satis_Extract/esatis_extract_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>
