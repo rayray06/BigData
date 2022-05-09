@@ -118,12 +118,6 @@ public class Death_Fetch implements TalendJob {
 
 		public void synchronizeContext() {
 
-			if (HaddopHDFS_DeathFile != null) {
-
-				this.setProperty("HaddopHDFS_DeathFile", HaddopHDFS_DeathFile.toString());
-
-			}
-
 			if (HadoopHDFS_HdfsFileSeparator != null) {
 
 				this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
@@ -139,6 +133,12 @@ public class Death_Fetch implements TalendJob {
 			if (HadoopHDFS_HdfsUser != null) {
 
 				this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
+
+			}
+
+			if (HadoopHDFS_DeathFile != null) {
+
+				this.setProperty("HadoopHDFS_DeathFile", HadoopHDFS_DeathFile.toString());
 
 			}
 
@@ -180,6 +180,12 @@ public class Death_Fetch implements TalendJob {
 
 			}
 
+			if (HadoopHDFS_HospiFile != null) {
+
+				this.setProperty("HadoopHDFS_HospiFile", HadoopHDFS_HospiFile.toString());
+
+			}
+
 			if (ProjectHadoopCluster_NameNodeUri != null) {
 
 				this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
@@ -192,12 +198,6 @@ public class Death_Fetch implements TalendJob {
 
 			}
 
-		}
-
-		public String HaddopHDFS_DeathFile;
-
-		public String getHaddopHDFS_DeathFile() {
-			return this.HaddopHDFS_DeathFile;
 		}
 
 		public String HadoopHDFS_HdfsFileSeparator;
@@ -216,6 +216,12 @@ public class Death_Fetch implements TalendJob {
 
 		public String getHadoopHDFS_HdfsUser() {
 			return this.HadoopHDFS_HdfsUser;
+		}
+
+		public String HadoopHDFS_DeathFile;
+
+		public String getHadoopHDFS_DeathFile() {
+			return this.HadoopHDFS_DeathFile;
 		}
 
 		public String Death_Data_Encoding;
@@ -254,6 +260,12 @@ public class Death_Fetch implements TalendJob {
 			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
 		}
 
+		public String HadoopHDFS_HospiFile;
+
+		public String getHadoopHDFS_HospiFile() {
+			return this.HadoopHDFS_HospiFile;
+		}
+
 		public String ProjectHadoopCluster_NameNodeUri;
 
 		public String getProjectHadoopCluster_NameNodeUri() {
@@ -288,7 +300,6 @@ public class Death_Fetch implements TalendJob {
 	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 
 	private RunStat runStat = new RunStat();
-	private RunTrace runTrace = new RunTrace();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -514,8 +525,6 @@ public class Death_Fetch implements TalendJob {
 				 * [tHDFSConnection_1 begin ] start
 				 */
 
-				globalMap.put("ENABLE_TRACES_CONNECTION_tHDFSConnection_1", Boolean.FALSE);
-
 				ok_Hash.put("tHDFSConnection_1", false);
 				start_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 
@@ -571,34 +580,6 @@ public class Death_Fetch implements TalendJob {
 				/**
 				 * [tHDFSConnection_1 process_data_end ] stop
 				 */
-
-				if (!isChildJob && (Boolean) globalMap.get("ENABLE_TRACES_CONNECTION_tHDFSConnection_1")) {
-					if (globalMap.get("USE_CONDITION") != null && (Boolean) globalMap.get("USE_CONDITION")) {
-						if (globalMap.get("TRACE_CONDITION") != null && (Boolean) globalMap.get("TRACE_CONDITION")) {
-							// if next breakpoint has been clicked on UI or if start job, should wait action
-							// of user.
-							if (runTrace.isNextBreakpoint()) {
-								runTrace.waitForUserAction();
-							} else if (runTrace.isNextRow()) {
-								runTrace.waitForUserAction();
-							}
-						} else {
-							// if next row has been clicked on UI or if start job, should wait action of
-							// user.
-							if (runTrace.isNextRow()) {
-								runTrace.waitForUserAction();
-							}
-						}
-					} else { // no condition set
-						if (runTrace.isNextRow()) {
-							runTrace.waitForUserAction();
-						} else {
-							Thread.sleep(1000);
-						}
-					}
-
-				}
-				globalMap.put("USE_CONDITION", Boolean.FALSE);
 
 				/**
 				 * [tHDFSConnection_1 end ] start
@@ -1234,8 +1215,6 @@ public class Death_Fetch implements TalendJob {
 				 * [tHDFSOutput_2 begin ] start
 				 */
 
-				globalMap.put("ENABLE_TRACES_CONNECTION_tRowGenerator_1", Boolean.FALSE);
-
 				ok_Hash.put("tHDFSOutput_2", false);
 				start_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
 
@@ -1263,7 +1242,7 @@ public class Death_Fetch implements TalendJob {
 				}
 
 				org.apache.hadoop.fs.Path path_tHDFSOutput_2 = new org.apache.hadoop.fs.Path(
-						context.HaddopHDFS_DeathFile);
+						context.HadoopHDFS_DeathFile);
 				int nb_line_tHDFSOutput_2 = 0;
 
 				org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_2 = null;
@@ -1281,8 +1260,6 @@ public class Death_Fetch implements TalendJob {
 				/**
 				 * [tRowGenerator_1 begin ] start
 				 */
-
-				globalMap.put("ENABLE_TRACES_CONNECTION_tRowGenerator_1", Boolean.FALSE);
 
 				ok_Hash.put("tRowGenerator_1", false);
 				start_Hash.put("tRowGenerator_1", System.currentTimeMillis());
@@ -1479,83 +1456,6 @@ public class Death_Fetch implements TalendJob {
 					 */
 
 					currentComponent = "tRowGenerator_1";
-
-					if (row2 != null) {
-						globalMap.put("ENABLE_TRACES_CONNECTION_tRowGenerator_1", Boolean.TRUE);
-						if (runTrace.isPause()) {
-							while (runTrace.isPause()) {
-								Thread.sleep(100);
-							}
-						} else {
-
-							// here we dump the line content for trace purpose
-							java.util.LinkedHashMap<String, String> runTraceData = new java.util.LinkedHashMap<String, String>();
-
-							runTraceData.put("Nom", String.valueOf(row2.Nom));
-
-							runTraceData.put("Prenoms", String.valueOf(row2.Prenoms));
-
-							runTraceData.put("Sexe", String.valueOf(row2.Sexe));
-
-							runTraceData.put("Date_Naissance", String.valueOf(row2.Date_Naissance));
-
-							runTraceData.put("Date_Deces", String.valueOf(row2.Date_Deces));
-
-							runTraceData.put("Pays_Source_Naissance", String.valueOf(row2.Pays_Source_Naissance));
-
-							runTraceData.put("Code_Source_Commune_Naissance",
-									String.valueOf(row2.Code_Source_Commune_Naissance));
-
-							runTraceData.put("Nom_Source_Commune_Naissance",
-									String.valueOf(row2.Nom_Source_Commune_Naissance));
-
-							runTraceData.put("Code_Actuel_Commune_Naissance",
-									String.valueOf(row2.Code_Actuel_Commune_Naissance));
-
-							runTraceData.put("Nom_Actuel_Commune_Naissance",
-									String.valueOf(row2.Nom_Actuel_Commune_Naissance));
-
-							runTraceData.put("Code_Actuel_Departement_Naissance",
-									String.valueOf(row2.Code_Actuel_Departement_Naissance));
-
-							runTraceData.put("Nom_Actuel_Departement_Naissance",
-									String.valueOf(row2.Nom_Actuel_Departement_Naissance));
-
-							runTraceData.put("Code_Actuel_Region_Naissance",
-									String.valueOf(row2.Code_Actuel_Region_Naissance));
-
-							runTraceData.put("Nom_Actuel_Region_Naissance",
-									String.valueOf(row2.Nom_Actuel_Region_Naissance));
-
-							runTraceData.put("Code_Source_Commune_Deces",
-									String.valueOf(row2.Code_Source_Commune_Deces));
-
-							runTraceData.put("Code_Actuel_Commune_Deces",
-									String.valueOf(row2.Code_Actuel_Commune_Deces));
-
-							runTraceData.put("Nom_Actuel_Commune_Deces", String.valueOf(row2.Nom_Actuel_Commune_Deces));
-
-							runTraceData.put("Code_Actuel_Departement_Deces",
-									String.valueOf(row2.Code_Actuel_Departement_Deces));
-
-							runTraceData.put("Nom_Actuel_Departement_Deces",
-									String.valueOf(row2.Nom_Actuel_Departement_Deces));
-
-							runTraceData.put("Code_Actuel_Region_Deces", String.valueOf(row2.Code_Actuel_Region_Deces));
-
-							runTraceData.put("Nom_Actuel_Region_Deces", String.valueOf(row2.Nom_Actuel_Region_Deces));
-
-							runTraceData.put("Numero_d_acte_du_deces", String.valueOf(row2.Numero_d_acte_du_deces));
-
-							runTraceData.put("Nom_du_fichier_source_INSEE",
-									String.valueOf(row2.Nom_du_fichier_source_INSEE));
-
-							runTraceData.put("Age", String.valueOf(row2.Age));
-
-							runTrace.sendTrace("row2", "tRowGenerator_1", runTraceData);
-						}
-
-					}
 
 					tos_count_tRowGenerator_1++;
 
@@ -1912,35 +1812,6 @@ public class Death_Fetch implements TalendJob {
 					/**
 					 * [tRowGenerator_1 process_data_end ] stop
 					 */
-
-					if (!isChildJob && (Boolean) globalMap.get("ENABLE_TRACES_CONNECTION_tRowGenerator_1")) {
-						if (globalMap.get("USE_CONDITION") != null && (Boolean) globalMap.get("USE_CONDITION")) {
-							if (globalMap.get("TRACE_CONDITION") != null
-									&& (Boolean) globalMap.get("TRACE_CONDITION")) {
-								// if next breakpoint has been clicked on UI or if start job, should wait action
-								// of user.
-								if (runTrace.isNextBreakpoint()) {
-									runTrace.waitForUserAction();
-								} else if (runTrace.isNextRow()) {
-									runTrace.waitForUserAction();
-								}
-							} else {
-								// if next row has been clicked on UI or if start job, should wait action of
-								// user.
-								if (runTrace.isNextRow()) {
-									runTrace.waitForUserAction();
-								}
-							}
-						} else { // no condition set
-							if (runTrace.isNextRow()) {
-								runTrace.waitForUserAction();
-							} else {
-								Thread.sleep(1000);
-							}
-						}
-
-					}
-					globalMap.put("USE_CONDITION", Boolean.FALSE);
 
 					/**
 					 * [tRowGenerator_1 end ] start
@@ -2614,8 +2485,6 @@ public class Death_Fetch implements TalendJob {
 
 				int NB_ITERATE_tFileInputDelimited_1 = 0; // for statistics
 
-				globalMap.put("ENABLE_TRACES_CONNECTION_tFileList_1", Boolean.FALSE);
-
 				ok_Hash.put("tFileList_1", false);
 				start_Hash.put("tFileList_1", System.currentTimeMillis());
 
@@ -2727,8 +2596,6 @@ public class Death_Fetch implements TalendJob {
 					 * [tHDFSOutput_1 begin ] start
 					 */
 
-					globalMap.put("ENABLE_TRACES_CONNECTION_tFileList_1", Boolean.FALSE);
-
 					ok_Hash.put("tHDFSOutput_1", false);
 					start_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 
@@ -2756,7 +2623,7 @@ public class Death_Fetch implements TalendJob {
 					}
 
 					org.apache.hadoop.fs.Path path_tHDFSOutput_1 = new org.apache.hadoop.fs.Path(
-							context.HaddopHDFS_DeathFile);
+							context.HadoopHDFS_DeathFile);
 					int nb_line_tHDFSOutput_1 = 0;
 
 					org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_1 = null;
@@ -2778,8 +2645,6 @@ public class Death_Fetch implements TalendJob {
 					/**
 					 * [tFileInputDelimited_1 begin ] start
 					 */
-
-					globalMap.put("ENABLE_TRACES_CONNECTION_tFileList_1", Boolean.FALSE);
 
 					ok_Hash.put("tFileInputDelimited_1", false);
 					start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
@@ -3459,35 +3324,6 @@ public class Death_Fetch implements TalendJob {
 					 * [tFileList_1 process_data_end ] stop
 					 */
 
-					if (!isChildJob && (Boolean) globalMap.get("ENABLE_TRACES_CONNECTION_tFileList_1")) {
-						if (globalMap.get("USE_CONDITION") != null && (Boolean) globalMap.get("USE_CONDITION")) {
-							if (globalMap.get("TRACE_CONDITION") != null
-									&& (Boolean) globalMap.get("TRACE_CONDITION")) {
-								// if next breakpoint has been clicked on UI or if start job, should wait action
-								// of user.
-								if (runTrace.isNextBreakpoint()) {
-									runTrace.waitForUserAction();
-								} else if (runTrace.isNextRow()) {
-									runTrace.waitForUserAction();
-								}
-							} else {
-								// if next row has been clicked on UI or if start job, should wait action of
-								// user.
-								if (runTrace.isNextRow()) {
-									runTrace.waitForUserAction();
-								}
-							}
-						} else { // no condition set
-							if (runTrace.isNextRow()) {
-								runTrace.waitForUserAction();
-							} else {
-								Thread.sleep(1000);
-							}
-						}
-
-					}
-					globalMap.put("USE_CONDITION", Boolean.FALSE);
-
 					/**
 					 * [tFileList_1 end ] start
 					 */
@@ -3701,14 +3537,14 @@ public class Death_Fetch implements TalendJob {
 			}
 			class ContextProcessing {
 				private void processContext_0() {
-					context.setContextType("HaddopHDFS_DeathFile", "id_String");
-					context.HaddopHDFS_DeathFile = (String) context.getProperty("HaddopHDFS_DeathFile");
 					context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
 					context.HadoopHDFS_HdfsFileSeparator = (String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
 					context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
 					context.HadoopHDFS_HdfsRowSeparator = (String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
 					context.setContextType("HadoopHDFS_HdfsUser", "id_String");
 					context.HadoopHDFS_HdfsUser = (String) context.getProperty("HadoopHDFS_HdfsUser");
+					context.setContextType("HadoopHDFS_DeathFile", "id_String");
+					context.HadoopHDFS_DeathFile = (String) context.getProperty("HadoopHDFS_DeathFile");
 					context.setContextType("Death_Data_Encoding", "id_String");
 					context.Death_Data_Encoding = (String) context.getProperty("Death_Data_Encoding");
 					context.setContextType("Death_Data_FieldSeparator", "id_String");
@@ -3732,6 +3568,8 @@ public class Death_Fetch implements TalendJob {
 							"id_String");
 					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) context
 							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+					context.setContextType("HadoopHDFS_HospiFile", "id_String");
+					context.HadoopHDFS_HospiFile = (String) context.getProperty("HadoopHDFS_HospiFile");
 					context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
 					context.ProjectHadoopCluster_NameNodeUri = (String) context
 							.getProperty("ProjectHadoopCluster_NameNodeUri");
@@ -3752,9 +3590,6 @@ public class Death_Fetch implements TalendJob {
 
 		// get context value from parent directly
 		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-			if (parentContextMap.containsKey("HaddopHDFS_DeathFile")) {
-				context.HaddopHDFS_DeathFile = (String) parentContextMap.get("HaddopHDFS_DeathFile");
-			}
 			if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
 				context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
 			}
@@ -3763,6 +3598,9 @@ public class Death_Fetch implements TalendJob {
 			}
 			if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
 				context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
+			}
+			if (parentContextMap.containsKey("HadoopHDFS_DeathFile")) {
+				context.HadoopHDFS_DeathFile = (String) parentContextMap.get("HadoopHDFS_DeathFile");
 			}
 			if (parentContextMap.containsKey("Death_Data_Encoding")) {
 				context.Death_Data_Encoding = (String) parentContextMap.get("Death_Data_Encoding");
@@ -3783,6 +3621,9 @@ public class Death_Fetch implements TalendJob {
 			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
 				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap
 						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+			}
+			if (parentContextMap.containsKey("HadoopHDFS_HospiFile")) {
+				context.HadoopHDFS_HospiFile = (String) parentContextMap.get("HadoopHDFS_HospiFile");
 			}
 			if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
 				context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap
@@ -3812,20 +3653,6 @@ public class Death_Fetch implements TalendJob {
 			} catch (java.io.IOException ioException) {
 				ioException.printStackTrace();
 			}
-		}
-
-		try {
-			runTrace.openSocket(!isChildJob);
-			runTrace.startThreadTrace(clientHost, portTraces);
-			if (runTrace.isPause()) {
-				while (runTrace.isPause()) {
-					Thread.sleep(100);
-				}
-			}
-		} catch (java.io.IOException ioException) {
-			ioException.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 
 		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
@@ -3871,7 +3698,6 @@ public class Death_Fetch implements TalendJob {
 			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
 			runStat.stopThreadStat();
 		}
-		runTrace.stopThreadTrace();
 		int returnCode = 0;
 		if (errorCode == null) {
 			returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -4005,6 +3831,6 @@ public class Death_Fetch implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 123154 characters generated by Talend Open Studio for Big Data on the 9 mai
- * 2022 02:56:52 CEST
+ * 117129 characters generated by Talend Open Studio for Big Data on the 9 mai
+ * 2022 03:13:24 CEST
  ************************************************************************************************/

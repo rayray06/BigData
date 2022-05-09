@@ -4386,3 +4386,207 @@ java.util.ConcurrentModificationException
 !ENTRY org.talend.platform.logging 1 0 2022-05-09 03:02:25.689
 !MESSAGE 2022-05-09 03:02:25,689 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPITALISATION_0.1/src/test/resources
 
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:07:48.499
+!MESSAGE 2022-05-09 03:07:48,498 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:07:48.557
+!MESSAGE 2022-05-09 03:07:48,556 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:07:48.558
+!MESSAGE 2022-05-09 03:07:48,558 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:07:48.566
+!MESSAGE 2022-05-09 03:07:48,565 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:07:48.567
+!MESSAGE 2022-05-09 03:07:48,567 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-09 03:08:33.591
+!MESSAGE 2022-05-09 03:08:33,591 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:10:27.084
+!MESSAGE 2022-05-09 03:10:27,084 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:10:27.171
+!MESSAGE 2022-05-09 03:10:27,170 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:10:27.172
+!MESSAGE 2022-05-09 03:10:27,171 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:10:27.176
+!MESSAGE 2022-05-09 03:10:27,175 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:10:27.177
+!MESSAGE 2022-05-09 03:10:27,176 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.363
+!MESSAGE 2022-05-09 03:13:25,362 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.455
+!MESSAGE 2022-05-09 03:13:25,455 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.575
+!MESSAGE 2022-05-09 03:13:25,575 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.576
+!MESSAGE 2022-05-09 03:13:25,576 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.580
+!MESSAGE 2022-05-09 03:13:25,578 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.580
+!MESSAGE 2022-05-09 03:13:25,580 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DEATH_FETCH_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:25.705
+!MESSAGE 2022-05-09 03:13:25,704 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:26.034
+!MESSAGE 2022-05-09 03:13:26,033 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:13:26.324
+!MESSAGE 2022-05-09 03:13:26,324 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Extraction/CSV_Extraction/Death_Extraction/death_fetch_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.death_fetch_0_1.Death_Fetch --context=Default --stat_port=3993 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.279
+!MESSAGE 2022-05-09 03:16:40,278 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.376
+!MESSAGE 2022-05-09 03:16:40,375 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.497
+!MESSAGE 2022-05-09 03:16:40,497 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.498
+!MESSAGE 2022-05-09 03:16:40,498 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.501
+!MESSAGE 2022-05-09 03:16:40,501 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.503
+!MESSAGE 2022-05-09 03:16:40,502 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.610
+!MESSAGE 2022-05-09 03:16:40,610 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:16:40.823
+!MESSAGE 2022-05-09 03:16:40,823 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-09 03:16:40.904
+!MESSAGE 2022-05-09 03:16:40,902 ERROR org.talend.commons.exception.CommonExceptionHandler  - Erreurs de compilation du Job 
+Au moins le Job "Extract_Hospi" a des erreurs de compilation, réparez et réexportez.
+Ligne en erreur: 882
+Message détaillé: HadoopHDSF_HospiFile cannot be resolved or is not a field
+Il peut y avoir d'autres erreurs causées par la compatibilité avec la JVM. Vérifiez que les paramètres de votre JVM sont les mêmes que dans le studio.
+
+!STACK 0
+org.talend.designer.runprocess.ProcessorException: Erreurs de compilation du Job 
+Au moins le Job "Extract_Hospi" a des erreurs de compilation, réparez et réexportez.
+Ligne en erreur: 882
+Message détaillé: HadoopHDSF_HospiFile cannot be resolved or is not a field
+Il peut y avoir d'autres erreurs causées par la compatibilité avec la JVM. Vérifiez que les paramètres de votre JVM sont les mêmes que dans le studio.
+	at org.talend.designer.runprocess.JobErrorsChecker.checkLastGenerationHasCompilationError(JobErrorsChecker.java:358)
+	at org.talend.designer.runprocess.DefaultRunProcessService.checkLastGenerationHasCompilationError(DefaultRunProcessService.java:539)
+	at org.talend.designer.runprocess.RunProcessService.checkLastGenerationHasCompilationError(RunProcessService.java:317)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateBuildInfo(ProcessorUtilities.java:955)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateCode(ProcessorUtilities.java:615)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateCode(ProcessorUtilities.java:2068)
+	at org.talend.designer.runprocess.RunProcessContext$1.run(RunProcessContext.java:601)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:440)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:356)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:474)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:240)
+	at org.eclipse.ui.internal.progress.ProgressManager.run(ProgressManager.java:966)
+	at org.talend.designer.runprocess.RunProcessContext.exec(RunProcessContext.java:548)
+	at org.talend.designer.runprocess.ui.ProcessComposite.exec(ProcessComposite.java:1448)
+	at org.talend.designer.runprocess.ui.views.ProcessView$RunAction.run(ProcessView.java:700)
+	at org.talend.designer.runprocess.ui.actions.RunProcessAction.run(RunProcessAction.java:63)
+	at org.talend.designer.core.debug.JobLaunchConfigurationDelegate$1$1.run(JobLaunchConfigurationDelegate.java:98)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.talend.rcp.intro.Application.start(Application.java:280)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.671
+!MESSAGE 2022-05-09 03:18:17,670 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.770
+!MESSAGE 2022-05-09 03:18:17,769 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.878
+!MESSAGE 2022-05-09 03:18:17,878 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.879
+!MESSAGE 2022-05-09 03:18:17,879 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.883
+!MESSAGE 2022-05-09 03:18:17,883 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.884
+!MESSAGE 2022-05-09 03:18:17,884 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_EXTRACT_HOSPI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:17.970
+!MESSAGE 2022-05-09 03:18:17,969 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:18.149
+!MESSAGE 2022-05-09 03:18:18,148 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-09 03:18:18.299
+!MESSAGE 2022-05-09 03:18:18,299 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Extraction/CSV_Extraction/Hospitalisation_Extraction/extract_hospi_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.extract_hospi_0_1.Extract_Hospi --context=Default --stat_port=3939 %*
+
