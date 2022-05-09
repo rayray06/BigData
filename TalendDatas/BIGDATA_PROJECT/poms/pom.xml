@@ -10,8 +10,8 @@
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
-    <module>jobs/process/demo/onboardingdemojob_0.1</module>
     <module>jobs/process/Extraction/CSV_Extraction/Death_Extraction/death_fetch_0.1</module>
+    <module>jobs/process/Extraction/CSV_Extraction/Hospitalisation_Extraction/extract_hospi_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

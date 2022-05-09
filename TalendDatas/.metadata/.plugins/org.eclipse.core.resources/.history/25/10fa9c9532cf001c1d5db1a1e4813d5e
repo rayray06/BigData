@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_mSAuYM8nEeynZOKm8YNFVg" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_mSAuYc8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_HdfsRowSeparator" prompt="HadoopHDFS_HdfsRowSeparator?" promptNeeded="false" type="id_String" value="\n"/>
+  <contextParameter xmi:id="_mSAuYs8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_HdfsUser" prompt="HadoopHDFS_HdfsUser?" promptNeeded="false" type="id_String" value="cloudera"/>
+  <contextParameter xmi:id="_mSAuY88nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_HdfsFileSeparator" prompt="HadoopHDFS_HdfsFileSeparator?" promptNeeded="false" type="id_String" value=";"/>
+  <contextParameter xmi:id="_mSAuZM8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable" prompt="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable?" promptNeeded="false" type="id_String" value="false"/>
+  <contextParameter xmi:id="_mSAuZc8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy" prompt="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy?" promptNeeded="false" type="id_String" value="NEVER"/>
+  <contextParameter xmi:id="_mSAuZs8nEeynZOKm8YNFVg" comment="" name="HaddopHDFS_DeathFile" prompt="HaddopHDFS_DeathFile?" promptNeeded="false" type="id_String" value="&quot;&quot;"/>
+</talendfile:ContextType>

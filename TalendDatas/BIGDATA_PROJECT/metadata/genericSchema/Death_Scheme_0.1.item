@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_pRfGUM8eEeylS-_k4rIanw" comment="connectionComment" label="connectionLabel" dataPackage="_pRfGUc8eEeylS-_k4rIanw"/>
+  <TalendMetadata:GenericPackage xmi:id="_pRfGUc8eEeylS-_k4rIanw" dataManager="_pRfGUM8eEeylS-_k4rIanw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_pRfGUs8eEeylS-_k4rIanw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGU88eEeylS-_k4rIanw" name="Numero_d_acte_du_deces" id="1870" label="Numero_d_acte_du_deces" length="9" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGVM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGVc8eEeylS-_k4rIanw" name="Nom" id="1871" label="Nom" length="16" talendType="id_String" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGVs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGV88eEeylS-_k4rIanw" name="Prenoms" id="1872" label="Prenoms" length="28" talendType="id_String" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGWM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGWc8eEeylS-_k4rIanw" name="Sexe" id="1873" label="Sexe" length="1" talendType="id_Character" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGWs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGW88eEeylS-_k4rIanw" name="Date_Naissance" id="1874" label="Date_Naissance" length="10" talendType="id_Date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;">
+        <initialValue xmi:id="_pRfGXM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGXc8eEeylS-_k4rIanw" name="Date_Deces" id="1875" label="Date_Deces" length="10" talendType="id_Date" pattern="&quot;yyyy-MM-dd&quot;">
+        <initialValue xmi:id="_pRfGXs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGX88eEeylS-_k4rIanw" name="Pays_Source_Naissance" id="1876" label="Pays_Source_Naissance" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGYM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGYc8eEeylS-_k4rIanw" name="Code_Source_Commune_Naissance" id="1877" label="Code_Source_Commune_Naissance" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGYs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGY88eEeylS-_k4rIanw" name="Nom_Source_Commune_Naissance" id="1878" label="Nom_Source_Commune_Naissance" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGZM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGZc8eEeylS-_k4rIanw" name="Code_Actuel_Commune_Naissance" id="1879" label="Code_Actuel_Commune_Naissance" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGZs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGZ88eEeylS-_k4rIanw" name="Nom_Actuel_Commune_Naissance" id="1880" label="Nom_Actuel_Commune_Naissance" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGaM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGac8eEeylS-_k4rIanw" name="Code_Actuel_Departement_Naissance" id="1881" label="Code_Actuel_Departement_Naissance" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGas8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGa88eEeylS-_k4rIanw" name="Nom_Actuel_Departement_Naissance" id="1882" label="Nom_Actuel_Departement_Naissance" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGbM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGbc8eEeylS-_k4rIanw" name="Code_Actuel_Region_Naissance" id="1883" label="Code_Actuel_Region_Naissance" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGbs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGb88eEeylS-_k4rIanw" name="Nom_Actuel_Region_Naissance" id="1884" label="Nom_Actuel_Region_Naissance" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGcM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGcc8eEeylS-_k4rIanw" name="Code_Source_Commune_Deces" id="1885" label="Code_Source_Commune_Deces" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGcs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGc88eEeylS-_k4rIanw" name="Code_Actuel_Commune_Deces" id="1886" label="Code_Actuel_Commune_Deces" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGdM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGdc8eEeylS-_k4rIanw" name="Nom_Actuel_Commune_Deces" id="1887" label="Nom_Actuel_Commune_Deces" length="21" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGds8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGd88eEeylS-_k4rIanw" name="Code_Actuel_Departement_Deces" id="1888" label="Code_Actuel_Departement_Deces" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGeM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGec8eEeylS-_k4rIanw" name="Nom_Actuel_Departement_Deces" id="1889" label="Nom_Actuel_Departement_Deces" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGes8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGe88eEeylS-_k4rIanw" name="Code_Actuel_Region_Deces" id="1890" label="Code_Actuel_Region_Deces" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGfM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGfc8eEeylS-_k4rIanw" name="Nom_Actuel_Region_Deces" id="1891" label="Nom_Actuel_Region_Deces" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGfs8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGf88eEeylS-_k4rIanw" name="Nom_du_fichier_source_INSEE" id="1892" label="Nom_du_fichier_source_INSEE" length="14" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGgM8eEeylS-_k4rIanw"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGgc8eEeylS-_k4rIanw" name="Age" id="1893" label="Age" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_pRfGgs8eEeylS-_k4rIanw"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

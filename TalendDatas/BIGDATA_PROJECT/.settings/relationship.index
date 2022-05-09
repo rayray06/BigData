@@ -1,35 +1,31 @@
 [ {
   "baseItem" : {
-    "id" : "_QKNNUGZ8EeWm5YvsrIoYzQ",
+    "id" : "_3s1cwM72EeylS-_k4rIanw",
     "version" : "0.1",
     "type" : "job"
   },
   "relatedItems" : [ {
-    "id" : "DQTechnical",
+    "id" : "_-fZyYM8aEeylS-_k4rIanw",
     "version" : "Latest",
-    "type" : "routine"
+    "type" : "context"
+  }, {
+    "id" : "_SaMnUM7jEeylS-_k4rIanw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_kZLMAM78EeylS-_k4rIanw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_mRyr8M8nEeynZOKm8YNFVg",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "__LyXQM8aEeylS-_k4rIanw",
+    "version" : "Latest",
+    "type" : "property"
   }, {
     "id" : "DataOperation",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "DataQuality",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "DemoRoutines",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "DqStringHandling",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "GetRandomPhoneNum",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "MDM",
     "version" : "Latest",
     "type" : "routine"
   }, {
@@ -42,10 +38,6 @@
     "type" : "routine"
   }, {
     "id" : "Relational",
-    "version" : "Latest",
-    "type" : "routine"
-  }, {
-    "id" : "SQLike",
     "version" : "Latest",
     "type" : "routine"
   }, {
@@ -64,5 +56,13 @@
     "id" : "TalendString",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "TalendStringUtil",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "_Vent4M8gEeylS-_k4rIanw - Death_SCheme",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 } ]

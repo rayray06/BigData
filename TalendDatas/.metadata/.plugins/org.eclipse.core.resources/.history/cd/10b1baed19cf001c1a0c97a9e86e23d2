@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_kZZ1gM78EeylS-_k4rIanw" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_kZZ1gc78EeylS-_k4rIanw" comment="" name="Death_Data_FieldSeparator" prompt="Death_Data_FieldSeparator?" promptNeeded="false" type="id_String" value="&quot;;&quot;"/>
+  <contextParameter xmi:id="_kZZ1gs78EeylS-_k4rIanw" comment="" name="Death_Data_Header" prompt="Death_Data_Header?" promptNeeded="false" type="id_Integer" value="1"/>
+  <contextParameter xmi:id="_kZZ1g878EeylS-_k4rIanw" comment="" name="Death_Data_Encoding" prompt="Death_Data_Encoding?" promptNeeded="false" type="id_String" value="UTF-8"/>
+  <contextParameter xmi:id="_kZZ1hM78EeylS-_k4rIanw" comment="" name="Death_Data_RowSeparator" prompt="Death_Data_RowSeparator?" promptNeeded="false" type="id_String" value="&quot;\n&quot;"/>
+  <contextParameter xmi:id="_kZZ1hc78EeylS-_k4rIanw" comment="" name="Death_Data_File" prompt="Death_Data_File?" promptNeeded="false" type="id_File" value="C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces/liste-des-personnes-decedees-en-france_2010.csv"/>
+</talendfile:ContextType>

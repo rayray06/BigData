@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_qYPLoM8hEeylS-_k4rIanw" name="Copy_of_Death_Data_2011" label="Copy_of_Death_Data_2011" dataPackage="_Vent4s8gEeylS-_k4rIanw" Server="Localhost 127.0.0.1" FilePath="C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Sources_Deces/liste-des-personnes-decedees-en-france_2011.csv" Encoding="UTF-8" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_Vent4s8gEeylS-_k4rIanw" name="default" dataManager="_qYPLoM8hEeylS-_k4rIanw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Vent488gEeylS-_k4rIanw" id="_smEnEM8fEeylS-_k4rIanw" label="Death_SCheme">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent5M8gEeylS-_k4rIanw" label="Nom" length="16" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent5c8gEeylS-_k4rIanw" label="Prenoms" length="28" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent5s8gEeylS-_k4rIanw" label="Sexe" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent588gEeylS-_k4rIanw" label="Date_Naissance" length="10" talendType="id_Date" pattern="&quot;yyyy-MM-dd&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent6M8gEeylS-_k4rIanw" label="Date_Deces" length="10" talendType="id_Date" pattern="&quot;yyyy-MM-dd&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent6c8gEeylS-_k4rIanw" label="Pays_Source_Naissance" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent6s8gEeylS-_k4rIanw" label="Code_Source_Commune_Naissance" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent688gEeylS-_k4rIanw" label="Nom_Source_Commune_Naissance" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent7M8gEeylS-_k4rIanw" label="Code_Actuel_Commune_Naissance" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent7c8gEeylS-_k4rIanw" label="Nom_Actuel_Commune_Naissance" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent7s8gEeylS-_k4rIanw" label="Code_Actuel_Departement_Naissance" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent788gEeylS-_k4rIanw" label="Nom_Actuel_Departement_Naissance" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent8M8gEeylS-_k4rIanw" label="Code_Actuel_Region_Naissance" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent8c8gEeylS-_k4rIanw" label="Nom_Actuel_Region_Naissance" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent8s8gEeylS-_k4rIanw" label="Code_Source_Commune_Deces" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent888gEeylS-_k4rIanw" label="Code_Actuel_Commune_Deces" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent9M8gEeylS-_k4rIanw" label="Nom_Actuel_Commune_Deces" length="21" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent9c8gEeylS-_k4rIanw" label="Code_Actuel_Departement_Deces" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent9s8gEeylS-_k4rIanw" label="Nom_Actuel_Departement_Deces" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent988gEeylS-_k4rIanw" label="Code_Actuel_Region_Deces" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent-M8gEeylS-_k4rIanw" label="Nom_Actuel_Region_Deces" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent-c8gEeylS-_k4rIanw" label="Numero_d_acte_du_deces" length="10" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent-s8gEeylS-_k4rIanw" label="Nom_du_fichier_source_INSEE" length="14" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vent-88gEeylS-_k4rIanw" label="Age" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
