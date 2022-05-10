@@ -10,11 +10,13 @@
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
-    <module>jobs/process/Extraction/CSV_Extraction/Death_Extraction/death_fetch_0.1</module>
-    <module>jobs/process/Extraction/CSV_Extraction/Hospi_Extract/extract_hospi_0.1</module>
     <module>jobs/process/testtemp_0.1</module>
-    <module>jobs/process/Extraction/CSV_Extraction/Region_Extrac/region_extrac_0.1</module>
-    <module>jobs/process/Extraction/CSV_Extraction/Satis_Extract/esatis_e_0.1</module>
+    <module>jobs/process/Extraction/sorry_0.1</module>
+    <module>jobs/process/Extraction/Death_Extraction/death_fetch_0.1</module>
+    <module>jobs/process/Extraction/Etab_Extrac/etab_extrac_0.1</module>
+    <module>jobs/process/Extraction/Hospi_Extract/extract_hospi_0.1</module>
+    <module>jobs/process/Extraction/Region_Extrac/region_extrac_0.1</module>
+    <module>jobs/process/Extraction/Satis_Extract/esatis_e_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>
