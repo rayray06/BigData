@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_1lq2rNCQEeyF9IEJ3RrsIg" id="_1lpogNCQEeyF9IEJ3RrsIg" label="Profes" version="0.1" statusCode="" item="_1lq2rtCQEeyF9IEJ3RrsIg" displayName="Profes">
+    <author href="../../../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+    <additionalProperties xmi:id="_1lt58NCQEeyF9IEJ3RrsIg" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_1luhANCQEeyF9IEJ3RrsIg" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_1luhAdCQEeyF9IEJ3RrsIg" key="created_date" value="2022-05-10T20:41:43.183+0200"/>
+    <additionalProperties xmi:id="_1luhAtCQEeyF9IEJ3RrsIg" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_1luhA9CQEeyF9IEJ3RrsIg" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_1luhBNCQEeyF9IEJ3RrsIg" key="modified_date" value="2022-05-10T20:41:57.719+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_1lq2rdCQEeyF9IEJ3RrsIg" path="Satis_Data"/>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_1lq2rtCQEeyF9IEJ3RrsIg" property="_1lq2rNCQEeyF9IEJ3RrsIg" state="_1lq2rdCQEeyF9IEJ3RrsIg">
+    <connection href="Profes_0.1.item#_1lq2oNCQEeyF9IEJ3RrsIg"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>

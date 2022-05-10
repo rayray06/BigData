@@ -11,4 +11,7 @@
   <contextParameter xmi:id="_Fp5jIdAsEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Etablissement" prompt="HadoopHDFS_Etablissement?" promptNeeded="false" type="id_String" value="&quot;Project/Etablissement/EtablissementTable&quot;"/>
   <contextParameter xmi:id="_6K1OENBHEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Region" prompt="HadoopHDFS_Region?" promptNeeded="false" type="id_String" value="&quot;Project/Region/RegionTable&quot;"/>
   <contextParameter xmi:id="_Uiy0wNBSEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_DimDeath" prompt="HadoopHDFS_DimDeath?" promptNeeded="false" type="id_String" value="&quot;Project/DimDeath/DimDeathTable&quot;"/>
+  <contextParameter xmi:id="_S78H4NCjEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Prof" prompt="HadoopHDFS_Prof?" promptNeeded="false" type="id_String" value="&quot;Project/Professionel/ProfessionelTable&quot;"/>
+  <contextParameter xmi:id="_KcyC4NCmEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Diag" prompt="HadoopHDFS_Diag?" promptNeeded="false" type="id_String" value="&quot;Project/Diagnostic/DiagnosticTable&quot;"/>
+  <contextParameter xmi:id="_gsAeINCmEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Patient" prompt="HadoopHDFS_Patient?" promptNeeded="false" type="id_String" value="&quot;Project/Patient/PatientTable&quot;"/>
 </talendfile:ContextType>
