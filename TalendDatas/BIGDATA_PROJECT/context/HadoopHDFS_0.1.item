@@ -7,4 +7,7 @@
   <contextParameter xmi:id="_mSAuZc8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy" prompt="HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy?" promptNeeded="false" type="id_String" value="NEVER"/>
   <contextParameter xmi:id="_mSAuZs8nEeynZOKm8YNFVg" comment="" name="HadoopHDFS_DeathFile" prompt="HadoopHDFS_DeathFile?" promptNeeded="false" type="id_String" value="&quot;Project/Death/DeathTable&quot;"/>
   <contextParameter xmi:id="_xO8DEM80EeyAYOg9U06AzA" comment="" name="HadoopHDFS_HospiFile" prompt="HadoopHDFS_HospiFile?" promptNeeded="false" type="id_String" value="&quot;Project/Hospi/HospiTable&quot;"/>
+  <contextParameter xmi:id="_Fp5jINAsEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_SatisfactionFile" prompt="HadoopHDFS_SatisfactionFile?" promptNeeded="false" type="id_String" value="&quot;Project/Satis/SatisTable&quot;"/>
+  <contextParameter xmi:id="_Fp5jIdAsEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Etablissement" prompt="HadoopHDFS_Etablissement?" promptNeeded="false" type="id_String" value="&quot;Project/Etablissement/EtablissementTable&quot;"/>
+  <contextParameter xmi:id="_6K1OENBHEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Region" prompt="HadoopHDFS_Region?" promptNeeded="false" type="id_String" value="&quot;Project/Region/RegionTable&quot;"/>
 </talendfile:ContextType>

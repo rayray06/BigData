@@ -437,6 +437,16 @@ public class Death_Fetch implements TalendJob {
 		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tHDFSOutput_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -602,7 +612,7 @@ public class Death_Fetch implements TalendJob {
 		globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+	public static class OutStruct implements routines.system.IPersistableRow<OutStruct> {
 		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Death_Fetch = new byte[0];
 		static byte[] commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -611,6 +621,189 @@ public class Death_Fetch implements TalendJob {
 		public boolean hashCodeDirty = true;
 
 		public String loopKey;
+
+		public String Nom_Actuel_Region_Deces;
+
+		public String getNom_Actuel_Region_Deces() {
+			return this.Nom_Actuel_Region_Deces;
+		}
+
+		public String Numero_d_acte_du_deces;
+
+		public String getNumero_d_acte_du_deces() {
+			return this.Numero_d_acte_du_deces;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result
+						+ ((this.Numero_d_acte_du_deces == null) ? 0 : this.Numero_d_acte_du_deces.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final OutStruct other = (OutStruct) obj;
+
+			if (this.Numero_d_acte_du_deces == null) {
+				if (other.Numero_d_acte_du_deces != null)
+					return false;
+
+			} else if (!this.Numero_d_acte_du_deces.equals(other.Numero_d_acte_du_deces))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(OutStruct other) {
+
+			other.Nom_Actuel_Region_Deces = this.Nom_Actuel_Region_Deces;
+			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
+
+		}
+
+		public void copyKeysDataTo(OutStruct other) {
+
+			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BIGDATA_PROJECT_Death_Fetch.length) {
+					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_Death_Fetch.length == 0) {
+						commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[1024];
+					} else {
+						commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BIGDATA_PROJECT_Death_Fetch, 0, length);
+				strReturn = new String(commonByteArray_BIGDATA_PROJECT_Death_Fetch, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BIGDATA_PROJECT_Death_Fetch) {
+
+				try {
+
+					int length = 0;
+
+					this.Nom_Actuel_Region_Deces = readString(dis);
+
+					this.Numero_d_acte_du_deces = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.Nom_Actuel_Region_Deces, dos);
+
+				// String
+
+				writeString(this.Numero_d_acte_du_deces, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("Nom_Actuel_Region_Deces=" + Nom_Actuel_Region_Deces);
+			sb.append(",Numero_d_acte_du_deces=" + Numero_d_acte_du_deces);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(OutStruct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.Numero_d_acte_du_deces, other.Numero_d_acte_du_deces);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Death_Fetch = new byte[0];
+		static byte[] commonByteArray_BIGDATA_PROJECT_Death_Fetch = new byte[0];
 
 		public String Nom;
 
@@ -754,77 +947,6 @@ public class Death_Fetch implements TalendJob {
 
 		public Integer getAge() {
 			return this.Age;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result
-						+ ((this.Numero_d_acte_du_deces == null) ? 0 : this.Numero_d_acte_du_deces.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row1Struct other = (row1Struct) obj;
-
-			if (this.Numero_d_acte_du_deces == null) {
-				if (other.Numero_d_acte_du_deces != null)
-					return false;
-
-			} else if (!this.Numero_d_acte_du_deces.equals(other.Numero_d_acte_du_deces))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row1Struct other) {
-
-			other.Nom = this.Nom;
-			other.Prenoms = this.Prenoms;
-			other.Sexe = this.Sexe;
-			other.Date_Naissance = this.Date_Naissance;
-			other.Date_Deces = this.Date_Deces;
-			other.Pays_Source_Naissance = this.Pays_Source_Naissance;
-			other.Code_Source_Commune_Naissance = this.Code_Source_Commune_Naissance;
-			other.Nom_Source_Commune_Naissance = this.Nom_Source_Commune_Naissance;
-			other.Code_Actuel_Commune_Naissance = this.Code_Actuel_Commune_Naissance;
-			other.Nom_Actuel_Commune_Naissance = this.Nom_Actuel_Commune_Naissance;
-			other.Code_Actuel_Departement_Naissance = this.Code_Actuel_Departement_Naissance;
-			other.Nom_Actuel_Departement_Naissance = this.Nom_Actuel_Departement_Naissance;
-			other.Code_Actuel_Region_Naissance = this.Code_Actuel_Region_Naissance;
-			other.Nom_Actuel_Region_Naissance = this.Nom_Actuel_Region_Naissance;
-			other.Code_Source_Commune_Deces = this.Code_Source_Commune_Deces;
-			other.Code_Actuel_Commune_Deces = this.Code_Actuel_Commune_Deces;
-			other.Nom_Actuel_Commune_Deces = this.Nom_Actuel_Commune_Deces;
-			other.Code_Actuel_Departement_Deces = this.Code_Actuel_Departement_Deces;
-			other.Nom_Actuel_Departement_Deces = this.Nom_Actuel_Departement_Deces;
-			other.Code_Actuel_Region_Deces = this.Code_Actuel_Region_Deces;
-			other.Nom_Actuel_Region_Deces = this.Nom_Actuel_Region_Deces;
-			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
-			other.Nom_du_fichier_source_INSEE = this.Nom_du_fichier_source_INSEE;
-			other.Age = this.Age;
-
-		}
-
-		public void copyKeysDataTo(row1Struct other) {
-
-			other.Numero_d_acte_du_deces = this.Numero_d_acte_du_deces;
-
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -1120,11 +1242,6 @@ public class Death_Fetch implements TalendJob {
 
 			int returnValue = -1;
 
-			returnValue = checkNullsAndCompare(this.Numero_d_acte_du_deces, other.Numero_d_acte_du_deces);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
 			return returnValue;
 		}
 
@@ -1172,6 +1289,7 @@ public class Death_Fetch implements TalendJob {
 				globalResumeTicket = true;
 
 				row1Struct row1 = new row1Struct();
+				OutStruct Out = new OutStruct();
 
 				/**
 				 * [tHDFSOutput_1 begin ] start
@@ -1183,7 +1301,7 @@ public class Death_Fetch implements TalendJob {
 				currentComponent = "tHDFSOutput_1";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Out");
 				}
 
 				int tos_count_tHDFSOutput_1 = 0;
@@ -1217,6 +1335,41 @@ public class Death_Fetch implements TalendJob {
 
 				/**
 				 * [tHDFSOutput_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_1 begin ] start
+				 */
+
+				ok_Hash.put("tMap_1", false);
+				start_Hash.put("tMap_1", System.currentTimeMillis());
+
+				currentComponent = "tMap_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tMap_1 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_1__Struct {
+				}
+				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				OutStruct Out_tmp = new OutStruct();
+// ###############################
+
+				/**
+				 * [tMap_1 begin ] stop
 				 */
 
 				/**
@@ -1495,333 +1648,139 @@ public class Death_Fetch implements TalendJob {
 						if (row1 != null) {
 
 							/**
-							 * [tHDFSOutput_1 main ] start
+							 * [tMap_1 main ] start
 							 */
 
-							currentComponent = "tHDFSOutput_1";
+							currentComponent = "tMap_1";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
 							}
 
-							StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
+							boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							if (row1.Nom != null) {
+							// ###############################
+							// # Input tables (lookups)
+							boolean rejectedInnerJoin_tMap_1 = false;
+							boolean mainRowRejected_tMap_1 = false;
 
-								sb_tHDFSOutput_1.append(
+							// ###############################
+							{ // start of Var scope
 
-										row1.Nom
+								// ###############################
+								// # Vars tables
 
-								);
+								Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+								// ###############################
+								// # Output tables
 
-							}
+								Out = null;
 
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+// # Output table : 'Out'
+								Out_tmp.Nom_Actuel_Region_Deces = StringHandling
+										.UPCASE(StringHandling.TRIM(row1.Nom_Actuel_Region_Deces));
+								Out_tmp.Numero_d_acte_du_deces = row1.Numero_d_acte_du_deces;
+								Out = Out_tmp;
+// ###############################
 
-							if (row1.Prenoms != null) {
+							} // end of Var scope
 
-								sb_tHDFSOutput_1.append(
+							rejectedInnerJoin_tMap_1 = false;
 
-										row1.Prenoms
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Sexe != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Sexe
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Date_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										FormatterUtils.format_Date(row1.Date_Naissance, "yyyy-MM-dd")
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Date_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										FormatterUtils.format_Date(row1.Date_Deces, "yyyy-MM-dd")
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Pays_Source_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Pays_Source_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Source_Commune_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Source_Commune_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Source_Commune_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Source_Commune_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Commune_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Commune_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Commune_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Commune_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Departement_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Departement_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Departement_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Departement_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Region_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Region_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Region_Naissance != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Region_Naissance
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Source_Commune_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Source_Commune_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Commune_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Commune_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Commune_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Commune_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Departement_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Departement_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Departement_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Departement_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Code_Actuel_Region_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Code_Actuel_Region_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_Actuel_Region_Deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_Actuel_Region_Deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Numero_d_acte_du_deces != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Numero_d_acte_du_deces
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Nom_du_fichier_source_INSEE != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Nom_du_fichier_source_INSEE
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
-
-							if (row1.Age != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										row1.Age
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsRowSeparator);
-
-							outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
-
-							nb_line_tHDFSOutput_1++;
-
-							tos_count_tHDFSOutput_1++;
+							tos_count_tMap_1++;
 
 							/**
-							 * [tHDFSOutput_1 main ] stop
+							 * [tMap_1 main ] stop
 							 */
 
 							/**
-							 * [tHDFSOutput_1 process_data_begin ] start
+							 * [tMap_1 process_data_begin ] start
 							 */
 
-							currentComponent = "tHDFSOutput_1";
+							currentComponent = "tMap_1";
 
 							/**
-							 * [tHDFSOutput_1 process_data_begin ] stop
+							 * [tMap_1 process_data_begin ] stop
+							 */
+// Start of branch "Out"
+							if (Out != null) {
+
+								/**
+								 * [tHDFSOutput_1 main ] start
+								 */
+
+								currentComponent = "tHDFSOutput_1";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "Out");
+								}
+
+								StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
+
+								if (Out.Nom_Actuel_Region_Deces != null) {
+
+									sb_tHDFSOutput_1.append(
+
+											Out.Nom_Actuel_Region_Deces
+
+									);
+
+								}
+
+								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+
+								if (Out.Numero_d_acte_du_deces != null) {
+
+									sb_tHDFSOutput_1.append(
+
+											Out.Numero_d_acte_du_deces
+
+									);
+
+								}
+
+								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsRowSeparator);
+
+								outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
+
+								nb_line_tHDFSOutput_1++;
+
+								tos_count_tHDFSOutput_1++;
+
+								/**
+								 * [tHDFSOutput_1 main ] stop
+								 */
+
+								/**
+								 * [tHDFSOutput_1 process_data_begin ] start
+								 */
+
+								currentComponent = "tHDFSOutput_1";
+
+								/**
+								 * [tHDFSOutput_1 process_data_begin ] stop
+								 */
+
+								/**
+								 * [tHDFSOutput_1 process_data_end ] start
+								 */
+
+								currentComponent = "tHDFSOutput_1";
+
+								/**
+								 * [tHDFSOutput_1 process_data_end ] stop
+								 */
+
+							} // End of branch "Out"
+
+							/**
+							 * [tMap_1 process_data_end ] start
 							 */
 
-							/**
-							 * [tHDFSOutput_1 process_data_end ] start
-							 */
-
-							currentComponent = "tHDFSOutput_1";
+							currentComponent = "tMap_1";
 
 							/**
-							 * [tHDFSOutput_1 process_data_end ] stop
+							 * [tMap_1 process_data_end ] stop
 							 */
 
 						} // End of branch "row1"
@@ -1863,6 +1822,27 @@ public class Death_Fetch implements TalendJob {
 				 */
 
 				/**
+				 * [tMap_1 end ] start
+				 */
+
+				currentComponent = "tMap_1";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tMap_1", true);
+				end_Hash.put("tMap_1", System.currentTimeMillis());
+
+				/**
+				 * [tMap_1 end ] stop
+				 */
+
+				/**
 				 * [tHDFSOutput_1 end ] start
 				 */
 
@@ -1873,7 +1853,7 @@ public class Death_Fetch implements TalendJob {
 				}
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Out");
 				}
 
 				ok_Hash.put("tHDFSOutput_1", true);
@@ -1907,6 +1887,16 @@ public class Death_Fetch implements TalendJob {
 
 				/**
 				 * [tFileInputDelimited_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_1 finally ] start
+				 */
+
+				currentComponent = "tMap_1";
+
+				/**
+				 * [tMap_1 finally ] stop
 				 */
 
 				/**
@@ -2365,6 +2355,6 @@ public class Death_Fetch implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 76099 characters generated by Talend Open Studio for Big Data on the 9 mai
- * 2022 13:45:38 CEST
+ * 75163 characters generated by Talend Open Studio for Big Data on the 10 mai
+ * 2022 10:18:56 CEST
  ************************************************************************************************/
