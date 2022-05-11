@@ -127,93 +127,8 @@ public class Mock_job_for_Guess_schema implements TalendJob {
 
 		public void synchronizeContext() {
 
-			if (HadoopHDFS_HdfsUser != null) {
-
-				this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
-
-			}
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable.toString());
-
-			}
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy.toString());
-
-			}
-
-			if (ProjectHadoopCluster_NameNodeUri != null) {
-
-				this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
-
-			}
-
-			if (ProjectHadoopCluster_User != null) {
-
-				this.setProperty("ProjectHadoopCluster_User", ProjectHadoopCluster_User.toString());
-
-			}
-
-			if (HadoopHDFS_HdfsRowSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsRowSeparator", HadoopHDFS_HdfsRowSeparator.toString());
-
-			}
-
-			if (HadoopHDFS_HdfsFileSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
-
-			}
-
 		}
 
-		public String HadoopHDFS_HdfsUser;
-
-		public String getHadoopHDFS_HdfsUser() {
-			return this.HadoopHDFS_HdfsUser;
-		}
-
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-		}
-
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-		}
-
-		public String ProjectHadoopCluster_NameNodeUri;
-
-		public String getProjectHadoopCluster_NameNodeUri() {
-			return this.ProjectHadoopCluster_NameNodeUri;
-		}
-
-		public String ProjectHadoopCluster_User;
-
-		public String getProjectHadoopCluster_User() {
-			return this.ProjectHadoopCluster_User;
-		}
-
-		public String HadoopHDFS_HdfsRowSeparator;
-
-		public String getHadoopHDFS_HdfsRowSeparator() {
-			return this.HadoopHDFS_HdfsRowSeparator;
-		}
-
-		public String HadoopHDFS_HdfsFileSeparator;
-
-		public String getHadoopHDFS_HdfsFileSeparator() {
-			return this.HadoopHDFS_HdfsFileSeparator;
-		}
 	}
 
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -692,7 +607,8 @@ public class Mock_job_for_Guess_schema implements TalendJob {
 				} catch (Exception e) {
 // Exception is thrown if db don't support, no need to catch exception here
 				}
-				java.sql.ResultSet rs = stm.executeQuery("SELECT \"Id_patient\",\"Age\",\"Sexe\" FROM \"Patient\" ");
+				java.sql.ResultSet rs = stm.executeQuery(
+						"SELECT \"Num_consultation\",\"Id_patient\",\"Code_diag\",\"Id_prof_sante\" FROM \"Consultation\" ");
 				java.sql.ResultSetMetaData rsmd = rs.getMetaData();
 				int numbOfColumn = rsmd.getColumnCount();
 
@@ -954,25 +870,6 @@ public class Mock_job_for_Guess_schema implements TalendJob {
 			}
 			class ContextProcessing {
 				private void processContext_0() {
-					context.setContextType("HadoopHDFS_HdfsUser", "id_String");
-					context.HadoopHDFS_HdfsUser = (String) context.getProperty("HadoopHDFS_HdfsUser");
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-					context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
-					context.ProjectHadoopCluster_NameNodeUri = (String) context
-							.getProperty("ProjectHadoopCluster_NameNodeUri");
-					context.setContextType("ProjectHadoopCluster_User", "id_String");
-					context.ProjectHadoopCluster_User = (String) context.getProperty("ProjectHadoopCluster_User");
-					context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
-					context.HadoopHDFS_HdfsRowSeparator = (String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
-					context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
-					context.HadoopHDFS_HdfsFileSeparator = (String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
 				}
 
 				public void processAllContext() {
@@ -988,30 +885,6 @@ public class Mock_job_for_Guess_schema implements TalendJob {
 
 		// get context value from parent directly
 		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
-				context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
-				context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap
-						.get("ProjectHadoopCluster_NameNodeUri");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_User")) {
-				context.ProjectHadoopCluster_User = (String) parentContextMap.get("ProjectHadoopCluster_User");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsRowSeparator")) {
-				context.HadoopHDFS_HdfsRowSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsRowSeparator");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
-				context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
-			}
 		}
 
 		// Resume: init the resumeUtil
@@ -1221,6 +1094,6 @@ public class Mock_job_for_Guess_schema implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 40082 characters generated by Talend Open Studio for Big Data on the 10 mai
- * 2022 23:21:21 CEST
+ * 34154 characters generated by Talend Open Studio for Big Data on the 11 mai
+ * 2022 02:24:42 CEST
  ************************************************************************************************/

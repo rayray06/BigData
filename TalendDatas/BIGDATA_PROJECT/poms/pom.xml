@@ -14,12 +14,14 @@
     <module>jobs/process/Extraction/sorry_0.1</module>
     <module>jobs/process/Extraction/Death_Extraction/death_fetch_0.1</module>
     <module>jobs/process/Extraction/Etab_Extrac/etab_extrac_0.1</module>
-    <module>jobs/process/Extraction/Hospi_Extract/extract_hospi_0.1</module>
     <module>jobs/process/Extraction/Region_Extrac/region_extrac_0.1</module>
     <module>jobs/process/Extraction/Satis_Extract/esatis_e_0.1</module>
     <module>jobs/process/Extraction/Prof_Extrac/prof_extrac_0.1</module>
     <module>jobs/process/Extraction/Diag_Extrac/diag_extrac_0.1</module>
     <module>jobs/process/Extraction/Patien_Extrac/patient_extrac_0.1</module>
+    <module>jobs/process/Extraction/RDV_Extrac/rdv_extrac_0.1</module>
+    <module>jobs/process/Extraction/Consu_Extrac/consu_extrac_0.1</module>
+    <module>jobs/process/Extraction/Visite_Extract/extract_visite_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>
