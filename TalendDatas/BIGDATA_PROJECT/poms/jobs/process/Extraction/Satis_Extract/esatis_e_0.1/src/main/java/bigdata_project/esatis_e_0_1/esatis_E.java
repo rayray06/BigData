@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 package bigdata_project.esatis_e_0_1;
 
 import routines.Numeric;
@@ -40,26 +41,31 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
+ 
+
+
+
+
 
 @SuppressWarnings("unused")
 
 /**
  * Job: esatis_E Purpose: <br>
- * Description: <br>
- * 
+ * Description:  <br>
  * @author ray-hann06@hotmail.fr
  * @version 7.3.1.20200219_1130
- * @status
+ * @status 
  */
 public class esatis_E implements TalendJob {
 
-	protected static void logIgnoredError(String message, Throwable cause) {
-		System.err.println(message);
-		if (cause != null) {
-			cause.printStackTrace();
-		}
+protected static void logIgnoredError(String message, Throwable cause) {
+       System.err.println(message);
+       if (cause != null) {
+               cause.printStackTrace();
+       }
 
-	}
+}
+
 
 	public final Object obj = new Object();
 
@@ -73,4502 +79,5125 @@ public class esatis_E implements TalendJob {
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
-
+	
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
+	
 	private final static String utf8Charset = "UTF-8";
-
-	// contains type for every context property
+	//contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
-
-		public PropertiesWithType(java.util.Properties properties) {
+		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
+		
+		public PropertiesWithType(java.util.Properties properties){
 			super(properties);
 		}
-
-		public PropertiesWithType() {
+		public PropertiesWithType(){
 			super();
 		}
-
+		
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key, type);
+			propertyTypes.put(key,type);
 		}
-
+	
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-
+	
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
-
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties) {
+		public ContextProperties(java.util.Properties properties){
 			super(properties);
 		}
-
-		public ContextProperties() {
+		public ContextProperties(){
 			super();
 		}
 
-		public void synchronizeContext() {
-
-			if (HadoopHDFS_DeathFile != null) {
-
-				this.setProperty("HadoopHDFS_DeathFile", HadoopHDFS_DeathFile.toString());
-
+		public void synchronizeContext(){
+			
+			if(HadoopHDFS_DeathFile != null){
+				
+					this.setProperty("HadoopHDFS_DeathFile", HadoopHDFS_DeathFile.toString());
+				
 			}
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable.toString());
-
+			
+			if(HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable != null){
+				
+					this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable", HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable.toString());
+				
 			}
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy.toString());
-
+			
+			if(HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy != null){
+				
+					this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy", HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy.toString());
+				
 			}
-
-			if (HadoopHDFS_Etablissement != null) {
-
-				this.setProperty("HadoopHDFS_Etablissement", HadoopHDFS_Etablissement.toString());
-
+			
+			if(HadoopHDFS_Etablissement != null){
+				
+					this.setProperty("HadoopHDFS_Etablissement", HadoopHDFS_Etablissement.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsFileSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
-
+			
+			if(HadoopHDFS_HdfsFileSeparator != null){
+				
+					this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsRowSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsRowSeparator", HadoopHDFS_HdfsRowSeparator.toString());
-
+			
+			if(HadoopHDFS_HdfsRowSeparator != null){
+				
+					this.setProperty("HadoopHDFS_HdfsRowSeparator", HadoopHDFS_HdfsRowSeparator.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsUser != null) {
-
-				this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
-
+			
+			if(HadoopHDFS_HdfsUser != null){
+				
+					this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
+				
 			}
-
-			if (HadoopHDFS_VisiteFile != null) {
-
-				this.setProperty("HadoopHDFS_VisiteFile", HadoopHDFS_VisiteFile.toString());
-
+			
+			if(HadoopHDFS_VisiteFile != null){
+				
+					this.setProperty("HadoopHDFS_VisiteFile", HadoopHDFS_VisiteFile.toString());
+				
 			}
-
-			if (HadoopHDFS_SatisfactionFile != null) {
-
-				this.setProperty("HadoopHDFS_SatisfactionFile", HadoopHDFS_SatisfactionFile.toString());
-
+			
+			if(HadoopHDFS_SatisfactionFile != null){
+				
+					this.setProperty("HadoopHDFS_SatisfactionFile", HadoopHDFS_SatisfactionFile.toString());
+				
 			}
-
-			if (ProjectHadoopCluster_NameNodeUri != null) {
-
-				this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
-
+			
+			if(ProjectHadoopCluster_NameNodeUri != null){
+				
+					this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
+				
 			}
-
-			if (ProjectHadoopCluster_User != null) {
-
-				this.setProperty("ProjectHadoopCluster_User", ProjectHadoopCluster_User.toString());
-
+			
+			if(ProjectHadoopCluster_User != null){
+				
+					this.setProperty("ProjectHadoopCluster_User", ProjectHadoopCluster_User.toString());
+				
 			}
-
+			
 		}
 
-		public String HadoopHDFS_DeathFile;
-
-		public String getHadoopHDFS_DeathFile() {
-			return this.HadoopHDFS_DeathFile;
-		}
-
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-		}
-
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-		}
-
-		public String HadoopHDFS_Etablissement;
-
-		public String getHadoopHDFS_Etablissement() {
-			return this.HadoopHDFS_Etablissement;
-		}
-
-		public String HadoopHDFS_HdfsFileSeparator;
-
-		public String getHadoopHDFS_HdfsFileSeparator() {
-			return this.HadoopHDFS_HdfsFileSeparator;
-		}
-
-		public String HadoopHDFS_HdfsRowSeparator;
-
-		public String getHadoopHDFS_HdfsRowSeparator() {
-			return this.HadoopHDFS_HdfsRowSeparator;
-		}
-
-		public String HadoopHDFS_HdfsUser;
-
-		public String getHadoopHDFS_HdfsUser() {
-			return this.HadoopHDFS_HdfsUser;
-		}
-
-		public String HadoopHDFS_VisiteFile;
-
-		public String getHadoopHDFS_VisiteFile() {
-			return this.HadoopHDFS_VisiteFile;
-		}
-
-		public String HadoopHDFS_SatisfactionFile;
-
-		public String getHadoopHDFS_SatisfactionFile() {
-			return this.HadoopHDFS_SatisfactionFile;
-		}
-
-		public String ProjectHadoopCluster_NameNodeUri;
-
-		public String getProjectHadoopCluster_NameNodeUri() {
-			return this.ProjectHadoopCluster_NameNodeUri;
-		}
-
-		public String ProjectHadoopCluster_User;
-
-		public String getProjectHadoopCluster_User() {
-			return this.ProjectHadoopCluster_User;
-		}
+public String HadoopHDFS_DeathFile;
+public String getHadoopHDFS_DeathFile(){
+	return this.HadoopHDFS_DeathFile;
+}
+public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
+public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable(){
+	return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
+}
+public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
+public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy(){
+	return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
+}
+public String HadoopHDFS_Etablissement;
+public String getHadoopHDFS_Etablissement(){
+	return this.HadoopHDFS_Etablissement;
+}
+public String HadoopHDFS_HdfsFileSeparator;
+public String getHadoopHDFS_HdfsFileSeparator(){
+	return this.HadoopHDFS_HdfsFileSeparator;
+}
+public String HadoopHDFS_HdfsRowSeparator;
+public String getHadoopHDFS_HdfsRowSeparator(){
+	return this.HadoopHDFS_HdfsRowSeparator;
+}
+public String HadoopHDFS_HdfsUser;
+public String getHadoopHDFS_HdfsUser(){
+	return this.HadoopHDFS_HdfsUser;
+}
+public String HadoopHDFS_VisiteFile;
+public String getHadoopHDFS_VisiteFile(){
+	return this.HadoopHDFS_VisiteFile;
+}
+public String HadoopHDFS_SatisfactionFile;
+public String getHadoopHDFS_SatisfactionFile(){
+	return this.HadoopHDFS_SatisfactionFile;
+}
+public String ProjectHadoopCluster_NameNodeUri;
+public String getProjectHadoopCluster_NameNodeUri(){
+	return this.ProjectHadoopCluster_NameNodeUri;
+}
+public String ProjectHadoopCluster_User;
+public String getProjectHadoopCluster_User(){
+	return this.ProjectHadoopCluster_User;
+}
 	}
-
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
-
 	public ContextProperties getContext() {
 		return this.context;
 	}
-
 	private final String jobVersion = "0.1";
 	private final String jobName = "esatis_E";
 	private final String projectName = "BIGDATA_PROJECT";
 	public Integer errorCode = null;
 	private String currentComponent = "";
+	
+		private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
+        private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
+	
+		private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
+		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
+	
 
-	private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
-	private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
-
-	private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
-	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
-
-	private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-
+	
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(),
-					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
-	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-	public String getExceptionStackTrace() {
-		if ("failure".equals(this.getStatus())) {
-			errorMessagePS.flush();
-			return baos.toString();
-		}
-		return null;
+private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
+
+public String getExceptionStackTrace() {
+	if ("failure".equals(this.getStatus())) {
+		errorMessagePS.flush();
+		return baos.toString();
+	}
+	return null;
+}
+
+private Exception exception;
+
+public Exception getException() {
+	if ("failure".equals(this.getStatus())) {
+		return this.exception;
+	}
+	return null;
+}
+
+private class TalendException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	private java.util.Map<String, Object> globalMap = null;
+	private Exception e = null;
+	private String currentComponent = null;
+	private String virtualComponentName = null;
+	
+	public void setVirtualComponentName (String virtualComponentName){
+		this.virtualComponentName = virtualComponentName;
 	}
 
-	private Exception exception;
+	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+		this.currentComponent= errorComponent;
+		this.globalMap = globalMap;
+		this.e = e;
+	}
 
 	public Exception getException() {
-		if ("failure".equals(this.getStatus())) {
-			return this.exception;
-		}
-		return null;
+		return this.e;
 	}
 
-	private class TalendException extends Exception {
+	public String getCurrentComponent() {
+		return this.currentComponent;
+	}
 
-		private static final long serialVersionUID = 1L;
+	
+    public String getExceptionCauseMessage(Exception e){
+        Throwable cause = e;
+        String message = null;
+        int i = 10;
+        while (null != cause && 0 < i--) {
+            message = cause.getMessage();
+            if (null == message) {
+                cause = cause.getCause();
+            } else {
+                break;          
+            }
+        }
+        if (null == message) {
+            message = e.getClass().getName();
+        }   
+        return message;
+    }
 
-		private java.util.Map<String, Object> globalMap = null;
-		private Exception e = null;
-		private String currentComponent = null;
-		private String virtualComponentName = null;
-
-		public void setVirtualComponentName(String virtualComponentName) {
-			this.virtualComponentName = virtualComponentName;
+	@Override
+	public void printStackTrace() {
+		if (!(e instanceof TalendException || e instanceof TDieException)) {
+			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
+				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			}
+			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
 		}
-
-		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-			this.currentComponent = errorComponent;
-			this.globalMap = globalMap;
-			this.e = e;
+		if (!(e instanceof TDieException)) {
+			if(e instanceof TalendException){
+				e.printStackTrace();
+			} else {
+				e.printStackTrace();
+				e.printStackTrace(errorMessagePS);
+				esatis_E.this.exception = e;
+			}
 		}
-
-		public Exception getException() {
-			return this.e;
-		}
-
-		public String getCurrentComponent() {
-			return this.currentComponent;
-		}
-
-		public String getExceptionCauseMessage(Exception e) {
-			Throwable cause = e;
-			String message = null;
-			int i = 10;
-			while (null != cause && 0 < i--) {
-				message = cause.getMessage();
-				if (null == message) {
-					cause = cause.getCause();
-				} else {
+		if (!(e instanceof TalendException)) {
+		try {
+			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+				if (m.getName().compareTo(currentComponent + "_error") == 0) {
+					m.invoke(esatis_E.this, new Object[] { e , currentComponent, globalMap});
 					break;
 				}
 			}
-			if (null == message) {
-				message = e.getClass().getName();
-			}
-			return message;
-		}
 
-		@Override
-		public void printStackTrace() {
-			if (!(e instanceof TalendException || e instanceof TDieException)) {
-				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
-					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				}
-				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+			if(!(e instanceof TDieException)){
 			}
-			if (!(e instanceof TDieException)) {
-				if (e instanceof TalendException) {
-					e.printStackTrace();
+		} catch (Exception e) {
+			this.e.printStackTrace();
+		}
+		}
+	}
+}
+
+			public void tFileInputExcel_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tUniqRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tHDFSOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileInputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_row4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileInputExcel_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+	
+
+
+
+
+
+
+public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+
+	
+			    public String identifiant_organisation;
+
+				public String getIdentifiant_organisation () {
+					return this.identifiant_organisation;
+				}
+				
+			    public String region;
+
+				public String getRegion () {
+					return this.region;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
 				} else {
-					e.printStackTrace();
-					e.printStackTrace(errorMessagePS);
-					esatis_E.this.exception = e;
-				}
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
 			}
-			if (!(e instanceof TalendException)) {
-				try {
-					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(esatis_E.this, new Object[] { e, currentComponent, globalMap });
-							break;
-						}
-					}
-
-					if (!(e instanceof TDieException)) {
-					}
-				} catch (Exception e) {
-					this.e.printStackTrace();
-				}
-			}
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
 		}
+		return strReturn;
 	}
 
-	public void tFileInputExcel_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		end_Hash.put(errorComponent, System.currentTimeMillis());
+    public void readData(ObjectInputStream dis) {
 
-		status = "failure";
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
 
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
+        	try {
 
-	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tUniqRow_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHDFSOutput_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tLogRow_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row4_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileInputExcel_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
-
-		public String identifiant_organisation;
-
-		public String getIdentifiant_organisation() {
-			return this.identifiant_organisation;
-		}
-
-		public String region;
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.identifiant_organisation = readString(dis);
-
+					
 					this.region = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.identifiant_organisation,dos);
+					
+					// String
+				
+						writeString(this.region,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("identifiant_organisation="+identifiant_organisation);
+		sb.append(",region="+region);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row2Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+
+	
+			    public String identifiant_organisation;
+
+				public String getIdentifiant_organisation () {
+					return this.identifiant_organisation;
 				}
+				
+			    public String region;
 
+				public String getRegion () {
+					return this.region;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.identifiant_organisation, dos);
-
-				// String
-
-				writeString(this.region, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("identifiant_organisation=" + identifiant_organisation);
-			sb.append(",region=" + region);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String identifiant_organisation;
+    public void readData(ObjectInputStream dis) {
 
-		public String getIdentifiant_organisation() {
-			return this.identifiant_organisation;
-		}
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
 
-		public String region;
+        	try {
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.identifiant_organisation = readString(dis);
-
+					
 					this.region = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.identifiant_organisation,dos);
+					
+					// String
+				
+						writeString(this.region,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("identifiant_organisation="+identifiant_organisation);
+		sb.append(",region="+region);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class RegionFinessStruct implements routines.system.IPersistableRow<RegionFinessStruct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+
+	
+			    public String identifiant_organisation;
+
+				public String getIdentifiant_organisation () {
+					return this.identifiant_organisation;
 				}
+				
+			    public String region;
 
+				public String getRegion () {
+					return this.region;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.identifiant_organisation, dos);
-
-				// String
-
-				writeString(this.region, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("identifiant_organisation=" + identifiant_organisation);
-			sb.append(",region=" + region);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row3Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class RegionFinessStruct implements routines.system.IPersistableRow<RegionFinessStruct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String identifiant_organisation;
+    public void readData(ObjectInputStream dis) {
 
-		public String getIdentifiant_organisation() {
-			return this.identifiant_organisation;
-		}
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
 
-		public String region;
+        	try {
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.identifiant_organisation = readString(dis);
-
+					
 					this.region = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.identifiant_organisation,dos);
+					
+					// String
+				
+						writeString(this.region,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("identifiant_organisation="+identifiant_organisation);
+		sb.append(",region="+region);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(RegionFinessStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+
+	
+			    public String finess;
+
+				public String getFiness () {
+					return this.finess;
 				}
+				
+			    public String rs_finess;
 
+				public String getRs_finess () {
+					return this.rs_finess;
+				}
+				
+			    public String finess_geo;
+
+				public String getFiness_geo () {
+					return this.finess_geo;
+				}
+				
+			    public String rs_finess_geo;
+
+				public String getRs_finess_geo () {
+					return this.rs_finess_geo;
+				}
+				
+			    public String region;
+
+				public String getRegion () {
+					return this.region;
+				}
+				
+			    public String participation;
+
+				public String getParticipation () {
+					return this.participation;
+				}
+				
+			    public String Depot;
+
+				public String getDepot () {
+					return this.Depot;
+				}
+				
+			    public Integer nb_rep_score_all_rea_ajust;
+
+				public Integer getNb_rep_score_all_rea_ajust () {
+					return this.nb_rep_score_all_rea_ajust;
+				}
+				
+			    public String score_all_rea_ajust;
+
+				public String getScore_all_rea_ajust () {
+					return this.score_all_rea_ajust;
+				}
+				
+			    public String classement;
+
+				public String getClassement () {
+					return this.classement;
+				}
+				
+			    public String evolution;
+
+				public String getEvolution () {
+					return this.evolution;
+				}
+				
+			    public Integer nb_rep_score_accueil_rea_ajust;
+
+				public Integer getNb_rep_score_accueil_rea_ajust () {
+					return this.nb_rep_score_accueil_rea_ajust;
+				}
+				
+			    public Float score_accueil_rea_ajust;
+
+				public Float getScore_accueil_rea_ajust () {
+					return this.score_accueil_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_PECinf_rea_ajust;
+
+				public Integer getNb_rep_score_PECinf_rea_ajust () {
+					return this.nb_rep_score_PECinf_rea_ajust;
+				}
+				
+			    public Float score_PECinf_rea_ajust;
+
+				public Float getScore_PECinf_rea_ajust () {
+					return this.score_PECinf_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_PECmed_rea_ajust;
+
+				public Integer getNb_rep_score_PECmed_rea_ajust () {
+					return this.nb_rep_score_PECmed_rea_ajust;
+				}
+				
+			    public Float score_PECmed_rea_ajust;
+
+				public Float getScore_PECmed_rea_ajust () {
+					return this.score_PECmed_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_chambre_rea_ajust;
+
+				public Integer getNb_rep_score_chambre_rea_ajust () {
+					return this.nb_rep_score_chambre_rea_ajust;
+				}
+				
+			    public Float score_chambre_rea_ajust;
+
+				public Float getScore_chambre_rea_ajust () {
+					return this.score_chambre_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_repas_rea_ajust;
+
+				public Integer getNb_rep_score_repas_rea_ajust () {
+					return this.nb_rep_score_repas_rea_ajust;
+				}
+				
+			    public Float score_repas_rea_ajust;
+
+				public Float getScore_repas_rea_ajust () {
+					return this.score_repas_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_sortie_rea_ajust;
+
+				public Integer getNb_rep_score_sortie_rea_ajust () {
+					return this.nb_rep_score_sortie_rea_ajust;
+				}
+				
+			    public Float score_sortie_rea_ajust;
+
+				public Float getScore_sortie_rea_ajust () {
+					return this.score_sortie_rea_ajust;
+				}
+				
+			    public String taux_reco_brut;
+
+				public String getTaux_reco_brut () {
+					return this.taux_reco_brut;
+				}
+				
+			    public Integer nb_reco_brut;
+
+				public Integer getNb_reco_brut () {
+					return this.nb_reco_brut;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.identifiant_organisation, dos);
-
-				// String
-
-				writeString(this.region, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("identifiant_organisation=" + identifiant_organisation);
-			sb.append(",region=" + region);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(RegionFinessStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
-
-		public String finess;
-
-		public String getFiness() {
-			return this.finess;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public String rs_finess;
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		public String getRs_finess() {
-			return this.rs_finess;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String finess_geo;
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
 
-		public String getFiness_geo() {
-			return this.finess_geo;
-		}
+        	try {
 
-		public String rs_finess_geo;
-
-		public String getRs_finess_geo() {
-			return this.rs_finess_geo;
-		}
-
-		public String region;
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public String participation;
-
-		public String getParticipation() {
-			return this.participation;
-		}
-
-		public String Depot;
-
-		public String getDepot() {
-			return this.Depot;
-		}
-
-		public Integer nb_rep_score_all_rea_ajust;
-
-		public Integer getNb_rep_score_all_rea_ajust() {
-			return this.nb_rep_score_all_rea_ajust;
-		}
-
-		public String score_all_rea_ajust;
-
-		public String getScore_all_rea_ajust() {
-			return this.score_all_rea_ajust;
-		}
-
-		public String classement;
-
-		public String getClassement() {
-			return this.classement;
-		}
-
-		public String evolution;
-
-		public String getEvolution() {
-			return this.evolution;
-		}
-
-		public Integer nb_rep_score_accueil_rea_ajust;
-
-		public Integer getNb_rep_score_accueil_rea_ajust() {
-			return this.nb_rep_score_accueil_rea_ajust;
-		}
-
-		public Float score_accueil_rea_ajust;
-
-		public Float getScore_accueil_rea_ajust() {
-			return this.score_accueil_rea_ajust;
-		}
-
-		public Integer nb_rep_score_PECinf_rea_ajust;
-
-		public Integer getNb_rep_score_PECinf_rea_ajust() {
-			return this.nb_rep_score_PECinf_rea_ajust;
-		}
-
-		public Float score_PECinf_rea_ajust;
-
-		public Float getScore_PECinf_rea_ajust() {
-			return this.score_PECinf_rea_ajust;
-		}
-
-		public Integer nb_rep_score_PECmed_rea_ajust;
-
-		public Integer getNb_rep_score_PECmed_rea_ajust() {
-			return this.nb_rep_score_PECmed_rea_ajust;
-		}
-
-		public Float score_PECmed_rea_ajust;
-
-		public Float getScore_PECmed_rea_ajust() {
-			return this.score_PECmed_rea_ajust;
-		}
-
-		public Integer nb_rep_score_chambre_rea_ajust;
-
-		public Integer getNb_rep_score_chambre_rea_ajust() {
-			return this.nb_rep_score_chambre_rea_ajust;
-		}
-
-		public Float score_chambre_rea_ajust;
-
-		public Float getScore_chambre_rea_ajust() {
-			return this.score_chambre_rea_ajust;
-		}
-
-		public Integer nb_rep_score_repas_rea_ajust;
-
-		public Integer getNb_rep_score_repas_rea_ajust() {
-			return this.nb_rep_score_repas_rea_ajust;
-		}
-
-		public Float score_repas_rea_ajust;
-
-		public Float getScore_repas_rea_ajust() {
-			return this.score_repas_rea_ajust;
-		}
-
-		public Integer nb_rep_score_sortie_rea_ajust;
-
-		public Integer getNb_rep_score_sortie_rea_ajust() {
-			return this.nb_rep_score_sortie_rea_ajust;
-		}
-
-		public Float score_sortie_rea_ajust;
-
-		public Float getScore_sortie_rea_ajust() {
-			return this.score_sortie_rea_ajust;
-		}
-
-		public String taux_reco_brut;
-
-		public String getTaux_reco_brut() {
-			return this.taux_reco_brut;
-		}
-
-		public Integer nb_reco_brut;
-
-		public Integer getNb_reco_brut() {
-			return this.nb_reco_brut;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.finess = readString(dis);
-
+					
 					this.rs_finess = readString(dis);
-
+					
 					this.finess_geo = readString(dis);
-
+					
 					this.rs_finess_geo = readString(dis);
-
+					
 					this.region = readString(dis);
-
+					
 					this.participation = readString(dis);
-
+					
 					this.Depot = readString(dis);
-
-					this.nb_rep_score_all_rea_ajust = readInteger(dis);
-
+					
+						this.nb_rep_score_all_rea_ajust = readInteger(dis);
+					
 					this.score_all_rea_ajust = readString(dis);
-
+					
 					this.classement = readString(dis);
-
+					
 					this.evolution = readString(dis);
-
-					this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_accueil_rea_ajust = null;
-					} else {
-						this.score_accueil_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_PECinf_rea_ajust = null;
-					} else {
-						this.score_PECinf_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_PECmed_rea_ajust = null;
-					} else {
-						this.score_PECmed_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_chambre_rea_ajust = null;
-					} else {
-						this.score_chambre_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_repas_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_repas_rea_ajust = null;
-					} else {
-						this.score_repas_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_sortie_rea_ajust = null;
-					} else {
-						this.score_sortie_rea_ajust = dis.readFloat();
-					}
-
+					
+						this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_accueil_rea_ajust = null;
+           				} else {
+           			    	this.score_accueil_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_PECinf_rea_ajust = null;
+           				} else {
+           			    	this.score_PECinf_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_PECmed_rea_ajust = null;
+           				} else {
+           			    	this.score_PECmed_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_chambre_rea_ajust = null;
+           				} else {
+           			    	this.score_chambre_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_repas_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_repas_rea_ajust = null;
+           				} else {
+           			    	this.score_repas_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_sortie_rea_ajust = null;
+           				} else {
+           			    	this.score_sortie_rea_ajust = dis.readFloat();
+           				}
+					
 					this.taux_reco_brut = readString(dis);
+					
+						this.nb_reco_brut = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.nb_reco_brut = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.finess,dos);
+					
+					// String
+				
+						writeString(this.rs_finess,dos);
+					
+					// String
+				
+						writeString(this.finess_geo,dos);
+					
+					// String
+				
+						writeString(this.rs_finess_geo,dos);
+					
+					// String
+				
+						writeString(this.region,dos);
+					
+					// String
+				
+						writeString(this.participation,dos);
+					
+					// String
+				
+						writeString(this.Depot,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_all_rea_ajust,dos);
+					
+					// String
+				
+						writeString(this.score_all_rea_ajust,dos);
+					
+					// String
+				
+						writeString(this.classement,dos);
+					
+					// String
+				
+						writeString(this.evolution,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_accueil_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_accueil_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_accueil_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_PECinf_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_PECinf_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_PECinf_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_PECmed_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_PECmed_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_PECmed_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_chambre_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_chambre_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_chambre_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_repas_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_repas_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_repas_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_sortie_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_sortie_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_sortie_rea_ajust);
+		            	}
+					
+					// String
+				
+						writeString(this.taux_reco_brut,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_reco_brut,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("finess="+finess);
+		sb.append(",rs_finess="+rs_finess);
+		sb.append(",finess_geo="+finess_geo);
+		sb.append(",rs_finess_geo="+rs_finess_geo);
+		sb.append(",region="+region);
+		sb.append(",participation="+participation);
+		sb.append(",Depot="+Depot);
+		sb.append(",nb_rep_score_all_rea_ajust="+String.valueOf(nb_rep_score_all_rea_ajust));
+		sb.append(",score_all_rea_ajust="+score_all_rea_ajust);
+		sb.append(",classement="+classement);
+		sb.append(",evolution="+evolution);
+		sb.append(",nb_rep_score_accueil_rea_ajust="+String.valueOf(nb_rep_score_accueil_rea_ajust));
+		sb.append(",score_accueil_rea_ajust="+String.valueOf(score_accueil_rea_ajust));
+		sb.append(",nb_rep_score_PECinf_rea_ajust="+String.valueOf(nb_rep_score_PECinf_rea_ajust));
+		sb.append(",score_PECinf_rea_ajust="+String.valueOf(score_PECinf_rea_ajust));
+		sb.append(",nb_rep_score_PECmed_rea_ajust="+String.valueOf(nb_rep_score_PECmed_rea_ajust));
+		sb.append(",score_PECmed_rea_ajust="+String.valueOf(score_PECmed_rea_ajust));
+		sb.append(",nb_rep_score_chambre_rea_ajust="+String.valueOf(nb_rep_score_chambre_rea_ajust));
+		sb.append(",score_chambre_rea_ajust="+String.valueOf(score_chambre_rea_ajust));
+		sb.append(",nb_rep_score_repas_rea_ajust="+String.valueOf(nb_rep_score_repas_rea_ajust));
+		sb.append(",score_repas_rea_ajust="+String.valueOf(score_repas_rea_ajust));
+		sb.append(",nb_rep_score_sortie_rea_ajust="+String.valueOf(nb_rep_score_sortie_rea_ajust));
+		sb.append(",score_sortie_rea_ajust="+String.valueOf(score_sortie_rea_ajust));
+		sb.append(",taux_reco_brut="+taux_reco_brut);
+		sb.append(",nb_reco_brut="+String.valueOf(nb_reco_brut));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class after_tFileInputExcel_1Struct implements routines.system.IPersistableRow<after_tFileInputExcel_1Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+
+	
+			    public String finess;
+
+				public String getFiness () {
+					return this.finess;
 				}
+				
+			    public String rs_finess;
 
+				public String getRs_finess () {
+					return this.rs_finess;
+				}
+				
+			    public String finess_geo;
+
+				public String getFiness_geo () {
+					return this.finess_geo;
+				}
+				
+			    public String rs_finess_geo;
+
+				public String getRs_finess_geo () {
+					return this.rs_finess_geo;
+				}
+				
+			    public String region;
+
+				public String getRegion () {
+					return this.region;
+				}
+				
+			    public String participation;
+
+				public String getParticipation () {
+					return this.participation;
+				}
+				
+			    public String Depot;
+
+				public String getDepot () {
+					return this.Depot;
+				}
+				
+			    public Integer nb_rep_score_all_rea_ajust;
+
+				public Integer getNb_rep_score_all_rea_ajust () {
+					return this.nb_rep_score_all_rea_ajust;
+				}
+				
+			    public String score_all_rea_ajust;
+
+				public String getScore_all_rea_ajust () {
+					return this.score_all_rea_ajust;
+				}
+				
+			    public String classement;
+
+				public String getClassement () {
+					return this.classement;
+				}
+				
+			    public String evolution;
+
+				public String getEvolution () {
+					return this.evolution;
+				}
+				
+			    public Integer nb_rep_score_accueil_rea_ajust;
+
+				public Integer getNb_rep_score_accueil_rea_ajust () {
+					return this.nb_rep_score_accueil_rea_ajust;
+				}
+				
+			    public Float score_accueil_rea_ajust;
+
+				public Float getScore_accueil_rea_ajust () {
+					return this.score_accueil_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_PECinf_rea_ajust;
+
+				public Integer getNb_rep_score_PECinf_rea_ajust () {
+					return this.nb_rep_score_PECinf_rea_ajust;
+				}
+				
+			    public Float score_PECinf_rea_ajust;
+
+				public Float getScore_PECinf_rea_ajust () {
+					return this.score_PECinf_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_PECmed_rea_ajust;
+
+				public Integer getNb_rep_score_PECmed_rea_ajust () {
+					return this.nb_rep_score_PECmed_rea_ajust;
+				}
+				
+			    public Float score_PECmed_rea_ajust;
+
+				public Float getScore_PECmed_rea_ajust () {
+					return this.score_PECmed_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_chambre_rea_ajust;
+
+				public Integer getNb_rep_score_chambre_rea_ajust () {
+					return this.nb_rep_score_chambre_rea_ajust;
+				}
+				
+			    public Float score_chambre_rea_ajust;
+
+				public Float getScore_chambre_rea_ajust () {
+					return this.score_chambre_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_repas_rea_ajust;
+
+				public Integer getNb_rep_score_repas_rea_ajust () {
+					return this.nb_rep_score_repas_rea_ajust;
+				}
+				
+			    public Float score_repas_rea_ajust;
+
+				public Float getScore_repas_rea_ajust () {
+					return this.score_repas_rea_ajust;
+				}
+				
+			    public Integer nb_rep_score_sortie_rea_ajust;
+
+				public Integer getNb_rep_score_sortie_rea_ajust () {
+					return this.nb_rep_score_sortie_rea_ajust;
+				}
+				
+			    public Float score_sortie_rea_ajust;
+
+				public Float getScore_sortie_rea_ajust () {
+					return this.score_sortie_rea_ajust;
+				}
+				
+			    public String taux_reco_brut;
+
+				public String getTaux_reco_brut () {
+					return this.taux_reco_brut;
+				}
+				
+			    public Integer nb_reco_brut;
+
+				public Integer getNb_reco_brut () {
+					return this.nb_reco_brut;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.finess, dos);
-
-				// String
-
-				writeString(this.rs_finess, dos);
-
-				// String
-
-				writeString(this.finess_geo, dos);
-
-				// String
-
-				writeString(this.rs_finess_geo, dos);
-
-				// String
-
-				writeString(this.region, dos);
-
-				// String
-
-				writeString(this.participation, dos);
-
-				// String
-
-				writeString(this.Depot, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_all_rea_ajust, dos);
-
-				// String
-
-				writeString(this.score_all_rea_ajust, dos);
-
-				// String
-
-				writeString(this.classement, dos);
-
-				// String
-
-				writeString(this.evolution, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_accueil_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_accueil_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_accueil_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_PECinf_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_PECinf_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_PECinf_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_PECmed_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_PECmed_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_PECmed_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_chambre_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_chambre_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_chambre_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_repas_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_repas_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_repas_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_sortie_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_sortie_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_sortie_rea_ajust);
-				}
-
-				// String
-
-				writeString(this.taux_reco_brut, dos);
-
-				// Integer
-
-				writeInteger(this.nb_reco_brut, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("finess=" + finess);
-			sb.append(",rs_finess=" + rs_finess);
-			sb.append(",finess_geo=" + finess_geo);
-			sb.append(",rs_finess_geo=" + rs_finess_geo);
-			sb.append(",region=" + region);
-			sb.append(",participation=" + participation);
-			sb.append(",Depot=" + Depot);
-			sb.append(",nb_rep_score_all_rea_ajust=" + String.valueOf(nb_rep_score_all_rea_ajust));
-			sb.append(",score_all_rea_ajust=" + score_all_rea_ajust);
-			sb.append(",classement=" + classement);
-			sb.append(",evolution=" + evolution);
-			sb.append(",nb_rep_score_accueil_rea_ajust=" + String.valueOf(nb_rep_score_accueil_rea_ajust));
-			sb.append(",score_accueil_rea_ajust=" + String.valueOf(score_accueil_rea_ajust));
-			sb.append(",nb_rep_score_PECinf_rea_ajust=" + String.valueOf(nb_rep_score_PECinf_rea_ajust));
-			sb.append(",score_PECinf_rea_ajust=" + String.valueOf(score_PECinf_rea_ajust));
-			sb.append(",nb_rep_score_PECmed_rea_ajust=" + String.valueOf(nb_rep_score_PECmed_rea_ajust));
-			sb.append(",score_PECmed_rea_ajust=" + String.valueOf(score_PECmed_rea_ajust));
-			sb.append(",nb_rep_score_chambre_rea_ajust=" + String.valueOf(nb_rep_score_chambre_rea_ajust));
-			sb.append(",score_chambre_rea_ajust=" + String.valueOf(score_chambre_rea_ajust));
-			sb.append(",nb_rep_score_repas_rea_ajust=" + String.valueOf(nb_rep_score_repas_rea_ajust));
-			sb.append(",score_repas_rea_ajust=" + String.valueOf(score_repas_rea_ajust));
-			sb.append(",nb_rep_score_sortie_rea_ajust=" + String.valueOf(nb_rep_score_sortie_rea_ajust));
-			sb.append(",score_sortie_rea_ajust=" + String.valueOf(score_sortie_rea_ajust));
-			sb.append(",taux_reco_brut=" + taux_reco_brut);
-			sb.append(",nb_reco_brut=" + String.valueOf(nb_reco_brut));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class after_tFileInputExcel_1Struct
-			implements routines.system.IPersistableRow<after_tFileInputExcel_1Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
-
-		public String finess;
-
-		public String getFiness() {
-			return this.finess;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public String rs_finess;
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		public String getRs_finess() {
-			return this.rs_finess;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String finess_geo;
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
 
-		public String getFiness_geo() {
-			return this.finess_geo;
-		}
+        	try {
 
-		public String rs_finess_geo;
-
-		public String getRs_finess_geo() {
-			return this.rs_finess_geo;
-		}
-
-		public String region;
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public String participation;
-
-		public String getParticipation() {
-			return this.participation;
-		}
-
-		public String Depot;
-
-		public String getDepot() {
-			return this.Depot;
-		}
-
-		public Integer nb_rep_score_all_rea_ajust;
-
-		public Integer getNb_rep_score_all_rea_ajust() {
-			return this.nb_rep_score_all_rea_ajust;
-		}
-
-		public String score_all_rea_ajust;
-
-		public String getScore_all_rea_ajust() {
-			return this.score_all_rea_ajust;
-		}
-
-		public String classement;
-
-		public String getClassement() {
-			return this.classement;
-		}
-
-		public String evolution;
-
-		public String getEvolution() {
-			return this.evolution;
-		}
-
-		public Integer nb_rep_score_accueil_rea_ajust;
-
-		public Integer getNb_rep_score_accueil_rea_ajust() {
-			return this.nb_rep_score_accueil_rea_ajust;
-		}
-
-		public Float score_accueil_rea_ajust;
-
-		public Float getScore_accueil_rea_ajust() {
-			return this.score_accueil_rea_ajust;
-		}
-
-		public Integer nb_rep_score_PECinf_rea_ajust;
-
-		public Integer getNb_rep_score_PECinf_rea_ajust() {
-			return this.nb_rep_score_PECinf_rea_ajust;
-		}
-
-		public Float score_PECinf_rea_ajust;
-
-		public Float getScore_PECinf_rea_ajust() {
-			return this.score_PECinf_rea_ajust;
-		}
-
-		public Integer nb_rep_score_PECmed_rea_ajust;
-
-		public Integer getNb_rep_score_PECmed_rea_ajust() {
-			return this.nb_rep_score_PECmed_rea_ajust;
-		}
-
-		public Float score_PECmed_rea_ajust;
-
-		public Float getScore_PECmed_rea_ajust() {
-			return this.score_PECmed_rea_ajust;
-		}
-
-		public Integer nb_rep_score_chambre_rea_ajust;
-
-		public Integer getNb_rep_score_chambre_rea_ajust() {
-			return this.nb_rep_score_chambre_rea_ajust;
-		}
-
-		public Float score_chambre_rea_ajust;
-
-		public Float getScore_chambre_rea_ajust() {
-			return this.score_chambre_rea_ajust;
-		}
-
-		public Integer nb_rep_score_repas_rea_ajust;
-
-		public Integer getNb_rep_score_repas_rea_ajust() {
-			return this.nb_rep_score_repas_rea_ajust;
-		}
-
-		public Float score_repas_rea_ajust;
-
-		public Float getScore_repas_rea_ajust() {
-			return this.score_repas_rea_ajust;
-		}
-
-		public Integer nb_rep_score_sortie_rea_ajust;
-
-		public Integer getNb_rep_score_sortie_rea_ajust() {
-			return this.nb_rep_score_sortie_rea_ajust;
-		}
-
-		public Float score_sortie_rea_ajust;
-
-		public Float getScore_sortie_rea_ajust() {
-			return this.score_sortie_rea_ajust;
-		}
-
-		public String taux_reco_brut;
-
-		public String getTaux_reco_brut() {
-			return this.taux_reco_brut;
-		}
-
-		public Integer nb_reco_brut;
-
-		public Integer getNb_reco_brut() {
-			return this.nb_reco_brut;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.finess = readString(dis);
-
+					
 					this.rs_finess = readString(dis);
-
+					
 					this.finess_geo = readString(dis);
-
+					
 					this.rs_finess_geo = readString(dis);
-
+					
 					this.region = readString(dis);
-
+					
 					this.participation = readString(dis);
-
+					
 					this.Depot = readString(dis);
-
-					this.nb_rep_score_all_rea_ajust = readInteger(dis);
-
+					
+						this.nb_rep_score_all_rea_ajust = readInteger(dis);
+					
 					this.score_all_rea_ajust = readString(dis);
-
+					
 					this.classement = readString(dis);
-
+					
 					this.evolution = readString(dis);
-
-					this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_accueil_rea_ajust = null;
-					} else {
-						this.score_accueil_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_PECinf_rea_ajust = null;
-					} else {
-						this.score_PECinf_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_PECmed_rea_ajust = null;
-					} else {
-						this.score_PECmed_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_chambre_rea_ajust = null;
-					} else {
-						this.score_chambre_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_repas_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_repas_rea_ajust = null;
-					} else {
-						this.score_repas_rea_ajust = dis.readFloat();
-					}
-
-					this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.score_sortie_rea_ajust = null;
-					} else {
-						this.score_sortie_rea_ajust = dis.readFloat();
-					}
-
+					
+						this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_accueil_rea_ajust = null;
+           				} else {
+           			    	this.score_accueil_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_PECinf_rea_ajust = null;
+           				} else {
+           			    	this.score_PECinf_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_PECmed_rea_ajust = null;
+           				} else {
+           			    	this.score_PECmed_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_chambre_rea_ajust = null;
+           				} else {
+           			    	this.score_chambre_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_repas_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_repas_rea_ajust = null;
+           				} else {
+           			    	this.score_repas_rea_ajust = dis.readFloat();
+           				}
+					
+						this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.score_sortie_rea_ajust = null;
+           				} else {
+           			    	this.score_sortie_rea_ajust = dis.readFloat();
+           				}
+					
 					this.taux_reco_brut = readString(dis);
-
-					this.nb_reco_brut = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.finess, dos);
-
-				// String
-
-				writeString(this.rs_finess, dos);
-
-				// String
-
-				writeString(this.finess_geo, dos);
-
-				// String
-
-				writeString(this.rs_finess_geo, dos);
-
-				// String
-
-				writeString(this.region, dos);
-
-				// String
-
-				writeString(this.participation, dos);
-
-				// String
-
-				writeString(this.Depot, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_all_rea_ajust, dos);
-
-				// String
-
-				writeString(this.score_all_rea_ajust, dos);
-
-				// String
-
-				writeString(this.classement, dos);
-
-				// String
-
-				writeString(this.evolution, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_accueil_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_accueil_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_accueil_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_PECinf_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_PECinf_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_PECinf_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_PECmed_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_PECmed_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_PECmed_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_chambre_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_chambre_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_chambre_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_repas_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_repas_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_repas_rea_ajust);
-				}
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_sortie_rea_ajust, dos);
-
-				// Float
-
-				if (this.score_sortie_rea_ajust == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.score_sortie_rea_ajust);
-				}
-
-				// String
-
-				writeString(this.taux_reco_brut, dos);
-
-				// Integer
-
-				writeInteger(this.nb_reco_brut, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("finess=" + finess);
-			sb.append(",rs_finess=" + rs_finess);
-			sb.append(",finess_geo=" + finess_geo);
-			sb.append(",rs_finess_geo=" + rs_finess_geo);
-			sb.append(",region=" + region);
-			sb.append(",participation=" + participation);
-			sb.append(",Depot=" + Depot);
-			sb.append(",nb_rep_score_all_rea_ajust=" + String.valueOf(nb_rep_score_all_rea_ajust));
-			sb.append(",score_all_rea_ajust=" + score_all_rea_ajust);
-			sb.append(",classement=" + classement);
-			sb.append(",evolution=" + evolution);
-			sb.append(",nb_rep_score_accueil_rea_ajust=" + String.valueOf(nb_rep_score_accueil_rea_ajust));
-			sb.append(",score_accueil_rea_ajust=" + String.valueOf(score_accueil_rea_ajust));
-			sb.append(",nb_rep_score_PECinf_rea_ajust=" + String.valueOf(nb_rep_score_PECinf_rea_ajust));
-			sb.append(",score_PECinf_rea_ajust=" + String.valueOf(score_PECinf_rea_ajust));
-			sb.append(",nb_rep_score_PECmed_rea_ajust=" + String.valueOf(nb_rep_score_PECmed_rea_ajust));
-			sb.append(",score_PECmed_rea_ajust=" + String.valueOf(score_PECmed_rea_ajust));
-			sb.append(",nb_rep_score_chambre_rea_ajust=" + String.valueOf(nb_rep_score_chambre_rea_ajust));
-			sb.append(",score_chambre_rea_ajust=" + String.valueOf(score_chambre_rea_ajust));
-			sb.append(",nb_rep_score_repas_rea_ajust=" + String.valueOf(nb_rep_score_repas_rea_ajust));
-			sb.append(",score_repas_rea_ajust=" + String.valueOf(score_repas_rea_ajust));
-			sb.append(",nb_rep_score_sortie_rea_ajust=" + String.valueOf(nb_rep_score_sortie_rea_ajust));
-			sb.append(",score_sortie_rea_ajust=" + String.valueOf(score_sortie_rea_ajust));
-			sb.append(",taux_reco_brut=" + taux_reco_brut);
-			sb.append(",nb_reco_brut=" + String.valueOf(nb_reco_brut));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tFileInputExcel_1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
+					
+						this.nb_reco_brut = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.finess,dos);
+					
+					// String
+				
+						writeString(this.rs_finess,dos);
+					
+					// String
+				
+						writeString(this.finess_geo,dos);
+					
+					// String
+				
+						writeString(this.rs_finess_geo,dos);
+					
+					// String
+				
+						writeString(this.region,dos);
+					
+					// String
+				
+						writeString(this.participation,dos);
+					
+					// String
+				
+						writeString(this.Depot,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_all_rea_ajust,dos);
+					
+					// String
+				
+						writeString(this.score_all_rea_ajust,dos);
+					
+					// String
+				
+						writeString(this.classement,dos);
+					
+					// String
+				
+						writeString(this.evolution,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_accueil_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_accueil_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_accueil_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_PECinf_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_PECinf_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_PECinf_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_PECmed_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_PECmed_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_PECmed_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_chambre_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_chambre_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_chambre_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_repas_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_repas_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_repas_rea_ajust);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.nb_rep_score_sortie_rea_ajust,dos);
+					
+					// Float
+				
+						if(this.score_sortie_rea_ajust == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeFloat(this.score_sortie_rea_ajust);
+		            	}
+					
+					// String
+				
+						writeString(this.taux_reco_brut,dos);
+					
+					// Integer
+				
+						writeInteger(this.nb_reco_brut,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("finess="+finess);
+		sb.append(",rs_finess="+rs_finess);
+		sb.append(",finess_geo="+finess_geo);
+		sb.append(",rs_finess_geo="+rs_finess_geo);
+		sb.append(",region="+region);
+		sb.append(",participation="+participation);
+		sb.append(",Depot="+Depot);
+		sb.append(",nb_rep_score_all_rea_ajust="+String.valueOf(nb_rep_score_all_rea_ajust));
+		sb.append(",score_all_rea_ajust="+score_all_rea_ajust);
+		sb.append(",classement="+classement);
+		sb.append(",evolution="+evolution);
+		sb.append(",nb_rep_score_accueil_rea_ajust="+String.valueOf(nb_rep_score_accueil_rea_ajust));
+		sb.append(",score_accueil_rea_ajust="+String.valueOf(score_accueil_rea_ajust));
+		sb.append(",nb_rep_score_PECinf_rea_ajust="+String.valueOf(nb_rep_score_PECinf_rea_ajust));
+		sb.append(",score_PECinf_rea_ajust="+String.valueOf(score_PECinf_rea_ajust));
+		sb.append(",nb_rep_score_PECmed_rea_ajust="+String.valueOf(nb_rep_score_PECmed_rea_ajust));
+		sb.append(",score_PECmed_rea_ajust="+String.valueOf(score_PECmed_rea_ajust));
+		sb.append(",nb_rep_score_chambre_rea_ajust="+String.valueOf(nb_rep_score_chambre_rea_ajust));
+		sb.append(",score_chambre_rea_ajust="+String.valueOf(score_chambre_rea_ajust));
+		sb.append(",nb_rep_score_repas_rea_ajust="+String.valueOf(nb_rep_score_repas_rea_ajust));
+		sb.append(",score_repas_rea_ajust="+String.valueOf(score_repas_rea_ajust));
+		sb.append(",nb_rep_score_sortie_rea_ajust="+String.valueOf(nb_rep_score_sortie_rea_ajust));
+		sb.append(",score_sortie_rea_ajust="+String.valueOf(score_sortie_rea_ajust));
+		sb.append(",taux_reco_brut="+taux_reco_brut);
+		sb.append(",nb_reco_brut="+String.valueOf(nb_reco_brut));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(after_tFileInputExcel_1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				tFileInputDelimited_1Process(globalMap);
 
-				row1Struct row1 = new row1Struct();
-				RegionFinessStruct RegionFiness = new RegionFinessStruct();
-				row3Struct row3 = new row3Struct();
-				row3Struct row2 = row3;
+		tFileInputDelimited_1Process(globalMap);
 
-				/**
-				 * [tLogRow_1 begin ] start
-				 */
+		row1Struct row1 = new row1Struct();
+RegionFinessStruct RegionFiness = new RegionFinessStruct();
+row3Struct row3 = new row3Struct();
+row3Struct row2 = row3;
 
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
 
-				currentComponent = "tLogRow_1";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
-				}
 
-				int tos_count_tLogRow_1 = 0;
 
-				///////////////////////
 
-				class Util_tLogRow_1 {
 
-					String[] des_top = { ".", ".", "-", "+" };
+	
+	/**
+	 * [tLogRow_1 begin ] start
+	 */
 
-					String[] des_head = { "|=", "=|", "-", "+" };
+	
 
-					String[] des_bottom = { "'", "'", "-", "+" };
+	
+		
+		ok_Hash.put("tLogRow_1", false);
+		start_Hash.put("tLogRow_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tLogRow_1";
 
-					String name = "";
+	
+		int tos_count_tLogRow_1 = 0;
+		
 
-					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+	///////////////////////
+	
+         class Util_tLogRow_1 {
 
-					int[] colLengths = new int[2];
+        String[] des_top = { ".", ".", "-", "+" };
 
-					public void addRow(String[] row) {
+        String[] des_head = { "|=", "=|", "-", "+" };
 
-						for (int i = 0; i < 2; i++) {
-							if (row[i] != null) {
-								colLengths[i] = Math.max(colLengths[i], row[i].length());
-							}
-						}
-						list.add(row);
-					}
+        String[] des_bottom = { "'", "'", "-", "+" };
 
-					public void setTableName(String name) {
+        String name="";
 
-						this.name = name;
-					}
+        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
 
-					public StringBuilder format() {
+        int[] colLengths = new int[2];
 
-						StringBuilder sb = new StringBuilder();
+        public void addRow(String[] row) {
 
-						sb.append(print(des_top));
+            for (int i = 0; i < 2; i++) {
+                if (row[i]!=null) {
+                  colLengths[i] = Math.max(colLengths[i], row[i].length());
+                }
+            }
+            list.add(row);
+        }
 
-						int totals = 0;
-						for (int i = 0; i < colLengths.length; i++) {
-							totals = totals + colLengths[i];
-						}
+        public void setTableName(String name) {
 
-						// name
-						sb.append("|");
-						int k = 0;
-						for (k = 0; k < (totals + 1 - name.length()) / 2; k++) {
-							sb.append(' ');
-						}
-						sb.append(name);
-						for (int i = 0; i < totals + 1 - name.length() - k; i++) {
-							sb.append(' ');
-						}
-						sb.append("|\n");
+            this.name = name;
+        }
 
-						// head and rows
-						sb.append(print(des_head));
-						for (int i = 0; i < list.size(); i++) {
+            public StringBuilder format() {
+            
+                StringBuilder sb = new StringBuilder();
+  
+            
+                    sb.append(print(des_top));
+    
+                    int totals = 0;
+                    for (int i = 0; i < colLengths.length; i++) {
+                        totals = totals + colLengths[i];
+                    }
+    
+                    // name
+                    sb.append("|");
+                    int k = 0;
+                    for (k = 0; k < (totals + 1 - name.length()) / 2; k++) {
+                        sb.append(' ');
+                    }
+                    sb.append(name);
+                    for (int i = 0; i < totals + 1 - name.length() - k; i++) {
+                        sb.append(' ');
+                    }
+                    sb.append("|\n");
 
-							String[] row = list.get(i);
+                    // head and rows
+                    sb.append(print(des_head));
+                    for (int i = 0; i < list.size(); i++) {
+    
+                        String[] row = list.get(i);
+    
+                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+                        
+                        StringBuilder sbformat = new StringBuilder();                                             
+        			        sbformat.append("|%1$-");
+        			        sbformat.append(colLengths[0]);
+        			        sbformat.append("s");
+        			              
+        			        sbformat.append("|%2$-");
+        			        sbformat.append(colLengths[1]);
+        			        sbformat.append("s");
+        			                      
+                        sbformat.append("|\n");                    
+       
+                        formatter.format(sbformat.toString(), (Object[])row);	
+                                
+                        sb.append(formatter.toString());
+                        if (i == 0)
+                            sb.append(print(des_head)); // print the head
+                    }
+    
+                    // end
+                    sb.append(print(des_bottom));
+                    return sb;
+                }
+            
 
-							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+            private StringBuilder print(String[] fillChars) {
+                StringBuilder sb = new StringBuilder();
+                //first column
+                sb.append(fillChars[0]);                
+                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+                        sb.append(fillChars[2]);
+                    }
+                    sb.append(fillChars[3]);	                
 
-							StringBuilder sbformat = new StringBuilder();
-							sbformat.append("|%1$-");
-							sbformat.append(colLengths[0]);
-							sbformat.append("s");
-
-							sbformat.append("|%2$-");
-							sbformat.append(colLengths[1]);
-							sbformat.append("s");
-
-							sbformat.append("|\n");
-
-							formatter.format(sbformat.toString(), (Object[]) row);
-
-							sb.append(formatter.toString());
-							if (i == 0)
-								sb.append(print(des_head)); // print the head
-						}
-
-						// end
-						sb.append(print(des_bottom));
-						return sb;
-					}
-
-					private StringBuilder print(String[] fillChars) {
-						StringBuilder sb = new StringBuilder();
-						// first column
-						sb.append(fillChars[0]);
-						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-							sb.append(fillChars[2]);
-						}
-						sb.append(fillChars[3]);
-
-						// last column
-						for (int i = 0; i < colLengths[1] - fillChars[1].length() + 1; i++) {
-							sb.append(fillChars[2]);
-						}
-						sb.append(fillChars[1]);
-						sb.append("\n");
-						return sb;
-					}
-
-					public boolean isTableEmpty() {
-						if (list.size() > 1)
-							return false;
-						return true;
-					}
-				}
-				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-				util_tLogRow_1.setTableName("tLogRow_1");
-				util_tLogRow_1.addRow(new String[] { "identifiant_organisation", "region", });
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
+                
+                    //last column
+                    for (int i = 0; i < colLengths[1] - fillChars[1].length() + 1; i++) {
+                        sb.append(fillChars[2]);
+                    }         
+                sb.append(fillChars[1]);
+                sb.append("\n");               
+                return sb;
+            }
+            
+            public boolean isTableEmpty(){
+            	if (list.size() > 1)
+            		return false;
+            	return true;
+            }
+        }
+        Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+        util_tLogRow_1.setTableName("tLogRow_1");
+        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","region",});        
+ 		StringBuilder strBuffer_tLogRow_1 = null;
+		int nb_line_tLogRow_1 = 0;
 ///////////////////////    			
 
-				/**
-				 * [tLogRow_1 begin ] stop
-				 */
 
-				/**
-				 * [tHDFSOutput_2 begin ] start
-				 */
 
-				ok_Hash.put("tHDFSOutput_2", false);
-				start_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
+ 
 
-				currentComponent = "tHDFSOutput_2";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+
+/**
+ * [tLogRow_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tHDFSOutput_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tHDFSOutput_2", false);
+		start_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tHDFSOutput_2";
+
+	
+		int tos_count_tHDFSOutput_2 = 0;
+		
+
+	
+
+
+String username_tHDFSOutput_2 = "";
+org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
+	org.apache.hadoop.conf.Configuration conf_tHDFSOutput_2 = new org.apache.hadoop.conf.Configuration();
+	
+	
+		conf_tHDFSOutput_2.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
+	
+	        conf_tHDFSOutput_2.set("dfs.client.use.datanode.hostname", "true");
+	        
+				conf_tHDFSOutput_2.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable);
+			
+				conf_tHDFSOutput_2.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy);
+			
+       org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSOutput_2);
+		username_tHDFSOutput_2 = context.HadoopHDFS_HdfsUser;
+		if(username_tHDFSOutput_2 == null || "".equals(username_tHDFSOutput_2)){
+			fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_2);
+		}else{
+			System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_2);
+			fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(new java.net.URI(conf_tHDFSOutput_2.get("fs.default.name")),conf_tHDFSOutput_2,username_tHDFSOutput_2);
+		}	
+	
+
+	
+	org.apache.hadoop.fs.Path path_tHDFSOutput_2 = new org.apache.hadoop.fs.Path(context.HadoopHDFS_SatisfactionFile);
+	int nb_line_tHDFSOutput_2 = 0;
+				
+		org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_2 = null;
+		
+			fsDataOutputStream_tHDFSOutput_2 = fs_tHDFSOutput_2.create(path_tHDFSOutput_2, true);
+		
+		
+			java.io.Writer outtHDFSOutput_2 = null;
+			outtHDFSOutput_2=new java.io.BufferedWriter(new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_2));
+		
+
+ 
+
+
+
+/**
+ * [tHDFSOutput_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tUniqRow_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tUniqRow_1", false);
+		start_Hash.put("tUniqRow_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tUniqRow_1";
+
+	
+		int tos_count_tUniqRow_1 = 0;
+		
+
+	
+		class KeyStruct_tUniqRow_1 {
+	
+			private static final int DEFAULT_HASHCODE = 1;
+		    private static final int PRIME = 31;
+		    private int hashCode = DEFAULT_HASHCODE;
+		    public boolean hashCodeDirty = true;
+	
+	        
+					String identifiant_organisation;        
+	        
+		    @Override
+			public int hashCode() {
+				if (this.hashCodeDirty) {
+					final int prime = PRIME;
+					int result = DEFAULT_HASHCODE;
+			
+								result = prime * result + ((this.identifiant_organisation == null) ? 0 : this.identifiant_organisation.hashCode());
+								
+		    		this.hashCode = result;
+		    		this.hashCodeDirty = false;		
 				}
+				return this.hashCode;
+			}
+			
+			@Override
+			public boolean equals(Object obj) {
+				if (this == obj) return true;
+				if (obj == null) return false;
+				if (getClass() != obj.getClass()) return false;
+				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
+				
+									if (this.identifiant_organisation == null) {
+										if (other.identifiant_organisation != null) 
+											return false;
+								
+									} else if (!this.identifiant_organisation.equals(other.identifiant_organisation))
+								 
+										return false;
+								
+				
+				return true;
+			}
+	  
+	        
+		}
 
-				int tos_count_tHDFSOutput_2 = 0;
+	
+int nb_uniques_tUniqRow_1 = 0;
+int nb_duplicates_tUniqRow_1 = 0;
+KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
 
-				String username_tHDFSOutput_2 = "";
-				org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
-				org.apache.hadoop.conf.Configuration conf_tHDFSOutput_2 = new org.apache.hadoop.conf.Configuration();
+ 
 
-				conf_tHDFSOutput_2.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
 
-				conf_tHDFSOutput_2.set("dfs.client.use.datanode.hostname", "true");
 
-				conf_tHDFSOutput_2.set("dfs.client.block.write.replace-datanode-on-failure.enable",
-						context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable);
+/**
+ * [tUniqRow_1 begin ] stop
+ */
 
-				conf_tHDFSOutput_2.set("dfs.client.block.write.replace-datanode-on-failure.policy",
-						context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy);
 
-				org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSOutput_2);
-				username_tHDFSOutput_2 = context.HadoopHDFS_HdfsUser;
-				if (username_tHDFSOutput_2 == null || "".equals(username_tHDFSOutput_2)) {
-					fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_2);
-				} else {
-					System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_2);
-					fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(
-							new java.net.URI(conf_tHDFSOutput_2.get("fs.default.name")), conf_tHDFSOutput_2,
-							username_tHDFSOutput_2);
-				}
 
-				org.apache.hadoop.fs.Path path_tHDFSOutput_2 = new org.apache.hadoop.fs.Path(
-						context.HadoopHDFS_SatisfactionFile);
-				int nb_line_tHDFSOutput_2 = 0;
+	
+	/**
+	 * [tMap_1 begin ] start
+	 */
 
-				org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_2 = null;
+	
 
-				fsDataOutputStream_tHDFSOutput_2 = fs_tHDFSOutput_2.create(path_tHDFSOutput_2, true);
+	
+		
+		ok_Hash.put("tMap_1", false);
+		start_Hash.put("tMap_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_1";
 
-				java.io.Writer outtHDFSOutput_2 = null;
-				outtHDFSOutput_2 = new java.io.BufferedWriter(
-						new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_2));
+	
+		int tos_count_tMap_1 = 0;
+		
 
-				/**
-				 * [tHDFSOutput_2 begin ] stop
-				 */
 
-				/**
-				 * [tUniqRow_1 begin ] start
-				 */
 
-				ok_Hash.put("tUniqRow_1", false);
-				start_Hash.put("tUniqRow_1", System.currentTimeMillis());
-
-				currentComponent = "tUniqRow_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "RegionFiness");
-				}
-
-				int tos_count_tUniqRow_1 = 0;
-
-				class KeyStruct_tUniqRow_1 {
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					String identifiant_organisation;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
-							result = prime * result + ((this.identifiant_organisation == null) ? 0
-									: this.identifiant_organisation.hashCode());
-
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
-					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
-
-						if (this.identifiant_organisation == null) {
-							if (other.identifiant_organisation != null)
-								return false;
-
-						} else if (!this.identifiant_organisation.equals(other.identifiant_organisation))
-
-							return false;
-
-						return true;
-					}
-
-				}
-
-				int nb_uniques_tUniqRow_1 = 0;
-				int nb_duplicates_tUniqRow_1 = 0;
-				KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-				java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>();
-
-				/**
-				 * [tUniqRow_1 begin ] stop
-				 */
-
-				/**
-				 * [tMap_1 begin ] start
-				 */
-
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
-
-				currentComponent = "tMap_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
-
-				int tos_count_tMap_1 = 0;
 
 // ###############################
 // # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) 
+					globalMap.get( "tHash_Lookup_row4" ))
+					;					
+					
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) globalMap
-						.get("tHash_Lookup_row4"));
-
-				row4Struct row4HashKey = new row4Struct();
-				row4Struct row4Default = new row4Struct();
+row4Struct row4HashKey = new row4Struct();
+row4Struct row4Default = new row4Struct();
 // ###############################        
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_1__Struct {
-					String UPCASE;
-					String TRIM;
-					String REPLACEHYPHEN;
-					String Final;
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+class  Var__tMap_1__Struct  {
+	String UPCASE;
+	String TRIM;
+	String REPLACEHYPHEN;
+	String Final;
+}
+Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				RegionFinessStruct RegionFiness_tmp = new RegionFinessStruct();
+RegionFinessStruct RegionFiness_tmp = new RegionFinessStruct();
 // ###############################
 
-				/**
-				 * [tMap_1 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tFileInputExcel_1 begin ] start
-				 */
 
-				ok_Hash.put("tFileInputExcel_1", false);
-				start_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
-				currentComponent = "tFileInputExcel_1";
+        
 
-				int tos_count_tFileInputExcel_1 = 0;
 
-				final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:++eGaarbV4hoM5eTjvvu1Zg0Wfr3AK+WoivwuA==");
-				String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
-				if (password_tFileInputExcel_1.isEmpty()) {
-					password_tFileInputExcel_1 = null;
-				}
-				Object source_tFileInputExcel_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatis48h-mco-open-data-2020.xlsx";
-				com.talend.excel.xssf.event.ExcelReader excelReader_tFileInputExcel_1 = null;
 
-				if (source_tFileInputExcel_1 instanceof java.io.InputStream
-						|| source_tFileInputExcel_1 instanceof String) {
-					excelReader_tFileInputExcel_1 = new com.talend.excel.xssf.event.ExcelReader();
-					excelReader_tFileInputExcel_1.setIncludePhoneticRuns(true);
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tFileInputExcel_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileInputExcel_1", false);
+		start_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+		int tos_count_tFileInputExcel_1 = 0;
+		
+
+ 
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Ko4AirdG/oKgwNc9Z/yDHbTPj0NJJWmHbxY74A==");
+        String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
+        if (password_tFileInputExcel_1.isEmpty()){
+            password_tFileInputExcel_1 = null;
+        }
+		Object source_tFileInputExcel_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatis48h-mco-open-data-2020.xlsx";
+		com.talend.excel.xssf.event.ExcelReader excelReader_tFileInputExcel_1 = null;
+
+		if(source_tFileInputExcel_1 instanceof java.io.InputStream || source_tFileInputExcel_1 instanceof String){
+			excelReader_tFileInputExcel_1 = new com.talend.excel.xssf.event.ExcelReader();
+			excelReader_tFileInputExcel_1.setIncludePhoneticRuns(true);
+		}else{
+			throw new java.lang.Exception("The data source should be specified as Inputstream or File Path!");
+		}
+
+		try {
+		excelReader_tFileInputExcel_1.addSheetName(".*",true);
+		int start_column_tFileInputExcel_1 = 1-1;
+		int end_column_tFileInputExcel_1 = -1;
+		if(start_column_tFileInputExcel_1 >=0) {//follow start column
+			
+				end_column_tFileInputExcel_1 = start_column_tFileInputExcel_1 + 25 - 1;
+			
+		} else if(end_column_tFileInputExcel_1 >= 0) {//follow end column
+			start_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 - 25 + 1;
+		}
+
+		if(end_column_tFileInputExcel_1<0 || start_column_tFileInputExcel_1<0) {
+			throw new RuntimeException("Error start column and end column.");
+		}
+		int actual_end_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 ;
+
+		int header_tFileInputExcel_1 = 1;
+		int limit_tFileInputExcel_1 = -1;
+
+		int nb_line_tFileInputExcel_1 = 0;
+
+		//for the number format
+        java.text.DecimalFormat df_tFileInputExcel_1 = new java.text.DecimalFormat("#.####################################");
+        char decimalChar_tFileInputExcel_1 = df_tFileInputExcel_1.getDecimalFormatSymbols().getDecimalSeparator();
+
+		if(source_tFileInputExcel_1 instanceof String){
+			excelReader_tFileInputExcel_1.parse((String)source_tFileInputExcel_1,"UTF-8", password_tFileInputExcel_1);
+		} else if(source_tFileInputExcel_1 instanceof java.io.InputStream) {
+			excelReader_tFileInputExcel_1.parse((java.io.InputStream)source_tFileInputExcel_1,"UTF-8", password_tFileInputExcel_1);
+		}
+		
+
+
+		while((header_tFileInputExcel_1--)>0 && excelReader_tFileInputExcel_1.hasNext()) {//skip the header
+			excelReader_tFileInputExcel_1.next();
+		}
+
+		
+		while(excelReader_tFileInputExcel_1.hasNext()) {
+			int emptyColumnCount_tFileInputExcel_1 = 0;
+
+			if (limit_tFileInputExcel_1 != -1 && nb_line_tFileInputExcel_1 >= limit_tFileInputExcel_1) {
+				excelReader_tFileInputExcel_1.stopRead();
+        		break;
+        	}
+
+        	java.util.List<String> row_tFileInputExcel_1 = excelReader_tFileInputExcel_1.next();
+		row1 = null;
+					int tempRowLength_tFileInputExcel_1 = 25;
+				
+				int columnIndex_tFileInputExcel_1 = 0;
+			
+					
+		String[] temp_row_tFileInputExcel_1 = new String[tempRowLength_tFileInputExcel_1];
+		
+		for(int i_tFileInputExcel_1=0;i_tFileInputExcel_1 < tempRowLength_tFileInputExcel_1;i_tFileInputExcel_1++){
+			int current_tFileInputExcel_1 = i_tFileInputExcel_1 + start_column_tFileInputExcel_1;
+			if(current_tFileInputExcel_1 <= actual_end_column_tFileInputExcel_1){
+				if(current_tFileInputExcel_1 < row_tFileInputExcel_1.size()){
+					String column_tFileInputExcel_1 = row_tFileInputExcel_1.get(current_tFileInputExcel_1);
+					if(column_tFileInputExcel_1!=null) {
+						temp_row_tFileInputExcel_1[i_tFileInputExcel_1] = column_tFileInputExcel_1;
+					} else {
+						temp_row_tFileInputExcel_1[i_tFileInputExcel_1]="";
+					}
 				} else {
-					throw new java.lang.Exception("The data source should be specified as Inputstream or File Path!");
+					temp_row_tFileInputExcel_1[i_tFileInputExcel_1]="";
 				}
+			} else {
+				temp_row_tFileInputExcel_1[i_tFileInputExcel_1]="";
+			}
+		}
 
-				try {
-					excelReader_tFileInputExcel_1.addSheetName(".*", true);
-					int start_column_tFileInputExcel_1 = 1 - 1;
-					int end_column_tFileInputExcel_1 = -1;
-					if (start_column_tFileInputExcel_1 >= 0) {// follow start column
+		boolean whetherReject_tFileInputExcel_1 = false;
+		row1 = new row1Struct();
+		int curColNum_tFileInputExcel_1 = -1;
+		String curColName_tFileInputExcel_1 = "";
 
-						end_column_tFileInputExcel_1 = start_column_tFileInputExcel_1 + 25 - 1;
-
-					} else if (end_column_tFileInputExcel_1 >= 0) {// follow end column
-						start_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 - 25 + 1;
-					}
-
-					if (end_column_tFileInputExcel_1 < 0 || start_column_tFileInputExcel_1 < 0) {
-						throw new RuntimeException("Error start column and end column.");
-					}
-					int actual_end_column_tFileInputExcel_1 = end_column_tFileInputExcel_1;
-
-					int header_tFileInputExcel_1 = 1;
-					int limit_tFileInputExcel_1 = -1;
-
-					int nb_line_tFileInputExcel_1 = 0;
-
-					// for the number format
-					java.text.DecimalFormat df_tFileInputExcel_1 = new java.text.DecimalFormat(
-							"#.####################################");
-					char decimalChar_tFileInputExcel_1 = df_tFileInputExcel_1.getDecimalFormatSymbols()
-							.getDecimalSeparator();
-
-					if (source_tFileInputExcel_1 instanceof String) {
-						excelReader_tFileInputExcel_1.parse((String) source_tFileInputExcel_1, "UTF-8",
-								password_tFileInputExcel_1);
-					} else if (source_tFileInputExcel_1 instanceof java.io.InputStream) {
-						excelReader_tFileInputExcel_1.parse((java.io.InputStream) source_tFileInputExcel_1, "UTF-8",
-								password_tFileInputExcel_1);
-					}
-
-					while ((header_tFileInputExcel_1--) > 0 && excelReader_tFileInputExcel_1.hasNext()) {// skip the
-																											// header
-						excelReader_tFileInputExcel_1.next();
-					}
-
-					while (excelReader_tFileInputExcel_1.hasNext()) {
-						int emptyColumnCount_tFileInputExcel_1 = 0;
-
-						if (limit_tFileInputExcel_1 != -1 && nb_line_tFileInputExcel_1 >= limit_tFileInputExcel_1) {
-							excelReader_tFileInputExcel_1.stopRead();
-							break;
-						}
-
-						java.util.List<String> row_tFileInputExcel_1 = excelReader_tFileInputExcel_1.next();
-						row1 = null;
-						int tempRowLength_tFileInputExcel_1 = 25;
-
-						int columnIndex_tFileInputExcel_1 = 0;
-
-						String[] temp_row_tFileInputExcel_1 = new String[tempRowLength_tFileInputExcel_1];
-
-						for (int i_tFileInputExcel_1 = 0; i_tFileInputExcel_1 < tempRowLength_tFileInputExcel_1; i_tFileInputExcel_1++) {
-							int current_tFileInputExcel_1 = i_tFileInputExcel_1 + start_column_tFileInputExcel_1;
-							if (current_tFileInputExcel_1 <= actual_end_column_tFileInputExcel_1) {
-								if (current_tFileInputExcel_1 < row_tFileInputExcel_1.size()) {
-									String column_tFileInputExcel_1 = row_tFileInputExcel_1
-											.get(current_tFileInputExcel_1);
-									if (column_tFileInputExcel_1 != null) {
-										temp_row_tFileInputExcel_1[i_tFileInputExcel_1] = column_tFileInputExcel_1;
-									} else {
-										temp_row_tFileInputExcel_1[i_tFileInputExcel_1] = "";
-									}
-								} else {
-									temp_row_tFileInputExcel_1[i_tFileInputExcel_1] = "";
-								}
-							} else {
-								temp_row_tFileInputExcel_1[i_tFileInputExcel_1] = "";
-							}
-						}
-
-						boolean whetherReject_tFileInputExcel_1 = false;
-						row1 = new row1Struct();
-						int curColNum_tFileInputExcel_1 = -1;
-						String curColName_tFileInputExcel_1 = "";
-
-						try {
+		try{
 							columnIndex_tFileInputExcel_1 = 0;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "finess";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "finess";
-
-								row1.finess = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.finess = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.finess = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.finess = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 1;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "rs_finess";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "rs_finess";
-
-								row1.rs_finess = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.rs_finess = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.rs_finess = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.rs_finess = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 2;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "finess_geo";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "finess_geo";
-
-								row1.finess_geo = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.finess_geo = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.finess_geo = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.finess_geo = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 3;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "rs_finess_geo";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "rs_finess_geo";
-
-								row1.rs_finess_geo = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.rs_finess_geo = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.rs_finess_geo = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.rs_finess_geo = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 4;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "region";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "region";
-
-								row1.region = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.region = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.region = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.region = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 5;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "participation";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "participation";
-
-								row1.participation = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.participation = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.participation = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.participation = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 6;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "Depot";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "Depot";
-
-								row1.Depot = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.Depot = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.Depot = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.Depot = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 7;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_all_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_all_rea_ajust";
-
-								row1.nb_rep_score_all_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_all_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_all_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_all_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 8;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_all_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_all_rea_ajust";
-
-								row1.score_all_rea_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.score_all_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_all_rea_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.score_all_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 9;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "classement";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "classement";
-
-								row1.classement = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.classement = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.classement = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.classement = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 10;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "evolution";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "evolution";
-
-								row1.evolution = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.evolution = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.evolution = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.evolution = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 11;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_accueil_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_accueil_rea_ajust";
-
-								row1.nb_rep_score_accueil_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_accueil_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_accueil_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_accueil_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 12;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_accueil_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_accueil_rea_ajust";
-
-								row1.score_accueil_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_accueil_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_accueil_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_accueil_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 13;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_PECinf_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_PECinf_rea_ajust";
-
-								row1.nb_rep_score_PECinf_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_PECinf_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_PECinf_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_PECinf_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 14;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_PECinf_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_PECinf_rea_ajust";
-
-								row1.score_PECinf_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_PECinf_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_PECinf_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_PECinf_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 15;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_PECmed_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_PECmed_rea_ajust";
-
-								row1.nb_rep_score_PECmed_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_PECmed_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_PECmed_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_PECmed_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 16;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_PECmed_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_PECmed_rea_ajust";
-
-								row1.score_PECmed_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_PECmed_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_PECmed_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_PECmed_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 17;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_chambre_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_chambre_rea_ajust";
-
-								row1.nb_rep_score_chambre_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_chambre_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_chambre_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_chambre_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 18;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_chambre_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_chambre_rea_ajust";
-
-								row1.score_chambre_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_chambre_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_chambre_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_chambre_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 19;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_repas_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_repas_rea_ajust";
-
-								row1.nb_rep_score_repas_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_repas_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_repas_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_repas_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 20;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_repas_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_repas_rea_ajust";
-
-								row1.score_repas_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_repas_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_repas_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_repas_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 21;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_rep_score_sortie_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_sortie_rea_ajust";
-
-								row1.nb_rep_score_sortie_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
-										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-												'.' == decimalChar_tFileInputExcel_1 ? null
-														: decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_rep_score_sortie_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.nb_rep_score_sortie_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_rep_score_sortie_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 22;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "score_sortie_rea_ajust";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_sortie_rea_ajust";
-
-								row1.score_sortie_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.score_sortie_rea_ajust = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.score_sortie_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.score_sortie_rea_ajust = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 23;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "taux_reco_brut";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "taux_reco_brut";
-
-								row1.taux_reco_brut = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
-							} else {
-								row1.taux_reco_brut = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
+				row1.taux_reco_brut = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+			}else{
+				row1.taux_reco_brut = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
 							columnIndex_tFileInputExcel_1 = 24;
+						
+			if( temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+				curColNum_tFileInputExcel_1=columnIndex_tFileInputExcel_1 + start_column_tFileInputExcel_1 + 1;
+				curColName_tFileInputExcel_1 = "nb_reco_brut";
 
-							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
-								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
-										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_reco_brut";
+				row1.nb_reco_brut = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null, '.'==decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+			}else{
+				row1.nb_reco_brut = null;
+				emptyColumnCount_tFileInputExcel_1++;
+			}
+			nb_line_tFileInputExcel_1++;
+			
+		} catch(java.lang.Exception e) {
+			whetherReject_tFileInputExcel_1 = true;
+					 System.err.println(e.getMessage());
+					 row1 = null;
+			}
 
-								row1.nb_reco_brut = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
-							} else {
-								row1.nb_reco_brut = null;
-								emptyColumnCount_tFileInputExcel_1++;
-							}
-							nb_line_tFileInputExcel_1++;
+        		
 
-						} catch (java.lang.Exception e) {
-							whetherReject_tFileInputExcel_1 = true;
-							System.err.println(e.getMessage());
-							row1 = null;
-						}
 
-						/**
-						 * [tFileInputExcel_1 begin ] stop
-						 */
 
-						/**
-						 * [tFileInputExcel_1 main ] start
-						 */
 
-						currentComponent = "tFileInputExcel_1";
+ 
 
-						tos_count_tFileInputExcel_1++;
 
-						/**
-						 * [tFileInputExcel_1 main ] stop
-						 */
 
-						/**
-						 * [tFileInputExcel_1 process_data_begin ] start
-						 */
+/**
+ * [tFileInputExcel_1 begin ] stop
+ */
+	
+	/**
+	 * [tFileInputExcel_1 main ] start
+	 */
 
-						currentComponent = "tFileInputExcel_1";
+	
 
-						/**
-						 * [tFileInputExcel_1 process_data_begin ] stop
-						 */
+	
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+
+ 
+
+
+	tos_count_tFileInputExcel_1++;
+
+/**
+ * [tFileInputExcel_1 main ] stop
+ */
+	
+	/**
+	 * [tFileInputExcel_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputExcel_1 process_data_begin ] stop
+ */
 // Start of branch "row1"
-						if (row1 != null) {
+if(row1 != null) { 
 
-							/**
-							 * [tMap_1 main ] start
-							 */
 
-							currentComponent = "tMap_1";
 
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
-							}
+	
+	/**
+	 * [tMap_1 main ] start
+	 */
 
-							boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+	
 
-							// ###############################
-							// # Input tables (lookups)
-							boolean rejectedInnerJoin_tMap_1 = false;
-							boolean mainRowRejected_tMap_1 = false;
+	
+	
+	currentComponent="tMap_1";
 
-							///////////////////////////////////////////////
-							// Starting Lookup Table "row4"
-							///////////////////////////////////////////////
+	
 
-							boolean forceLooprow4 = false;
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_1 = false;
+		  boolean mainRowRejected_tMap_1 = false;
+            				    								  
+		
 
-							row4Struct row4ObjectFromLookup = null;
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row4" 
+				///////////////////////////////////////////////
 
-							if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
 
+				
+				
+                            
+ 					    boolean forceLooprow4 = false;
+       		  	    	
+       		  	    	
+ 							row4Struct row4ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								
+                        		    		    row4HashKey.finess_etablissement_juridique = row1.finess ;
+                        		    		
 
-								row4HashKey.finess_etablissement_juridique = row1.finess;
+								
+		                        	row4HashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row4.lookup( row4HashKey );
 
-								row4HashKey.hashCodeDirty = true;
+	  							
 
-								tHash_Lookup_row4.lookup(row4HashKey);
+	  							
 
-								if (!tHash_Lookup_row4.hasNext()) { // G_TM_M_090
+ 								
+								  
+								  if(!tHash_Lookup_row4.hasNext()) { // G_TM_M_090
 
-									rejectedInnerJoin_tMap_1 = true;
+  								
+		  				
+	  								
+			  							rejectedInnerJoin_tMap_1 = true;
+	  								
+						
+									
+  									  		
+ 								
+								  
+								  } // G_TM_M_090
 
-								} // G_TM_M_090
+  								
+
+
 
 							} // G_TM_M_020
-
-							if (tHash_Lookup_row4 != null && tHash_Lookup_row4.getCount(row4HashKey) > 1) { // G 071
-
-								// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row4'
-								// and it contains more one result from keys :
-								// row4.finess_etablissement_juridique = '" +
-								// row4HashKey.finess_etablissement_juridique + "'");
-							} // G 071
+			           		  	  
+							
+				           		if(tHash_Lookup_row4 != null && tHash_Lookup_row4.getCount(row4HashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row4' and it contains more one result from keys :  row4.finess_etablissement_juridique = '" + row4HashKey.finess_etablissement_juridique + "'");
+								} // G 071
+							
 
 							row4Struct row4 = null;
-
-							row4Struct fromLookup_row4 = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row4Struct fromLookup_row4 = null;
 							row4 = row4Default;
-
-							if (tHash_Lookup_row4 != null && tHash_Lookup_row4.hasNext()) { // G 099
-
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_row4 !=null && tHash_Lookup_row4.hasNext()) { // G 099
+								
+							
+								
 								fromLookup_row4 = tHash_Lookup_row4.next();
 
-							} // G 099
+							
+							
+								} // G 099
+							
+							
 
-							if (fromLookup_row4 != null) {
+							if(fromLookup_row4 != null) {
 								row4 = fromLookup_row4;
 							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	            	
+	            // ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_1__Struct Var = Var__tMap_1;
+Var.UPCASE = StringHandling.UPCASE(TalendString.removeAccents(((Relational.ISNULL(row1.region))?"":row1.region))) ;
+Var.TRIM = StringHandling.TRIM(Var.UPCASE) ;
+Var.REPLACEHYPHEN = StringHandling.EREPLACE(Var.TRIM,"-"," ") ;
+Var.Final = StringHandling.EREPLACE(Var.REPLACEHYPHEN,"PACA","PROVENCE ALPES COTE D'AZUR") ;// ###############################
+        // ###############################
+        // # Output tables
 
-							// ###############################
-							{ // start of Var scope
+RegionFiness = null;
 
-								// ###############################
-								// # Vars tables
-
-								Var__tMap_1__Struct Var = Var__tMap_1;
-								Var.UPCASE = StringHandling.UPCASE(TalendString
-										.removeAccents(((Relational.ISNULL(row1.region)) ? "" : row1.region)));
-								Var.TRIM = StringHandling.TRIM(Var.UPCASE);
-								Var.REPLACEHYPHEN = StringHandling.EREPLACE(Var.TRIM, "-", " ");
-								Var.Final = StringHandling.EREPLACE(Var.REPLACEHYPHEN, "PACA",
-										"PROVENCE ALPES COTE D'AZUR");// ###############################
-								// ###############################
-								// # Output tables
-
-								RegionFiness = null;
-
-								if (!rejectedInnerJoin_tMap_1) {
+if(!rejectedInnerJoin_tMap_1 ) {
 
 // # Output table : 'RegionFiness'
 // # Filter conditions 
-									if (
+if( 
 
-									Relational.NOT(Relational.ISNULL(row1.region))
+Relational.NOT(Relational.ISNULL(row1.region))
 
-									) {
-										RegionFiness_tmp.identifiant_organisation = row4.identifiant_organisation;
-										RegionFiness_tmp.region = Var.Final;
-										RegionFiness = RegionFiness_tmp;
-									} // closing filter/reject
-								} // closing inner join bracket (2)
+ ) {
+RegionFiness_tmp.identifiant_organisation = row4.identifiant_organisation ;
+RegionFiness_tmp.region = Var.Final;
+RegionFiness = RegionFiness_tmp;
+} // closing filter/reject
+}  // closing inner join bracket (2)
 // ###############################
 
-							} // end of Var scope
+} // end of Var scope
 
-							rejectedInnerJoin_tMap_1 = false;
+rejectedInnerJoin_tMap_1 = false;
 
-							tos_count_tMap_1++;
 
-							/**
-							 * [tMap_1 main ] stop
-							 */
 
-							/**
-							 * [tMap_1 process_data_begin ] start
-							 */
 
-							currentComponent = "tMap_1";
 
-							/**
-							 * [tMap_1 process_data_begin ] stop
-							 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_1++;
+
+/**
+ * [tMap_1 main ] stop
+ */
+	
+	/**
+	 * [tMap_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_begin ] stop
+ */
 // Start of branch "RegionFiness"
-							if (RegionFiness != null) {
+if(RegionFiness != null) { 
 
-								/**
-								 * [tUniqRow_1 main ] start
-								 */
 
-								currentComponent = "tUniqRow_1";
 
-								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "RegionFiness");
-								}
+	
+	/**
+	 * [tUniqRow_1 main ] start
+	 */
 
-								row3 = null;
-								if (RegionFiness.identifiant_organisation == null) {
-									finder_tUniqRow_1.identifiant_organisation = null;
-								} else {
-									finder_tUniqRow_1.identifiant_organisation = RegionFiness.identifiant_organisation
-											.toLowerCase();
-								}
-								finder_tUniqRow_1.hashCodeDirty = true;
-								if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-									KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+	
 
-									if (RegionFiness.identifiant_organisation == null) {
-										new_tUniqRow_1.identifiant_organisation = null;
-									} else {
-										new_tUniqRow_1.identifiant_organisation = RegionFiness.identifiant_organisation
-												.toLowerCase();
-									}
+	
+	
+	currentComponent="tUniqRow_1";
 
-									keystUniqRow_1.add(new_tUniqRow_1);
-									if (row3 == null) {
+	
+row3 = null;			
+if(RegionFiness.identifiant_organisation == null){
+	finder_tUniqRow_1.identifiant_organisation = null;
+}else{
+	finder_tUniqRow_1.identifiant_organisation = RegionFiness.identifiant_organisation.toLowerCase();
+}	
+finder_tUniqRow_1.hashCodeDirty = true;
+if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
 
-										row3 = new row3Struct();
-									}
-									row3.identifiant_organisation = RegionFiness.identifiant_organisation;
-									row3.region = RegionFiness.region;
-									nb_uniques_tUniqRow_1++;
-								} else {
-									nb_duplicates_tUniqRow_1++;
-								}
+		
+if(RegionFiness.identifiant_organisation == null){
+	new_tUniqRow_1.identifiant_organisation = null;
+}else{
+	new_tUniqRow_1.identifiant_organisation = RegionFiness.identifiant_organisation.toLowerCase();
+}
+		
+		keystUniqRow_1.add(new_tUniqRow_1);if(row3 == null){ 
+	
+	row3 = new row3Struct();
+}row3.identifiant_organisation = RegionFiness.identifiant_organisation;			row3.region = RegionFiness.region;					
+		nb_uniques_tUniqRow_1++;
+	} else {
+	  nb_duplicates_tUniqRow_1++;
+	}
 
-								tos_count_tUniqRow_1++;
+ 
 
-								/**
-								 * [tUniqRow_1 main ] stop
-								 */
 
-								/**
-								 * [tUniqRow_1 process_data_begin ] start
-								 */
+	tos_count_tUniqRow_1++;
 
-								currentComponent = "tUniqRow_1";
+/**
+ * [tUniqRow_1 main ] stop
+ */
+	
+	/**
+	 * [tUniqRow_1 process_data_begin ] start
+	 */
 
-								/**
-								 * [tUniqRow_1 process_data_begin ] stop
-								 */
+	
+
+	
+	
+	currentComponent="tUniqRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tUniqRow_1 process_data_begin ] stop
+ */
 // Start of branch "row3"
-								if (row3 != null) {
+if(row3 != null) { 
 
-									/**
-									 * [tHDFSOutput_2 main ] start
-									 */
 
-									currentComponent = "tHDFSOutput_2";
 
-									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
-									}
+	
+	/**
+	 * [tHDFSOutput_2 main ] start
+	 */
 
-									StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
+	
 
-									if (row3.identifiant_organisation != null) {
+	
+	
+	currentComponent="tHDFSOutput_2";
 
-										sb_tHDFSOutput_2.append(
+	
 
-												row3.identifiant_organisation
+	
+					StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
+					
+					
+								if(row3.identifiant_organisation != null) {
+							
+									sb_tHDFSOutput_2.append(
+										
+											row3.identifiant_organisation
+										
+									);
+							
+								}
+												
+								sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
+							
+								if(row3.region != null) {
+							
+									sb_tHDFSOutput_2.append(
+										
+											row3.region
+										
+									);
+							
+								}
+							
+					sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsRowSeparator);
+					
+						outtHDFSOutput_2.write(sb_tHDFSOutput_2.toString());
+					
+				nb_line_tHDFSOutput_2++;
+				
 
-										);
+	
+ 
+     row2 = row3;
 
-									}
 
-									sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
+	tos_count_tHDFSOutput_2++;
 
-									if (row3.region != null) {
+/**
+ * [tHDFSOutput_2 main ] stop
+ */
+	
+	/**
+	 * [tHDFSOutput_2 process_data_begin ] start
+	 */
 
-										sb_tHDFSOutput_2.append(
+	
 
-												row3.region
+	
+	
+	currentComponent="tHDFSOutput_2";
 
-										);
+	
 
-									}
+ 
 
-									sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsRowSeparator);
 
-									outtHDFSOutput_2.write(sb_tHDFSOutput_2.toString());
 
-									nb_line_tHDFSOutput_2++;
+/**
+ * [tHDFSOutput_2 process_data_begin ] stop
+ */
 
-									row2 = row3;
+	
+	/**
+	 * [tLogRow_1 main ] start
+	 */
 
-									tos_count_tHDFSOutput_2++;
+	
 
-									/**
-									 * [tHDFSOutput_2 main ] stop
-									 */
+	
+	
+	currentComponent="tLogRow_1";
 
-									/**
-									 * [tHDFSOutput_2 process_data_begin ] start
-									 */
-
-									currentComponent = "tHDFSOutput_2";
-
-									/**
-									 * [tHDFSOutput_2 process_data_begin ] stop
-									 */
-
-									/**
-									 * [tLogRow_1 main ] start
-									 */
-
-									currentComponent = "tLogRow_1";
-
-									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
-									}
-
+	
 ///////////////////////		
+						
 
-									String[] row_tLogRow_1 = new String[2];
+				
+				String[] row_tLogRow_1 = new String[2];
+   				
+	    		if(row2.identifiant_organisation != null) { //              
+                 row_tLogRow_1[0]=    						    
+				                String.valueOf(row2.identifiant_organisation)			
+					          ;	
+							
+	    		} //			
+    			   				
+	    		if(row2.region != null) { //              
+                 row_tLogRow_1[1]=    						    
+				                String.valueOf(row2.region)			
+					          ;	
+							
+	    		} //			
+    			 
 
-									if (row2.identifiant_organisation != null) { //
-										row_tLogRow_1[0] = String.valueOf(row2.identifiant_organisation);
-
-									} //
-
-									if (row2.region != null) { //
-										row_tLogRow_1[1] = String.valueOf(row2.region);
-
-									} //
-
-									util_tLogRow_1.addRow(row_tLogRow_1);
-									nb_line_tLogRow_1++;
+				util_tLogRow_1.addRow(row_tLogRow_1);	
+				nb_line_tLogRow_1++;
 //////
 
 //////                    
-
+                    
 ///////////////////////    			
 
-									tos_count_tLogRow_1++;
+ 
 
-									/**
-									 * [tLogRow_1 main ] stop
-									 */
 
-									/**
-									 * [tLogRow_1 process_data_begin ] start
-									 */
+	tos_count_tLogRow_1++;
 
-									currentComponent = "tLogRow_1";
+/**
+ * [tLogRow_1 main ] stop
+ */
+	
+	/**
+	 * [tLogRow_1 process_data_begin ] start
+	 */
 
-									/**
-									 * [tLogRow_1 process_data_begin ] stop
-									 */
+	
 
-									/**
-									 * [tLogRow_1 process_data_end ] start
-									 */
+	
+	
+	currentComponent="tLogRow_1";
 
-									currentComponent = "tLogRow_1";
+	
 
-									/**
-									 * [tLogRow_1 process_data_end ] stop
-									 */
+ 
 
-									/**
-									 * [tHDFSOutput_2 process_data_end ] start
-									 */
 
-									currentComponent = "tHDFSOutput_2";
 
-									/**
-									 * [tHDFSOutput_2 process_data_end ] stop
-									 */
+/**
+ * [tLogRow_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tLogRow_1 process_data_end ] start
+	 */
 
-								} // End of branch "row3"
+	
 
-								/**
-								 * [tUniqRow_1 process_data_end ] start
-								 */
+	
+	
+	currentComponent="tLogRow_1";
 
-								currentComponent = "tUniqRow_1";
+	
 
-								/**
-								 * [tUniqRow_1 process_data_end ] stop
-								 */
+ 
 
-							} // End of branch "RegionFiness"
 
-							/**
-							 * [tMap_1 process_data_end ] start
-							 */
 
-							currentComponent = "tMap_1";
+/**
+ * [tLogRow_1 process_data_end ] stop
+ */
 
-							/**
-							 * [tMap_1 process_data_end ] stop
-							 */
 
-						} // End of branch "row1"
 
-						/**
-						 * [tFileInputExcel_1 process_data_end ] start
-						 */
+	
+	/**
+	 * [tHDFSOutput_2 process_data_end ] start
+	 */
 
-						currentComponent = "tFileInputExcel_1";
+	
 
-						/**
-						 * [tFileInputExcel_1 process_data_end ] stop
-						 */
+	
+	
+	currentComponent="tHDFSOutput_2";
 
-						/**
-						 * [tFileInputExcel_1 end ] start
-						 */
+	
 
-						currentComponent = "tFileInputExcel_1";
+ 
 
-					}
 
-					try {
-						if (excelReader_tFileInputExcel_1 != null) {
-							excelReader_tFileInputExcel_1.handleException();
-						}
-					} catch (java.lang.Exception e_tFileInputExcel_1) {
-						if (!(e_tFileInputExcel_1
-								.getCause() instanceof com.talend.excel.xssf.event.EnoughDataException)) {
 
-							System.err.println(e_tFileInputExcel_1.getMessage());
+/**
+ * [tHDFSOutput_2 process_data_end ] stop
+ */
 
-						}
-					}
+} // End of branch "row3"
 
-					globalMap.put("tFileInputExcel_1_NB_LINE", nb_line_tFileInputExcel_1);
 
-				} finally {
 
+
+	
+	/**
+	 * [tUniqRow_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tUniqRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tUniqRow_1 process_data_end ] stop
+ */
+
+} // End of branch "RegionFiness"
+
+
+
+
+	
+	/**
+	 * [tMap_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_end ] stop
+ */
+
+} // End of branch "row1"
+
+
+
+
+	
+	/**
+	 * [tFileInputExcel_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputExcel_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tFileInputExcel_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+
+			}
+			
+			try {
+				if(excelReader_tFileInputExcel_1!=null) {
+					excelReader_tFileInputExcel_1.handleException();
 				}
+			} catch(java.lang.Exception e_tFileInputExcel_1) {
+				if(!(e_tFileInputExcel_1.getCause() instanceof com.talend.excel.xssf.event.EnoughDataException)) {
+				
+					
+				System.err.println(e_tFileInputExcel_1.getMessage());	
+				
+				}
+			}
+			
+			
+			
+			globalMap.put("tFileInputExcel_1_NB_LINE",nb_line_tFileInputExcel_1);
+			
+		} finally { 
+				
+		}	
+		
+ 
 
-				ok_Hash.put("tFileInputExcel_1", true);
-				end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
+ok_Hash.put("tFileInputExcel_1", true);
+end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
-				/**
-				 * [tFileInputExcel_1 end ] stop
-				 */
 
-				/**
-				 * [tMap_1 end ] start
-				 */
 
-				currentComponent = "tMap_1";
+
+/**
+ * [tFileInputExcel_1 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
-				if (tHash_Lookup_row4 != null) {
-					tHash_Lookup_row4.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row4");
+					if(tHash_Lookup_row4 != null) {
+						tHash_Lookup_row4.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row4" );
 
+					
+					
+				
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
 
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				/**
-				 * [tMap_1 end ] stop
-				 */
 
-				/**
-				 * [tUniqRow_1 end ] start
-				 */
 
-				currentComponent = "tUniqRow_1";
+ 
 
-				globalMap.put("tUniqRow_1_NB_UNIQUES", nb_uniques_tUniqRow_1);
-				globalMap.put("tUniqRow_1_NB_DUPLICATES", nb_duplicates_tUniqRow_1);
+ok_Hash.put("tMap_1", true);
+end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "RegionFiness");
-				}
 
-				ok_Hash.put("tUniqRow_1", true);
-				end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
-				/**
-				 * [tUniqRow_1 end ] stop
-				 */
 
-				/**
-				 * [tHDFSOutput_2 end ] start
-				 */
+/**
+ * [tMap_1 end ] stop
+ */
 
-				currentComponent = "tHDFSOutput_2";
+	
+	/**
+	 * [tUniqRow_1 end ] start
+	 */
 
-				if (outtHDFSOutput_2 != null) {
-					outtHDFSOutput_2.close();
-				}
+	
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
-				}
+	
+	
+	currentComponent="tUniqRow_1";
 
-				ok_Hash.put("tHDFSOutput_2", true);
-				end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
+	
 
-				/**
-				 * [tHDFSOutput_2 end ] stop
-				 */
+globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
+globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
 
-				/**
-				 * [tLogRow_1 end ] start
-				 */
+ 
 
-				currentComponent = "tLogRow_1";
+ok_Hash.put("tUniqRow_1", true);
+end_Hash.put("tUniqRow_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tUniqRow_1 end ] stop
+ */
+
+	
+	/**
+	 * [tHDFSOutput_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSOutput_2";
+
+	
+
+
+		if(outtHDFSOutput_2!=null){
+			outtHDFSOutput_2.close();
+		}
+
+	
+ 
+
+ok_Hash.put("tHDFSOutput_2", true);
+end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tHDFSOutput_2 end ] stop
+ */
+
+	
+	/**
+	 * [tLogRow_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tLogRow_1";
+
+	
+
 
 //////
 
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
-				if (globalMap.get("tLogRow_CONSOLE") != null) {
-					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-				} else {
-					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-				}
-
-				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-				consoleOut_tLogRow_1.flush();
+                    
+                    java.io.PrintStream consoleOut_tLogRow_1 = null;
+                    if (globalMap.get("tLogRow_CONSOLE")!=null)
+                    {
+                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+                    }
+                    else
+                    {
+                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
+                    }
+                    
+                    consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
+                    consoleOut_tLogRow_1.flush();
 //////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
 
 ///////////////////////    			
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
+ 
+
+ok_Hash.put("tLogRow_1", true);
+end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tLogRow_1 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+				throw error;
+			}finally{
+				
+					     			//free memory for "tMap_1"
+					     			globalMap.remove("tHash_Lookup_row4"); 
+				     			
+				try{
+					
+	
+	/**
+	 * [tFileInputExcel_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputExcel_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputExcel_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tUniqRow_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tUniqRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tUniqRow_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tHDFSOutput_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSOutput_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tLogRow_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tLogRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tLogRow_1 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
 				}
-
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				/**
-				 * [tLogRow_1 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row4");
-
-			try {
-
-				/**
-				 * [tFileInputExcel_1 finally ] start
-				 */
-
-				currentComponent = "tFileInputExcel_1";
-
-				/**
-				 * [tFileInputExcel_1 finally ] stop
-				 */
-
-				/**
-				 * [tMap_1 finally ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-				/**
-				 * [tMap_1 finally ] stop
-				 */
-
-				/**
-				 * [tUniqRow_1 finally ] start
-				 */
-
-				currentComponent = "tUniqRow_1";
-
-				/**
-				 * [tUniqRow_1 finally ] stop
-				 */
-
-				/**
-				 * [tHDFSOutput_2 finally ] start
-				 */
-
-				currentComponent = "tHDFSOutput_2";
-
-				/**
-				 * [tHDFSOutput_2 finally ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 finally ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-				/**
-				 * [tLogRow_1 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
+				resourceMap = null;
 			}
-			resourceMap = null;
-		}
+		
 
 		globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public static class row4Struct implements routines.system.IPersistableComparableLookupRow<row4Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
 
-		public String loopKey;
+public static class row4Struct implements routines.system.IPersistableComparableLookupRow<row4Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
 
-		public String adresse;
+    public String loopKey;
 
-		public String getAdresse() {
-			return this.adresse;
-		}
 
-		public String cedex;
 
-		public String getCedex() {
-			return this.cedex;
-		}
+	
+			    public String adresse;
 
-		public String code_commune;
-
-		public String getCode_commune() {
-			return this.code_commune;
-		}
-
-		public String code_postal;
-
-		public String getCode_postal() {
-			return this.code_postal;
-		}
-
-		public String commune;
-
-		public String getCommune() {
-			return this.commune;
-		}
-
-		public String complement_destinataire;
-
-		public String getComplement_destinataire() {
-			return this.complement_destinataire;
-		}
-
-		public String complement_point_geographique;
-
-		public String getComplement_point_geographique() {
-			return this.complement_point_geographique;
-		}
-
-		public String email;
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public String enseigne_commerciale_site;
-
-		public String getEnseigne_commerciale_site() {
-			return this.enseigne_commerciale_site;
-		}
-
-		public String finess_etablissement_juridique;
-
-		public String getFiness_etablissement_juridique() {
-			return this.finess_etablissement_juridique;
-		}
-
-		public String finess_site;
-
-		public String getFiness_site() {
-			return this.finess_site;
-		}
-
-		public String identifiant_organisation;
-
-		public String getIdentifiant_organisation() {
-			return this.identifiant_organisation;
-		}
-
-		public String indice_repetition_voie;
-
-		public String getIndice_repetition_voie() {
-			return this.indice_repetition_voie;
-		}
-
-		public String mention_distribution;
-
-		public String getMention_distribution() {
-			return this.mention_distribution;
-		}
-
-		public String numero_voie;
-
-		public String getNumero_voie() {
-			return this.numero_voie;
-		}
-
-		public String pays;
-
-		public String getPays() {
-			return this.pays;
-		}
-
-		public String raison_sociale_site;
-
-		public String getRaison_sociale_site() {
-			return this.raison_sociale_site;
-		}
-
-		public String siren_site;
-
-		public String getSiren_site() {
-			return this.siren_site;
-		}
-
-		public String siret_site;
-
-		public String getSiret_site() {
-			return this.siret_site;
-		}
-
-		public String telecopie;
-
-		public String getTelecopie() {
-			return this.telecopie;
-		}
-
-		public String telephone;
-
-		public String getTelephone() {
-			return this.telephone;
-		}
-
-		public String telephone_2;
-
-		public String getTelephone_2() {
-			return this.telephone_2;
-		}
-
-		public String type_voie;
-
-		public String getType_voie() {
-			return this.type_voie;
-		}
-
-		public String voie;
-
-		public String getVoie() {
-			return this.voie;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.finess_etablissement_juridique == null) ? 0
-						: this.finess_etablissement_juridique.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row4Struct other = (row4Struct) obj;
-
-			if (this.finess_etablissement_juridique == null) {
-				if (other.finess_etablissement_juridique != null)
-					return false;
-
-			} else if (!this.finess_etablissement_juridique.equals(other.finess_etablissement_juridique))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row4Struct other) {
-
-			other.adresse = this.adresse;
-			other.cedex = this.cedex;
-			other.code_commune = this.code_commune;
-			other.code_postal = this.code_postal;
-			other.commune = this.commune;
-			other.complement_destinataire = this.complement_destinataire;
-			other.complement_point_geographique = this.complement_point_geographique;
-			other.email = this.email;
-			other.enseigne_commerciale_site = this.enseigne_commerciale_site;
-			other.finess_etablissement_juridique = this.finess_etablissement_juridique;
-			other.finess_site = this.finess_site;
-			other.identifiant_organisation = this.identifiant_organisation;
-			other.indice_repetition_voie = this.indice_repetition_voie;
-			other.mention_distribution = this.mention_distribution;
-			other.numero_voie = this.numero_voie;
-			other.pays = this.pays;
-			other.raison_sociale_site = this.raison_sociale_site;
-			other.siren_site = this.siren_site;
-			other.siret_site = this.siret_site;
-			other.telecopie = this.telecopie;
-			other.telephone = this.telephone;
-			other.telephone_2 = this.telephone_2;
-			other.type_voie = this.type_voie;
-			other.voie = this.voie;
-
-		}
-
-		public void copyKeysDataTo(row4Struct other) {
-
-			other.finess_etablissement_juridique = this.finess_etablissement_juridique;
-
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-					}
+				public String getAdresse () {
+					return this.adresse;
 				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+				
+			    public String cedex;
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-				try {
-
-					int length = 0;
-
-					this.finess_etablissement_juridique = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
+				public String getCedex () {
+					return this.cedex;
 				}
+				
+			    public String code_commune;
 
-			}
+				public String getCode_commune () {
+					return this.code_commune;
+				}
+				
+			    public String code_postal;
 
+				public String getCode_postal () {
+					return this.code_postal;
+				}
+				
+			    public String commune;
+
+				public String getCommune () {
+					return this.commune;
+				}
+				
+			    public String complement_destinataire;
+
+				public String getComplement_destinataire () {
+					return this.complement_destinataire;
+				}
+				
+			    public String complement_point_geographique;
+
+				public String getComplement_point_geographique () {
+					return this.complement_point_geographique;
+				}
+				
+			    public String email;
+
+				public String getEmail () {
+					return this.email;
+				}
+				
+			    public String enseigne_commerciale_site;
+
+				public String getEnseigne_commerciale_site () {
+					return this.enseigne_commerciale_site;
+				}
+				
+			    public String finess_etablissement_juridique;
+
+				public String getFiness_etablissement_juridique () {
+					return this.finess_etablissement_juridique;
+				}
+				
+			    public String finess_site;
+
+				public String getFiness_site () {
+					return this.finess_site;
+				}
+				
+			    public String identifiant_organisation;
+
+				public String getIdentifiant_organisation () {
+					return this.identifiant_organisation;
+				}
+				
+			    public String indice_repetition_voie;
+
+				public String getIndice_repetition_voie () {
+					return this.indice_repetition_voie;
+				}
+				
+			    public String mention_distribution;
+
+				public String getMention_distribution () {
+					return this.mention_distribution;
+				}
+				
+			    public String numero_voie;
+
+				public String getNumero_voie () {
+					return this.numero_voie;
+				}
+				
+			    public String pays;
+
+				public String getPays () {
+					return this.pays;
+				}
+				
+			    public String raison_sociale_site;
+
+				public String getRaison_sociale_site () {
+					return this.raison_sociale_site;
+				}
+				
+			    public String siren_site;
+
+				public String getSiren_site () {
+					return this.siren_site;
+				}
+				
+			    public String siret_site;
+
+				public String getSiret_site () {
+					return this.siret_site;
+				}
+				
+			    public String telecopie;
+
+				public String getTelecopie () {
+					return this.telecopie;
+				}
+				
+			    public String telephone;
+
+				public String getTelephone () {
+					return this.telephone;
+				}
+				
+			    public String telephone_2;
+
+				public String getTelephone_2 () {
+					return this.telephone_2;
+				}
+				
+			    public String type_voie;
+
+				public String getType_voie () {
+					return this.type_voie;
+				}
+				
+			    public String voie;
+
+				public String getVoie () {
+					return this.voie;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.finess_etablissement_juridique == null) ? 0 : this.finess_etablissement_juridique.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.finess_etablissement_juridique, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.adresse = readString(dis, ois);
-
-				this.cedex = readString(dis, ois);
-
-				this.code_commune = readString(dis, ois);
-
-				this.code_postal = readString(dis, ois);
-
-				this.commune = readString(dis, ois);
-
-				this.complement_destinataire = readString(dis, ois);
-
-				this.complement_point_geographique = readString(dis, ois);
-
-				this.email = readString(dis, ois);
-
-				this.enseigne_commerciale_site = readString(dis, ois);
-
-				this.finess_site = readString(dis, ois);
-
-				this.identifiant_organisation = readString(dis, ois);
-
-				this.indice_repetition_voie = readString(dis, ois);
-
-				this.mention_distribution = readString(dis, ois);
-
-				this.numero_voie = readString(dis, ois);
-
-				this.pays = readString(dis, ois);
-
-				this.raison_sociale_site = readString(dis, ois);
-
-				this.siren_site = readString(dis, ois);
-
-				this.siret_site = readString(dis, ois);
-
-				this.telecopie = readString(dis, ois);
-
-				this.telephone = readString(dis, ois);
-
-				this.telephone_2 = readString(dis, ois);
-
-				this.type_voie = readString(dis, ois);
-
-				this.voie = readString(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.adresse, dos, oos);
-
-				writeString(this.cedex, dos, oos);
-
-				writeString(this.code_commune, dos, oos);
-
-				writeString(this.code_postal, dos, oos);
-
-				writeString(this.commune, dos, oos);
-
-				writeString(this.complement_destinataire, dos, oos);
-
-				writeString(this.complement_point_geographique, dos, oos);
-
-				writeString(this.email, dos, oos);
-
-				writeString(this.enseigne_commerciale_site, dos, oos);
-
-				writeString(this.finess_site, dos, oos);
-
-				writeString(this.identifiant_organisation, dos, oos);
-
-				writeString(this.indice_repetition_voie, dos, oos);
-
-				writeString(this.mention_distribution, dos, oos);
-
-				writeString(this.numero_voie, dos, oos);
-
-				writeString(this.pays, dos, oos);
-
-				writeString(this.raison_sociale_site, dos, oos);
-
-				writeString(this.siren_site, dos, oos);
-
-				writeString(this.siret_site, dos, oos);
-
-				writeString(this.telecopie, dos, oos);
-
-				writeString(this.telephone, dos, oos);
-
-				writeString(this.telephone_2, dos, oos);
-
-				writeString(this.type_voie, dos, oos);
-
-				writeString(this.voie, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("adresse=" + adresse);
-			sb.append(",cedex=" + cedex);
-			sb.append(",code_commune=" + code_commune);
-			sb.append(",code_postal=" + code_postal);
-			sb.append(",commune=" + commune);
-			sb.append(",complement_destinataire=" + complement_destinataire);
-			sb.append(",complement_point_geographique=" + complement_point_geographique);
-			sb.append(",email=" + email);
-			sb.append(",enseigne_commerciale_site=" + enseigne_commerciale_site);
-			sb.append(",finess_etablissement_juridique=" + finess_etablissement_juridique);
-			sb.append(",finess_site=" + finess_site);
-			sb.append(",identifiant_organisation=" + identifiant_organisation);
-			sb.append(",indice_repetition_voie=" + indice_repetition_voie);
-			sb.append(",mention_distribution=" + mention_distribution);
-			sb.append(",numero_voie=" + numero_voie);
-			sb.append(",pays=" + pays);
-			sb.append(",raison_sociale_site=" + raison_sociale_site);
-			sb.append(",siren_site=" + siren_site);
-			sb.append(",siret_site=" + siret_site);
-			sb.append(",telecopie=" + telecopie);
-			sb.append(",telephone=" + telephone);
-			sb.append(",telephone_2=" + telephone_2);
-			sb.append(",type_voie=" + type_voie);
-			sb.append(",voie=" + voie);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row4Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.finess_etablissement_juridique,
-					other.finess_etablissement_juridique);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row4Struct other = (row4Struct) obj;
+		
+						if (this.finess_etablissement_juridique == null) {
+							if (other.finess_etablissement_juridique != null)
+								return false;
+						
+						} else if (!this.finess_etablissement_juridique.equals(other.finess_etablissement_juridique))
+						
+							return false;
+					
 
-		final boolean execStat = this.execStat;
+		return true;
+    }
 
+	public void copyDataTo(row4Struct other) {
+
+		other.adresse = this.adresse;
+	            other.cedex = this.cedex;
+	            other.code_commune = this.code_commune;
+	            other.code_postal = this.code_postal;
+	            other.commune = this.commune;
+	            other.complement_destinataire = this.complement_destinataire;
+	            other.complement_point_geographique = this.complement_point_geographique;
+	            other.email = this.email;
+	            other.enseigne_commerciale_site = this.enseigne_commerciale_site;
+	            other.finess_etablissement_juridique = this.finess_etablissement_juridique;
+	            other.finess_site = this.finess_site;
+	            other.identifiant_organisation = this.identifiant_organisation;
+	            other.indice_repetition_voie = this.indice_repetition_voie;
+	            other.mention_distribution = this.mention_distribution;
+	            other.numero_voie = this.numero_voie;
+	            other.pays = this.pays;
+	            other.raison_sociale_site = this.raison_sociale_site;
+	            other.siren_site = this.siren_site;
+	            other.siret_site = this.siret_site;
+	            other.telecopie = this.telecopie;
+	            other.telephone = this.telephone;
+	            other.telephone_2 = this.telephone_2;
+	            other.type_voie = this.type_voie;
+	            other.voie = this.voie;
+	            
+	}
+
+	public void copyKeysDataTo(row4Struct other) {
+
+		other.finess_etablissement_juridique = this.finess_etablissement_juridique;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.finess_etablissement_juridique = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.finess_etablissement_juridique,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.adresse = readString(dis,ois);
+					
+						this.cedex = readString(dis,ois);
+					
+						this.code_commune = readString(dis,ois);
+					
+						this.code_postal = readString(dis,ois);
+					
+						this.commune = readString(dis,ois);
+					
+						this.complement_destinataire = readString(dis,ois);
+					
+						this.complement_point_geographique = readString(dis,ois);
+					
+						this.email = readString(dis,ois);
+					
+						this.enseigne_commerciale_site = readString(dis,ois);
+					
+						this.finess_site = readString(dis,ois);
+					
+						this.identifiant_organisation = readString(dis,ois);
+					
+						this.indice_repetition_voie = readString(dis,ois);
+					
+						this.mention_distribution = readString(dis,ois);
+					
+						this.numero_voie = readString(dis,ois);
+					
+						this.pays = readString(dis,ois);
+					
+						this.raison_sociale_site = readString(dis,ois);
+					
+						this.siren_site = readString(dis,ois);
+					
+						this.siret_site = readString(dis,ois);
+					
+						this.telecopie = readString(dis,ois);
+					
+						this.telephone = readString(dis,ois);
+					
+						this.telephone_2 = readString(dis,ois);
+					
+						this.type_voie = readString(dis,ois);
+					
+						this.voie = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.adresse, dos, oos);
+					
+						writeString(this.cedex, dos, oos);
+					
+						writeString(this.code_commune, dos, oos);
+					
+						writeString(this.code_postal, dos, oos);
+					
+						writeString(this.commune, dos, oos);
+					
+						writeString(this.complement_destinataire, dos, oos);
+					
+						writeString(this.complement_point_geographique, dos, oos);
+					
+						writeString(this.email, dos, oos);
+					
+						writeString(this.enseigne_commerciale_site, dos, oos);
+					
+						writeString(this.finess_site, dos, oos);
+					
+						writeString(this.identifiant_organisation, dos, oos);
+					
+						writeString(this.indice_repetition_voie, dos, oos);
+					
+						writeString(this.mention_distribution, dos, oos);
+					
+						writeString(this.numero_voie, dos, oos);
+					
+						writeString(this.pays, dos, oos);
+					
+						writeString(this.raison_sociale_site, dos, oos);
+					
+						writeString(this.siren_site, dos, oos);
+					
+						writeString(this.siret_site, dos, oos);
+					
+						writeString(this.telecopie, dos, oos);
+					
+						writeString(this.telephone, dos, oos);
+					
+						writeString(this.telephone_2, dos, oos);
+					
+						writeString(this.type_voie, dos, oos);
+					
+						writeString(this.voie, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("adresse="+adresse);
+		sb.append(",cedex="+cedex);
+		sb.append(",code_commune="+code_commune);
+		sb.append(",code_postal="+code_postal);
+		sb.append(",commune="+commune);
+		sb.append(",complement_destinataire="+complement_destinataire);
+		sb.append(",complement_point_geographique="+complement_point_geographique);
+		sb.append(",email="+email);
+		sb.append(",enseigne_commerciale_site="+enseigne_commerciale_site);
+		sb.append(",finess_etablissement_juridique="+finess_etablissement_juridique);
+		sb.append(",finess_site="+finess_site);
+		sb.append(",identifiant_organisation="+identifiant_organisation);
+		sb.append(",indice_repetition_voie="+indice_repetition_voie);
+		sb.append(",mention_distribution="+mention_distribution);
+		sb.append(",numero_voie="+numero_voie);
+		sb.append(",pays="+pays);
+		sb.append(",raison_sociale_site="+raison_sociale_site);
+		sb.append(",siren_site="+siren_site);
+		sb.append(",siret_site="+siret_site);
+		sb.append(",telecopie="+telecopie);
+		sb.append(",telephone="+telephone);
+		sb.append(",telephone_2="+telephone_2);
+		sb.append(",type_voie="+type_voie);
+		sb.append(",voie="+voie);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row4Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.finess_etablissement_juridique, other.finess_etablissement_juridique);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				row4Struct row4 = new row4Struct();
 
-				/**
-				 * [tAdvancedHash_row4 begin ] start
-				 */
 
-				ok_Hash.put("tAdvancedHash_row4", false);
-				start_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+		row4Struct row4 = new row4Struct();
 
-				currentComponent = "tAdvancedHash_row4";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row4");
-				}
 
-				int tos_count_tAdvancedHash_row4 = 0;
 
-				// connection name:row4
-				// source node:tFileInputDelimited_1 - inputs:(after_tFileInputExcel_1)
-				// outputs:(row4,row4) | target node:tAdvancedHash_row4 - inputs:(row4)
-				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row4) outputs:(RegionFiness)
+	
+	/**
+	 * [tAdvancedHash_row4 begin ] start
+	 */
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row4Struct>getLookup(matchingModeEnum_row4);
+	
+		
+		ok_Hash.put("tAdvancedHash_row4", false);
+		start_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row4";
 
-				globalMap.put("tHash_Lookup_row4", tHash_Lookup_row4);
+	
+		int tos_count_tAdvancedHash_row4 = 0;
+		
 
-				/**
-				 * [tAdvancedHash_row4 begin ] stop
-				 */
+			   		// connection name:row4
+			   		// source node:tFileInputDelimited_1 - inputs:(after_tFileInputExcel_1) outputs:(row4,row4) | target node:tAdvancedHash_row4 - inputs:(row4) outputs:()
+			   		// linked node: tMap_1 - inputs:(row1,row4) outputs:(RegionFiness)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row4Struct>getLookup(matchingModeEnum_row4);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row4", tHash_Lookup_row4);
+		   	   	   
+				
+           
 
-				/**
-				 * [tFileInputDelimited_1 begin ] start
-				 */
+ 
 
-				ok_Hash.put("tFileInputDelimited_1", false);
-				start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
-				currentComponent = "tFileInputDelimited_1";
 
-				int tos_count_tFileInputDelimited_1 = 0;
+/**
+ * [tAdvancedHash_row4 begin ] stop
+ */
 
-				final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
 
+
+	
+	/**
+	 * [tFileInputDelimited_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileInputDelimited_1", false);
+		start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+		int tos_count_tFileInputDelimited_1 = 0;
+		
+	
+	
+	
+ 
+	
+	
+	final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
+	
+	
 				int nb_line_tFileInputDelimited_1 = 0;
 				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_1 = null;
 				int limit_tFileInputDelimited_1 = -1;
-				try {
-
-					Object filename_tFileInputDelimited_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv";
-					if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
-
-						int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
-						if (footer_value_tFileInputDelimited_1 > 0 || random_value_tFileInputDelimited_1 > 0) {
-							throw new java.lang.Exception(
-									"When the input source is a stream,footer and random shouldn't be bigger than 0.");
-						}
-
-					}
-					try {
-						fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
-								"C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv",
-								"UTF-8", ";", "\n", false, 1, 0, limit_tFileInputDelimited_1, -1, false);
-					} catch (java.lang.Exception e) {
-
-						System.err.println(e.getMessage());
-
-					}
-
-					while (fid_tFileInputDelimited_1 != null && fid_tFileInputDelimited_1.nextRecord()) {
-						rowstate_tFileInputDelimited_1.reset();
-
-						row4 = null;
-
-						row4 = null;
-
-						boolean whetherReject_tFileInputDelimited_1 = false;
-						row4 = new row4Struct();
-						try {
-
-							int columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							row4.adresse = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 1;
-
-							row4.cedex = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 2;
-
-							row4.code_commune = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 3;
-
-							row4.code_postal = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 4;
-
-							row4.commune = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 5;
-
-							row4.complement_destinataire = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 6;
-
-							row4.complement_point_geographique = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 7;
-
-							row4.email = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 8;
-
-							row4.enseigne_commerciale_site = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 9;
-
-							row4.finess_etablissement_juridique = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 10;
-
-							row4.finess_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 11;
-
-							row4.identifiant_organisation = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 12;
-
-							row4.indice_repetition_voie = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 13;
-
-							row4.mention_distribution = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 14;
-
-							row4.numero_voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 15;
-
-							row4.pays = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 16;
-
-							row4.raison_sociale_site = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 17;
-
-							row4.siren_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 18;
-
-							row4.siret_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 19;
-
-							row4.telecopie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 20;
-
-							row4.telephone = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 21;
-
-							row4.telephone_2 = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 22;
-
-							row4.type_voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 23;
-
-							row4.voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							if (rowstate_tFileInputDelimited_1.getException() != null) {
-								throw rowstate_tFileInputDelimited_1.getException();
-							}
-
-						} catch (java.lang.Exception e) {
-							whetherReject_tFileInputDelimited_1 = true;
-
-							System.err.println(e.getMessage());
-							row4 = null;
-
-						}
-
-						/**
-						 * [tFileInputDelimited_1 begin ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 main ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						tos_count_tFileInputDelimited_1++;
-
-						/**
-						 * [tFileInputDelimited_1 main ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] stop
-						 */
-// Start of branch "row4"
-						if (row4 != null) {
-
-							/**
-							 * [tAdvancedHash_row4 main ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row4";
-
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "row4");
-							}
-
-							row4Struct row4_HashRow = new row4Struct();
-
-							row4_HashRow.adresse = row4.adresse;
-
-							row4_HashRow.cedex = row4.cedex;
-
-							row4_HashRow.code_commune = row4.code_commune;
-
-							row4_HashRow.code_postal = row4.code_postal;
-
-							row4_HashRow.commune = row4.commune;
-
-							row4_HashRow.complement_destinataire = row4.complement_destinataire;
-
-							row4_HashRow.complement_point_geographique = row4.complement_point_geographique;
-
-							row4_HashRow.email = row4.email;
-
-							row4_HashRow.enseigne_commerciale_site = row4.enseigne_commerciale_site;
-
-							row4_HashRow.finess_etablissement_juridique = row4.finess_etablissement_juridique;
-
-							row4_HashRow.finess_site = row4.finess_site;
-
-							row4_HashRow.identifiant_organisation = row4.identifiant_organisation;
-
-							row4_HashRow.indice_repetition_voie = row4.indice_repetition_voie;
-
-							row4_HashRow.mention_distribution = row4.mention_distribution;
-
-							row4_HashRow.numero_voie = row4.numero_voie;
-
-							row4_HashRow.pays = row4.pays;
-
-							row4_HashRow.raison_sociale_site = row4.raison_sociale_site;
-
-							row4_HashRow.siren_site = row4.siren_site;
-
-							row4_HashRow.siret_site = row4.siret_site;
-
-							row4_HashRow.telecopie = row4.telecopie;
-
-							row4_HashRow.telephone = row4.telephone;
-
-							row4_HashRow.telephone_2 = row4.telephone_2;
-
-							row4_HashRow.type_voie = row4.type_voie;
-
-							row4_HashRow.voie = row4.voie;
-
-							tHash_Lookup_row4.put(row4_HashRow);
-
-							tos_count_tAdvancedHash_row4++;
-
-							/**
-							 * [tAdvancedHash_row4 main ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row4 process_data_begin ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row4";
-
-							/**
-							 * [tAdvancedHash_row4 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row4 process_data_end ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row4";
-
-							/**
-							 * [tAdvancedHash_row4 process_data_end ] stop
-							 */
-
-						} // End of branch "row4"
-
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-					}
-				} finally {
-					if (!((Object) ("C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv") instanceof java.io.InputStream)) {
-						if (fid_tFileInputDelimited_1 != null) {
-							fid_tFileInputDelimited_1.close();
-						}
-					}
-					if (fid_tFileInputDelimited_1 != null) {
-						globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
-
-					}
-				}
-
-				ok_Hash.put("tFileInputDelimited_1", true);
-				end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
-
-				/**
-				 * [tFileInputDelimited_1 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row4 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row4";
-
-				tHash_Lookup_row4.endPut();
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
-				}
-
-				ok_Hash.put("tAdvancedHash_row4", true);
-				end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row4 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tFileInputDelimited_1 finally ] start
-				 */
-
-				currentComponent = "tFileInputDelimited_1";
-
-				/**
-				 * [tFileInputDelimited_1 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row4 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row4";
-
-				/**
-				 * [tAdvancedHash_row4 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
+				try{
+					
+						Object filename_tFileInputDelimited_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv";
+						if(filename_tFileInputDelimited_1 instanceof java.io.InputStream){
+							
+			int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
+			if(footer_value_tFileInputDelimited_1 >0 || random_value_tFileInputDelimited_1 > 0){
+				throw new java.lang.Exception("When the input source is a stream,footer and random shouldn't be bigger than 0.");				
 			}
-			resourceMap = null;
-		}
+		
+						}
+						try {
+							fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited("C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv", "UTF-8",";","\n",false,1,0,
+									limit_tFileInputDelimited_1
+								,-1, false);
+						} catch(java.lang.Exception e) {
+							
+								
+								System.err.println(e.getMessage());
+							
+						}
+					
+				    
+					while (fid_tFileInputDelimited_1!=null && fid_tFileInputDelimited_1.nextRecord()) {
+						rowstate_tFileInputDelimited_1.reset();
+						
+			    						row4 = null;			
+									
+			    						row4 = null;			
+												
+									boolean whetherReject_tFileInputDelimited_1 = false;
+									row4 = new row4Struct();
+									try {
+										
+				int columnIndexWithD_tFileInputDelimited_1 = 0;
+				
+					columnIndexWithD_tFileInputDelimited_1 = 0;
+					
+							row4.adresse = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 1;
+					
+							row4.cedex = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 2;
+					
+							row4.code_commune = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 3;
+					
+							row4.code_postal = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 4;
+					
+							row4.commune = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 5;
+					
+							row4.complement_destinataire = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 6;
+					
+							row4.complement_point_geographique = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 7;
+					
+							row4.email = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 8;
+					
+							row4.enseigne_commerciale_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 9;
+					
+							row4.finess_etablissement_juridique = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 10;
+					
+							row4.finess_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 11;
+					
+							row4.identifiant_organisation = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 12;
+					
+							row4.indice_repetition_voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 13;
+					
+							row4.mention_distribution = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 14;
+					
+							row4.numero_voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 15;
+					
+							row4.pays = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 16;
+					
+							row4.raison_sociale_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 17;
+					
+							row4.siren_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 18;
+					
+							row4.siret_site = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 19;
+					
+							row4.telecopie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 20;
+					
+							row4.telephone = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 21;
+					
+							row4.telephone_2 = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 22;
+					
+							row4.type_voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 23;
+					
+							row4.voie = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+				
+										
+										if(rowstate_tFileInputDelimited_1.getException()!=null) {
+											throw rowstate_tFileInputDelimited_1.getException();
+										}
+										
+										
+							
+			    					} catch (java.lang.Exception e) {
+			        					whetherReject_tFileInputDelimited_1 = true;
+			        					
+			                					System.err.println(e.getMessage());
+			                					row4 = null;
+			                				
+			    					}
+								
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 begin ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+	tos_count_tFileInputDelimited_1++;
+
+/**
+ * [tFileInputDelimited_1 main ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 process_data_begin ] stop
+ */
+// Start of branch "row4"
+if(row4 != null) { 
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row4 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row4";
+
+	
+
+
+			   
+			   
+
+					row4Struct row4_HashRow = new row4Struct();
+		   	   	   
+				
+				row4_HashRow.adresse = row4.adresse;
+				
+				row4_HashRow.cedex = row4.cedex;
+				
+				row4_HashRow.code_commune = row4.code_commune;
+				
+				row4_HashRow.code_postal = row4.code_postal;
+				
+				row4_HashRow.commune = row4.commune;
+				
+				row4_HashRow.complement_destinataire = row4.complement_destinataire;
+				
+				row4_HashRow.complement_point_geographique = row4.complement_point_geographique;
+				
+				row4_HashRow.email = row4.email;
+				
+				row4_HashRow.enseigne_commerciale_site = row4.enseigne_commerciale_site;
+				
+				row4_HashRow.finess_etablissement_juridique = row4.finess_etablissement_juridique;
+				
+				row4_HashRow.finess_site = row4.finess_site;
+				
+				row4_HashRow.identifiant_organisation = row4.identifiant_organisation;
+				
+				row4_HashRow.indice_repetition_voie = row4.indice_repetition_voie;
+				
+				row4_HashRow.mention_distribution = row4.mention_distribution;
+				
+				row4_HashRow.numero_voie = row4.numero_voie;
+				
+				row4_HashRow.pays = row4.pays;
+				
+				row4_HashRow.raison_sociale_site = row4.raison_sociale_site;
+				
+				row4_HashRow.siren_site = row4.siren_site;
+				
+				row4_HashRow.siret_site = row4.siret_site;
+				
+				row4_HashRow.telecopie = row4.telecopie;
+				
+				row4_HashRow.telephone = row4.telephone;
+				
+				row4_HashRow.telephone_2 = row4.telephone_2;
+				
+				row4_HashRow.type_voie = row4.type_voie;
+				
+				row4_HashRow.voie = row4.voie;
+				
+			tHash_Lookup_row4.put(row4_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row4++;
+
+/**
+ * [tAdvancedHash_row4 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row4 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row4";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row4 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row4 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row4";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row4 process_data_end ] stop
+ */
+
+} // End of branch "row4"
+
+
+
+
+	
+	/**
+	 * [tFileInputDelimited_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+
+
+            }
+            }finally{
+                if(!((Object)("C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Bdd_Gestion_des_professionnels/etablissement_sante.csv") instanceof java.io.InputStream)){
+                	if(fid_tFileInputDelimited_1!=null){
+                		fid_tFileInputDelimited_1.close();
+                	}
+                }
+                if(fid_tFileInputDelimited_1!=null){
+                	globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
+					
+                }
+			}
+			  
+
+ 
+
+ok_Hash.put("tFileInputDelimited_1", true);
+end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileInputDelimited_1 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row4 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row4";
+
+	
+
+tHash_Lookup_row4.endPut();
+
+ 
+
+ok_Hash.put("tAdvancedHash_row4", true);
+end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row4 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tFileInputDelimited_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row4 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row4";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row4 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
 	}
+	
+    public String resuming_logs_dir_path = null;
+    public String resuming_checkpoint_path = null;
+    public String parent_part_launcher = null;
+    private String resumeEntryMethodName = null;
+    private boolean globalResumeTicket = false;
 
-	public String resuming_logs_dir_path = null;
-	public String resuming_checkpoint_path = null;
-	public String parent_part_launcher = null;
-	private String resumeEntryMethodName = null;
-	private boolean globalResumeTicket = false;
+    public boolean watch = false;
+    // portStats is null, it means don't execute the statistics
+    public Integer portStats = null;
+    public int portTraces = 4334;
+    public String clientHost;
+    public String defaultClientHost = "localhost";
+    public String contextStr = "Default";
+    public boolean isDefaultContext = true;
+    public String pid = "0";
+    public String rootPid = null;
+    public String fatherPid = null;
+    public String fatherNode = null;
+    public long startTime = 0;
+    public boolean isChildJob = false;
+    public String log4jLevel = "";
+    
+    private boolean enableLogStash;
 
-	public boolean watch = false;
-	// portStats is null, it means don't execute the statistics
-	public Integer portStats = null;
-	public int portTraces = 4334;
-	public String clientHost;
-	public String defaultClientHost = "localhost";
-	public String contextStr = "Default";
-	public boolean isDefaultContext = true;
-	public String pid = "0";
-	public String rootPid = null;
-	public String fatherPid = null;
-	public String fatherNode = null;
-	public long startTime = 0;
-	public boolean isChildJob = false;
-	public String log4jLevel = "";
+    private boolean execStat = true;
 
-	private boolean enableLogStash;
+    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+        protected java.util.Map<String, String> initialValue() {
+            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
+            threadRunResultMap.put("errorCode", null);
+            threadRunResultMap.put("status", "");
+            return threadRunResultMap;
+        };
+    };
 
-	private boolean execStat = true;
 
-	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-		protected java.util.Map<String, String> initialValue() {
-			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
-			threadRunResultMap.put("errorCode", null);
-			threadRunResultMap.put("status", "");
-			return threadRunResultMap;
-		};
-	};
+    private PropertiesWithType context_param = new PropertiesWithType();
+    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
 
-	private PropertiesWithType context_param = new PropertiesWithType();
-	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+    public String status= "";
+    
 
-	public String status = "";
+    public static void main(String[] args){
+        final esatis_E esatis_EClass = new esatis_E();
 
-	public static void main(String[] args) {
-		final esatis_E esatis_EClass = new esatis_E();
+        int exitCode = esatis_EClass.runJobInTOS(args);
 
-		int exitCode = esatis_EClass.runJobInTOS(args);
+        System.exit(exitCode);
+    }
 
-		System.exit(exitCode);
-	}
 
-	public String[][] runJob(String[] args) {
+    public String[][] runJob(String[] args) {
 
-		int exitCode = runJobInTOS(args);
-		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+        int exitCode = runJobInTOS(args);
+        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
 
-		return bufferValue;
-	}
+        return bufferValue;
+    }
 
-	public boolean hastBufferOutputComponent() {
+    public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
+    	
+        return hastBufferOutput;
+    }
 
-		return hastBufferOutput;
-	}
+    public int runJobInTOS(String[] args) {
+	   	// reset status
+	   	status = "";
+	   	
+        String lastStr = "";
+        for (String arg : args) {
+            if (arg.equalsIgnoreCase("--context_param")) {
+                lastStr = arg;
+            } else if (lastStr.equals("")) {
+                evalParam(arg);
+            } else {
+                evalParam(lastStr + " " + arg);
+                lastStr = "";
+            }
+        }
+        enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
 
-	public int runJobInTOS(String[] args) {
-		// reset status
-		status = "";
+    	
+    	
 
-		String lastStr = "";
-		for (String arg : args) {
-			if (arg.equalsIgnoreCase("--context_param")) {
-				lastStr = arg;
-			} else if (lastStr.equals("")) {
-				evalParam(arg);
-			} else {
-				evalParam(lastStr + " " + arg);
-				lastStr = "";
-			}
-		}
-		enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
+        if(clientHost == null) {
+            clientHost = defaultClientHost;
+        }
 
-		if (clientHost == null) {
-			clientHost = defaultClientHost;
-		}
+        if(pid == null || "0".equals(pid)) {
+            pid = TalendString.getAsciiRandomString(6);
+        }
 
-		if (pid == null || "0".equals(pid)) {
-			pid = TalendString.getAsciiRandomString(6);
-		}
+        if (rootPid==null) {
+            rootPid = pid;
+        }
+        if (fatherPid==null) {
+            fatherPid = pid;
+        }else{
+            isChildJob = true;
+        }
 
-		if (rootPid == null) {
-			rootPid = pid;
-		}
-		if (fatherPid == null) {
-			fatherPid = pid;
-		} else {
-			isChildJob = true;
-		}
 
-		if (portStats != null) {
-			// portStats = -1; //for testing
-			if (portStats < 0 || portStats > 65535) {
-				// issue:10869, the portStats is invalid, so this client socket can't open
-				System.err.println("The statistics socket port " + portStats + " is invalid.");
-				execStat = false;
-			}
-		} else {
-			execStat = false;
-		}
+        try {
+            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
+            java.io.InputStream inContext = esatis_E.class.getClassLoader().getResourceAsStream("bigdata_project/esatis_e_0_1/contexts/" + contextStr + ".properties");
+            if (inContext == null) {
+                inContext = esatis_E.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
+            }
+            if (inContext != null) {
+                //defaultProps is in order to keep the original context value
+                if(context != null && context.isEmpty()) {
+	                defaultProps.load(inContext);
+	                context = new ContextProperties(defaultProps);
+                }
+                
+                inContext.close();
+            } else if (!isDefaultContext) {
+                //print info and job continue to run, for case: context_param is not empty.
+                System.err.println("Could not find the context " + contextStr);
+            }
 
-		try {
-			// call job/subjob with an existing context, like: --context=production. if
-			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = esatis_E.class.getClassLoader()
-					.getResourceAsStream("bigdata_project/esatis_e_0_1/contexts/" + contextStr + ".properties");
-			if (inContext == null) {
-				inContext = esatis_E.class.getClassLoader()
-						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
-			}
-			if (inContext != null) {
-				// defaultProps is in order to keep the original context value
-				if (context != null && context.isEmpty()) {
-					defaultProps.load(inContext);
-					context = new ContextProperties(defaultProps);
-				}
-
-				inContext.close();
-			} else if (!isDefaultContext) {
-				// print info and job continue to run, for case: context_param is not empty.
-				System.err.println("Could not find the context " + contextStr);
-			}
-
-			if (!context_param.isEmpty()) {
-				context.putAll(context_param);
-				// set types for params from parentJobs
-				for (Object key : context_param.keySet()) {
+            if(!context_param.isEmpty()) {
+                context.putAll(context_param);
+				//set types for params from parentJobs
+				for (Object key: context_param.keySet()){
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-			}
-			class ContextProcessing {
-				private void processContext_0() {
-					context.setContextType("HadoopHDFS_DeathFile", "id_String");
-					context.HadoopHDFS_DeathFile = (String) context.getProperty("HadoopHDFS_DeathFile");
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-					context.setContextType("HadoopHDFS_Etablissement", "id_String");
-					context.HadoopHDFS_Etablissement = (String) context.getProperty("HadoopHDFS_Etablissement");
-					context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
-					context.HadoopHDFS_HdfsFileSeparator = (String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
-					context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
-					context.HadoopHDFS_HdfsRowSeparator = (String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
-					context.setContextType("HadoopHDFS_HdfsUser", "id_String");
-					context.HadoopHDFS_HdfsUser = (String) context.getProperty("HadoopHDFS_HdfsUser");
-					context.setContextType("HadoopHDFS_VisiteFile", "id_String");
-					context.HadoopHDFS_VisiteFile = (String) context.getProperty("HadoopHDFS_VisiteFile");
-					context.setContextType("HadoopHDFS_SatisfactionFile", "id_String");
-					context.HadoopHDFS_SatisfactionFile = (String) context.getProperty("HadoopHDFS_SatisfactionFile");
-					context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
-					context.ProjectHadoopCluster_NameNodeUri = (String) context
-							.getProperty("ProjectHadoopCluster_NameNodeUri");
-					context.setContextType("ProjectHadoopCluster_User", "id_String");
-					context.ProjectHadoopCluster_User = (String) context.getProperty("ProjectHadoopCluster_User");
-				}
+            }
+            class ContextProcessing {
+                private void processContext_0() {
+                        context.setContextType("HadoopHDFS_DeathFile", "id_String");
+                            context.HadoopHDFS_DeathFile=(String) context.getProperty("HadoopHDFS_DeathFile");
+                        context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable", "id_String");
+                            context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable=(String) context.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
+                        context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy", "id_String");
+                            context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy=(String) context.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+                        context.setContextType("HadoopHDFS_Etablissement", "id_String");
+                            context.HadoopHDFS_Etablissement=(String) context.getProperty("HadoopHDFS_Etablissement");
+                        context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
+                            context.HadoopHDFS_HdfsFileSeparator=(String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
+                        context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
+                            context.HadoopHDFS_HdfsRowSeparator=(String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
+                        context.setContextType("HadoopHDFS_HdfsUser", "id_String");
+                            context.HadoopHDFS_HdfsUser=(String) context.getProperty("HadoopHDFS_HdfsUser");
+                        context.setContextType("HadoopHDFS_VisiteFile", "id_String");
+                            context.HadoopHDFS_VisiteFile=(String) context.getProperty("HadoopHDFS_VisiteFile");
+                        context.setContextType("HadoopHDFS_SatisfactionFile", "id_String");
+                            context.HadoopHDFS_SatisfactionFile=(String) context.getProperty("HadoopHDFS_SatisfactionFile");
+                        context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
+                            context.ProjectHadoopCluster_NameNodeUri=(String) context.getProperty("ProjectHadoopCluster_NameNodeUri");
+                        context.setContextType("ProjectHadoopCluster_User", "id_String");
+                            context.ProjectHadoopCluster_User=(String) context.getProperty("ProjectHadoopCluster_User");
+                } 
+                public void processAllContext() {
+                        processContext_0();
+                }
+            }
 
-				public void processAllContext() {
-					processContext_0();
-				}
-			}
+            new ContextProcessing().processAllContext();
+        } catch (java.io.IOException ie) {
+            System.err.println("Could not load context "+contextStr);
+            ie.printStackTrace();
+        }
 
-			new ContextProcessing().processAllContext();
-		} catch (java.io.IOException ie) {
-			System.err.println("Could not load context " + contextStr);
-			ie.printStackTrace();
-		}
+        // get context value from parent directly
+        if (parentContextMap != null && !parentContextMap.isEmpty()) {if (parentContextMap.containsKey("HadoopHDFS_DeathFile")) {
+                context.HadoopHDFS_DeathFile = (String) parentContextMap.get("HadoopHDFS_DeathFile");
+            }if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable")) {
+                context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) parentContextMap.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
+            }if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
+                context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+            }if (parentContextMap.containsKey("HadoopHDFS_Etablissement")) {
+                context.HadoopHDFS_Etablissement = (String) parentContextMap.get("HadoopHDFS_Etablissement");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
+                context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsRowSeparator")) {
+                context.HadoopHDFS_HdfsRowSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsRowSeparator");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
+                context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
+            }if (parentContextMap.containsKey("HadoopHDFS_VisiteFile")) {
+                context.HadoopHDFS_VisiteFile = (String) parentContextMap.get("HadoopHDFS_VisiteFile");
+            }if (parentContextMap.containsKey("HadoopHDFS_SatisfactionFile")) {
+                context.HadoopHDFS_SatisfactionFile = (String) parentContextMap.get("HadoopHDFS_SatisfactionFile");
+            }if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
+                context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap.get("ProjectHadoopCluster_NameNodeUri");
+            }if (parentContextMap.containsKey("ProjectHadoopCluster_User")) {
+                context.ProjectHadoopCluster_User = (String) parentContextMap.get("ProjectHadoopCluster_User");
+            }
+        }
 
-		// get context value from parent directly
-		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-			if (parentContextMap.containsKey("HadoopHDFS_DeathFile")) {
-				context.HadoopHDFS_DeathFile = (String) parentContextMap.get("HadoopHDFS_DeathFile");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_Etablissement")) {
-				context.HadoopHDFS_Etablissement = (String) parentContextMap.get("HadoopHDFS_Etablissement");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
-				context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsRowSeparator")) {
-				context.HadoopHDFS_HdfsRowSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsRowSeparator");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
-				context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_VisiteFile")) {
-				context.HadoopHDFS_VisiteFile = (String) parentContextMap.get("HadoopHDFS_VisiteFile");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_SatisfactionFile")) {
-				context.HadoopHDFS_SatisfactionFile = (String) parentContextMap.get("HadoopHDFS_SatisfactionFile");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
-				context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap
-						.get("ProjectHadoopCluster_NameNodeUri");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_User")) {
-				context.ProjectHadoopCluster_User = (String) parentContextMap.get("ProjectHadoopCluster_User");
-			}
-		}
-
-		// Resume: init the resumeUtil
-		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+        //Resume: init the resumeUtil
+        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-		// Resume: jobStart
-		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
-				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
+        //Resume: jobStart
+        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
-		if (execStat) {
-			try {
-				runStat.openSocket(!isChildJob);
-				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-				runStat.startThreadStat(clientHost, portStats);
-				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-			} catch (java.io.IOException ioException) {
-				ioException.printStackTrace();
-			}
-		}
 
-		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-		globalMap.put("concurrentHashMap", concurrentHashMap);
 
-		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		long endUsedMemory = 0;
-		long end = 0;
 
-		startTime = System.currentTimeMillis();
+	
+	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+	    globalMap.put("concurrentHashMap", concurrentHashMap);
+	
 
-		this.globalResumeTicket = true;// to run tPreJob
+    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    long endUsedMemory = 0;
+    long end = 0;
 
-		this.globalResumeTicket = false;// to run others jobs
+    startTime = System.currentTimeMillis();
 
-		try {
-			errorCode = null;
-			tFileInputExcel_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tFileInputExcel_1) {
-			globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", -1);
 
-			e_tFileInputExcel_1.printStackTrace();
 
-		}
 
-		this.globalResumeTicket = true;// to run tPostJob
+this.globalResumeTicket = true;//to run tPreJob
 
-		end = System.currentTimeMillis();
 
-		if (watch) {
-			System.out.println((end - startTime) + " milliseconds");
-		}
 
-		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		if (false) {
-			System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : esatis_E");
-		}
 
-		if (execStat) {
-			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-			runStat.stopThreadStat();
-		}
-		int returnCode = 0;
-		if (errorCode == null) {
-			returnCode = status != null && status.equals("failure") ? 1 : 0;
-		} else {
-			returnCode = errorCode.intValue();
-		}
-		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
-				"" + returnCode, "", "", "");
+this.globalResumeTicket = false;//to run others jobs
 
-		return returnCode;
+try {
+errorCode = null;tFileInputExcel_1Process(globalMap);
+if(!"failure".equals(status)) { status = "end"; }
+}catch (TalendException e_tFileInputExcel_1) {
+globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", -1);
 
-	}
+e_tFileInputExcel_1.printStackTrace();
 
-	// only for OSGi env
-	public void destroy() {
+}
 
-	}
+this.globalResumeTicket = true;//to run tPostJob
 
-	private java.util.Map<String, Object> getSharedConnections4REST() {
-		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
 
-		return connections;
-	}
 
-	private void evalParam(String arg) {
-		if (arg.startsWith("--resuming_logs_dir_path")) {
-			resuming_logs_dir_path = arg.substring(25);
-		} else if (arg.startsWith("--resuming_checkpoint_path")) {
-			resuming_checkpoint_path = arg.substring(27);
-		} else if (arg.startsWith("--parent_part_launcher")) {
-			parent_part_launcher = arg.substring(23);
-		} else if (arg.startsWith("--watch")) {
-			watch = true;
-		} else if (arg.startsWith("--stat_port=")) {
-			String portStatsStr = arg.substring(12);
-			if (portStatsStr != null && !portStatsStr.equals("null")) {
-				portStats = Integer.parseInt(portStatsStr);
-			}
-		} else if (arg.startsWith("--trace_port=")) {
-			portTraces = Integer.parseInt(arg.substring(13));
-		} else if (arg.startsWith("--client_host=")) {
-			clientHost = arg.substring(14);
-		} else if (arg.startsWith("--context=")) {
-			contextStr = arg.substring(10);
-			isDefaultContext = false;
-		} else if (arg.startsWith("--father_pid=")) {
-			fatherPid = arg.substring(13);
-		} else if (arg.startsWith("--root_pid=")) {
-			rootPid = arg.substring(11);
-		} else if (arg.startsWith("--father_node=")) {
-			fatherNode = arg.substring(14);
-		} else if (arg.startsWith("--pid=")) {
-			pid = arg.substring(6);
-		} else if (arg.startsWith("--context_type")) {
-			String keyValue = arg.substring(15);
+
+        end = System.currentTimeMillis();
+
+        if (watch) {
+            System.out.println((end-startTime)+" milliseconds");
+        }
+
+        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        if (false) {
+            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : esatis_E");
+        }
+
+
+
+    int returnCode = 0;
+    if(errorCode == null) {
+         returnCode = status != null && status.equals("failure") ? 1 : 0;
+    } else {
+         returnCode = errorCode.intValue();
+    }
+    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
+
+    return returnCode;
+
+  }
+
+    // only for OSGi env
+    public void destroy() {
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private java.util.Map<String, Object> getSharedConnections4REST() {
+        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
+
+
+
+
+
+
+
+        return connections;
+    }
+
+    private void evalParam(String arg) {
+        if (arg.startsWith("--resuming_logs_dir_path")) {
+            resuming_logs_dir_path = arg.substring(25);
+        } else if (arg.startsWith("--resuming_checkpoint_path")) {
+            resuming_checkpoint_path = arg.substring(27);
+        } else if (arg.startsWith("--parent_part_launcher")) {
+            parent_part_launcher = arg.substring(23);
+        } else if (arg.startsWith("--watch")) {
+            watch = true;
+        } else if (arg.startsWith("--stat_port=")) {
+            String portStatsStr = arg.substring(12);
+            if (portStatsStr != null && !portStatsStr.equals("null")) {
+                portStats = Integer.parseInt(portStatsStr);
+            }
+        } else if (arg.startsWith("--trace_port=")) {
+            portTraces = Integer.parseInt(arg.substring(13));
+        } else if (arg.startsWith("--client_host=")) {
+            clientHost = arg.substring(14);
+        } else if (arg.startsWith("--context=")) {
+            contextStr = arg.substring(10);
+            isDefaultContext = false;
+        } else if (arg.startsWith("--father_pid=")) {
+            fatherPid = arg.substring(13);
+        } else if (arg.startsWith("--root_pid=")) {
+            rootPid = arg.substring(11);
+        } else if (arg.startsWith("--father_node=")) {
+            fatherNode = arg.substring(14);
+        } else if (arg.startsWith("--pid=")) {
+            pid = arg.substring(6);
+        } else if (arg.startsWith("--context_type")) {
+            String keyValue = arg.substring(15);
 			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.setContextType(keyValue.substring(0, index),
-							replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
 
-			}
+            }
 
 		} else if (arg.startsWith("--context_param")) {
-			String keyValue = arg.substring(16);
-			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
-			}
-		} else if (arg.startsWith("--log4jLevel=")) {
-			log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {// for trunjob call
-			final int equal = arg.indexOf('=');
+            String keyValue = arg.substring(16);
+            int index = -1;
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
+            }
+        } else if (arg.startsWith("--log4jLevel=")) {
+            log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {//for trunjob call
+		    final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-	}
+    }
+    
+    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
 
-	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
-
-	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
-			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
-
-	private String replaceEscapeChars(String keyValue) {
+    private final String[][] escapeChars = {
+        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
+        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
+        };
+    private String replaceEscapeChars (String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -4580,17 +5209,15 @@ public class esatis_E implements TalendJob {
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0], currIndex);
-				if (index >= 0) {
+				index = keyValue.indexOf(strArray[0],currIndex);
+				if (index>=0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
-							strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the
-			// result
+			// if the left string doesn't include escape chars, append the left into the result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -4598,19 +5225,20 @@ public class esatis_E implements TalendJob {
 		}
 
 		return result.toString();
-	}
+    }
 
-	public Integer getErrorCode() {
-		return errorCode;
-	}
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
-	public String getStatus() {
-		return status;
-	}
 
-	ResumeUtil resumeUtil = null;
+    public String getStatus() {
+        return status;
+    }
+
+    ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 144108 characters generated by Talend Open Studio for Big Data on the 11 mai
- * 2022 10:36:21 CEST
+ *     141562 characters generated by Talend Open Studio for Big Data 
+ *     on the 11 mai 2022 12:22:43 CEST
  ************************************************************************************************/
