@@ -23,6 +23,8 @@
     <module>jobs/process/Extraction/Consu_Extrac/consu_extrac_0.1</module>
     <module>jobs/process/Extraction/Visite_Extract/extract_visite_0.1</module>
     <module>jobs/process/Extraction/Hosco_Extrac/hosco_extrac_0.1</module>
+    <module>jobs/process/Extraction/execu_gen_0.1</module>
+    <module>jobs/process/poubelle_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

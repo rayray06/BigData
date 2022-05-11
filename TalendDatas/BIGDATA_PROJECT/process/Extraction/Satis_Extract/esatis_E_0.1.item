@@ -54,7 +54,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:8b7KgTZRJxMODxr/gVO0qkeCfj3QO9eQU0YtPyf9" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:jh26jQOsoZ0TjC/LLZmFbzwcrYGoAzaZw0Z0M6IS" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -89,7 +89,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Ko8oH34Ve0OWHwLBBI8tMzTFQnTV+2NarhWZP4X4" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QcmM0HmsB2w81DxaIglqlAwbZOIOssbZtg02p77S" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -118,13 +118,13 @@
     <routinesParameter id="_hkWo4M7ZEeylS-_k4rIanw" name="TalendStringUtil"/>
     <routinesParameter id="_hkPUIM7ZEeylS-_k4rIanw" name="TalendString"/>
   </parameters>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="128">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="__g5dcM-PEeyF9IEJ3RrsIg" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_b0cyoM-QEeyF9IEJ3RrsIg" show="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatisca-mco-open-data-2020.xlsx&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:SusEE0G+3265S1pHDmngUlk7BYVPrkpHI8QNNs17"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatis48h-mco-open-data-2020.xlsx&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:vldHw7TaVGHLDGyVqXsqJMZ+Zg3K7u3J9LFSax1p"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="true"/>
     <elementParameter field="TABLE" name="SHEETLIST" show="false">
       <elementValue elementRef="SHEETNAME" value="&quot;Resultats&quot;"/>
@@ -137,8 +137,10 @@
     <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
     <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_b0cyoM-QEeyF9IEJ3RrsIg - esat48_Scheme" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="__g5dcM-PEeyF9IEJ3RrsIg - Esat_Metadata" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_b0cyoM-QEeyF9IEJ3RrsIg - esat48_Scheme" show="false"/>
     <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
     <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="','" show="false"/>
     <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="'.'" show="false"/>
@@ -158,33 +160,37 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Depot"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_all_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_all_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_all_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_all_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="classement"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="evolution"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_AVH_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_accueil_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_AVH_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_accueil_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_ACC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PECinf_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_ACC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_PECinf_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_PEC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PECmed_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PEC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_PECmed_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_CER_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_chambre_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_CER_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_chambre_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_OVS_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_repas_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_OVS_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_repas_rea_ajust"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_sortie_rea_ajust"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_sortie_rea_ajust"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="taux_reco_brut"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -214,10 +220,10 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Depot"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_all_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_all_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_all_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_all_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="classement"/>
@@ -226,34 +232,40 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="evolution"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_AVH_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_accueil_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_AVH_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_accueil_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_ACC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PECinf_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_ACC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_PECinf_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_PEC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PECmed_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_PEC_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_PECmed_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_CER_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_chambre_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_CER_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_chambre_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="score_OVS_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_repas_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_OVS_ajust"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_repas_rea_ajust"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nb_rep_score_sortie_rea_ajust"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="score_sortie_rea_ajust"/>
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="taux_reco_brut"/>
@@ -271,34 +283,9 @@
     <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
     <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="EVENT_MODE"/>
     <elementParameter field="CHECK" name="INCLUDE_PHONETICRUNS" value="true"/>
-    <elementParameter field="TEXT" name="LABEL" value="esat_Data"/>
+    <elementParameter field="TEXT" name="LABEL" value="esat48"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="Esat_Metadata" name="tFileInputExcel_1">
-      <column comment="" key="false" length="9" name="finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="51" name="rs_finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="finess_geo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="37" name="rs_finess_geo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot; &quot;" key="false" length="20" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="14" name="participation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="Depot" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_all_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_all_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="classement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="evolution" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_AVH_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_AVH_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_ACC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_ACC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_PEC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_PEC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_CER_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_CER_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_OVS_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_OVS_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="taux_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="Esat_Metadata" name="REJECT">
+    <metadata connector="FLOW" label="esat48_Scheme" name="tFileInputExcel_1">
       <column comment="" key="false" length="9" name="finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="51" name="rs_finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="finess_geo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -306,20 +293,49 @@
       <column comment="" key="false" length="20" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="14" name="participation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="Depot" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_all_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_all_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_all_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_all_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="classement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="evolution" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_AVH_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_AVH_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_ACC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_ACC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_PEC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_PEC_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_CER_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_CER_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="score_OVS_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="nb_rep_score_OVS_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_accueil_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_accueil_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_PECinf_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_PECinf_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_PECmed_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_PECmed_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_chambre_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_chambre_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_repas_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_repas_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_sortie_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_sortie_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="taux_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="esat48_Scheme" name="REJECT">
+      <column comment="" key="false" length="9" name="finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="51" name="rs_finess" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="finess_geo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="37" name="rs_finess_geo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="14" name="participation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="Depot" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_all_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_all_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="classement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="evolution" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_accueil_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_accueil_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_PECinf_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_PECinf_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_PECmed_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_PECmed_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_chambre_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_chambre_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_repas_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_repas_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="nb_rep_score_sortie_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="score_sortie_rea_ajust" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="taux_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="nb_reco_brut" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -345,7 +361,7 @@
       <column comment="" key="false" length="20" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="UPCASE" expression="StringHandling.UPCASE(TalendString.removeAccents(((Relational.ISNULL(row1.region))?&quot;&quot;:row1.region))) " type="id_String"/>
         <mapperTableEntries name="TRIM" expression="StringHandling.TRIM(Var.UPCASE) " type="id_String"/>
@@ -364,20 +380,22 @@
         <mapperTableEntries name="region" type="id_String" nullable="true"/>
         <mapperTableEntries name="participation" type="id_String" nullable="true"/>
         <mapperTableEntries name="Depot" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_all_ajust" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="score_all_ajust" type="id_String" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_all_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_all_rea_ajust" type="id_String" nullable="true"/>
         <mapperTableEntries name="classement" type="id_String" nullable="true"/>
         <mapperTableEntries name="evolution" type="id_String" nullable="true"/>
-        <mapperTableEntries name="score_AVH_ajust" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_AVH_ajust" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="score_ACC_ajust" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_ACC_ajust" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="score_PEC_ajust" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_PEC_ajust" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="score_CER_ajust" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_CER_ajust" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="score_OVS_ajust" type="id_String" nullable="true"/>
-        <mapperTableEntries name="nb_rep_score_OVS_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_accueil_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_accueil_rea_ajust" type="id_Float" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_PECinf_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_PECinf_rea_ajust" type="id_Float" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_PECmed_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_PECmed_rea_ajust" type="id_Float" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_chambre_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_chambre_rea_ajust" type="id_Float" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_repas_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_repas_rea_ajust" type="id_Float" nullable="true"/>
+        <mapperTableEntries name="nb_rep_score_sortie_rea_ajust" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="score_sortie_rea_ajust" type="id_Float" nullable="true"/>
         <mapperTableEntries name="taux_reco_brut" type="id_String" nullable="true"/>
         <mapperTableEntries name="nb_reco_brut" type="id_Integer" nullable="true"/>
       </inputTables>
@@ -455,8 +473,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="context.ProjectHadoopCluster_NameNodeUri"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" value="&quot;adl://account.azuredatalakestore.net&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" value="&quot;XXXX&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:BSSGBc/jhEoo8jNPYuswgGbsDGrPYUXlXs/AJ6xLscopGOBVQYWi/qZUORgg11bNiSPoMt2biiJ9uZZDyUFzQncE/ZSPtxKYYJTVj7XTRgE=" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:I08EBMQT7t1a8F5qA7LHKkel+m6wU92dOsjKIq9ABYjcrg==" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:s3/pWzXddmOFsq3fwrwYMV1Q935asfBKIp0489JvqFvQ+CQY/HE9MDPJoiFK5p4f0ti4fyYI7BF2/udIv4vDVFHjXfZosyeRMX+OPCqQzpY=" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:37nR8azxo0RjlONENjn/nf+rtxuODG5VUFmiHDw0Kz+/VQ==" show="false"/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" value="&quot;hdfs/_HOST@EXAMPLE.COM&quot;" show="false"/>
@@ -466,7 +484,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.HadoopHDFS_HdfsUser"/>
     <elementParameter field="TEXT" name="GROUP" value="&quot;supergroup&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:zNcSCZB+rAsUYCHojgcF5VqQR6jUczyn0MqaPyM0" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:njd3HrVK0KlyiNGJ58FaoOGBu4Y4gGbnB2U44x8O" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="" show="false"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="context.HadoopHDFS_SatisfactionFile"/>

@@ -248,7 +248,6 @@
                 <include>org.talend.libraries:simpleexcel-2.2-20190722:jar:6.0.0</include>
                 <include>org.talend.libraries:talendcsv:jar:6.0.0</include>
                 <include>org.talend.libraries:commons-collections4-4.1:jar:6.0.0</include>
-                <include>org.talend.libraries:external_sort:jar:6.0.0</include>
             </includes>
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>false</useProjectArtifact>

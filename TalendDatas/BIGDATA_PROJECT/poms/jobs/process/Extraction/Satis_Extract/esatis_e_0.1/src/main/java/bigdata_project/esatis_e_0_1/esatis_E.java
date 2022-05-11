@@ -162,9 +162,9 @@ public class esatis_E implements TalendJob {
 
 			}
 
-			if (HadoopHDFS_HospiFile != null) {
+			if (HadoopHDFS_VisiteFile != null) {
 
-				this.setProperty("HadoopHDFS_HospiFile", HadoopHDFS_HospiFile.toString());
+				this.setProperty("HadoopHDFS_VisiteFile", HadoopHDFS_VisiteFile.toString());
 
 			}
 
@@ -230,10 +230,10 @@ public class esatis_E implements TalendJob {
 			return this.HadoopHDFS_HdfsUser;
 		}
 
-		public String HadoopHDFS_HospiFile;
+		public String HadoopHDFS_VisiteFile;
 
-		public String getHadoopHDFS_HospiFile() {
-			return this.HadoopHDFS_HospiFile;
+		public String getHadoopHDFS_VisiteFile() {
+			return this.HadoopHDFS_VisiteFile;
 		}
 
 		public String HadoopHDFS_SatisfactionFile;
@@ -904,16 +904,16 @@ public class esatis_E implements TalendJob {
 			return this.Depot;
 		}
 
-		public Integer nb_rep_score_all_ajust;
+		public Integer nb_rep_score_all_rea_ajust;
 
-		public Integer getNb_rep_score_all_ajust() {
-			return this.nb_rep_score_all_ajust;
+		public Integer getNb_rep_score_all_rea_ajust() {
+			return this.nb_rep_score_all_rea_ajust;
 		}
 
-		public String score_all_ajust;
+		public String score_all_rea_ajust;
 
-		public String getScore_all_ajust() {
-			return this.score_all_ajust;
+		public String getScore_all_rea_ajust() {
+			return this.score_all_rea_ajust;
 		}
 
 		public String classement;
@@ -928,64 +928,76 @@ public class esatis_E implements TalendJob {
 			return this.evolution;
 		}
 
-		public String score_AVH_ajust;
+		public Integer nb_rep_score_accueil_rea_ajust;
 
-		public String getScore_AVH_ajust() {
-			return this.score_AVH_ajust;
+		public Integer getNb_rep_score_accueil_rea_ajust() {
+			return this.nb_rep_score_accueil_rea_ajust;
 		}
 
-		public Integer nb_rep_score_AVH_ajust;
+		public Float score_accueil_rea_ajust;
 
-		public Integer getNb_rep_score_AVH_ajust() {
-			return this.nb_rep_score_AVH_ajust;
+		public Float getScore_accueil_rea_ajust() {
+			return this.score_accueil_rea_ajust;
 		}
 
-		public String score_ACC_ajust;
+		public Integer nb_rep_score_PECinf_rea_ajust;
 
-		public String getScore_ACC_ajust() {
-			return this.score_ACC_ajust;
+		public Integer getNb_rep_score_PECinf_rea_ajust() {
+			return this.nb_rep_score_PECinf_rea_ajust;
 		}
 
-		public Integer nb_rep_score_ACC_ajust;
+		public Float score_PECinf_rea_ajust;
 
-		public Integer getNb_rep_score_ACC_ajust() {
-			return this.nb_rep_score_ACC_ajust;
+		public Float getScore_PECinf_rea_ajust() {
+			return this.score_PECinf_rea_ajust;
 		}
 
-		public String score_PEC_ajust;
+		public Integer nb_rep_score_PECmed_rea_ajust;
 
-		public String getScore_PEC_ajust() {
-			return this.score_PEC_ajust;
+		public Integer getNb_rep_score_PECmed_rea_ajust() {
+			return this.nb_rep_score_PECmed_rea_ajust;
 		}
 
-		public Integer nb_rep_score_PEC_ajust;
+		public Float score_PECmed_rea_ajust;
 
-		public Integer getNb_rep_score_PEC_ajust() {
-			return this.nb_rep_score_PEC_ajust;
+		public Float getScore_PECmed_rea_ajust() {
+			return this.score_PECmed_rea_ajust;
 		}
 
-		public String score_CER_ajust;
+		public Integer nb_rep_score_chambre_rea_ajust;
 
-		public String getScore_CER_ajust() {
-			return this.score_CER_ajust;
+		public Integer getNb_rep_score_chambre_rea_ajust() {
+			return this.nb_rep_score_chambre_rea_ajust;
 		}
 
-		public Integer nb_rep_score_CER_ajust;
+		public Float score_chambre_rea_ajust;
 
-		public Integer getNb_rep_score_CER_ajust() {
-			return this.nb_rep_score_CER_ajust;
+		public Float getScore_chambre_rea_ajust() {
+			return this.score_chambre_rea_ajust;
 		}
 
-		public String score_OVS_ajust;
+		public Integer nb_rep_score_repas_rea_ajust;
 
-		public String getScore_OVS_ajust() {
-			return this.score_OVS_ajust;
+		public Integer getNb_rep_score_repas_rea_ajust() {
+			return this.nb_rep_score_repas_rea_ajust;
 		}
 
-		public Integer nb_rep_score_OVS_ajust;
+		public Float score_repas_rea_ajust;
 
-		public Integer getNb_rep_score_OVS_ajust() {
-			return this.nb_rep_score_OVS_ajust;
+		public Float getScore_repas_rea_ajust() {
+			return this.score_repas_rea_ajust;
+		}
+
+		public Integer nb_rep_score_sortie_rea_ajust;
+
+		public Integer getNb_rep_score_sortie_rea_ajust() {
+			return this.nb_rep_score_sortie_rea_ajust;
+		}
+
+		public Float score_sortie_rea_ajust;
+
+		public Float getScore_sortie_rea_ajust() {
+			return this.score_sortie_rea_ajust;
 		}
 
 		public String taux_reco_brut;
@@ -1073,33 +1085,67 @@ public class esatis_E implements TalendJob {
 
 					this.Depot = readString(dis);
 
-					this.nb_rep_score_all_ajust = readInteger(dis);
+					this.nb_rep_score_all_rea_ajust = readInteger(dis);
 
-					this.score_all_ajust = readString(dis);
+					this.score_all_rea_ajust = readString(dis);
 
 					this.classement = readString(dis);
 
 					this.evolution = readString(dis);
 
-					this.score_AVH_ajust = readString(dis);
+					this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_AVH_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_accueil_rea_ajust = null;
+					} else {
+						this.score_accueil_rea_ajust = dis.readFloat();
+					}
 
-					this.score_ACC_ajust = readString(dis);
+					this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_ACC_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_PECinf_rea_ajust = null;
+					} else {
+						this.score_PECinf_rea_ajust = dis.readFloat();
+					}
 
-					this.score_PEC_ajust = readString(dis);
+					this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_PEC_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_PECmed_rea_ajust = null;
+					} else {
+						this.score_PECmed_rea_ajust = dis.readFloat();
+					}
 
-					this.score_CER_ajust = readString(dis);
+					this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_CER_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_chambre_rea_ajust = null;
+					} else {
+						this.score_chambre_rea_ajust = dis.readFloat();
+					}
 
-					this.score_OVS_ajust = readString(dis);
+					this.nb_rep_score_repas_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_OVS_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_repas_rea_ajust = null;
+					} else {
+						this.score_repas_rea_ajust = dis.readFloat();
+					}
+
+					this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_sortie_rea_ajust = null;
+					} else {
+						this.score_sortie_rea_ajust = dis.readFloat();
+					}
 
 					this.taux_reco_brut = readString(dis);
 
@@ -1147,11 +1193,11 @@ public class esatis_E implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_all_ajust, dos);
+				writeInteger(this.nb_rep_score_all_rea_ajust, dos);
 
 				// String
 
-				writeString(this.score_all_ajust, dos);
+				writeString(this.score_all_rea_ajust, dos);
 
 				// String
 
@@ -1161,45 +1207,83 @@ public class esatis_E implements TalendJob {
 
 				writeString(this.evolution, dos);
 
-				// String
+				// Integer
 
-				writeString(this.score_AVH_ajust, dos);
+				writeInteger(this.nb_rep_score_accueil_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_accueil_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_accueil_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_AVH_ajust, dos);
+				writeInteger(this.nb_rep_score_PECinf_rea_ajust, dos);
 
-				// String
+				// Float
 
-				writeString(this.score_ACC_ajust, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_ACC_ajust, dos);
-
-				// String
-
-				writeString(this.score_PEC_ajust, dos);
+				if (this.score_PECinf_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_PECinf_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_PEC_ajust, dos);
+				writeInteger(this.nb_rep_score_PECmed_rea_ajust, dos);
 
-				// String
+				// Float
 
-				writeString(this.score_CER_ajust, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_CER_ajust, dos);
-
-				// String
-
-				writeString(this.score_OVS_ajust, dos);
+				if (this.score_PECmed_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_PECmed_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_OVS_ajust, dos);
+				writeInteger(this.nb_rep_score_chambre_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_chambre_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_chambre_rea_ajust);
+				}
+
+				// Integer
+
+				writeInteger(this.nb_rep_score_repas_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_repas_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_repas_rea_ajust);
+				}
+
+				// Integer
+
+				writeInteger(this.nb_rep_score_sortie_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_sortie_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_sortie_rea_ajust);
+				}
 
 				// String
 
@@ -1227,20 +1311,22 @@ public class esatis_E implements TalendJob {
 			sb.append(",region=" + region);
 			sb.append(",participation=" + participation);
 			sb.append(",Depot=" + Depot);
-			sb.append(",nb_rep_score_all_ajust=" + String.valueOf(nb_rep_score_all_ajust));
-			sb.append(",score_all_ajust=" + score_all_ajust);
+			sb.append(",nb_rep_score_all_rea_ajust=" + String.valueOf(nb_rep_score_all_rea_ajust));
+			sb.append(",score_all_rea_ajust=" + score_all_rea_ajust);
 			sb.append(",classement=" + classement);
 			sb.append(",evolution=" + evolution);
-			sb.append(",score_AVH_ajust=" + score_AVH_ajust);
-			sb.append(",nb_rep_score_AVH_ajust=" + String.valueOf(nb_rep_score_AVH_ajust));
-			sb.append(",score_ACC_ajust=" + score_ACC_ajust);
-			sb.append(",nb_rep_score_ACC_ajust=" + String.valueOf(nb_rep_score_ACC_ajust));
-			sb.append(",score_PEC_ajust=" + score_PEC_ajust);
-			sb.append(",nb_rep_score_PEC_ajust=" + String.valueOf(nb_rep_score_PEC_ajust));
-			sb.append(",score_CER_ajust=" + score_CER_ajust);
-			sb.append(",nb_rep_score_CER_ajust=" + String.valueOf(nb_rep_score_CER_ajust));
-			sb.append(",score_OVS_ajust=" + score_OVS_ajust);
-			sb.append(",nb_rep_score_OVS_ajust=" + String.valueOf(nb_rep_score_OVS_ajust));
+			sb.append(",nb_rep_score_accueil_rea_ajust=" + String.valueOf(nb_rep_score_accueil_rea_ajust));
+			sb.append(",score_accueil_rea_ajust=" + String.valueOf(score_accueil_rea_ajust));
+			sb.append(",nb_rep_score_PECinf_rea_ajust=" + String.valueOf(nb_rep_score_PECinf_rea_ajust));
+			sb.append(",score_PECinf_rea_ajust=" + String.valueOf(score_PECinf_rea_ajust));
+			sb.append(",nb_rep_score_PECmed_rea_ajust=" + String.valueOf(nb_rep_score_PECmed_rea_ajust));
+			sb.append(",score_PECmed_rea_ajust=" + String.valueOf(score_PECmed_rea_ajust));
+			sb.append(",nb_rep_score_chambre_rea_ajust=" + String.valueOf(nb_rep_score_chambre_rea_ajust));
+			sb.append(",score_chambre_rea_ajust=" + String.valueOf(score_chambre_rea_ajust));
+			sb.append(",nb_rep_score_repas_rea_ajust=" + String.valueOf(nb_rep_score_repas_rea_ajust));
+			sb.append(",score_repas_rea_ajust=" + String.valueOf(score_repas_rea_ajust));
+			sb.append(",nb_rep_score_sortie_rea_ajust=" + String.valueOf(nb_rep_score_sortie_rea_ajust));
+			sb.append(",score_sortie_rea_ajust=" + String.valueOf(score_sortie_rea_ajust));
 			sb.append(",taux_reco_brut=" + taux_reco_brut);
 			sb.append(",nb_reco_brut=" + String.valueOf(nb_reco_brut));
 			sb.append("]");
@@ -1328,16 +1414,16 @@ public class esatis_E implements TalendJob {
 			return this.Depot;
 		}
 
-		public Integer nb_rep_score_all_ajust;
+		public Integer nb_rep_score_all_rea_ajust;
 
-		public Integer getNb_rep_score_all_ajust() {
-			return this.nb_rep_score_all_ajust;
+		public Integer getNb_rep_score_all_rea_ajust() {
+			return this.nb_rep_score_all_rea_ajust;
 		}
 
-		public String score_all_ajust;
+		public String score_all_rea_ajust;
 
-		public String getScore_all_ajust() {
-			return this.score_all_ajust;
+		public String getScore_all_rea_ajust() {
+			return this.score_all_rea_ajust;
 		}
 
 		public String classement;
@@ -1352,64 +1438,76 @@ public class esatis_E implements TalendJob {
 			return this.evolution;
 		}
 
-		public String score_AVH_ajust;
+		public Integer nb_rep_score_accueil_rea_ajust;
 
-		public String getScore_AVH_ajust() {
-			return this.score_AVH_ajust;
+		public Integer getNb_rep_score_accueil_rea_ajust() {
+			return this.nb_rep_score_accueil_rea_ajust;
 		}
 
-		public Integer nb_rep_score_AVH_ajust;
+		public Float score_accueil_rea_ajust;
 
-		public Integer getNb_rep_score_AVH_ajust() {
-			return this.nb_rep_score_AVH_ajust;
+		public Float getScore_accueil_rea_ajust() {
+			return this.score_accueil_rea_ajust;
 		}
 
-		public String score_ACC_ajust;
+		public Integer nb_rep_score_PECinf_rea_ajust;
 
-		public String getScore_ACC_ajust() {
-			return this.score_ACC_ajust;
+		public Integer getNb_rep_score_PECinf_rea_ajust() {
+			return this.nb_rep_score_PECinf_rea_ajust;
 		}
 
-		public Integer nb_rep_score_ACC_ajust;
+		public Float score_PECinf_rea_ajust;
 
-		public Integer getNb_rep_score_ACC_ajust() {
-			return this.nb_rep_score_ACC_ajust;
+		public Float getScore_PECinf_rea_ajust() {
+			return this.score_PECinf_rea_ajust;
 		}
 
-		public String score_PEC_ajust;
+		public Integer nb_rep_score_PECmed_rea_ajust;
 
-		public String getScore_PEC_ajust() {
-			return this.score_PEC_ajust;
+		public Integer getNb_rep_score_PECmed_rea_ajust() {
+			return this.nb_rep_score_PECmed_rea_ajust;
 		}
 
-		public Integer nb_rep_score_PEC_ajust;
+		public Float score_PECmed_rea_ajust;
 
-		public Integer getNb_rep_score_PEC_ajust() {
-			return this.nb_rep_score_PEC_ajust;
+		public Float getScore_PECmed_rea_ajust() {
+			return this.score_PECmed_rea_ajust;
 		}
 
-		public String score_CER_ajust;
+		public Integer nb_rep_score_chambre_rea_ajust;
 
-		public String getScore_CER_ajust() {
-			return this.score_CER_ajust;
+		public Integer getNb_rep_score_chambre_rea_ajust() {
+			return this.nb_rep_score_chambre_rea_ajust;
 		}
 
-		public Integer nb_rep_score_CER_ajust;
+		public Float score_chambre_rea_ajust;
 
-		public Integer getNb_rep_score_CER_ajust() {
-			return this.nb_rep_score_CER_ajust;
+		public Float getScore_chambre_rea_ajust() {
+			return this.score_chambre_rea_ajust;
 		}
 
-		public String score_OVS_ajust;
+		public Integer nb_rep_score_repas_rea_ajust;
 
-		public String getScore_OVS_ajust() {
-			return this.score_OVS_ajust;
+		public Integer getNb_rep_score_repas_rea_ajust() {
+			return this.nb_rep_score_repas_rea_ajust;
 		}
 
-		public Integer nb_rep_score_OVS_ajust;
+		public Float score_repas_rea_ajust;
 
-		public Integer getNb_rep_score_OVS_ajust() {
-			return this.nb_rep_score_OVS_ajust;
+		public Float getScore_repas_rea_ajust() {
+			return this.score_repas_rea_ajust;
+		}
+
+		public Integer nb_rep_score_sortie_rea_ajust;
+
+		public Integer getNb_rep_score_sortie_rea_ajust() {
+			return this.nb_rep_score_sortie_rea_ajust;
+		}
+
+		public Float score_sortie_rea_ajust;
+
+		public Float getScore_sortie_rea_ajust() {
+			return this.score_sortie_rea_ajust;
 		}
 
 		public String taux_reco_brut;
@@ -1497,33 +1595,67 @@ public class esatis_E implements TalendJob {
 
 					this.Depot = readString(dis);
 
-					this.nb_rep_score_all_ajust = readInteger(dis);
+					this.nb_rep_score_all_rea_ajust = readInteger(dis);
 
-					this.score_all_ajust = readString(dis);
+					this.score_all_rea_ajust = readString(dis);
 
 					this.classement = readString(dis);
 
 					this.evolution = readString(dis);
 
-					this.score_AVH_ajust = readString(dis);
+					this.nb_rep_score_accueil_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_AVH_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_accueil_rea_ajust = null;
+					} else {
+						this.score_accueil_rea_ajust = dis.readFloat();
+					}
 
-					this.score_ACC_ajust = readString(dis);
+					this.nb_rep_score_PECinf_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_ACC_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_PECinf_rea_ajust = null;
+					} else {
+						this.score_PECinf_rea_ajust = dis.readFloat();
+					}
 
-					this.score_PEC_ajust = readString(dis);
+					this.nb_rep_score_PECmed_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_PEC_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_PECmed_rea_ajust = null;
+					} else {
+						this.score_PECmed_rea_ajust = dis.readFloat();
+					}
 
-					this.score_CER_ajust = readString(dis);
+					this.nb_rep_score_chambre_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_CER_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_chambre_rea_ajust = null;
+					} else {
+						this.score_chambre_rea_ajust = dis.readFloat();
+					}
 
-					this.score_OVS_ajust = readString(dis);
+					this.nb_rep_score_repas_rea_ajust = readInteger(dis);
 
-					this.nb_rep_score_OVS_ajust = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_repas_rea_ajust = null;
+					} else {
+						this.score_repas_rea_ajust = dis.readFloat();
+					}
+
+					this.nb_rep_score_sortie_rea_ajust = readInteger(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.score_sortie_rea_ajust = null;
+					} else {
+						this.score_sortie_rea_ajust = dis.readFloat();
+					}
 
 					this.taux_reco_brut = readString(dis);
 
@@ -1571,11 +1703,11 @@ public class esatis_E implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_all_ajust, dos);
+				writeInteger(this.nb_rep_score_all_rea_ajust, dos);
 
 				// String
 
-				writeString(this.score_all_ajust, dos);
+				writeString(this.score_all_rea_ajust, dos);
 
 				// String
 
@@ -1585,45 +1717,83 @@ public class esatis_E implements TalendJob {
 
 				writeString(this.evolution, dos);
 
-				// String
+				// Integer
 
-				writeString(this.score_AVH_ajust, dos);
+				writeInteger(this.nb_rep_score_accueil_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_accueil_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_accueil_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_AVH_ajust, dos);
+				writeInteger(this.nb_rep_score_PECinf_rea_ajust, dos);
 
-				// String
+				// Float
 
-				writeString(this.score_ACC_ajust, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_ACC_ajust, dos);
-
-				// String
-
-				writeString(this.score_PEC_ajust, dos);
+				if (this.score_PECinf_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_PECinf_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_PEC_ajust, dos);
+				writeInteger(this.nb_rep_score_PECmed_rea_ajust, dos);
 
-				// String
+				// Float
 
-				writeString(this.score_CER_ajust, dos);
-
-				// Integer
-
-				writeInteger(this.nb_rep_score_CER_ajust, dos);
-
-				// String
-
-				writeString(this.score_OVS_ajust, dos);
+				if (this.score_PECmed_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_PECmed_rea_ajust);
+				}
 
 				// Integer
 
-				writeInteger(this.nb_rep_score_OVS_ajust, dos);
+				writeInteger(this.nb_rep_score_chambre_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_chambre_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_chambre_rea_ajust);
+				}
+
+				// Integer
+
+				writeInteger(this.nb_rep_score_repas_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_repas_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_repas_rea_ajust);
+				}
+
+				// Integer
+
+				writeInteger(this.nb_rep_score_sortie_rea_ajust, dos);
+
+				// Float
+
+				if (this.score_sortie_rea_ajust == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.score_sortie_rea_ajust);
+				}
 
 				// String
 
@@ -1651,20 +1821,22 @@ public class esatis_E implements TalendJob {
 			sb.append(",region=" + region);
 			sb.append(",participation=" + participation);
 			sb.append(",Depot=" + Depot);
-			sb.append(",nb_rep_score_all_ajust=" + String.valueOf(nb_rep_score_all_ajust));
-			sb.append(",score_all_ajust=" + score_all_ajust);
+			sb.append(",nb_rep_score_all_rea_ajust=" + String.valueOf(nb_rep_score_all_rea_ajust));
+			sb.append(",score_all_rea_ajust=" + score_all_rea_ajust);
 			sb.append(",classement=" + classement);
 			sb.append(",evolution=" + evolution);
-			sb.append(",score_AVH_ajust=" + score_AVH_ajust);
-			sb.append(",nb_rep_score_AVH_ajust=" + String.valueOf(nb_rep_score_AVH_ajust));
-			sb.append(",score_ACC_ajust=" + score_ACC_ajust);
-			sb.append(",nb_rep_score_ACC_ajust=" + String.valueOf(nb_rep_score_ACC_ajust));
-			sb.append(",score_PEC_ajust=" + score_PEC_ajust);
-			sb.append(",nb_rep_score_PEC_ajust=" + String.valueOf(nb_rep_score_PEC_ajust));
-			sb.append(",score_CER_ajust=" + score_CER_ajust);
-			sb.append(",nb_rep_score_CER_ajust=" + String.valueOf(nb_rep_score_CER_ajust));
-			sb.append(",score_OVS_ajust=" + score_OVS_ajust);
-			sb.append(",nb_rep_score_OVS_ajust=" + String.valueOf(nb_rep_score_OVS_ajust));
+			sb.append(",nb_rep_score_accueil_rea_ajust=" + String.valueOf(nb_rep_score_accueil_rea_ajust));
+			sb.append(",score_accueil_rea_ajust=" + String.valueOf(score_accueil_rea_ajust));
+			sb.append(",nb_rep_score_PECinf_rea_ajust=" + String.valueOf(nb_rep_score_PECinf_rea_ajust));
+			sb.append(",score_PECinf_rea_ajust=" + String.valueOf(score_PECinf_rea_ajust));
+			sb.append(",nb_rep_score_PECmed_rea_ajust=" + String.valueOf(nb_rep_score_PECmed_rea_ajust));
+			sb.append(",score_PECmed_rea_ajust=" + String.valueOf(score_PECmed_rea_ajust));
+			sb.append(",nb_rep_score_chambre_rea_ajust=" + String.valueOf(nb_rep_score_chambre_rea_ajust));
+			sb.append(",score_chambre_rea_ajust=" + String.valueOf(score_chambre_rea_ajust));
+			sb.append(",nb_rep_score_repas_rea_ajust=" + String.valueOf(nb_rep_score_repas_rea_ajust));
+			sb.append(",score_repas_rea_ajust=" + String.valueOf(score_repas_rea_ajust));
+			sb.append(",nb_rep_score_sortie_rea_ajust=" + String.valueOf(nb_rep_score_sortie_rea_ajust));
+			sb.append(",score_sortie_rea_ajust=" + String.valueOf(score_sortie_rea_ajust));
 			sb.append(",taux_reco_brut=" + taux_reco_brut);
 			sb.append(",nb_reco_brut=" + String.valueOf(nb_reco_brut));
 			sb.append("]");
@@ -2051,12 +2223,12 @@ public class esatis_E implements TalendJob {
 				int tos_count_tFileInputExcel_1 = 0;
 
 				final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:dv/bjEcZCTYu32h7T8XxqkveCfCFjlOcTjEYzw==");
+						.decryptPassword("enc:routine.encryption.key.v1:++eGaarbV4hoM5eTjvvu1Zg0Wfr3AK+WoivwuA==");
 				String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
 				if (password_tFileInputExcel_1.isEmpty()) {
 					password_tFileInputExcel_1 = null;
 				}
-				Object source_tFileInputExcel_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatisca-mco-open-data-2020.xlsx";
+				Object source_tFileInputExcel_1 = "C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Satisfaction_Patient/Satisfaction_2020/resultats-esatis48h-mco-open-data-2020.xlsx";
 				com.talend.excel.xssf.event.ExcelReader excelReader_tFileInputExcel_1 = null;
 
 				if (source_tFileInputExcel_1 instanceof java.io.InputStream
@@ -2073,10 +2245,10 @@ public class esatis_E implements TalendJob {
 					int end_column_tFileInputExcel_1 = -1;
 					if (start_column_tFileInputExcel_1 >= 0) {// follow start column
 
-						end_column_tFileInputExcel_1 = start_column_tFileInputExcel_1 + 23 - 1;
+						end_column_tFileInputExcel_1 = start_column_tFileInputExcel_1 + 25 - 1;
 
 					} else if (end_column_tFileInputExcel_1 >= 0) {// follow end column
-						start_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 - 23 + 1;
+						start_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 - 25 + 1;
 					}
 
 					if (end_column_tFileInputExcel_1 < 0 || start_column_tFileInputExcel_1 < 0) {
@@ -2118,7 +2290,7 @@ public class esatis_E implements TalendJob {
 
 						java.util.List<String> row_tFileInputExcel_1 = excelReader_tFileInputExcel_1.next();
 						row1 = null;
-						int tempRowLength_tFileInputExcel_1 = 23;
+						int tempRowLength_tFileInputExcel_1 = 25;
 
 						int columnIndex_tFileInputExcel_1 = 0;
 
@@ -2206,7 +2378,7 @@ public class esatis_E implements TalendJob {
 
 								row1.region = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
 							} else {
-								row1.region = " ";
+								row1.region = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 5;
@@ -2238,13 +2410,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_all_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_all_rea_ajust";
 
-								row1.nb_rep_score_all_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
-										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
-										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+								row1.nb_rep_score_all_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_all_ajust = null;
+								row1.nb_rep_score_all_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 8;
@@ -2252,11 +2425,11 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_all_ajust";
+								curColName_tFileInputExcel_1 = "score_all_rea_ajust";
 
-								row1.score_all_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.score_all_rea_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
 							} else {
-								row1.score_all_ajust = null;
+								row1.score_all_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 9;
@@ -2288,11 +2461,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_AVH_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_accueil_rea_ajust";
 
-								row1.score_AVH_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.nb_rep_score_accueil_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.score_AVH_ajust = null;
+								row1.nb_rep_score_accueil_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 12;
@@ -2300,13 +2476,13 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_AVH_ajust";
+								curColName_tFileInputExcel_1 = "score_accueil_rea_ajust";
 
-								row1.nb_rep_score_AVH_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+								row1.score_accueil_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
 										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
 										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_AVH_ajust = null;
+								row1.score_accueil_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 13;
@@ -2314,11 +2490,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_ACC_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_PECinf_rea_ajust";
 
-								row1.score_ACC_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.nb_rep_score_PECinf_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.score_ACC_ajust = null;
+								row1.nb_rep_score_PECinf_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 14;
@@ -2326,13 +2505,13 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_ACC_ajust";
+								curColName_tFileInputExcel_1 = "score_PECinf_rea_ajust";
 
-								row1.nb_rep_score_ACC_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+								row1.score_PECinf_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
 										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
 										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_ACC_ajust = null;
+								row1.score_PECinf_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 15;
@@ -2340,11 +2519,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_PEC_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_PECmed_rea_ajust";
 
-								row1.score_PEC_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.nb_rep_score_PECmed_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.score_PEC_ajust = null;
+								row1.nb_rep_score_PECmed_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 16;
@@ -2352,13 +2534,13 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_PEC_ajust";
+								curColName_tFileInputExcel_1 = "score_PECmed_rea_ajust";
 
-								row1.nb_rep_score_PEC_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+								row1.score_PECmed_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
 										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
 										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_PEC_ajust = null;
+								row1.score_PECmed_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 17;
@@ -2366,11 +2548,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_CER_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_chambre_rea_ajust";
 
-								row1.score_CER_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.nb_rep_score_chambre_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.score_CER_ajust = null;
+								row1.nb_rep_score_chambre_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 18;
@@ -2378,13 +2563,13 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_CER_ajust";
+								curColName_tFileInputExcel_1 = "score_chambre_rea_ajust";
 
-								row1.nb_rep_score_CER_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+								row1.score_chambre_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
 										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
 										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_CER_ajust = null;
+								row1.score_chambre_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 19;
@@ -2392,11 +2577,14 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "score_OVS_ajust";
+								curColName_tFileInputExcel_1 = "nb_rep_score_repas_rea_ajust";
 
-								row1.score_OVS_ajust = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								row1.nb_rep_score_repas_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
 							} else {
-								row1.score_OVS_ajust = null;
+								row1.nb_rep_score_repas_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 20;
@@ -2404,16 +2592,45 @@ public class esatis_E implements TalendJob {
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
 										+ start_column_tFileInputExcel_1 + 1;
-								curColName_tFileInputExcel_1 = "nb_rep_score_OVS_ajust";
+								curColName_tFileInputExcel_1 = "score_repas_rea_ajust";
 
-								row1.nb_rep_score_OVS_ajust = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+								row1.score_repas_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
 										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
 										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
 							} else {
-								row1.nb_rep_score_OVS_ajust = null;
+								row1.score_repas_rea_ajust = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
 							columnIndex_tFileInputExcel_1 = 21;
+
+							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+										+ start_column_tFileInputExcel_1 + 1;
+								curColName_tFileInputExcel_1 = "nb_rep_score_sortie_rea_ajust";
+
+								row1.nb_rep_score_sortie_rea_ajust = ParserUtils.parseTo_Integer(ParserUtils
+										.parseTo_Number(temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+												'.' == decimalChar_tFileInputExcel_1 ? null
+														: decimalChar_tFileInputExcel_1));
+							} else {
+								row1.nb_rep_score_sortie_rea_ajust = null;
+								emptyColumnCount_tFileInputExcel_1++;
+							}
+							columnIndex_tFileInputExcel_1 = 22;
+
+							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+										+ start_column_tFileInputExcel_1 + 1;
+								curColName_tFileInputExcel_1 = "score_sortie_rea_ajust";
+
+								row1.score_sortie_rea_ajust = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+										temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+										'.' == decimalChar_tFileInputExcel_1 ? null : decimalChar_tFileInputExcel_1));
+							} else {
+								row1.score_sortie_rea_ajust = null;
+								emptyColumnCount_tFileInputExcel_1++;
+							}
+							columnIndex_tFileInputExcel_1 = 23;
 
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
@@ -2425,7 +2642,7 @@ public class esatis_E implements TalendJob {
 								row1.taux_reco_brut = null;
 								emptyColumnCount_tFileInputExcel_1++;
 							}
-							columnIndex_tFileInputExcel_1 = 22;
+							columnIndex_tFileInputExcel_1 = 24;
 
 							if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
 								curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
@@ -4135,8 +4352,8 @@ public class esatis_E implements TalendJob {
 					context.HadoopHDFS_HdfsRowSeparator = (String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
 					context.setContextType("HadoopHDFS_HdfsUser", "id_String");
 					context.HadoopHDFS_HdfsUser = (String) context.getProperty("HadoopHDFS_HdfsUser");
-					context.setContextType("HadoopHDFS_HospiFile", "id_String");
-					context.HadoopHDFS_HospiFile = (String) context.getProperty("HadoopHDFS_HospiFile");
+					context.setContextType("HadoopHDFS_VisiteFile", "id_String");
+					context.HadoopHDFS_VisiteFile = (String) context.getProperty("HadoopHDFS_VisiteFile");
 					context.setContextType("HadoopHDFS_SatisfactionFile", "id_String");
 					context.HadoopHDFS_SatisfactionFile = (String) context.getProperty("HadoopHDFS_SatisfactionFile");
 					context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
@@ -4182,8 +4399,8 @@ public class esatis_E implements TalendJob {
 			if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
 				context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
 			}
-			if (parentContextMap.containsKey("HadoopHDFS_HospiFile")) {
-				context.HadoopHDFS_HospiFile = (String) parentContextMap.get("HadoopHDFS_HospiFile");
+			if (parentContextMap.containsKey("HadoopHDFS_VisiteFile")) {
+				context.HadoopHDFS_VisiteFile = (String) parentContextMap.get("HadoopHDFS_VisiteFile");
 			}
 			if (parentContextMap.containsKey("HadoopHDFS_SatisfactionFile")) {
 				context.HadoopHDFS_SatisfactionFile = (String) parentContextMap.get("HadoopHDFS_SatisfactionFile");
@@ -4394,6 +4611,6 @@ public class esatis_E implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 134685 characters generated by Talend Open Studio for Big Data on the 11 mai
- * 2022 02:04:13 CEST
+ * 144108 characters generated by Talend Open Studio for Big Data on the 11 mai
+ * 2022 10:36:21 CEST
  ************************************************************************************************/
