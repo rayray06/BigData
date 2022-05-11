@@ -421,10 +421,10 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
     static byte[] commonByteArray_BIGDATA_PROJECT_Region_Extrac = new byte[0];
 
 	
-			    public String region;
+			    public String Nom_Region;
 
-				public String getRegion () {
-					return this.region;
+				public String getNom_Region () {
+					return this.Nom_Region;
 				}
 				
 
@@ -468,7 +468,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 
         		int length = 0;
 		
-					this.region = readString(dis);
+					this.Nom_Region = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -490,7 +490,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 		
 					// String
 				
-						writeString(this.region,dos);
+						writeString(this.Nom_Region,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -505,7 +505,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("region="+region);
+		sb.append("Nom_Region="+Nom_Region);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -551,10 +551,10 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
     static byte[] commonByteArray_BIGDATA_PROJECT_Region_Extrac = new byte[0];
 
 	
-			    public String region;
+			    public String Nom_Region;
 
-				public String getRegion () {
-					return this.region;
+				public String getNom_Region () {
+					return this.Nom_Region;
 				}
 				
 
@@ -598,7 +598,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 
         		int length = 0;
 		
-					this.region = readString(dis);
+					this.Nom_Region = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -620,7 +620,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		
 					// String
 				
-						writeString(this.region,dos);
+						writeString(this.Nom_Region,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -635,7 +635,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("region="+region);
+		sb.append("Nom_Region="+Nom_Region);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2060,58 +2060,8 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 		int tos_count_tUniqRow_1 = 0;
 		
 
-	
-		class KeyStruct_tUniqRow_1 {
-	
-			private static final int DEFAULT_HASHCODE = 1;
-		    private static final int PRIME = 31;
-		    private int hashCode = DEFAULT_HASHCODE;
-		    public boolean hashCodeDirty = true;
-	
-	        
-					String region;        
-	        
-		    @Override
-			public int hashCode() {
-				if (this.hashCodeDirty) {
-					final int prime = PRIME;
-					int result = DEFAULT_HASHCODE;
-			
-								result = prime * result + ((this.region == null) ? 0 : this.region.hashCode());
-								
-		    		this.hashCode = result;
-		    		this.hashCodeDirty = false;		
-				}
-				return this.hashCode;
-			}
-			
-			@Override
-			public boolean equals(Object obj) {
-				if (this == obj) return true;
-				if (obj == null) return false;
-				if (getClass() != obj.getClass()) return false;
-				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
-				
-									if (this.region == null) {
-										if (other.region != null) 
-											return false;
-								
-									} else if (!this.region.equals(other.region))
-								 
-										return false;
-								
-				
-				return true;
-			}
-	  
-	        
-		}
-
-	
 int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0;
-KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
+int nb_duplicates_tUniqRow_1 = 0; 
 
  
 
@@ -2239,7 +2189,7 @@ regionDataStruct regionData_tmp = new regionDataStruct();
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Y0R+ZAcY0Hh5VZSKtDtt2v2GVOQchtuHlEoKXA==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ylW6fOt8ztqCUiPCiydKZaEb7Crt7giMWxGjAQ==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -2783,7 +2733,7 @@ if(regionData != null) {
 // for output
 			row3 = new row3Struct();
 								
-			row3.region = regionData.region;			
+			row3.Nom_Region = regionData.region;			
 
 			nb_line_tUnite_1++;
 
@@ -2829,31 +2779,7 @@ if(regionData != null) {
 	currentComponent="tUniqRow_1";
 
 	
-row4 = null;			
-if(row3.region == null){
-	finder_tUniqRow_1.region = null;
-}else{
-	finder_tUniqRow_1.region = row3.region.toLowerCase();
-}	
-finder_tUniqRow_1.hashCodeDirty = true;
-if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-
-		
-if(row3.region == null){
-	new_tUniqRow_1.region = null;
-}else{
-	new_tUniqRow_1.region = row3.region.toLowerCase();
-}
-		
-		keystUniqRow_1.add(new_tUniqRow_1);if(row4 == null){ 
-	
-	row4 = new row4Struct();
-}row4.region = row3.region;					
-		nb_uniques_tUniqRow_1++;
-	} else {
-	  nb_duplicates_tUniqRow_1++;
-	}
+row4.Nom_Region = row3.Nom_Region;			
 
  
 
@@ -2905,11 +2831,11 @@ if(row4 != null) {
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
 					
 					
-								if(row4.region != null) {
+								if(row4.Nom_Region != null) {
 							
 									sb_tHDFSOutput_1.append(
 										
-											row4.region
+											row4.Nom_Region
 										
 									);
 							
@@ -3660,7 +3586,7 @@ if(copyOfregionData != null) {
 // for output
 			row3 = new row3Struct();
 								
-			row3.region = copyOfregionData.region;			
+			row3.Nom_Region = copyOfregionData.region;			
 
 			nb_line_tUnite_1++;
 
@@ -3706,31 +3632,7 @@ if(copyOfregionData != null) {
 	currentComponent="tUniqRow_1";
 
 	
-row4 = null;			
-if(row3.region == null){
-	finder_tUniqRow_1.region = null;
-}else{
-	finder_tUniqRow_1.region = row3.region.toLowerCase();
-}	
-finder_tUniqRow_1.hashCodeDirty = true;
-if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-
-		
-if(row3.region == null){
-	new_tUniqRow_1.region = null;
-}else{
-	new_tUniqRow_1.region = row3.region.toLowerCase();
-}
-		
-		keystUniqRow_1.add(new_tUniqRow_1);if(row4 == null){ 
-	
-	row4 = new row4Struct();
-}row4.region = row3.region;					
-		nb_uniques_tUniqRow_1++;
-	} else {
-	  nb_duplicates_tUniqRow_1++;
-	}
+row4.Nom_Region = row3.Nom_Region;			
 
  
 
@@ -3782,11 +3684,11 @@ if(row4 != null) {
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
 					
 					
-								if(row4.region != null) {
+								if(row4.Nom_Region != null) {
 							
 									sb_tHDFSOutput_1.append(
 										
-											row4.region
+											row4.Nom_Region
 										
 									);
 							
@@ -4697,6 +4599,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     120280 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 12:22:42 CEST
+ *     117830 characters generated by Talend Open Studio for Big Data 
+ *     on the 11 mai 2022 21:55:34 CEST
  ************************************************************************************************/

@@ -457,10 +457,10 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					return this.identifiant_organisation;
 				}
 				
-			    public String region;
+			    public String Nom_Region;
 
-				public String getRegion () {
-					return this.region;
+				public String getNom_Region () {
+					return this.Nom_Region;
 				}
 				
 
@@ -506,7 +506,7 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		
 					this.identifiant_organisation = readString(dis);
 					
-					this.region = readString(dis);
+					this.Nom_Region = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -532,7 +532,7 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					
 					// String
 				
-						writeString(this.region,dos);
+						writeString(this.Nom_Region,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -548,7 +548,7 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("identifiant_organisation="+identifiant_organisation);
-		sb.append(",region="+region);
+		sb.append(",Nom_Region="+Nom_Region);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -600,10 +600,10 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					return this.identifiant_organisation;
 				}
 				
-			    public String region;
+			    public String Nom_Region;
 
-				public String getRegion () {
-					return this.region;
+				public String getNom_Region () {
+					return this.Nom_Region;
 				}
 				
 
@@ -649,7 +649,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		
 					this.identifiant_organisation = readString(dis);
 					
-					this.region = readString(dis);
+					this.Nom_Region = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -675,7 +675,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					
 					// String
 				
-						writeString(this.region,dos);
+						writeString(this.Nom_Region,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -691,7 +691,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("identifiant_organisation="+identifiant_organisation);
-		sb.append(",region="+region);
+		sb.append(",Nom_Region="+Nom_Region);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -743,10 +743,10 @@ public static class RegionFinessStruct implements routines.system.IPersistableRo
 					return this.identifiant_organisation;
 				}
 				
-			    public String region;
+			    public String Nom_Region;
 
-				public String getRegion () {
-					return this.region;
+				public String getNom_Region () {
+					return this.Nom_Region;
 				}
 				
 
@@ -792,7 +792,7 @@ public static class RegionFinessStruct implements routines.system.IPersistableRo
 		
 					this.identifiant_organisation = readString(dis);
 					
-					this.region = readString(dis);
+					this.Nom_Region = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -818,7 +818,7 @@ public static class RegionFinessStruct implements routines.system.IPersistableRo
 					
 					// String
 				
-						writeString(this.region,dos);
+						writeString(this.Nom_Region,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -834,7 +834,7 @@ public static class RegionFinessStruct implements routines.system.IPersistableRo
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("identifiant_organisation="+identifiant_organisation);
-		sb.append(",region="+region);
+		sb.append(",Nom_Region="+Nom_Region);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2086,7 +2086,7 @@ row3Struct row2 = row3;
         }
         Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
         util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","region",});        
+        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","Nom_Region",});        
  		StringBuilder strBuffer_tLogRow_1 = null;
 		int nb_line_tLogRow_1 = 0;
 ///////////////////////    			
@@ -2350,7 +2350,7 @@ RegionFinessStruct RegionFiness_tmp = new RegionFinessStruct();
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Ko4AirdG/oKgwNc9Z/yDHbTPj0NJJWmHbxY74A==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:6LdZDLPyWsFJzs7MU6PwHpBqL0lWVOu37Kim0g==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -2937,7 +2937,7 @@ Relational.NOT(Relational.ISNULL(row1.region))
 
  ) {
 RegionFiness_tmp.identifiant_organisation = row4.identifiant_organisation ;
-RegionFiness_tmp.region = Var.Final;
+RegionFiness_tmp.Nom_Region = Var.Final;
 RegionFiness = RegionFiness_tmp;
 } // closing filter/reject
 }  // closing inner join bracket (2)
@@ -3021,7 +3021,7 @@ if(RegionFiness.identifiant_organisation == null){
 		keystUniqRow_1.add(new_tUniqRow_1);if(row3 == null){ 
 	
 	row3 = new row3Struct();
-}row3.identifiant_organisation = RegionFiness.identifiant_organisation;			row3.region = RegionFiness.region;					
+}row3.identifiant_organisation = RegionFiness.identifiant_organisation;			row3.Nom_Region = RegionFiness.Nom_Region;					
 		nb_uniques_tUniqRow_1++;
 	} else {
 	  nb_duplicates_tUniqRow_1++;
@@ -3089,11 +3089,11 @@ if(row3 != null) {
 												
 								sb_tHDFSOutput_2.append(context.HadoopHDFS_HdfsFileSeparator);
 							
-								if(row3.region != null) {
+								if(row3.Nom_Region != null) {
 							
 									sb_tHDFSOutput_2.append(
 										
-											row3.region
+											row3.Nom_Region
 										
 									);
 							
@@ -3162,9 +3162,9 @@ if(row3 != null) {
 							
 	    		} //			
     			   				
-	    		if(row2.region != null) { //              
+	    		if(row2.Nom_Region != null) { //              
                  row_tLogRow_1[1]=    						    
-				                String.valueOf(row2.region)			
+				                String.valueOf(row2.Nom_Region)			
 					          ;	
 							
 	    		} //			
@@ -5239,6 +5239,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     141562 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 12:22:43 CEST
+ *     141678 characters generated by Talend Open Studio for Big Data 
+ *     on the 11 mai 2022 21:55:35 CEST
  ************************************************************************************************/

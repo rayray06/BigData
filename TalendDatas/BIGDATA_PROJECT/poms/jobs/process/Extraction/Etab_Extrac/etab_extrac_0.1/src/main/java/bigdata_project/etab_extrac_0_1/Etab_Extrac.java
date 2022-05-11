@@ -432,10 +432,10 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					return this.cedex;
 				}
 				
-			    public String score_all_rea_ajust;
+			    public String Score_48_2020;
 
-				public String getScore_all_rea_ajust () {
-					return this.score_all_rea_ajust;
+				public String getScore_48_2020 () {
+					return this.Score_48_2020;
 				}
 				
 
@@ -477,7 +477,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 
 		other.identifiant_organisation = this.identifiant_organisation;
 	            other.cedex = this.cedex;
-	            other.score_all_rea_ajust = this.score_all_rea_ajust;
+	            other.Score_48_2020 = this.Score_48_2020;
 	            
 	}
 
@@ -532,7 +532,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					
 					this.cedex = readString(dis);
 					
-					this.score_all_rea_ajust = readString(dis);
+					this.Score_48_2020 = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -562,7 +562,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					
 					// String
 				
-						writeString(this.score_all_rea_ajust,dos);
+						writeString(this.Score_48_2020,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -579,7 +579,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		sb.append("[");
 		sb.append("identifiant_organisation="+identifiant_organisation);
 		sb.append(",cedex="+cedex);
-		sb.append(",score_all_rea_ajust="+score_all_rea_ajust);
+		sb.append(",Score_48_2020="+Score_48_2020);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -651,10 +651,10 @@ public static class EtabStruct implements routines.system.IPersistableRow<EtabSt
 					return this.cedex;
 				}
 				
-			    public String score_all_rea_ajust;
+			    public String Score_48_2020;
 
-				public String getScore_all_rea_ajust () {
-					return this.score_all_rea_ajust;
+				public String getScore_48_2020 () {
+					return this.Score_48_2020;
 				}
 				
 
@@ -696,7 +696,7 @@ public static class EtabStruct implements routines.system.IPersistableRow<EtabSt
 
 		other.identifiant_organisation = this.identifiant_organisation;
 	            other.cedex = this.cedex;
-	            other.score_all_rea_ajust = this.score_all_rea_ajust;
+	            other.Score_48_2020 = this.Score_48_2020;
 	            
 	}
 
@@ -751,7 +751,7 @@ public static class EtabStruct implements routines.system.IPersistableRow<EtabSt
 					
 					this.cedex = readString(dis);
 					
-					this.score_all_rea_ajust = readString(dis);
+					this.Score_48_2020 = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -781,7 +781,7 @@ public static class EtabStruct implements routines.system.IPersistableRow<EtabSt
 					
 					// String
 				
-						writeString(this.score_all_rea_ajust,dos);
+						writeString(this.Score_48_2020,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -798,7 +798,7 @@ public static class EtabStruct implements routines.system.IPersistableRow<EtabSt
 		sb.append("[");
 		sb.append("identifiant_organisation="+identifiant_organisation);
 		sb.append(",cedex="+cedex);
-		sb.append(",score_all_rea_ajust="+score_all_rea_ajust);
+		sb.append(",Score_48_2020="+Score_48_2020);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1876,7 +1876,7 @@ EtabStruct row3 = Etab;
         }
         Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
         util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","cedex","score_all_rea_ajust",});        
+        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","cedex","Score_48_2020",});        
  		StringBuilder strBuffer_tLogRow_1 = null;
 		int nb_line_tLogRow_1 = 0;
 ///////////////////////    			
@@ -2419,7 +2419,7 @@ Etab = null;
 // # Output table : 'Etab'
 Etab_tmp.identifiant_organisation = row1.identifiant_organisation ;
 Etab_tmp.cedex = row1.cedex ;
-Etab_tmp.score_all_rea_ajust = row2.score_all_rea_ajust ;
+Etab_tmp.Score_48_2020 = row2.score_all_rea_ajust ;
 Etab = Etab_tmp;
 // ###############################
 
@@ -2510,11 +2510,11 @@ if(Etab != null) {
 												
 								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
 							
-								if(Etab.score_all_rea_ajust != null) {
+								if(Etab.Score_48_2020 != null) {
 							
 									sb_tHDFSOutput_1.append(
 										
-											Etab.score_all_rea_ajust
+											Etab.Score_48_2020
 										
 									);
 							
@@ -2590,9 +2590,9 @@ if(Etab != null) {
 							
 	    		} //			
     			   				
-	    		if(row3.score_all_rea_ajust != null) { //              
+	    		if(row3.Score_48_2020 != null) { //              
                  row_tLogRow_1[2]=    						    
-				                String.valueOf(row3.score_all_rea_ajust)			
+				                String.valueOf(row3.Score_48_2020)			
 					          ;	
 							
 	    		} //			
@@ -3735,7 +3735,7 @@ public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalM
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:hZ7fj029GIgfG07o4abfJLGQIzyrcVg61hm5+g==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:pWgmCHql5tI4M/wXKEWLRErl81nzK03vZAlRiA==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -4869,6 +4869,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     132239 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 12:22:40 CEST
+ *     132095 characters generated by Talend Open Studio for Big Data 
+ *     on the 11 mai 2022 21:55:32 CEST
  ************************************************************************************************/
