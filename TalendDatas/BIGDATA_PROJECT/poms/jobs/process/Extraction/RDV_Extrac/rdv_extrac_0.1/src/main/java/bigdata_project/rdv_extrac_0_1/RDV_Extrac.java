@@ -223,6 +223,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -369,15 +370,6 @@ private class TalendException extends Exception {
 			}
 			
 			public void tHDFSOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -565,6 +557,10 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+								} 
+							
 							tDBConnection_1Process(globalMap); 
 						
 
@@ -577,6 +573,8 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -673,7 +671,7 @@ public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap
 	
 	
 		 
-	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:15pheuXZETVR9GV+Y9jKw7Gw25OUnpazQcrrwg==");
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:lolqRivcWJyIFT4WsqvuysQJkNHJSRpgxzAmpw==");
 		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
 	
 	
@@ -808,6 +806,10 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
+								} 
+							
 							tDBInput_1Process(globalMap); 
 						
 
@@ -820,6 +822,8 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -859,166 +863,6 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 	}
 	
 
-
-public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
-
-	
-			    public int Num_consultation;
-
-				public int getNum_consultation () {
-					return this.Num_consultation;
-				}
-				
-			    public java.util.Date Date;
-
-				public java.util.Date getDate () {
-					return this.Date;
-				}
-				
-			    public java.util.Date Heure_debut;
-
-				public java.util.Date getHeure_debut () {
-					return this.Heure_debut;
-				}
-				
-			    public java.util.Date Heure_fin;
-
-				public java.util.Date getHeure_fin () {
-					return this.Heure_fin;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.Num_consultation = dis.readInt();
-					
-					this.Date = readDate(dis);
-					
-					this.Heure_debut = readDate(dis);
-					
-					this.Heure_fin = readDate(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.Num_consultation);
-					
-					// java.util.Date
-				
-						writeDate(this.Date,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.Heure_debut,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.Heure_fin,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("Num_consultation="+String.valueOf(Num_consultation));
-		sb.append(",Date="+String.valueOf(Date));
-		sb.append(",Heure_debut="+String.valueOf(Heure_debut));
-		sb.append(",Heure_fin="+String.valueOf(Heure_fin));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row2Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
     final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
@@ -1203,175 +1047,7 @@ public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) thr
 
 
 		row1Struct row1 = new row1Struct();
-row1Struct row2 = row1;
 
-
-
-
-
-	
-	/**
-	 * [tLogRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_1", false);
-		start_Hash.put("tLogRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_1";
-
-	
-		int tos_count_tLogRow_1 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_1 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[4];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 4; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 3 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 3 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%4$-");
-        			        sbformat.append(colLengths[3]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[3] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-        util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"Num_consultation","Date","Heure_debut","Heure_fin",});        
- 		StringBuilder strBuffer_tLogRow_1 = null;
-		int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_1 begin ] stop
- */
 
 
 
@@ -1391,6 +1067,10 @@ row1Struct row2 = row1;
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -1569,6 +1249,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -1625,7 +1309,6 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 
 	
  
-     row2 = row1;
 
 
 	tos_count_tHDFSOutput_1++;
@@ -1653,111 +1336,6 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 /**
  * [tHDFSOutput_1 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_1 = new String[4];
-              
-                 row_tLogRow_1[0]=    						    
-				                String.valueOf(row2.Num_consultation)			
-					          ;	
-										
-    			   				
-	    		if(row2.Date != null) { //              
-                 row_tLogRow_1[1]=    						    
-				                String.valueOf(row2.Date)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row2.Heure_debut != null) { //              
-                 row_tLogRow_1[2]=    						    
-				                String.valueOf(row2.Heure_debut)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row2.Heure_fin != null) { //              
-                 row_tLogRow_1[3]=    						    
-				                String.valueOf(row2.Heure_fin)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_1.addRow(row_tLogRow_1);	
-				nb_line_tLogRow_1++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_1++;
-
-/**
- * [tLogRow_1 main ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_1 process_data_end ] start
@@ -1855,6 +1433,10 @@ end_Hash.put("tDBInput_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -1866,56 +1448,6 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_1 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
-                    }
-                    
-                    consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-                    consoleOut_tLogRow_1.flush();
-//////
-globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_1", true);
-end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_1 end ] stop
- */
-
-
-
 
 
 
@@ -1932,6 +1464,8 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -1979,30 +1513,6 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 finally ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 finally ] stop
- */
-
-
-
 
 
 
@@ -2120,6 +1630,16 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -2209,6 +1729,16 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -2261,6 +1791,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -2424,6 +1958,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     63163 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:34 CEST
+ *     52606 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:46 CEST
  ************************************************************************************************/

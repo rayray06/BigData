@@ -223,6 +223,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -368,15 +369,6 @@ private class TalendException extends Exception {
 					tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tFileInputExcel_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -406,225 +398,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Etab_Extrac = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_Etab_Extrac = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public String identifiant_organisation;
-
-				public String getIdentifiant_organisation () {
-					return this.identifiant_organisation;
-				}
-				
-			    public String cedex;
-
-				public String getCedex () {
-					return this.cedex;
-				}
-				
-			    public String Score_48_2020;
-
-				public String getScore_48_2020 () {
-					return this.Score_48_2020;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.identifiant_organisation == null) ? 0 : this.identifiant_organisation.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row3Struct other = (row3Struct) obj;
-		
-						if (this.identifiant_organisation == null) {
-							if (other.identifiant_organisation != null)
-								return false;
-						
-						} else if (!this.identifiant_organisation.equals(other.identifiant_organisation))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row3Struct other) {
-
-		other.identifiant_organisation = this.identifiant_organisation;
-	            other.cedex = this.cedex;
-	            other.Score_48_2020 = this.Score_48_2020;
-	            
-	}
-
-	public void copyKeysDataTo(row3Struct other) {
-
-		other.identifiant_organisation = this.identifiant_organisation;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_BIGDATA_PROJECT_Etab_Extrac.length) {
-				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_Etab_Extrac.length == 0) {
-   					commonByteArray_BIGDATA_PROJECT_Etab_Extrac = new byte[1024];
-				} else {
-   					commonByteArray_BIGDATA_PROJECT_Etab_Extrac = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_BIGDATA_PROJECT_Etab_Extrac, 0, length);
-			strReturn = new String(commonByteArray_BIGDATA_PROJECT_Etab_Extrac, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_Etab_Extrac) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.identifiant_organisation = readString(dis);
-					
-					this.cedex = readString(dis);
-					
-					this.Score_48_2020 = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.identifiant_organisation,dos);
-					
-					// String
-				
-						writeString(this.cedex,dos);
-					
-					// String
-				
-						writeString(this.Score_48_2020,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("identifiant_organisation="+identifiant_organisation);
-		sb.append(",cedex="+cedex);
-		sb.append(",Score_48_2020="+Score_48_2020);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.identifiant_organisation, other.identifiant_organisation);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class EtabStruct implements routines.system.IPersistableRow<EtabStruct> {
     final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Etab_Extrac = new byte[0];
@@ -1728,168 +1501,8 @@ public void tFileInputDelimited_1Process(final java.util.Map<String, Object> glo
 
 		row1Struct row1 = new row1Struct();
 EtabStruct Etab = new EtabStruct();
-EtabStruct row3 = Etab;
 
 
-
-
-
-
-	
-	/**
-	 * [tLogRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_1", false);
-		start_Hash.put("tLogRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_1";
-
-	
-		int tos_count_tLogRow_1 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_1 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[3];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 3; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 2 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 2 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[2] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-        util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","cedex","Score_48_2020",});        
- 		StringBuilder strBuffer_tLogRow_1 = null;
-		int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_1 begin ] stop
- */
 
 
 
@@ -1909,6 +1522,10 @@ EtabStruct row3 = Etab;
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Etab");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -1977,6 +1594,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tMap_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tMap_1 = 0;
 		
 
@@ -2300,6 +1921,10 @@ if(row1 != null) {
 	currentComponent="tMap_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 		
 		
@@ -2481,6 +2106,10 @@ if(Etab != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Etab");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -2529,7 +2158,6 @@ if(Etab != null) {
 
 	
  
-     row3 = Etab;
 
 
 	tos_count_tHDFSOutput_1++;
@@ -2557,106 +2185,6 @@ if(Etab != null) {
 /**
  * [tHDFSOutput_1 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_1 = new String[3];
-   				
-	    		if(row3.identifiant_organisation != null) { //              
-                 row_tLogRow_1[0]=    						    
-				                String.valueOf(row3.identifiant_organisation)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row3.cedex != null) { //              
-                 row_tLogRow_1[1]=    						    
-				                String.valueOf(row3.cedex)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row3.Score_48_2020 != null) { //              
-                 row_tLogRow_1[2]=    						    
-				                String.valueOf(row3.Score_48_2020)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_1.addRow(row_tLogRow_1);	
-				nb_line_tLogRow_1++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_1++;
-
-/**
- * [tLogRow_1 main ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_1 process_data_end ] start
@@ -2800,6 +2328,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_1", true);
@@ -2831,6 +2363,10 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Etab");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -2842,56 +2378,6 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_1 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
-                    }
-                    
-                    consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-                    consoleOut_tLogRow_1.flush();
-//////
-globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_1", true);
-end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_1 end ] stop
- */
-
-
-
 
 
 
@@ -2911,6 +2397,8 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -2982,30 +2470,6 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 finally ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 finally ] stop
- */
-
-
-
 
 
 
@@ -3686,6 +3150,10 @@ public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalM
 	currentComponent="tAdvancedHash_row2";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
 		int tos_count_tAdvancedHash_row2 = 0;
 		
 
@@ -3735,7 +3203,7 @@ public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalM
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:pWgmCHql5tI4M/wXKEWLRErl81nzK03vZAlRiA==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:pXjSUVnngf2m1q9yeLgjgAJM+QFSIsAtMw5Xlw==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -4184,6 +3652,10 @@ if(row2 != null) {
 	currentComponent="tAdvancedHash_row2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
 
 
 			   
@@ -4386,6 +3858,10 @@ end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
 tHash_Lookup_row2.endPut();
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
  
 
 ok_Hash.put("tAdvancedHash_row2", true);
@@ -4413,6 +3889,8 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -4577,6 +4055,16 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -4666,6 +4154,16 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -4718,6 +4216,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -4869,6 +4371,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     132095 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:32 CEST
+ *     120551 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:45 CEST
  ************************************************************************************************/

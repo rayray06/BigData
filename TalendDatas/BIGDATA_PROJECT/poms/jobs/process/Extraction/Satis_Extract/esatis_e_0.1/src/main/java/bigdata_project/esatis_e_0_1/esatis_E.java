@@ -253,6 +253,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -407,15 +408,6 @@ private class TalendException extends Exception {
 					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tFileInputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -445,149 +437,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-
-public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[0];
-
-	
-			    public String identifiant_organisation;
-
-				public String getIdentifiant_organisation () {
-					return this.identifiant_organisation;
-				}
-				
-			    public String Nom_Region;
-
-				public String getNom_Region () {
-					return this.Nom_Region;
-				}
-				
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_BIGDATA_PROJECT_esatis_E.length) {
-				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_esatis_E.length == 0) {
-   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[1024];
-				} else {
-   					commonByteArray_BIGDATA_PROJECT_esatis_E = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length);
-			strReturn = new String(commonByteArray_BIGDATA_PROJECT_esatis_E, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_esatis_E) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.identifiant_organisation = readString(dis);
-					
-					this.Nom_Region = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.identifiant_organisation,dos);
-					
-					// String
-				
-						writeString(this.Nom_Region,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("identifiant_organisation="+identifiant_organisation);
-		sb.append(",Nom_Region="+Nom_Region);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row2Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
     final static byte[] commonByteArrayLock_BIGDATA_PROJECT_esatis_E = new byte[0];
@@ -1945,161 +1794,9 @@ public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalM
 		row1Struct row1 = new row1Struct();
 RegionFinessStruct RegionFiness = new RegionFinessStruct();
 row3Struct row3 = new row3Struct();
-row3Struct row2 = row3;
 
 
 
-
-
-
-
-	
-	/**
-	 * [tLogRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_1", false);
-		start_Hash.put("tLogRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_1";
-
-	
-		int tos_count_tLogRow_1 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_1 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[2];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 2; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 1 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 1 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                
-                    //last column
-                    for (int i = 0; i < colLengths[1] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-        util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"identifiant_organisation","Nom_Region",});        
- 		StringBuilder strBuffer_tLogRow_1 = null;
-		int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_1 begin ] stop
- */
 
 
 
@@ -2119,6 +1816,10 @@ row3Struct row2 = row3;
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+					}
+				
 		int tos_count_tHDFSOutput_2 = 0;
 		
 
@@ -2187,6 +1888,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"RegionFiness");
+					}
+				
 		int tos_count_tUniqRow_1 = 0;
 		
 
@@ -2269,6 +1974,10 @@ java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeySt
 	currentComponent="tMap_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tMap_1 = 0;
 		
 
@@ -2350,7 +2059,7 @@ RegionFinessStruct RegionFiness_tmp = new RegionFinessStruct();
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:6LdZDLPyWsFJzs7MU6PwHpBqL0lWVOu37Kim0g==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:R+Zz/1PrHR6zjqxKj4c9X/LLt5ixPteO9xHcuA==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -2798,6 +2507,10 @@ if(row1 != null) {
 	currentComponent="tMap_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 		
 		
@@ -3001,6 +2714,10 @@ if(RegionFiness != null) {
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"RegionFiness");
+					}
+					
 row3 = null;			
 if(RegionFiness.identifiant_organisation == null){
 	finder_tUniqRow_1.identifiant_organisation = null;
@@ -3072,6 +2789,10 @@ if(row3 != null) {
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
@@ -3108,7 +2829,6 @@ if(row3 != null) {
 
 	
  
-     row2 = row3;
 
 
 	tos_count_tHDFSOutput_2++;
@@ -3136,99 +2856,6 @@ if(row3 != null) {
 /**
  * [tHDFSOutput_2 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_1 = new String[2];
-   				
-	    		if(row2.identifiant_organisation != null) { //              
-                 row_tLogRow_1[0]=    						    
-				                String.valueOf(row2.identifiant_organisation)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row2.Nom_Region != null) { //              
-                 row_tLogRow_1[1]=    						    
-				                String.valueOf(row2.Nom_Region)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_1.addRow(row_tLogRow_1);	
-				nb_line_tLogRow_1++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_1++;
-
-/**
- * [tLogRow_1 main ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_2 process_data_end ] start
@@ -3405,6 +3032,10 @@ end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_1", true);
@@ -3433,6 +3064,10 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
 globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"RegionFiness");
+			  	}
+			  	
  
 
 ok_Hash.put("tUniqRow_1", true);
@@ -3464,6 +3099,10 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_2", true);
@@ -3475,56 +3114,6 @@ end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
 /**
  * [tHDFSOutput_2 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_1 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
-                    }
-                    
-                    consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-                    consoleOut_tLogRow_1.flush();
-//////
-globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_1", true);
-end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_1 end ] stop
- */
-
-
-
 
 
 
@@ -3547,6 +3136,8 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -3639,30 +3230,6 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_2 finally ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 finally ] stop
- */
-
-
-
 
 
 
@@ -4254,6 +3821,10 @@ public void tFileInputDelimited_1Process(final java.util.Map<String, Object> glo
 	currentComponent="tAdvancedHash_row4";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+					}
+				
 		int tos_count_tAdvancedHash_row4 = 0;
 		
 
@@ -4551,6 +4122,10 @@ if(row4 != null) {
 	currentComponent="tAdvancedHash_row4";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+					}
+					
 
 
 			   
@@ -4744,6 +4319,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 tHash_Lookup_row4.endPut();
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  	}
+			  	
  
 
 ok_Hash.put("tAdvancedHash_row4", true);
@@ -4771,6 +4350,8 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -4935,6 +4516,16 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -5036,6 +4627,16 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -5088,6 +4689,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -5239,6 +4844,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     141678 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:35 CEST
+ *     133006 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:47 CEST
  ************************************************************************************************/

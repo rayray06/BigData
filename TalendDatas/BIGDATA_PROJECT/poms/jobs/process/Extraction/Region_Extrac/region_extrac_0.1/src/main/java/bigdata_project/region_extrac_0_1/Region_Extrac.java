@@ -223,6 +223,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -1989,6 +1990,10 @@ row4Struct row4 = new row4Struct();
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -2057,11 +2062,65 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+					}
+				
 		int tos_count_tUniqRow_1 = 0;
 		
 
+	
+		class KeyStruct_tUniqRow_1 {
+	
+			private static final int DEFAULT_HASHCODE = 1;
+		    private static final int PRIME = 31;
+		    private int hashCode = DEFAULT_HASHCODE;
+		    public boolean hashCodeDirty = true;
+	
+	        
+					String Nom_Region;        
+	        
+		    @Override
+			public int hashCode() {
+				if (this.hashCodeDirty) {
+					final int prime = PRIME;
+					int result = DEFAULT_HASHCODE;
+			
+								result = prime * result + ((this.Nom_Region == null) ? 0 : this.Nom_Region.hashCode());
+								
+		    		this.hashCode = result;
+		    		this.hashCodeDirty = false;		
+				}
+				return this.hashCode;
+			}
+			
+			@Override
+			public boolean equals(Object obj) {
+				if (this == obj) return true;
+				if (obj == null) return false;
+				if (getClass() != obj.getClass()) return false;
+				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
+				
+									if (this.Nom_Region == null) {
+										if (other.Nom_Region != null) 
+											return false;
+								
+									} else if (!this.Nom_Region.equals(other.Nom_Region))
+								 
+										return false;
+								
+				
+				return true;
+			}
+	  
+	        
+		}
+
+	
 int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0; 
+int nb_duplicates_tUniqRow_1 = 0;
+KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
 
  
 
@@ -2089,6 +2148,10 @@ int nb_duplicates_tUniqRow_1 = 0;
 	currentComponent="tUnite_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"regionData","copyOfregionData");
+					}
+				
 		int tos_count_tUnite_1 = 0;
 		
 
@@ -2118,6 +2181,10 @@ int nb_line_tUnite_1 = 0;
 	currentComponent="tMap_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tMap_1 = 0;
 		
 
@@ -2189,7 +2256,7 @@ regionDataStruct regionData_tmp = new regionDataStruct();
 		
 
  
-	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ylW6fOt8ztqCUiPCiydKZaEb7Crt7giMWxGjAQ==");
+	final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:lipE8sSiCjoabElLvaVmdCEthDQVUcvjfTpgmQ==");
         String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
         if (password_tFileInputExcel_1.isEmpty()){
             password_tFileInputExcel_1 = null;
@@ -2637,6 +2704,10 @@ if(row1 != null) {
 	currentComponent="tMap_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 		
 		
@@ -2665,8 +2736,15 @@ regionData = null;
 
 
 // # Output table : 'regionData'
+// # Filter conditions 
+if( 
+
+StringHandling.LEN(Var.Final) > 0
+
+ ) {
 regionData_tmp.region = Var.Final ;
 regionData = regionData_tmp;
+} // closing filter/reject
 // ###############################
 
 } // end of Var scope
@@ -2727,6 +2805,10 @@ if(regionData != null) {
 	currentComponent="tUnite_1";
 
 	
+						if(execStat){
+							runStat.updateStatOnConnection(iterateId,1,1,"regionData");
+						}
+						
 //////////
  
 
@@ -2779,7 +2861,35 @@ if(regionData != null) {
 	currentComponent="tUniqRow_1";
 
 	
-row4.Nom_Region = row3.Nom_Region;			
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
+row4 = null;			
+if(row3.Nom_Region == null){
+	finder_tUniqRow_1.Nom_Region = null;
+}else{
+	finder_tUniqRow_1.Nom_Region = row3.Nom_Region.toLowerCase();
+}	
+finder_tUniqRow_1.hashCodeDirty = true;
+if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+
+		
+if(row3.Nom_Region == null){
+	new_tUniqRow_1.Nom_Region = null;
+}else{
+	new_tUniqRow_1.Nom_Region = row3.Nom_Region.toLowerCase();
+}
+		
+		keystUniqRow_1.add(new_tUniqRow_1);if(row4 == null){ 
+	
+	row4 = new row4Struct();
+}row4.Nom_Region = row3.Nom_Region;					
+		nb_uniques_tUniqRow_1++;
+	} else {
+	  nb_duplicates_tUniqRow_1++;
+	}
 
  
 
@@ -2826,6 +2936,10 @@ if(row4 != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -3068,6 +3182,10 @@ end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_1", true);
@@ -3099,6 +3217,10 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 	currentComponent="tMap_2";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
 		int tos_count_tMap_2 = 0;
 		
 
@@ -3490,6 +3612,10 @@ if(row2 != null) {
 	currentComponent="tMap_2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
 
 		
 		
@@ -3518,8 +3644,15 @@ copyOfregionData = null;
 
 
 // # Output table : 'copyOfregionData'
+// # Filter conditions 
+if( 
+
+StringHandling.LEN(Var.Final) > 0
+
+ ) {
 copyOfregionData_tmp.region = Var.Final ;
 copyOfregionData = copyOfregionData_tmp;
+} // closing filter/reject
 // ###############################
 
 } // end of Var scope
@@ -3580,6 +3713,10 @@ if(copyOfregionData != null) {
 	currentComponent="tUnite_1";
 
 	
+						if(execStat){
+							runStat.updateStatOnConnection(iterateId,1,1,"copyOfregionData");
+						}
+						
 //////////
  
 
@@ -3632,7 +3769,35 @@ if(copyOfregionData != null) {
 	currentComponent="tUniqRow_1";
 
 	
-row4.Nom_Region = row3.Nom_Region;			
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
+row4 = null;			
+if(row3.Nom_Region == null){
+	finder_tUniqRow_1.Nom_Region = null;
+}else{
+	finder_tUniqRow_1.Nom_Region = row3.Nom_Region.toLowerCase();
+}	
+finder_tUniqRow_1.hashCodeDirty = true;
+if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+
+		
+if(row3.Nom_Region == null){
+	new_tUniqRow_1.Nom_Region = null;
+}else{
+	new_tUniqRow_1.Nom_Region = row3.Nom_Region.toLowerCase();
+}
+		
+		keystUniqRow_1.add(new_tUniqRow_1);if(row4 == null){ 
+	
+	row4 = new row4Struct();
+}row4.Nom_Region = row3.Nom_Region;					
+		nb_uniques_tUniqRow_1++;
+	} else {
+	  nb_duplicates_tUniqRow_1++;
+	}
 
  
 
@@ -3679,6 +3844,10 @@ if(row4 != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -3914,6 +4083,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_2", true);
@@ -3942,6 +4115,10 @@ end_Hash.put("tMap_2", System.currentTimeMillis());
 	
 
 globalMap.put("tUnite_1_NB_LINE", nb_line_tUnite_1);
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"regionData","copyOfregionData");
+			  	}
+			  	
  
 
 ok_Hash.put("tUnite_1", true);
@@ -3970,6 +4147,10 @@ end_Hash.put("tUnite_1", System.currentTimeMillis());
 globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
 globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
  
 
 ok_Hash.put("tUniqRow_1", true);
@@ -4001,6 +4182,10 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -4031,6 +4216,8 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -4307,6 +4494,16 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -4396,6 +4593,16 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -4448,6 +4655,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -4599,6 +4810,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     117830 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:34 CEST
+ *     123510 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:47 CEST
  ************************************************************************************************/

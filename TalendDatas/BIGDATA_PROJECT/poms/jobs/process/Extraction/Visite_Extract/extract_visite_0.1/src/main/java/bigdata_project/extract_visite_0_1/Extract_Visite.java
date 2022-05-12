@@ -233,6 +233,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -387,25 +388,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tHDFSOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -588,6 +571,10 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+								} 
+							
 							tFileInputDelimited_1Process(globalMap); 
 						
 
@@ -600,6 +587,8 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -639,484 +628,6 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 	}
 	
 
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public String Num_Hospitalisation;
-
-				public String getNum_Hospitalisation () {
-					return this.Num_Hospitalisation;
-				}
-				
-			    public Integer Id_patient;
-
-				public Integer getId_patient () {
-					return this.Id_patient;
-				}
-				
-			    public String Code_diagnostic;
-
-				public String getCode_diagnostic () {
-					return this.Code_diagnostic;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.Num_Hospitalisation == null) ? 0 : this.Num_Hospitalisation.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row3Struct other = (row3Struct) obj;
-		
-						if (this.Num_Hospitalisation == null) {
-							if (other.Num_Hospitalisation != null)
-								return false;
-						
-						} else if (!this.Num_Hospitalisation.equals(other.Num_Hospitalisation))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row3Struct other) {
-
-		other.Num_Hospitalisation = this.Num_Hospitalisation;
-	            other.Id_patient = this.Id_patient;
-	            other.Code_diagnostic = this.Code_diagnostic;
-	            
-	}
-
-	public void copyKeysDataTo(row3Struct other) {
-
-		other.Num_Hospitalisation = this.Num_Hospitalisation;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_BIGDATA_PROJECT_Extract_Visite.length) {
-				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_Extract_Visite.length == 0) {
-   					commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[1024];
-				} else {
-   					commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_BIGDATA_PROJECT_Extract_Visite, 0, length);
-			strReturn = new String(commonByteArray_BIGDATA_PROJECT_Extract_Visite, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.Num_Hospitalisation = readString(dis);
-					
-						this.Id_patient = readInteger(dis);
-					
-					this.Code_diagnostic = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.Num_Hospitalisation,dos);
-					
-					// Integer
-				
-						writeInteger(this.Id_patient,dos);
-					
-					// String
-				
-						writeString(this.Code_diagnostic,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("Num_Hospitalisation="+Num_Hospitalisation);
-		sb.append(",Id_patient="+String.valueOf(Id_patient));
-		sb.append(",Code_diagnostic="+Code_diagnostic);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.Num_Hospitalisation, other.Num_Hospitalisation);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public String Num_Hospitalisation;
-
-				public String getNum_Hospitalisation () {
-					return this.Num_Hospitalisation;
-				}
-				
-			    public String Date_Entree;
-
-				public String getDate_Entree () {
-					return this.Date_Entree;
-				}
-				
-			    public Integer Jour_Hospitalisation;
-
-				public Integer getJour_Hospitalisation () {
-					return this.Jour_Hospitalisation;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.Num_Hospitalisation == null) ? 0 : this.Num_Hospitalisation.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row2Struct other = (row2Struct) obj;
-		
-						if (this.Num_Hospitalisation == null) {
-							if (other.Num_Hospitalisation != null)
-								return false;
-						
-						} else if (!this.Num_Hospitalisation.equals(other.Num_Hospitalisation))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row2Struct other) {
-
-		other.Num_Hospitalisation = this.Num_Hospitalisation;
-	            other.Date_Entree = this.Date_Entree;
-	            other.Jour_Hospitalisation = this.Jour_Hospitalisation;
-	            
-	}
-
-	public void copyKeysDataTo(row2Struct other) {
-
-		other.Num_Hospitalisation = this.Num_Hospitalisation;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_BIGDATA_PROJECT_Extract_Visite.length) {
-				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_Extract_Visite.length == 0) {
-   					commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[1024];
-				} else {
-   					commonByteArray_BIGDATA_PROJECT_Extract_Visite = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_BIGDATA_PROJECT_Extract_Visite, 0, length);
-			strReturn = new String(commonByteArray_BIGDATA_PROJECT_Extract_Visite, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.Num_Hospitalisation = readString(dis);
-					
-					this.Date_Entree = readString(dis);
-					
-						this.Jour_Hospitalisation = readInteger(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.Num_Hospitalisation,dos);
-					
-					// String
-				
-						writeString(this.Date_Entree,dos);
-					
-					// Integer
-				
-						writeInteger(this.Jour_Hospitalisation,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("Num_Hospitalisation="+Num_Hospitalisation);
-		sb.append(",Date_Entree="+Date_Entree);
-		sb.append(",Jour_Hospitalisation="+String.valueOf(Jour_Hospitalisation));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row2Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.Num_Hospitalisation, other.Num_Hospitalisation);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class OutStruct implements routines.system.IPersistableRow<OutStruct> {
     final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite = new byte[0];
@@ -1848,170 +1359,9 @@ public void tFileInputDelimited_1Process(final java.util.Map<String, Object> glo
 
 		row1Struct row1 = new row1Struct();
 OutStruct Out = new OutStruct();
-OutStruct row2 = Out;
 FaitStruct Fait = new FaitStruct();
-FaitStruct row3 = Fait;
 
 
-
-
-
-
-	
-	/**
-	 * [tLogRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_1", false);
-		start_Hash.put("tLogRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_1";
-
-	
-		int tos_count_tLogRow_1 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_1 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[3];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 3; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 2 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 2 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[2] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-        util_tLogRow_1.setTableName("tLogRow_1");
-        util_tLogRow_1.addRow(new String[]{"Num_Hospitalisation","Date_Entree","Jour_Hospitalisation",});        
- 		StringBuilder strBuffer_tLogRow_1 = null;
-		int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_1 begin ] stop
- */
 
 
 
@@ -2031,6 +1381,10 @@ FaitStruct row3 = Fait;
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Out");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -2084,165 +1438,6 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 
 
 
-
-	
-	/**
-	 * [tLogRow_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_2", false);
-		start_Hash.put("tLogRow_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_2";
-
-	
-		int tos_count_tLogRow_2 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_2 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[3];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 3; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 2 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 2 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[2] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_2 util_tLogRow_2 = new Util_tLogRow_2();
-        util_tLogRow_2.setTableName("tLogRow_2");
-        util_tLogRow_2.addRow(new String[]{"Num_Hospitalisation","Id_patient","Code_diagnostic",});        
- 		StringBuilder strBuffer_tLogRow_2 = null;
-		int nb_line_tLogRow_2 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_2 begin ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_2 begin ] start
@@ -2259,6 +1454,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Fait");
+					}
+				
 		int tos_count_tHDFSOutput_2 = 0;
 		
 
@@ -2317,6 +1516,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
 	currentComponent="tMap_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tMap_1 = 0;
 		
 
@@ -2584,6 +1787,10 @@ if(row1 != null) {
 	currentComponent="tMap_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 		
 		
@@ -2679,6 +1886,10 @@ if(Out != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Out");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -2727,7 +1938,6 @@ if(Out != null) {
 
 	
  
-     row2 = Out;
 
 
 	tos_count_tHDFSOutput_1++;
@@ -2755,106 +1965,6 @@ if(Out != null) {
 /**
  * [tHDFSOutput_1 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_1 = new String[3];
-   				
-	    		if(row2.Num_Hospitalisation != null) { //              
-                 row_tLogRow_1[0]=    						    
-				                String.valueOf(row2.Num_Hospitalisation)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row2.Date_Entree != null) { //              
-                 row_tLogRow_1[1]=    						    
-				                String.valueOf(row2.Date_Entree)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row2.Jour_Hospitalisation != null) { //              
-                 row_tLogRow_1[2]=    						    
-				                String.valueOf(row2.Jour_Hospitalisation)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_1.addRow(row_tLogRow_1);	
-				nb_line_tLogRow_1++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_1++;
-
-/**
- * [tLogRow_1 main ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_1 process_data_end ] start
@@ -2898,6 +2008,10 @@ if(Fait != null) {
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Fait");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
@@ -2946,7 +2060,6 @@ if(Fait != null) {
 
 	
  
-     row3 = Fait;
 
 
 	tos_count_tHDFSOutput_2++;
@@ -2974,106 +2087,6 @@ if(Fait != null) {
 /**
  * [tHDFSOutput_2 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_2 = new String[3];
-   				
-	    		if(row3.Num_Hospitalisation != null) { //              
-                 row_tLogRow_2[0]=    						    
-				                String.valueOf(row3.Num_Hospitalisation)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row3.Id_patient != null) { //              
-                 row_tLogRow_2[1]=    						    
-				                String.valueOf(row3.Id_patient)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(row3.Code_diagnostic != null) { //              
-                 row_tLogRow_2[2]=    						    
-				                String.valueOf(row3.Code_diagnostic)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_2.addRow(row_tLogRow_2);	
-				nb_line_tLogRow_2++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_2++;
-
-/**
- * [tLogRow_2 main ] stop
- */
-	
-	/**
-	 * [tLogRow_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_2 process_data_end ] start
@@ -3209,6 +2222,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_1", true);
@@ -3240,6 +2257,10 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Out");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -3251,56 +2272,6 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_1 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
-                    }
-                    
-                    consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-                    consoleOut_tLogRow_1.flush();
-//////
-globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_1", true);
-end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_1 end ] stop
- */
-
-
-
 
 
 
@@ -3324,6 +2295,10 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Fait");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_2", true);
@@ -3335,56 +2310,6 @@ end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
 /**
  * [tHDFSOutput_2 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_2 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_2);
-                    }
-                    
-                    consoleOut_tLogRow_2.println(util_tLogRow_2.format().toString());
-                    consoleOut_tLogRow_2.flush();
-//////
-globalMap.put("tLogRow_2_NB_LINE",nb_line_tLogRow_2);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_2", true);
-end_Hash.put("tLogRow_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_2 end ] stop
- */
-
-
-
 
 
 
@@ -3404,6 +2329,8 @@ end_Hash.put("tLogRow_2", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -3473,30 +2400,6 @@ end_Hash.put("tLogRow_2", System.currentTimeMillis());
  * [tHDFSOutput_1 finally ] stop
  */
 
-	
-	/**
-	 * [tLogRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 finally ] stop
- */
-
-
-
-
 
 
 
@@ -3520,30 +2423,6 @@ end_Hash.put("tLogRow_2", System.currentTimeMillis());
 /**
  * [tHDFSOutput_2 finally ] stop
  */
-
-	
-	/**
-	 * [tLogRow_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 finally ] stop
- */
-
-
-
 
 
 
@@ -3664,6 +2543,16 @@ end_Hash.put("tLogRow_2", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -3757,6 +2646,16 @@ end_Hash.put("tLogRow_2", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -3809,6 +2708,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -3960,6 +2863,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     98787 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:35 CEST
+ *     72786 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:48 CEST
  ************************************************************************************************/

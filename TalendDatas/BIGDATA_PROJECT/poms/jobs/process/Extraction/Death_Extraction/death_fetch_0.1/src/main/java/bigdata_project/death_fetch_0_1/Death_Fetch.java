@@ -284,6 +284,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -630,6 +631,10 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+								} 
+							
 							tFileInputDelimited_1Process(globalMap); 
 						
 
@@ -642,6 +647,8 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -1796,6 +1803,10 @@ row2Struct row2 = new row2Struct();
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Out");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -1856,6 +1867,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
 		int tos_count_tHDFSOutput_2 = 0;
 		
 
@@ -1914,6 +1929,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ActeDece");
+					}
+				
 		int tos_count_tUniqRow_1 = 0;
 		
 
@@ -1946,6 +1965,10 @@ int nb_duplicates_tUniqRow_1 = 0;
 	currentComponent="tMap_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tMap_1 = 0;
 		
 
@@ -2339,6 +2362,10 @@ if(row1 != null) {
 	currentComponent="tMap_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
 		
 		
@@ -2436,6 +2463,10 @@ if(Out != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Out");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -2542,6 +2573,10 @@ if(ActeDece != null) {
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"ActeDece");
+					}
+					
 row2.ID = ActeDece.ID;			
 
  
@@ -2589,6 +2624,10 @@ if(row2 != null) {
 	currentComponent="tHDFSOutput_2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_2 = new StringBuilder();
@@ -2801,6 +2840,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tMap_1", true);
@@ -2832,6 +2875,10 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Out");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -2863,6 +2910,10 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
 globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ActeDece");
+			  	}
+			  	
  
 
 ok_Hash.put("tUniqRow_1", true);
@@ -2894,6 +2945,10 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_2", true);
@@ -2927,6 +2982,8 @@ end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -3163,6 +3220,16 @@ end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -3281,6 +3348,16 @@ end_Hash.put("tHDFSOutput_2", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -3333,6 +3410,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -3484,6 +3565,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     88253 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:31 CEST
+ *     90597 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:44 CEST
  ************************************************************************************************/

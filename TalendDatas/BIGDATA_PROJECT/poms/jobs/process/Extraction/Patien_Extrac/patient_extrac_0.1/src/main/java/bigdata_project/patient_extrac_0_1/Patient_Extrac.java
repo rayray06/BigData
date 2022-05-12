@@ -223,6 +223,7 @@ public String getProjectHadoopCluster_User(){
 		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
 	
 
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
@@ -378,15 +379,6 @@ private class TalendException extends Exception {
 			}
 			
 			public void tHDFSOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -574,6 +566,10 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+								} 
+							
 							tDBConnection_1Process(globalMap); 
 						
 
@@ -586,6 +582,8 @@ end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -682,7 +680,7 @@ public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap
 	
 	
 		 
-	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:JJGPZUYNkev2GAnx4aw69vu79WXMrvuP3V4ePQ==");
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ncAUEPldTigm/JanNsyJaDoWwx5g/O5SiFrfTA==");
 		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
 	
 	
@@ -817,6 +815,10 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
 								}	    				    			
 					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
+								} 
+							
 							tDBInput_1Process(globalMap); 
 						
 
@@ -829,6 +831,8 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -868,182 +872,6 @@ end_Hash.put("tDBConnection_1", System.currentTimeMillis());
 	}
 	
 
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Patient_Extrac = new byte[0];
-    static byte[] commonByteArray_BIGDATA_PROJECT_Patient_Extrac = new byte[0];
-
-	
-			    public int Id_patient;
-
-				public int getId_patient () {
-					return this.Id_patient;
-				}
-				
-			    public Integer Age;
-
-				public Integer getAge () {
-					return this.Age;
-				}
-				
-			    public String Sexe;
-
-				public String getSexe () {
-					return this.Sexe;
-				}
-				
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_BIGDATA_PROJECT_Patient_Extrac.length) {
-				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_Patient_Extrac.length == 0) {
-   					commonByteArray_BIGDATA_PROJECT_Patient_Extrac = new byte[1024];
-				} else {
-   					commonByteArray_BIGDATA_PROJECT_Patient_Extrac = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_BIGDATA_PROJECT_Patient_Extrac, 0, length);
-			strReturn = new String(commonByteArray_BIGDATA_PROJECT_Patient_Extrac, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_BIGDATA_PROJECT_Patient_Extrac) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.Id_patient = dis.readInt();
-					
-						this.Age = readInteger(dis);
-					
-					this.Sexe = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.Id_patient);
-					
-					// Integer
-				
-						writeInteger(this.Age,dos);
-					
-					// String
-				
-						writeString(this.Sexe,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("Id_patient="+String.valueOf(Id_patient));
-		sb.append(",Age="+String.valueOf(Age));
-		sb.append(",Sexe="+Sexe);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
     final static byte[] commonByteArrayLock_BIGDATA_PROJECT_Patient_Extrac = new byte[0];
@@ -1421,50 +1249,8 @@ public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) thr
 
 		row1Struct row1 = new row1Struct();
 row2Struct row2 = new row2Struct();
-row2Struct row3 = row2;
 
 
-
-
-
-
-	
-	/**
-	 * [tLogRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_1", false);
-		start_Hash.put("tLogRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_1";
-
-	
-		int tos_count_tLogRow_1 = 0;
-		
-
-	///////////////////////
-	
-		final String OUTPUT_FIELD_SEPARATOR_tLogRow_1 = "|";
-		java.io.PrintStream consoleOut_tLogRow_1 = null;	
-
- 		StringBuilder strBuffer_tLogRow_1 = null;
-		int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_1 begin ] stop
- */
 
 
 
@@ -1484,6 +1270,10 @@ row2Struct row3 = row2;
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
 		int tos_count_tHDFSOutput_1 = 0;
 		
 
@@ -1542,6 +1332,10 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
 		int tos_count_tUniqRow_1 = 0;
 		
 
@@ -1736,6 +1530,10 @@ java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeySt
 	currentComponent="tUniqRow_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 row2 = null;			
 finder_tUniqRow_1.Id_patient = row1.Id_patient;	
 finder_tUniqRow_1.hashCodeDirty = true;
@@ -1799,6 +1597,10 @@ if(row2 != null) {
 	currentComponent="tHDFSOutput_1";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
 
 	
 					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
@@ -1843,7 +1645,6 @@ if(row2 != null) {
 
 	
  
-     row3 = row2;
 
 
 	tos_count_tHDFSOutput_1++;
@@ -1871,141 +1672,6 @@ if(row2 != null) {
 /**
  * [tHDFSOutput_1 process_data_begin ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-///////////////////////		
-						
-
-
-
-				strBuffer_tLogRow_1 = new StringBuilder();
-
-
-
-
-              
-                    							
-       
-				strBuffer_tLogRow_1.append(
-				                String.valueOf(row3.Id_patient)							
-				);
-
-
-							  			
-
-    			strBuffer_tLogRow_1.append("|");
-    			
-
-
-   				
-	    		if(row3.Age != null) { //              
-                    							
-       
-				strBuffer_tLogRow_1.append(
-				                String.valueOf(row3.Age)							
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_1.append("|");
-    			
-
-
-   				
-	    		if(row3.Sexe != null) { //              
-                    							
-       
-				strBuffer_tLogRow_1.append(
-				                String.valueOf(row3.Sexe)							
-				);
-
-
-							
-	    		} //  			
- 
-
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_1);
-                    }
-                    consoleOut_tLogRow_1.println(strBuffer_tLogRow_1.toString());
-                    consoleOut_tLogRow_1.flush();
-                    nb_line_tLogRow_1++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_1++;
-
-/**
- * [tLogRow_1 main ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 process_data_end ] stop
- */
-
-
-
 	
 	/**
 	 * [tHDFSOutput_1 process_data_end ] start
@@ -2126,6 +1792,10 @@ end_Hash.put("tDBInput_1", System.currentTimeMillis());
 globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
 globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
  
 
 ok_Hash.put("tUniqRow_1", true);
@@ -2157,6 +1827,10 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 		}
 
 	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
  
 
 ok_Hash.put("tHDFSOutput_1", true);
@@ -2168,41 +1842,6 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 end ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
-
-//////
-//////
-globalMap.put("tLogRow_1_NB_LINE",nb_line_tLogRow_1);
-
-///////////////////////    			
-
- 
-
-ok_Hash.put("tLogRow_1", true);
-end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_1 end ] stop
- */
-
-
-
 
 
 
@@ -2222,6 +1861,8 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 				
 				throw te;
 			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
 				
 				throw error;
 			}finally{
@@ -2290,30 +1931,6 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 /**
  * [tHDFSOutput_1 finally ] stop
  */
-
-	
-	/**
-	 * [tLogRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_1 finally ] stop
- */
-
-
-
 
 
 
@@ -2434,6 +2051,16 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
             isChildJob = true;
         }
 
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
         try {
             //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
@@ -2523,6 +2150,16 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
         //Resume: jobStart
         resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
 
 
@@ -2575,6 +2212,10 @@ this.globalResumeTicket = true;//to run tPostJob
 
 
 
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
     int returnCode = 0;
     if(errorCode == null) {
          returnCode = status != null && status.equals("failure") ? 1 : 0;
@@ -2738,6 +2379,6 @@ this.globalResumeTicket = true;//to run tPostJob
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     66815 characters generated by Talend Open Studio for Big Data 
- *     on the 11 mai 2022 21:55:33 CEST
+ *     60973 characters generated by Talend Open Studio for Big Data 
+ *     on the 12 mai 2022 13:45:45 CEST
  ************************************************************************************************/
