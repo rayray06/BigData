@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
   <TalendMetadata:GenericSchemaConnection xmi:id="_pmwqsNA6EeyF9IEJ3RrsIg" comment="connectionComment" label="connectionLabel" dataPackage="_pmwqsdA6EeyF9IEJ3RrsIg"/>
   <TalendMetadata:GenericPackage xmi:id="_pmwqsdA6EeyF9IEJ3RrsIg" dataManager="_pmwqsNA6EeyF9IEJ3RrsIg">
-    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_pmwqstA6EeyF9IEJ3RrsIg" label="metadata">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_pmwqstA6EeyF9IEJ3RrsIg" id="_r90MMNKsEeyiFK0OGkCKEQ" label="metadata">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pmwqs9A6EeyF9IEJ3RrsIg" name="Num_Hospitalisation" id="662" label="Num_Hospitalisation" length="2" talendType="id_Integer" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_pmwqtNA6EeyF9IEJ3RrsIg"/>
       </feature>
@@ -12,7 +12,7 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pmwqt9A6EeyF9IEJ3RrsIg" name="Code_diagnostic" id="665" label="Code_diagnostic" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_pmwquNA6EeyF9IEJ3RrsIg"/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pmwqudA6EeyF9IEJ3RrsIg" name="Date_Entree" id="667" label="Date_Entree" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pmwqudA6EeyF9IEJ3RrsIg" name="Date_Entree" id="667" label="Date_Entree" length="-1" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_pmwqutA6EeyF9IEJ3RrsIg"/>
       </feature>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pmwqu9A6EeyF9IEJ3RrsIg" name="Jour_Hospitalisation" id="668" label="Jour_Hospitalisation" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">

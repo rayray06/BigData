@@ -8,8 +8,10 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN1c8yEeyjRcBXZJl0rA" label="identifiant_organisation" length="18" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN1s8yEeyjRcBXZJl0rA" label="Code_diagnostic" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN188yEeyjRcBXZJl0rA" label="Suite_diagnostic_consultation" length="188" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN2M8yEeyjRcBXZJl0rA" label="Date_Entree" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN2c8yEeyjRcBXZJl0rA" label="Jour_Hospitalisation" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN2M8yEeyjRcBXZJl0rA" label="Date_Entree" length="-1" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_TqhN2c8yEeyjRcBXZJl0rA" label="Jour_Hospitalisation" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_U1ipENKsEeyiFK0OGkCKEQ" body=""/>
+      </feature>
     </ownedElement>
   </orgomg.cwm.resource.record:RecordFile>
 </xmi:XMI>

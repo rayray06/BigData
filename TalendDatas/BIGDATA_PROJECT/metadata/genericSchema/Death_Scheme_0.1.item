@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
   <TalendMetadata:GenericSchemaConnection xmi:id="_pRfGUM8eEeylS-_k4rIanw" comment="connectionComment" label="connectionLabel" dataPackage="_pRfGUc8eEeylS-_k4rIanw"/>
   <TalendMetadata:GenericPackage xmi:id="_pRfGUc8eEeylS-_k4rIanw" dataManager="_pRfGUM8eEeylS-_k4rIanw">
-    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_pRfGUs8eEeylS-_k4rIanw" label="metadata">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_pRfGUs8eEeylS-_k4rIanw" id="_uh1oINKsEeyiFK0OGkCKEQ" label="metadata">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_pRfGU88eEeylS-_k4rIanw" name="Numero_d_acte_du_deces" id="1870" label="Numero_d_acte_du_deces" length="9" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_pRfGVM8eEeylS-_k4rIanw"/>
       </feature>

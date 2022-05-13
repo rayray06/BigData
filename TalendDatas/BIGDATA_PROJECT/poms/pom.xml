@@ -25,6 +25,8 @@
     <module>jobs/process/Integrations/creation_partitions_0.1</module>
     <module>jobs/process/hos_0.1</module>
     <module>jobs/process/Extraction/Hosco_Extrac/hosconew_0.1</module>
+    <module>jobs/process/Integrations/Visite/visite_0.1</module>
+    <module>jobs/process/Integrations/Visite/staging_visite_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>
