@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2022-05-13T10:48:31.828+0200">
+  <deletedFolders>metadata/fileDelimited/Etablis_Datas</deletedFolders>
+  <deletedFolders>process/Extraction/CSV_Extraction</deletedFolders>
+  <deletedFolders>process/Extraction/PostGreExtraction</deletedFolders>
+  <deletedItems id="_-fZyYM8aEeylS-_k4rIanw" path="" type="CONTEXT"/>
+  <deletedItems id="_QnvzINBgEeyF9IEJ3RrsIg" path="Extraction" type="PROCESS"/>
+  <deletedItems id="_cObNAND9EeyF9IEJ3RrsIg" path="" type="PROCESS"/>
+  <deletedItems id="_OHLr8NBBEeyF9IEJ3RrsIg" path="" type="PROCESS"/>
+  <deletedItems id="_TZ-GkNI2EeyiFK0OGkCKEQ" path="Extraction/Hosco_Extrac" type="PROCESS"/>
+  <deletedItems id="_Uc5b0NI5EeyiFK0OGkCKEQ" path="Extraction/Death_Extraction" type="PROCESS"/>
+</recyclebin:RecycleBin>

@@ -6,7 +6,7 @@
     <contextParameter comment="" name="HadoopHDFS_HdfsFileSeparator" prompt="HadoopHDFS_HdfsFileSeparator?" promptNeeded="false" repositoryContextId="_mRyr8M8nEeynZOKm8YNFVg" type="id_String" value=";"/>
     <contextParameter comment="" name="HadoopHDFS_HdfsRowSeparator" prompt="HadoopHDFS_HdfsRowSeparator?" promptNeeded="false" repositoryContextId="_mRyr8M8nEeynZOKm8YNFVg" type="id_String" value="\n"/>
     <contextParameter comment="" name="HadoopHDFS_HdfsUser" prompt="HadoopHDFS_HdfsUser?" promptNeeded="false" repositoryContextId="_mRyr8M8nEeynZOKm8YNFVg" type="id_String" value="cloudera"/>
-    <contextParameter comment="" name="HadoopHDFS_Hosco" prompt="HadoopHDFS_Hosco?" promptNeeded="false" repositoryContextId="_mRyr8M8nEeynZOKm8YNFVg" type="id_String" value="&quot;Project/Hosco/HoscoTable&quot;"/>
+    <contextParameter comment="" name="HadoopHDFS_HoscoCo" prompt="HadoopHDFS_HoscoCo?" promptNeeded="false" repositoryContextId="_mRyr8M8nEeynZOKm8YNFVg" type="id_String" value="&quot;Project/Hosco/HoscoCoTable&quot;"/>
     <contextParameter comment="" name="ProjectHadoopCluster_NameNodeUri" prompt="ProjectHadoopCluster_NameNodeUri?" promptNeeded="false" repositoryContextId="_SaMnUM7jEeylS-_k4rIanw" type="id_String" value="hdfs://group3.bigdata:8020"/>
     <contextParameter comment="" name="ProjectHadoopCluster_User" prompt="ProjectHadoopCluster_User?" promptNeeded="false" repositoryContextId="_SaMnUM7jEeylS-_k4rIanw" type="id_String" value="cloudera"/>
   </context>
@@ -51,7 +51,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:2X3S1q08LMwvsuGtnZsCaPnTyrR4mDptTxB2atj3" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:wINAmLZJ84uolebPuMGCe803qkANeNwlBThIKGw0" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -86,7 +86,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:r4BuVGmVnvIJMPGVKmJsKoiG5gxFe0/3DhVx8JtS" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:o+Xepz8rhEZIEuEhhA/x2IrBzKUjrBaB6cA0RuEo" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -136,7 +136,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.HadoopHDFS_HdfsUser"/>
     <elementParameter field="TEXT" name="GROUP" value="&quot;supergroup&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:5O5/3XSID+Ctch2opVXvJSiqZGjCVnJEP3abNsTt" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:Yc8Serd3m+ecziOjS/yrww7D+AOOMFGQc0o9z6Ih" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="" show="false"/>
     <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES">
@@ -152,8 +152,8 @@
     <elementParameter field="TEXT" name="HDFS_ENCRYPTION_KEY_PROVIDER" value="&quot;kms://http@localhost:16000/kms&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" value="&quot;adl://account.azuredatalakestore.net&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" value="&quot;XXXX&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:KBXNOBUrEdCjq9zry0Bb5ON0CcGGX9HeuhWS0bIU7EQpQS5Da+fnvCmC2UddICbsIJRXgFU+np9T0DrJuNRK+NWp0DmHwNh+exfVSfUYBX0=" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:l5+Hivt6pkKEsCiiBtGB4TqISMmuDD1al1eHzbklNz79Dg==" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:k0FrXpp1hUgYM5/EcGVQFYWMTrzIya4/6LYvcouffBIhqQS9+632AkFyIZ33xgN9cJAMrcMDxvzxkb50JT1QYwSPw3jfg8LLV0aI0HSrXm0=" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:rW+4nMg/d/OVVj2HgzJdXEl5l0k6B7kC7ZKefjwNkV3GdA==" show="false"/>
     <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPR_HOME_DIR" value="&quot;/opt/mapr&quot;" show="false"/>
     <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" value="false" show="false"/>
@@ -172,7 +172,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;soins_medico_administratives&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;public&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;Group3User&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aDgSLtOBrVgDg4NXHA77qZTvSO766aEaR0VvEeEw"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2Uij5Ad2iZu17fSOowIsrUyGiRqmDCWmKufe5I7r"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
@@ -198,7 +198,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;soins_medico_administratives&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;public&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;Group3User&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:udNuijLO6syQWCnwt+kKwomnQFSEs/6GGo48l16M" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:grim3Ig8tfbzuYsqFO7oesjwCqHCrahC5zNOTnJd" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Consultation&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -248,7 +248,7 @@
       <column comment="" key="true" length="2" name="Num_Hospitalisation" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="FullOutput">
         <mapperTableEntries name="Num_consultation" expression="row1.Num_consultation " type="id_Integer"/>
@@ -379,8 +379,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="context.ProjectHadoopCluster_NameNodeUri"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" value="&quot;adl://account.azuredatalakestore.net&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" value="&quot;XXXX&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:ovMmMBvOc2qdLwe319+OB+0jQyFtq6BhhFj5TYWYk9E7oeNlvhOiP4bEGW9iwXMlHDXVIwxhp19c46Xke4FgItbn1DsZs+JWLWjD/BEss3s=" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:M34sEcbi/Xbq3OA0pM01+1fjQ9GFln/eoMIEf3Qecn6emw==" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:1GRG3CaGMvxAd8VHh0M88b55yng0z4NAAV0KqZB03s28j6BGQ8GrAvbpzJE8PZqoaLUnM/wHoHXhHqgJKn/vUzqKS16eAQ2Kfbpk0v6PEZU=" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:xEpgYkCLwlweV9PDgvnJMKFD4X+QmzXuqCxOgzs56oZ4XQ==" show="false"/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" value="&quot;hdfs/_HOST@EXAMPLE.COM&quot;" show="false"/>
@@ -390,10 +390,10 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.HadoopHDFS_HdfsUser"/>
     <elementParameter field="TEXT" name="GROUP" value="&quot;supergroup&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:DsIaNXXxm/YoHEikIka3Tw5cG1a64llqzo8ttXZZ" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:eAsIDoKplsQIdEdw2HRmKt/gSKjFoH9xiwRB/7JR" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="" show="false"/>
-    <elementParameter field="BOTH_HADOOP" name="FILENAME" value="context.HadoopHDFS_Hosco"/>
+    <elementParameter field="BOTH_HADOOP" name="FILENAME" value="context.HadoopHDFS_HoscoCo"/>
     <elementParameter field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
     <elementParameter field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="context.HadoopHDFS_HdfsRowSeparator"/>

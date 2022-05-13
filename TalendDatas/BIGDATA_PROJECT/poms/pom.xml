@@ -10,8 +10,6 @@
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
-    <module>jobs/process/testtemp_0.1</module>
-    <module>jobs/process/Extraction/sorry_0.1</module>
     <module>jobs/process/Extraction/Death_Extraction/death_fetch_0.1</module>
     <module>jobs/process/Extraction/Etab_Extrac/etab_extrac_0.1</module>
     <module>jobs/process/Extraction/Region_Extrac/region_extrac_0.1</module>
@@ -24,7 +22,9 @@
     <module>jobs/process/Extraction/Visite_Extract/extract_visite_0.1</module>
     <module>jobs/process/Extraction/Hosco_Extrac/hosco_extrac_0.1</module>
     <module>jobs/process/Extraction/execu_gen_0.1</module>
-    <module>jobs/process/poubelle_0.1</module>
+    <module>jobs/process/Integrations/creation_partitions_0.1</module>
+    <module>jobs/process/hos_0.1</module>
+    <module>jobs/process/Extraction/Hosco_Extrac/hosconew_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

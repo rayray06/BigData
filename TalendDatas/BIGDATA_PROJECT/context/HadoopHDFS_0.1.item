@@ -17,5 +17,6 @@
   <contextParameter xmi:id="_Fsgv0NC8EeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_RDV" prompt="HadoopHDFS_RDV?" promptNeeded="false" type="id_String" value="&quot;Project/RDV/RDVTable&quot;"/>
   <contextParameter xmi:id="_m6xEcNC8EeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Consu" prompt="HadoopHDFS_Consu?" promptNeeded="false" type="id_String" value="&quot;Project/Consu/ConsuTable&quot;"/>
   <contextParameter xmi:id="_yLn-kNDFEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Hospi" prompt="HadoopHDFS_Hospi?" promptNeeded="false" type="id_String" value="&quot;Project/Hospi/HospiTable&quot;"/>
-  <contextParameter xmi:id="_a0My4NDKEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_Hosco" prompt="HadoopHDFS_Hosco?" promptNeeded="false" type="id_String" value="&quot;Project/Hosco/HoscoTable&quot;"/>
+  <contextParameter xmi:id="_a0My4NDKEeyF9IEJ3RrsIg" comment="" name="HadoopHDFS_HoscoCo" prompt="HadoopHDFS_HoscoCo?" promptNeeded="false" type="id_String" value="&quot;Project/Hosco/HoscoCoTable&quot;"/>
+  <contextParameter xmi:id="_5P6rgNKYEeyiFK0OGkCKEQ" comment="" name="HadoopHDFS_HoscoHo" prompt="HadoopHDFS_HoscoHo?" promptNeeded="false" type="id_String" value="&quot;Project/Hosco/HoscoHoTable&quot;"/>
 </talendfile:ContextType>
