@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_SbUdodUCEeyiFK0OGkCKEQ" comment="connectionComment" label="connectionLabel" dataPackage="_SbUdotUCEeyiFK0OGkCKEQ" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_SbUdotUCEeyiFK0OGkCKEQ" dataManager="_SbUdodUCEeyiFK0OGkCKEQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_SbUdo9UCEeyiFK0OGkCKEQ" id="_PY5ZANUDEeyiFK0OGkCKEQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_SbUdpNUCEeyiFK0OGkCKEQ" name="Code_diag" id="36087" label="Code_diag" length="2147483647" sourceType="STRING" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_SbVEsNUCEeyiFK0OGkCKEQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_SbVEsdUCEeyiFK0OGkCKEQ" name="Diagnostic" id="36088" label="Diagnostic" length="2147483647" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_SbVEstUCEeyiFK0OGkCKEQ"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
