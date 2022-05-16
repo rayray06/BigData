@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_oiEPINT-EeyiFK0OGkCKEQ" id="_oiCZ8NT-EeyiFK0OGkCKEQ" label="Hospitalisation" version="0.1" statusCode="" item="_oiEPItT-EeyiFK0OGkCKEQ" displayName="Hospitalisation">
+    <author href="../../../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+    <additionalProperties xmi:id="_oiHScNT-EeyiFK0OGkCKEQ" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_oiHScdT-EeyiFK0OGkCKEQ" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_oiHSctT-EeyiFK0OGkCKEQ" key="created_date" value="2022-05-16T11:57:44.855+0200"/>
+    <additionalProperties xmi:id="_oiHSc9T-EeyiFK0OGkCKEQ" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_oiHSdNT-EeyiFK0OGkCKEQ" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_oiHSddT-EeyiFK0OGkCKEQ" key="modified_date" value="2022-05-16T11:57:44.975+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_oiEPIdT-EeyiFK0OGkCKEQ" path="Integrations/Hospitalisation"/>
+  <TalendProperties:ProcessItem xmi:id="_oiEPItT-EeyiFK0OGkCKEQ" property="_oiEPINT-EeyiFK0OGkCKEQ" state="_oiEPIdT-EeyiFK0OGkCKEQ">
+    <process href="Hospitalisation_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

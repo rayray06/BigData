@@ -27,6 +27,13 @@
     <module>jobs/process/Extraction/Hosco_Extrac/hosconew_0.1</module>
     <module>jobs/process/Integrations/Visite/visite_0.1</module>
     <module>jobs/process/Integrations/Visite/staging_visite_0.1</module>
+    <module>jobs/process/Integrations/full_integration_0.1</module>
+    <module>jobs/process/full_execution_0.1</module>
+    <module>jobs/process/test_0.1</module>
+    <module>jobs/process/test2_0.1</module>
+    <module>jobs/process/full_executionii_0.1</module>
+    <module>jobs/process/Integrations/Hospitalisation/hospitalisation_0.1</module>
+    <module>jobs/process/Integrations/Diagnostic/dim_diagnostic_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

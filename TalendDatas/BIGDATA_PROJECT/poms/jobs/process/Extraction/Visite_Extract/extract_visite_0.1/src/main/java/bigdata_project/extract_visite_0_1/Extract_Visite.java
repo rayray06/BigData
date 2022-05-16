@@ -467,8 +467,8 @@ public void tHDFSConnection_1Process(final java.util.Map<String, Object> globalM
 		
 				conf_tHDFSConnection_1.set("dfs.client.use.datanode.hostname", "true");
 	
-			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable);
-			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy);
+			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,"false");
+			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,"NEVER");
 	org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSConnection_1);
 	globalMap.put("conn_tHDFSConnection_1",conf_tHDFSConnection_1);
 
@@ -648,9 +648,9 @@ public static class OutStruct implements routines.system.IPersistableRow<OutStru
 					return this.Num_Hospitalisation;
 				}
 				
-			    public String Date_Entree;
+			    public java.util.Date Date_Entree;
 
-				public String getDate_Entree () {
+				public java.util.Date getDate_Entree () {
 					return this.Date_Entree;
 				}
 				
@@ -741,6 +741,27 @@ public static class OutStruct implements routines.system.IPersistableRow<OutStru
 			dos.write(byteArray);
     	}
     }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 	private Integer readInteger(ObjectInputStream dis) throws IOException{
 		Integer intReturn;
         int length = 0;
@@ -772,7 +793,7 @@ public static class OutStruct implements routines.system.IPersistableRow<OutStru
 		
 					this.Num_Hospitalisation = readString(dis);
 					
-					this.Date_Entree = readString(dis);
+					this.Date_Entree = readDate(dis);
 					
 						this.Jour_Hospitalisation = readInteger(dis);
 					
@@ -798,9 +819,9 @@ public static class OutStruct implements routines.system.IPersistableRow<OutStru
 				
 						writeString(this.Num_Hospitalisation,dos);
 					
-					// String
+					// java.util.Date
 				
-						writeString(this.Date_Entree,dos);
+						writeDate(this.Date_Entree,dos);
 					
 					// Integer
 				
@@ -820,7 +841,7 @@ public static class OutStruct implements routines.system.IPersistableRow<OutStru
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("Num_Hospitalisation="+Num_Hospitalisation);
-		sb.append(",Date_Entree="+Date_Entree);
+		sb.append(",Date_Entree="+String.valueOf(Date_Entree));
 		sb.append(",Jour_Hospitalisation="+String.valueOf(Jour_Hospitalisation));
 	    sb.append("]");
 
@@ -1142,9 +1163,9 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					return this.Suite_diagnostic_consultation;
 				}
 				
-			    public String Date_Entree;
+			    public java.util.Date Date_Entree;
 
-				public String getDate_Entree () {
+				public java.util.Date getDate_Entree () {
 					return this.Date_Entree;
 				}
 				
@@ -1207,6 +1228,27 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
     	}
 	}
 
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
     public void readData(ObjectInputStream dis) {
 
 		synchronized(commonByteArrayLock_BIGDATA_PROJECT_Extract_Visite) {
@@ -1225,7 +1267,7 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					
 					this.Suite_diagnostic_consultation = readString(dis);
 					
-					this.Date_Entree = readString(dis);
+					this.Date_Entree = readDate(dis);
 					
 						this.Jour_Hospitalisation = readInteger(dis);
 					
@@ -1267,9 +1309,9 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 				
 						writeString(this.Suite_diagnostic_consultation,dos);
 					
-					// String
+					// java.util.Date
 				
-						writeString(this.Date_Entree,dos);
+						writeDate(this.Date_Entree,dos);
 					
 					// Integer
 				
@@ -1293,7 +1335,7 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 		sb.append(",identifiant_organisation="+identifiant_organisation);
 		sb.append(",Code_diagnostic="+Code_diagnostic);
 		sb.append(",Suite_diagnostic_consultation="+Suite_diagnostic_consultation);
-		sb.append(",Date_Entree="+Date_Entree);
+		sb.append(",Date_Entree="+String.valueOf(Date_Entree));
 		sb.append(",Jour_Hospitalisation="+String.valueOf(Jour_Hospitalisation));
 	    sb.append("]");
 
@@ -1400,12 +1442,12 @@ org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
 	
 	        conf_tHDFSOutput_1.set("dfs.client.use.datanode.hostname", "true");
 	        
-				conf_tHDFSOutput_1.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable);
+				conf_tHDFSOutput_1.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,"false");
 			
-				conf_tHDFSOutput_1.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy);
+				conf_tHDFSOutput_1.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,"NEVER");
 			
        org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSOutput_1);
-		username_tHDFSOutput_1 = context.HadoopHDFS_HdfsUser;
+		username_tHDFSOutput_1 = "cloudera";
 		if(username_tHDFSOutput_1 == null || "".equals(username_tHDFSOutput_1)){
 			fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_1);
 		}else{
@@ -1468,7 +1510,7 @@ String username_tHDFSOutput_2 = "";
 org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_2 = null;
 	org.apache.hadoop.conf.Configuration conf_tHDFSOutput_2 = (org.apache.hadoop.conf.Configuration)globalMap.get("conn_tHDFSConnection_1");
 						
-					username_tHDFSOutput_2 = context.HadoopHDFS_HdfsUser;
+					username_tHDFSOutput_2 = "cloudera";
 				if(username_tHDFSOutput_2 == null || "".equals(username_tHDFSOutput_2)){
 					fs_tHDFSOutput_2 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_2);
 				}else{
@@ -1679,8 +1721,26 @@ FaitStruct Fait_tmp = new FaitStruct();
 				
 					columnIndexWithD_tFileInputDelimited_1 = 5;
 					
-							row1.Date_Entree = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-						
+						temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    									row1.Date_Entree = ParserUtils.parseTo_Date(temp, "dd/MM/yyyy");
+    								
+    							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"Date_Entree", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+								}
+    							
+						} else {						
+							
+								
+									row1.Date_Entree = null;
+								
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_1 = 6;
 					
@@ -1905,19 +1965,19 @@ if(Out != null) {
 							
 								}
 												
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+								sb_tHDFSOutput_1.append(";");
 							
 								if(Out.Date_Entree != null) {
 							
 									sb_tHDFSOutput_1.append(
 										
-											Out.Date_Entree
+											FormatterUtils.format_Date(Out.Date_Entree, "yyyy-MM-dd")
 										
 									);
 							
 								}
 												
-								sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsFileSeparator);
+								sb_tHDFSOutput_1.append(";");
 							
 								if(Out.Jour_Hospitalisation != null) {
 							
@@ -1929,7 +1989,7 @@ if(Out != null) {
 							
 								}
 							
-					sb_tHDFSOutput_1.append(context.HadoopHDFS_HdfsRowSeparator);
+					sb_tHDFSOutput_1.append("\n");
 					
 						outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
 					
@@ -2863,6 +2923,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     72786 characters generated by Talend Open Studio for Big Data 
- *     on the 12 mai 2022 13:45:48 CEST
+ *     74191 characters generated by Talend Open Studio for Big Data 
+ *     on the 16 mai 2022 11:51:15 CEST
  ************************************************************************************************/

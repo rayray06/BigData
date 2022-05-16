@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2022-05-16T08:49:45.121+0200">
+  <deletedFolders>process/Integrations/FactTable</deletedFolders>
+  <deletedFolders>process/Transformation_Chargement</deletedFolders>
+  <deletedItems id="_ZYIdANIIEeyiFK0OGkCKEQ" path="Integrations" type="PROCESS"/>
+  <deletedItems id="_nv8O0NKyEeyiFK0OGkCKEQ" path="StagingTable" type="METADATA_GENERIC_SCHEMA"/>
+</recyclebin:RecycleBin>

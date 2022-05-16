@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
-  <TalendMetadata:GenericSchemaConnection xmi:id="_CEx0kNKzEeyiFK0OGkCKEQ" comment="connectionComment" label="connectionLabel" dataPackage="_CEx0kdKzEeyiFK0OGkCKEQ"/>
+  <TalendMetadata:GenericSchemaConnection xmi:id="_CEx0kNKzEeyiFK0OGkCKEQ" comment="connectionComment" label="connectionLabel" dataPackage="_CEx0kdKzEeyiFK0OGkCKEQ" mappingTypeUsed="true" mappingTypeId="hive_id"/>
   <TalendMetadata:GenericPackage xmi:id="_CEx0kdKzEeyiFK0OGkCKEQ" dataManager="_CEx0kNKzEeyiFK0OGkCKEQ">
-    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_CEx0ktKzEeyiFK0OGkCKEQ" label="metadata">
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0k9KzEeyiFK0OGkCKEQ" name="Num_Hospitalisation" id="11799" label="Num_Hospitalisation" length="2" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_CEx0ktKzEeyiFK0OGkCKEQ" id="_IOwqYNT_EeyiFK0OGkCKEQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0k9KzEeyiFK0OGkCKEQ" name="Num_Hospitalisation" id="11799" label="Num_Hospitalisation" length="2" sourceType="STRING" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_CEx0lNKzEeyiFK0OGkCKEQ"/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0ldKzEeyiFK0OGkCKEQ" name="Id_patient" id="11800" label="Id_patient" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0ldKzEeyiFK0OGkCKEQ" name="Id_patient" id="11800" label="Id_patient" length="5" sourceType="INT" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_CEx0ltKzEeyiFK0OGkCKEQ"/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0l9KzEeyiFK0OGkCKEQ" name="Code_diagnostic" id="11801" label="Code_diagnostic" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_CEx0l9KzEeyiFK0OGkCKEQ" name="Code_diagnostic" id="11801" label="Code_diagnostic" length="6" sourceType="STRING" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_CEx0mNKzEeyiFK0OGkCKEQ"/>
       </feature>
     </ownedElement>

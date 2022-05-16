@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_mSAuZ88nEeynZOKm8YNFVg" id="_mRyr8M8nEeynZOKm8YNFVg" label="HadoopHDFS" version="0.1" statusCode="" item="_mSBVcc8nEeynZOKm8YNFVg" displayName="HadoopHDFS">
+    <author href="../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+    <additionalProperties xmi:id="_mSCjkM8nEeynZOKm8YNFVg" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_mSCjkc8nEeynZOKm8YNFVg" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_mSCjks8nEeynZOKm8YNFVg" key="created_date" value="2022-05-09T01:35:52.137+0200"/>
+    <additionalProperties xmi:id="_mSCjk88nEeynZOKm8YNFVg" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_mSCjlM8nEeynZOKm8YNFVg" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_mSCjlc8nEeynZOKm8YNFVg" key="modified_date" value="2022-05-13T10:44:32.154+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_mSBVcM8nEeynZOKm8YNFVg" path=""/>
+  <TalendProperties:ContextItem xmi:id="_mSBVcc8nEeynZOKm8YNFVg" property="_mSAuZ88nEeynZOKm8YNFVg" state="_mSBVcM8nEeynZOKm8YNFVg" defaultContext="Default">
+    <context href="HadoopHDFS_0.1.item#_mSAuYM8nEeynZOKm8YNFVg"/>
+  </TalendProperties:ContextItem>
+</xmi:XMI>

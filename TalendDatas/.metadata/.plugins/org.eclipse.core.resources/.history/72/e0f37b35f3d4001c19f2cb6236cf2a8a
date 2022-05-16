@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_8ekaANKyEeyiFK0OGkCKEQ" comment="connectionComment" label="connectionLabel" dataPackage="_8ekaAdKyEeyiFK0OGkCKEQ" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_8ekaAdKyEeyiFK0OGkCKEQ" dataManager="_8ekaANKyEeyiFK0OGkCKEQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_8ekaAtKyEeyiFK0OGkCKEQ" id="_UCn8ANTpEeyiFK0OGkCKEQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_8ekaA9KyEeyiFK0OGkCKEQ" name="Num_Hospitalisation" id="11790" label="Num_Hospitalisation" length="2" sourceType="STRING" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_8ekaBNKyEeyiFK0OGkCKEQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_8ekaBdKyEeyiFK0OGkCKEQ" name="Date_Entree" id="11791" label="Date_Entree" length="10" sourceType="TIMESTAMP" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_8ekaBtKyEeyiFK0OGkCKEQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_8ekaB9KyEeyiFK0OGkCKEQ" name="Jour_Hospitalisation" id="11792" label="Jour_Hospitalisation" length="2" sourceType="INT" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_8ekaCNKyEeyiFK0OGkCKEQ"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
