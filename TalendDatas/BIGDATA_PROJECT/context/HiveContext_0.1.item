@@ -9,4 +9,14 @@
   <contextParameter xmi:id="_CeoBENWqEey_cP3LWZvxoA" comment="" name="RegionTable" prompt="RegionTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Region&quot;"/>
   <contextParameter xmi:id="_XqqEgNWrEey_cP3LWZvxoA" comment="" name="SatiStage" prompt="SatiStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Satis&quot;"/>
   <contextParameter xmi:id="_XqqEgdWrEey_cP3LWZvxoA" comment="" name="SatiTable" prompt="SatiTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Satis&quot;"/>
+  <contextParameter xmi:id="_d_CTANWzEey_cP3LWZvxoA" comment="" name="DeathStage" prompt="DeathStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Death&quot;"/>
+  <contextParameter xmi:id="_d_CTAdWzEey_cP3LWZvxoA" comment="" name="DeathTable" prompt="DeathTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Death&quot;"/>
+  <contextParameter xmi:id="_oIGbcNW4Eey_cP3LWZvxoA" comment="" name="HoscoStageCo" prompt="HoscoStageCo?" promptNeeded="false" type="id_String" value="&quot;Stage_HoscoCo&quot;"/>
+  <contextParameter xmi:id="_oIGbcdW4Eey_cP3LWZvxoA" comment="" name="HoscoStageHo" prompt="HoscoStageHo?" promptNeeded="false" type="id_String" value="&quot;Stage_HoscoHo&quot;"/>
+  <contextParameter xmi:id="_oIGbctW4Eey_cP3LWZvxoA" comment="" name="HoscoTable" prompt="HoscoTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Hosco&quot;"/>
+  <contextParameter xmi:id="_5I5pANXDEey_cP3LWZvxoA" comment="" name="EtabTable" prompt="EtabTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Table&quot;"/>
+  <contextParameter xmi:id="_iCFhoNXHEey_cP3LWZvxoA" comment="" name="ConsuTable" prompt="ConsuTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Consu&quot;"/>
+  <contextParameter xmi:id="_xIXu0NXIEey_cP3LWZvxoA" comment="" name="ProfTable" prompt="ProfTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Prof&quot;"/>
+  <contextParameter xmi:id="_FC4qkNXLEey_cP3LWZvxoA" comment="" name="RDVStage" prompt="RDVStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Rdv&quot;"/>
+  <contextParameter xmi:id="_FC4qkdXLEey_cP3LWZvxoA" comment="" name="RDVTable" prompt="RDVTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Rdv&quot;"/>
 </talendfile:ContextType>

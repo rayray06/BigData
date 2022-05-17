@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
-  <TalendMetadata:GenericSchemaConnection xmi:id="_nv8O0dKyEeyiFK0OGkCKEQ" name="repository.metadataGenericSchema" dataPackage="_nv8O0tKyEeyiFK0OGkCKEQ" mappingTypeUsed="true" mappingTypeId="hive_id"/>
-  <TalendMetadata:GenericPackage xmi:id="_nv8O0tKyEeyiFK0OGkCKEQ" name="repository.metadataGenericSchema" dataManager="_nv8O0dKyEeyiFK0OGkCKEQ">
-    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_nv8O09KyEeyiFK0OGkCKEQ" id="_fBl-oNKyEeyiFK0OGkCKEQ" label="StagingTableScheme">
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_nv8O1NKyEeyiFK0OGkCKEQ" name="newColumn" label="newColumn" talendType="id_String"/>
-    </ownedElement>
-  </TalendMetadata:GenericPackage>
-</xmi:XMI>

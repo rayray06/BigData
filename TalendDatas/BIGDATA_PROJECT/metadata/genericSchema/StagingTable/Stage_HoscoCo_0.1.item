@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_ZSkAAtW3Eey_cP3LWZvxoA" comment="connectionComment" label="connectionLabel" dataPackage="_ZSkAA9W3Eey_cP3LWZvxoA" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_ZSkAA9W3Eey_cP3LWZvxoA" dataManager="_ZSkAAtW3Eey_cP3LWZvxoA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZSkABNW3Eey_cP3LWZvxoA" id="_cQllcNW5Eey_cP3LWZvxoA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZSkABdW3Eey_cP3LWZvxoA" name="Id_patient" id="9105" label="Id_patient" length="10" sourceType="INT" talendType="id_Integer">
+        <initialValue xmi:id="_ZSkABtW3Eey_cP3LWZvxoA" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZSkAB9W3Eey_cP3LWZvxoA" name="Num_consultation" id="9106" label="Num_consultation" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
+        <initialValue xmi:id="_ZSkACNW3Eey_cP3LWZvxoA" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

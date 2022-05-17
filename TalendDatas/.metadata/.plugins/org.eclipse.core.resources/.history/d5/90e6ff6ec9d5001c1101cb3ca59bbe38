@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2022-05-17T12:09:26.881+0200">
+  <deletedItems id="_nv8O0NKyEeyiFK0OGkCKEQ" path="StagingTable" type="METADATA_GENERIC_SCHEMA"/>
+  <deletedItems id="_lYaUANI0EeyiFK0OGkCKEQ" path="" type="PROCESS"/>
+  <deletedItems id="_tjW8kNTvEeyiFK0OGkCKEQ" path="" type="PROCESS"/>
+  <deletedItems id="_2SPuUNDIEeyF9IEJ3RrsIg" path="Extraction/Hosco_Extrac" type="PROCESS"/>
+  <deletedItems id="_opBKgNTkEeyiFK0OGkCKEQ" path="" type="PROCESS"/>
+  <deletedItems id="_X0TNENXJEey_cP3LWZvxoA" path="Integrations" type="PROCESS"/>
+</recyclebin:RecycleBin>

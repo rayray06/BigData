@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_6FTtINTiEeyiFK0OGkCKEQ" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_6FTtIdTiEeyiFK0OGkCKEQ" comment="" name="VisiteTable" prompt="VisiteTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Visite&quot;"/>
+  <contextParameter xmi:id="_6FTtItTiEeyiFK0OGkCKEQ" comment="" name="VisiteStage" prompt="VisiteStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Visite&quot;"/>
+  <contextParameter xmi:id="_xYyYMNT-EeyiFK0OGkCKEQ" comment="" name="HospiTable" prompt="HospiTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Hospi&quot;"/>
+  <contextParameter xmi:id="_nyP0YNUBEeyiFK0OGkCKEQ" comment="" name="DiagTable" prompt="DiagTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Diag&quot;"/>
+  <contextParameter xmi:id="_mLlUYNUIEeyiFK0OGkCKEQ" comment="" name="PatientTable" prompt="PatientTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Patient&quot;"/>
+  <contextParameter xmi:id="_Y3LI8NUREeyiFK0OGkCKEQ" comment="" name="PatientStage" prompt="PatientStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Patient&quot;"/>
+  <contextParameter xmi:id="_CeoBENWqEey_cP3LWZvxoA" comment="" name="RegionTable" prompt="RegionTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Region&quot;"/>
+  <contextParameter xmi:id="_XqqEgNWrEey_cP3LWZvxoA" comment="" name="SatiStage" prompt="SatiStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Satis&quot;"/>
+  <contextParameter xmi:id="_XqqEgdWrEey_cP3LWZvxoA" comment="" name="SatiTable" prompt="SatiTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Satis&quot;"/>
+  <contextParameter xmi:id="_d_CTANWzEey_cP3LWZvxoA" comment="" name="DeathStage" prompt="DeathStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Death&quot;"/>
+  <contextParameter xmi:id="_d_CTAdWzEey_cP3LWZvxoA" comment="" name="DeathTable" prompt="DeathTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Death&quot;"/>
+  <contextParameter xmi:id="_oIGbcNW4Eey_cP3LWZvxoA" comment="" name="HoscoStageCo" prompt="HoscoStageCo?" promptNeeded="false" type="id_String" value="&quot;Stage_HoscoCo&quot;"/>
+  <contextParameter xmi:id="_oIGbcdW4Eey_cP3LWZvxoA" comment="" name="HoscoStageHo" prompt="HoscoStageHo?" promptNeeded="false" type="id_String" value="&quot;Stage_HoscoHo&quot;"/>
+  <contextParameter xmi:id="_oIGbctW4Eey_cP3LWZvxoA" comment="" name="HoscoTable" prompt="HoscoTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Hosco&quot;"/>
+</talendfile:ContextType>

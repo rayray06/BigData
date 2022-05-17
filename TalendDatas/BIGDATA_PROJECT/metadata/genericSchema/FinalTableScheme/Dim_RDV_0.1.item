@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_fCiOANXMEey_cP3LWZvxoA" comment="connectionComment" label="connectionLabel" dataPackage="_fCiOAdXMEey_cP3LWZvxoA" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_fCiOAdXMEey_cP3LWZvxoA" dataManager="_fCiOANXMEey_cP3LWZvxoA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_fCiOAtXMEey_cP3LWZvxoA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fCiOA9XMEey_cP3LWZvxoA" name="Num_consultation" id="24110" label="Num_consultation" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
+        <initialValue xmi:id="_fCiOBNXMEey_cP3LWZvxoA" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fCiOBdXMEey_cP3LWZvxoA" name="Temps_debut" id="24111" label="Temps_debut" length="13" sourceType="TIMESTAMP" talendType="id_Date" pattern="&quot;yyyy-MM-dd HH:mm&quot;">
+        <initialValue xmi:id="_fCiOBtXMEey_cP3LWZvxoA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fCiOB9XMEey_cP3LWZvxoA" name="Temps_fin" id="24111" label="Temps_fin" length="13" sourceType="TIMESTAMP" talendType="id_Date" pattern="&quot;yyyy-MM-dd HH:mm&quot;">
+        <initialValue xmi:id="_fCiOCNXMEey_cP3LWZvxoA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

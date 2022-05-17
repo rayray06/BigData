@@ -1,5 +1,8 @@
 package routines;
 
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
 /*
  * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
  * it must be before the "{talendTypes}" key.
@@ -23,5 +26,16 @@ public class Perso {
 
     public static String UUID() {
         return java.util.UUID.randomUUID().toString();
+    }
+    
+    public static java.lang.Double ToDouble(String dataS) 
+    {
+    	return (dataS!=null)?Double.parseDouble(StringHandling.EREPLACE(dataS, ",", ".")) : null;
+    }
+    public static long DateToValue(String dataS) 
+    {
+    	LocalTime now = LocalTime.parse(dataS);
+    	LocalTime past = LocalTime.parse("00:00");
+    	return past.until(now, ChronoUnit.SECONDS);
     }
 }

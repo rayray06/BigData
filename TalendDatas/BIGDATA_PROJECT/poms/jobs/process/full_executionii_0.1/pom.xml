@@ -89,6 +89,56 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Diag_Extrac</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_Diagnostic</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Consu_Extrac</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Region_Extrac</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>esatis_E</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Stage_Hosco</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Stage_Death</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Fact_Satisfaction</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_Prof</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_Etablissement</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>Patient_Extrac</artifactId>
       <version>0.1.0</version>
     </dependency>
@@ -109,7 +159,7 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Diag_Extrac</artifactId>
+      <artifactId>Fact_Hosco</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
@@ -124,17 +174,12 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Dim_Diagnostic</artifactId>
-      <version>0.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>Stage_Patient</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Consu_Extrac</artifactId>
+      <artifactId>Dim_Death</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
@@ -149,17 +194,12 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Region_Extrac</artifactId>
+      <artifactId>Stage_Sati</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>HoscoNew</artifactId>
-      <version>0.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>esatis_E</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
