@@ -367,6 +367,15 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBClose_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBClose_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tFileInputDelimited_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -396,6 +405,11 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tDBClose_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -678,7 +692,7 @@ public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap
 	
 	
 		 
-	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:4ERa0ykXC1QkehB1lT9FtwRivYWj8NeOIYTRSw==");
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:aK67TeyFxvV1zs7ERzhPEKIt47DI3ET4uDprHw==");
 		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
 	
 	
@@ -2284,6 +2298,10 @@ globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
 ok_Hash.put("tDBInput_1", true);
 end_Hash.put("tDBInput_1", System.currentTimeMillis());
 
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
+				}
+				tDBClose_1Process(globalMap);
 
 
 
@@ -2479,6 +2497,204 @@ end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 		
 
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
+	}
+	
+
+public void tDBClose_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBClose_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tDBClose_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBClose_1", false);
+		start_Hash.put("tDBClose_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBClose_1";
+
+	
+		int tos_count_tDBClose_1 = 0;
+		
+
+ 
+
+
+
+/**
+ * [tDBClose_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+
+
+	java.sql.Connection conn_tDBClose_1 = (java.sql.Connection)globalMap.get("conn_tDBConnection_1");
+	if(conn_tDBClose_1 != null && !conn_tDBClose_1.isClosed())
+	{
+        conn_tDBClose_1.close();
+	}
+
+ 
+
+
+	tos_count_tDBClose_1++;
+
+/**
+ * [tDBClose_1 main ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+ok_Hash.put("tDBClose_1", true);
+end_Hash.put("tDBClose_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBClose_1 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBClose_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBClose_1_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -3667,6 +3883,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     88350 characters generated by Talend Open Studio for Big Data 
- *     on the 16 mai 2022 11:51:10 CEST
+ *     91881 characters generated by Talend Open Studio for Big Data 
+ *     on the 16 mai 2022 20:03:55 CEST
  ************************************************************************************************/

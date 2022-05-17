@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TalendMetadata:DatabaseConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmi:id="_4odZgM7gEeylS-_k4rIanw" name="ProstGreConnexion" id="_LZWNAM7eEeylS-_k4rIanw" label="ProstGreConnexion" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://172.20.16.11:5432/soins_medico_administratives?" dbVersionString="V9_X" Port="5432" Username="Group3User" Password="" ServerName="172.20.16.11" DatasourceName="" FileFieldName="" SID="soins_medico_administratives" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="public">
-  <taggedValue xmi:id="_4oenoM7gEeylS-_k4rIanw" tag="Is Conn Need Reload" value="true"/>
-  <parameters xmi:id="_4oenoc7gEeylS-_k4rIanw" key="CONN_PARA_KEY_USERNAME" value="Group3User"/>
-</TalendMetadata:DatabaseConnection>

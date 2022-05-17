@@ -34,6 +34,11 @@
     <module>jobs/process/full_executionii_0.1</module>
     <module>jobs/process/Integrations/Hospitalisation/hospitalisation_0.1</module>
     <module>jobs/process/Integrations/Diagnostic/dim_diagnostic_0.1</module>
+    <module>jobs/process/Integrations/Patient/stage_patient_0.1</module>
+    <module>jobs/process/Integrations/Patient/dim_patient_0.1</module>
+    <module>jobs/process/Integrations/Region/dim_region_0.1</module>
+    <module>jobs/process/Integrations/Satisfaction/fact_satisfaction_0.1</module>
+    <module>jobs/process/Integrations/Satisfaction/stage_sati_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

@@ -94,12 +94,17 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Hosco_Extrac</artifactId>
+      <artifactId>Visite</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
-      <artifactId>Visite</artifactId>
+      <artifactId>Dim_Patient</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_Region</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
@@ -115,6 +120,16 @@
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>Extract_Visite</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_Diagnostic</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Stage_Patient</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
@@ -139,7 +154,17 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>HoscoNew</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>esatis_E</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Hospitalisation</artifactId>
       <version>0.1.0</version>
     </dependency>
   </dependencies>

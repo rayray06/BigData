@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_wPly4NWrEey_cP3LWZvxoA" comment="connectionComment" label="connectionLabel" dataPackage="_wPly4dWrEey_cP3LWZvxoA"/>
+  <TalendMetadata:GenericPackage xmi:id="_wPly4dWrEey_cP3LWZvxoA" dataManager="_wPly4NWrEey_cP3LWZvxoA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_wPly4tWrEey_cP3LWZvxoA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_wPly49WrEey_cP3LWZvxoA" name="identifiant_organisation" id="5626" label="identifiant_organisation" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_wPly5NWrEey_cP3LWZvxoA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_wPly5dWrEey_cP3LWZvxoA" name="Nom_Region" id="5627" label="Nom_Region" length="20" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_wPly5tWrEey_cP3LWZvxoA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

@@ -9,7 +9,7 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_zym-NdKsEeyiFK0OGkCKEQ" name="Date_Entree" id="11770" label="Date_Entree" length="-1" precision="-1" sourceType="DATE" talendType="id_Date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;">
         <initialValue xmi:id="_zym-NtKsEeyiFK0OGkCKEQ"/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_zym-N9KsEeyiFK0OGkCKEQ" name="Data_Sortie" id="11771" label="Data_Sortie" length="-1" precision="-1" sourceType="DATE" talendType="id_Date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_zym-N9KsEeyiFK0OGkCKEQ" name="Date_Sortie" id="11771" label="Date_Sortie" length="-1" precision="-1" sourceType="DATE" talendType="id_Date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;">
         <initialValue xmi:id="_zym-ONKsEeyiFK0OGkCKEQ"/>
       </feature>
     </ownedElement>
