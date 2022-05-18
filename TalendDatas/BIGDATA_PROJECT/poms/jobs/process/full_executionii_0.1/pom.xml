@@ -99,6 +99,11 @@
     </dependency>
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Stage_RDV</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>Consu_Extrac</artifactId>
       <version>0.1.0</version>
     </dependency>
@@ -140,6 +145,11 @@
     <dependency>
       <groupId>org.example.bigdata_project.job</groupId>
       <artifactId>Patient_Extrac</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.bigdata_project.job</groupId>
+      <artifactId>Dim_RDV</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>

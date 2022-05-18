@@ -1,4 +1,4 @@
-Palette.RecentlyUsed.ComponentsList=tFileInputExcel\:1652258118866,tLogRow\:1652256131250,tUniqRow\:1652256125945,tMap\:1652255569308,tRunJob\:1652233214504,tHDFSOutput\:1652232849893,tFileInputDelimited\:1652232390422,tDBConnection\:1652226470778,tDBInput\:1652226435835,tHDFSConnection\:1652226417642,tUnite\:1652215750063,tFileList\:1652187269094,tSortRow\:1652183162858,tDBRow\:1652176211665,tRowGenerator\:1652053646134,tHDFSInput\:1652053587514
+Palette.RecentlyUsed.ComponentsList=tHiveRow\:1652794513798,tHiveConnection\:1652794501807,tRunJob\:1652794354220,tMap\:1652789290330,tLogRow\:1652776733760,tDBClose\:1652773651598,tFileInputExcel\:1652258118866,tUniqRow\:1652256125945,tHDFSOutput\:1652232849893,tFileInputDelimited\:1652232390422,tDBConnection\:1652226470778,tDBInput\:1652226435835,tHDFSConnection\:1652226417642,tUnite\:1652215750063,tDBRow\:1652176211665,tFileList\:1652187269094,tSortRow\:1652183162858,tRowGenerator\:1652053646134,tHDFSInput\:1652053587514
 TalendEditorPaletteFactory.Size=125
 TalendEditorPaletteFactory.StateAS400=1
 TalendEditorPaletteFactory.StateAccess=1
@@ -15,6 +15,7 @@ TalendEditorPaletteFactory.StateBox=1
 TalendEditorPaletteFactory.StateBusiness\ Intelligence=0
 TalendEditorPaletteFactory.StateCassandra=1
 TalendEditorPaletteFactory.StateChamps=1
+TalendEditorPaletteFactory.StateCloud=0
 TalendEditorPaletteFactory.StateCombined\ SQL=1
 TalendEditorPaletteFactory.StateConnections=1
 TalendEditorPaletteFactory.StateConnexions=1

@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 package bigdata_project.rdv_extrac_0_1;
 
 import routines.Numeric;
@@ -41,26 +42,31 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
+ 
+
+
+
+
 
 @SuppressWarnings("unused")
 
 /**
  * Job: RDV_Extrac Purpose: <br>
- * Description: <br>
- * 
+ * Description:  <br>
  * @author ray-hann06@hotmail.fr
  * @version 7.3.1.20200219_1130
- * @status
+ * @status 
  */
 public class RDV_Extrac implements TalendJob {
 
-	protected static void logIgnoredError(String message, Throwable cause) {
-		System.err.println(message);
-		if (cause != null) {
-			cause.printStackTrace();
-		}
+protected static void logIgnoredError(String message, Throwable cause) {
+       System.err.println(message);
+       if (cause != null) {
+               cause.printStackTrace();
+       }
 
-	}
+}
+
 
 	public final Object obj = new Object();
 
@@ -74,1116 +80,1300 @@ public class RDV_Extrac implements TalendJob {
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
-
+	
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
+	
 	private final static String utf8Charset = "UTF-8";
-
-	// contains type for every context property
+	//contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
-
-		public PropertiesWithType(java.util.Properties properties) {
+		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
+		
+		public PropertiesWithType(java.util.Properties properties){
 			super(properties);
 		}
-
-		public PropertiesWithType() {
+		public PropertiesWithType(){
 			super();
 		}
-
+		
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key, type);
+			propertyTypes.put(key,type);
 		}
-
+	
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-
+	
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
-
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties) {
+		public ContextProperties(java.util.Properties properties){
 			super(properties);
 		}
-
-		public ContextProperties() {
+		public ContextProperties(){
 			super();
 		}
 
-		public void synchronizeContext() {
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable.toString());
-
+		public void synchronizeContext(){
+			
+			if(HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable != null){
+				
+					this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable", HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable.toString());
+				
 			}
-
-			if (HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy != null) {
-
-				this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-						HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy.toString());
-
+			
+			if(HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy != null){
+				
+					this.setProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy", HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsFileSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
-
+			
+			if(HadoopHDFS_HdfsFileSeparator != null){
+				
+					this.setProperty("HadoopHDFS_HdfsFileSeparator", HadoopHDFS_HdfsFileSeparator.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsRowSeparator != null) {
-
-				this.setProperty("HadoopHDFS_HdfsRowSeparator", HadoopHDFS_HdfsRowSeparator.toString());
-
+			
+			if(HadoopHDFS_HdfsRowSeparator != null){
+				
+					this.setProperty("HadoopHDFS_HdfsRowSeparator", HadoopHDFS_HdfsRowSeparator.toString());
+				
 			}
-
-			if (HadoopHDFS_HdfsUser != null) {
-
-				this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
-
+			
+			if(HadoopHDFS_HdfsUser != null){
+				
+					this.setProperty("HadoopHDFS_HdfsUser", HadoopHDFS_HdfsUser.toString());
+				
 			}
-
-			if (HadoopHDFS_RDV != null) {
-
-				this.setProperty("HadoopHDFS_RDV", HadoopHDFS_RDV.toString());
-
+			
+			if(HadoopHDFS_RDV != null){
+				
+					this.setProperty("HadoopHDFS_RDV", HadoopHDFS_RDV.toString());
+				
 			}
-
-			if (ProjectHadoopCluster_NameNodeUri != null) {
-
-				this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
-
+			
+			if(ProjectHadoopCluster_NameNodeUri != null){
+				
+					this.setProperty("ProjectHadoopCluster_NameNodeUri", ProjectHadoopCluster_NameNodeUri.toString());
+				
 			}
-
-			if (ProjectHadoopCluster_User != null) {
-
-				this.setProperty("ProjectHadoopCluster_User", ProjectHadoopCluster_User.toString());
-
+			
+			if(ProjectHadoopCluster_User != null){
+				
+					this.setProperty("ProjectHadoopCluster_User", ProjectHadoopCluster_User.toString());
+				
 			}
-
+			
 		}
 
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
-		}
-
-		public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-
-		public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy() {
-			return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
-		}
-
-		public String HadoopHDFS_HdfsFileSeparator;
-
-		public String getHadoopHDFS_HdfsFileSeparator() {
-			return this.HadoopHDFS_HdfsFileSeparator;
-		}
-
-		public String HadoopHDFS_HdfsRowSeparator;
-
-		public String getHadoopHDFS_HdfsRowSeparator() {
-			return this.HadoopHDFS_HdfsRowSeparator;
-		}
-
-		public String HadoopHDFS_HdfsUser;
-
-		public String getHadoopHDFS_HdfsUser() {
-			return this.HadoopHDFS_HdfsUser;
-		}
-
-		public String HadoopHDFS_RDV;
-
-		public String getHadoopHDFS_RDV() {
-			return this.HadoopHDFS_RDV;
-		}
-
-		public String ProjectHadoopCluster_NameNodeUri;
-
-		public String getProjectHadoopCluster_NameNodeUri() {
-			return this.ProjectHadoopCluster_NameNodeUri;
-		}
-
-		public String ProjectHadoopCluster_User;
-
-		public String getProjectHadoopCluster_User() {
-			return this.ProjectHadoopCluster_User;
-		}
+public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
+public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable(){
+	return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable;
+}
+public String HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
+public String getHadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy(){
+	return this.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy;
+}
+public String HadoopHDFS_HdfsFileSeparator;
+public String getHadoopHDFS_HdfsFileSeparator(){
+	return this.HadoopHDFS_HdfsFileSeparator;
+}
+public String HadoopHDFS_HdfsRowSeparator;
+public String getHadoopHDFS_HdfsRowSeparator(){
+	return this.HadoopHDFS_HdfsRowSeparator;
+}
+public String HadoopHDFS_HdfsUser;
+public String getHadoopHDFS_HdfsUser(){
+	return this.HadoopHDFS_HdfsUser;
+}
+public String HadoopHDFS_RDV;
+public String getHadoopHDFS_RDV(){
+	return this.HadoopHDFS_RDV;
+}
+public String ProjectHadoopCluster_NameNodeUri;
+public String getProjectHadoopCluster_NameNodeUri(){
+	return this.ProjectHadoopCluster_NameNodeUri;
+}
+public String ProjectHadoopCluster_User;
+public String getProjectHadoopCluster_User(){
+	return this.ProjectHadoopCluster_User;
+}
 	}
-
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
-
 	public ContextProperties getContext() {
 		return this.context;
 	}
-
 	private final String jobVersion = "0.1";
 	private final String jobName = "RDV_Extrac";
 	private final String projectName = "BIGDATA_PROJECT";
 	public Integer errorCode = null;
 	private String currentComponent = "";
+	
+		private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
+        private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
+	
+		private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
+		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
+	
 
-	private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
-	private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
-
-	private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
-	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
-
-	private RunStat runStat = new RunStat();
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-
+	
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(),
-					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
-	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-	public String getExceptionStackTrace() {
-		if ("failure".equals(this.getStatus())) {
-			errorMessagePS.flush();
-			return baos.toString();
-		}
-		return null;
+private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
+
+public String getExceptionStackTrace() {
+	if ("failure".equals(this.getStatus())) {
+		errorMessagePS.flush();
+		return baos.toString();
+	}
+	return null;
+}
+
+private Exception exception;
+
+public Exception getException() {
+	if ("failure".equals(this.getStatus())) {
+		return this.exception;
+	}
+	return null;
+}
+
+private class TalendException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	private java.util.Map<String, Object> globalMap = null;
+	private Exception e = null;
+	private String currentComponent = null;
+	private String virtualComponentName = null;
+	
+	public void setVirtualComponentName (String virtualComponentName){
+		this.virtualComponentName = virtualComponentName;
 	}
 
-	private Exception exception;
+	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+		this.currentComponent= errorComponent;
+		this.globalMap = globalMap;
+		this.e = e;
+	}
 
 	public Exception getException() {
-		if ("failure".equals(this.getStatus())) {
-			return this.exception;
-		}
-		return null;
+		return this.e;
 	}
 
-	private class TalendException extends Exception {
+	public String getCurrentComponent() {
+		return this.currentComponent;
+	}
 
-		private static final long serialVersionUID = 1L;
+	
+    public String getExceptionCauseMessage(Exception e){
+        Throwable cause = e;
+        String message = null;
+        int i = 10;
+        while (null != cause && 0 < i--) {
+            message = cause.getMessage();
+            if (null == message) {
+                cause = cause.getCause();
+            } else {
+                break;          
+            }
+        }
+        if (null == message) {
+            message = e.getClass().getName();
+        }   
+        return message;
+    }
 
-		private java.util.Map<String, Object> globalMap = null;
-		private Exception e = null;
-		private String currentComponent = null;
-		private String virtualComponentName = null;
-
-		public void setVirtualComponentName(String virtualComponentName) {
-			this.virtualComponentName = virtualComponentName;
+	@Override
+	public void printStackTrace() {
+		if (!(e instanceof TalendException || e instanceof TDieException)) {
+			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
+				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			}
+			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
 		}
-
-		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-			this.currentComponent = errorComponent;
-			this.globalMap = globalMap;
-			this.e = e;
+		if (!(e instanceof TDieException)) {
+			if(e instanceof TalendException){
+				e.printStackTrace();
+			} else {
+				e.printStackTrace();
+				e.printStackTrace(errorMessagePS);
+				RDV_Extrac.this.exception = e;
+			}
 		}
-
-		public Exception getException() {
-			return this.e;
-		}
-
-		public String getCurrentComponent() {
-			return this.currentComponent;
-		}
-
-		public String getExceptionCauseMessage(Exception e) {
-			Throwable cause = e;
-			String message = null;
-			int i = 10;
-			while (null != cause && 0 < i--) {
-				message = cause.getMessage();
-				if (null == message) {
-					cause = cause.getCause();
-				} else {
+		if (!(e instanceof TalendException)) {
+		try {
+			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+				if (m.getName().compareTo(currentComponent + "_error") == 0) {
+					m.invoke(RDV_Extrac.this, new Object[] { e , currentComponent, globalMap});
 					break;
 				}
 			}
-			if (null == message) {
-				message = e.getClass().getName();
+
+			if(!(e instanceof TDieException)){
 			}
-			return message;
+		} catch (Exception e) {
+			this.e.printStackTrace();
 		}
-
-		@Override
-		public void printStackTrace() {
-			if (!(e instanceof TalendException || e instanceof TDieException)) {
-				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
-					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				}
-				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
-			}
-			if (!(e instanceof TDieException)) {
-				if (e instanceof TalendException) {
-					e.printStackTrace();
-				} else {
-					e.printStackTrace();
-					e.printStackTrace(errorMessagePS);
-					RDV_Extrac.this.exception = e;
-				}
-			}
-			if (!(e instanceof TalendException)) {
-				try {
-					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(RDV_Extrac.this, new Object[] { e, currentComponent, globalMap });
-							break;
-						}
-					}
-
-					if (!(e instanceof TDieException)) {
-					}
-				} catch (Exception e) {
-					this.e.printStackTrace();
-				}
-			}
 		}
 	}
+}
 
-	public void tHDFSConnection_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tHDFSConnection_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tHDFSConnection_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBConnection_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBConnection_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tHDFSOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBClose_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBClose_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tHDFSConnection_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-		end_Hash.put(errorComponent, System.currentTimeMillis());
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
-		status = "failure";
+			}
+			public void tDBConnection_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-		tHDFSConnection_1_onSubJobError(exception, errorComponent, globalMap);
-	}
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
-	public void tDBConnection_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
+			}
+			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-		end_Hash.put(errorComponent, System.currentTimeMillis());
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
-		status = "failure";
+			}
+			public void tDBClose_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-		tDBConnection_1_onSubJobError(exception, errorComponent, globalMap);
-	}
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
-	public void tDBInput_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
+			}
+	
 
-		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-		status = "failure";
 
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
 
-	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
 
-		end_Hash.put(errorComponent, System.currentTimeMillis());
+public void tHDFSConnection_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", 0);
 
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHDFSOutput_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDBClose_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBClose_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHDFSConnection_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tDBConnection_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tDBInput_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tDBClose_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tHDFSConnection_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				/**
-				 * [tHDFSConnection_1 begin ] start
-				 */
 
-				ok_Hash.put("tHDFSConnection_1", false);
-				start_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
 
-				currentComponent = "tHDFSConnection_1";
+		
 
-				int tos_count_tHDFSConnection_1 = 0;
 
-				org.apache.hadoop.conf.Configuration conf_tHDFSConnection_1 = new org.apache.hadoop.conf.Configuration();
-				conf_tHDFSConnection_1.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
-				conf_tHDFSConnection_1.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
+	
+	/**
+	 * [tHDFSConnection_1 begin ] start
+	 */
 
+	
+
+	
+		
+		ok_Hash.put("tHDFSConnection_1", false);
+		start_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tHDFSConnection_1";
+
+	
+		int tos_count_tHDFSConnection_1 = 0;
+		
+
+	
+	
+	
+		org.apache.hadoop.conf.Configuration conf_tHDFSConnection_1 = new org.apache.hadoop.conf.Configuration();
+		conf_tHDFSConnection_1.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
+			conf_tHDFSConnection_1.set("fs.default.name", context.ProjectHadoopCluster_NameNodeUri);
+		
 				conf_tHDFSConnection_1.set("dfs.client.use.datanode.hostname", "true");
+	
+			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.enable" ,"false");
+			conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.policy" ,"NEVER");
+	org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSConnection_1);
+	globalMap.put("conn_tHDFSConnection_1",conf_tHDFSConnection_1);
 
-				conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.enable", "false");
-				conf_tHDFSConnection_1.set("dfs.client.block.write.replace-datanode-on-failure.policy", "NEVER");
-				org.apache.hadoop.security.UserGroupInformation.setConfiguration(conf_tHDFSConnection_1);
-				globalMap.put("conn_tHDFSConnection_1", conf_tHDFSConnection_1);
+ 
 
-				/**
-				 * [tHDFSConnection_1 begin ] stop
-				 */
 
-				/**
-				 * [tHDFSConnection_1 main ] start
-				 */
 
-				currentComponent = "tHDFSConnection_1";
+/**
+ * [tHDFSConnection_1 begin ] stop
+ */
+	
+	/**
+	 * [tHDFSConnection_1 main ] start
+	 */
 
-				tos_count_tHDFSConnection_1++;
+	
 
-				/**
-				 * [tHDFSConnection_1 main ] stop
-				 */
+	
+	
+	currentComponent="tHDFSConnection_1";
 
-				/**
-				 * [tHDFSConnection_1 process_data_begin ] start
-				 */
+	
 
-				currentComponent = "tHDFSConnection_1";
+ 
 
-				/**
-				 * [tHDFSConnection_1 process_data_begin ] stop
-				 */
 
-				/**
-				 * [tHDFSConnection_1 process_data_end ] start
-				 */
+	tos_count_tHDFSConnection_1++;
 
-				currentComponent = "tHDFSConnection_1";
+/**
+ * [tHDFSConnection_1 main ] stop
+ */
+	
+	/**
+	 * [tHDFSConnection_1 process_data_begin ] start
+	 */
 
-				/**
-				 * [tHDFSConnection_1 process_data_end ] stop
-				 */
+	
 
-				/**
-				 * [tHDFSConnection_1 end ] start
-				 */
+	
+	
+	currentComponent="tHDFSConnection_1";
 
-				currentComponent = "tHDFSConnection_1";
+	
 
-				ok_Hash.put("tHDFSConnection_1", true);
-				end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
+ 
 
-				/**
-				 * [tHDFSConnection_1 end ] stop
-				 */
-			} // end the resume
 
-			if (resumeEntryMethodName == null || globalResumeTicket) {
-				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "",
-						Thread.currentThread().getId() + "", "", "", "", "", "");
+
+/**
+ * [tHDFSConnection_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tHDFSConnection_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSConnection_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSConnection_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tHDFSConnection_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSConnection_1";
+
+	
+
+ 
+
+ok_Hash.put("tHDFSConnection_1", true);
+end_Hash.put("tHDFSConnection_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tHDFSConnection_1 end ] stop
+ */
+				}//end the resume
+
+				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tHDFSConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+								} 
+							
+							tDBConnection_1Process(globalMap); 
+						
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tHDFSConnection_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSConnection_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSConnection_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
 			}
-
-			if (execStat) {
-				runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
-			}
-
-			tDBConnection_1Process(globalMap);
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tHDFSConnection_1 finally ] start
-				 */
-
-				currentComponent = "tHDFSConnection_1";
-
-				/**
-				 * [tHDFSConnection_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
+		
 
 		globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBConnection_1_SUBPROCESS_STATE", 0);
+public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBConnection_1_SUBPROCESS_STATE", 0);
 
-		final boolean execStat = this.execStat;
-
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				/**
-				 * [tDBConnection_1 begin ] start
-				 */
 
-				ok_Hash.put("tDBConnection_1", false);
-				start_Hash.put("tDBConnection_1", System.currentTimeMillis());
 
-				currentComponent = "tDBConnection_1";
+		
 
-				int tos_count_tDBConnection_1 = 0;
 
-				String dbProperties_tDBConnection_1 = "";
-				String url_tDBConnection_1 = "jdbc:postgresql://" + "172.20.16.11" + ":" + "5432" + "/"
-						+ "soins_medico_administratives";
+	
+	/**
+	 * [tDBConnection_1 begin ] start
+	 */
 
-				if (dbProperties_tDBConnection_1 != null && !"".equals(dbProperties_tDBConnection_1.trim())) {
-					url_tDBConnection_1 = url_tDBConnection_1 + "?" + dbProperties_tDBConnection_1;
+	
+
+	
+		
+		ok_Hash.put("tDBConnection_1", false);
+		start_Hash.put("tDBConnection_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBConnection_1";
+
+	
+		int tos_count_tDBConnection_1 = 0;
+		
+
+
+	
+            String dbProperties_tDBConnection_1 = "";
+            String url_tDBConnection_1 = "jdbc:postgresql://"+"172.20.16.11"+":"+"5432"+"/"+"soins_medico_administratives";
+            
+            if(dbProperties_tDBConnection_1 != null && !"".equals(dbProperties_tDBConnection_1.trim())) {
+                url_tDBConnection_1 = url_tDBConnection_1 + "?" + dbProperties_tDBConnection_1;
+            }
+	String dbUser_tDBConnection_1 = "Group3User";
+	
+	
+		 
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:8JHtEXGAHljoYFzK/JB26fKE0HvJz4KTLeKHvA==");
+		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
+	
+	
+	java.sql.Connection conn_tDBConnection_1 = null;
+	
+        java.util.Enumeration<java.sql.Driver> drivers_tDBConnection_1 =  java.sql.DriverManager.getDrivers();
+        java.util.Set<String> redShiftDriverNames_tDBConnection_1 = new java.util.HashSet<String>(java.util.Arrays
+                .asList("com.amazon.redshift.jdbc.Driver","com.amazon.redshift.jdbc41.Driver","com.amazon.redshift.jdbc42.Driver"));
+    while (drivers_tDBConnection_1.hasMoreElements()) {
+        java.sql.Driver d_tDBConnection_1 = drivers_tDBConnection_1.nextElement();
+        if (redShiftDriverNames_tDBConnection_1.contains(d_tDBConnection_1.getClass().getName())) {
+            try {
+                java.sql.DriverManager.deregisterDriver(d_tDBConnection_1);
+                java.sql.DriverManager.registerDriver(d_tDBConnection_1);
+            } catch (java.lang.Exception e_tDBConnection_1) {
+                    //do nothing
+            }
+        }
+    }
+					String driverClass_tDBConnection_1 = "org.postgresql.Driver";
+			java.lang.Class jdbcclazz_tDBConnection_1 = java.lang.Class.forName(driverClass_tDBConnection_1);
+			globalMap.put("driverClass_tDBConnection_1", driverClass_tDBConnection_1);
+		
+			conn_tDBConnection_1 = java.sql.DriverManager.getConnection(url_tDBConnection_1,dbUser_tDBConnection_1,dbPwd_tDBConnection_1);
+
+		globalMap.put("conn_tDBConnection_1", conn_tDBConnection_1);
+	if (null != conn_tDBConnection_1) {
+		
+			conn_tDBConnection_1.setAutoCommit(false);
+	}
+
+	globalMap.put("schema_" + "tDBConnection_1","public");
+
+	globalMap.put("conn_" + "tDBConnection_1",conn_tDBConnection_1);
+
+ 
+
+
+
+/**
+ * [tDBConnection_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBConnection_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBConnection_1";
+
+	
+
+ 
+
+
+	tos_count_tDBConnection_1++;
+
+/**
+ * [tDBConnection_1 main ] stop
+ */
+	
+	/**
+	 * [tDBConnection_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBConnection_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBConnection_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBConnection_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBConnection_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBConnection_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBConnection_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBConnection_1";
+
+	
+
+ 
+
+ok_Hash.put("tDBConnection_1", true);
+end_Hash.put("tDBConnection_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBConnection_1 end ] stop
+ */
+				}//end the resume
+
+				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBConnection_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
+								} 
+							
+							tDBInput_1Process(globalMap); 
+						
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBConnection_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBConnection_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBConnection_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
 				}
-				String dbUser_tDBConnection_1 = "Group3User";
-
-				final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:p34et3jU0zjGvG5BBEQsTrh5uiRaZ/8C0gwGOA==");
-				String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
-
-				java.sql.Connection conn_tDBConnection_1 = null;
-
-				java.util.Enumeration<java.sql.Driver> drivers_tDBConnection_1 = java.sql.DriverManager.getDrivers();
-				java.util.Set<String> redShiftDriverNames_tDBConnection_1 = new java.util.HashSet<String>(
-						java.util.Arrays.asList("com.amazon.redshift.jdbc.Driver", "com.amazon.redshift.jdbc41.Driver",
-								"com.amazon.redshift.jdbc42.Driver"));
-				while (drivers_tDBConnection_1.hasMoreElements()) {
-					java.sql.Driver d_tDBConnection_1 = drivers_tDBConnection_1.nextElement();
-					if (redShiftDriverNames_tDBConnection_1.contains(d_tDBConnection_1.getClass().getName())) {
-						try {
-							java.sql.DriverManager.deregisterDriver(d_tDBConnection_1);
-							java.sql.DriverManager.registerDriver(d_tDBConnection_1);
-						} catch (java.lang.Exception e_tDBConnection_1) {
-							// do nothing
-						}
-					}
-				}
-				String driverClass_tDBConnection_1 = "org.postgresql.Driver";
-				java.lang.Class jdbcclazz_tDBConnection_1 = java.lang.Class.forName(driverClass_tDBConnection_1);
-				globalMap.put("driverClass_tDBConnection_1", driverClass_tDBConnection_1);
-
-				conn_tDBConnection_1 = java.sql.DriverManager.getConnection(url_tDBConnection_1, dbUser_tDBConnection_1,
-						dbPwd_tDBConnection_1);
-
-				globalMap.put("conn_tDBConnection_1", conn_tDBConnection_1);
-				if (null != conn_tDBConnection_1) {
-
-					conn_tDBConnection_1.setAutoCommit(false);
-				}
-
-				globalMap.put("schema_" + "tDBConnection_1", "public");
-
-				globalMap.put("conn_" + "tDBConnection_1", conn_tDBConnection_1);
-
-				/**
-				 * [tDBConnection_1 begin ] stop
-				 */
-
-				/**
-				 * [tDBConnection_1 main ] start
-				 */
-
-				currentComponent = "tDBConnection_1";
-
-				tos_count_tDBConnection_1++;
-
-				/**
-				 * [tDBConnection_1 main ] stop
-				 */
-
-				/**
-				 * [tDBConnection_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tDBConnection_1";
-
-				/**
-				 * [tDBConnection_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tDBConnection_1 process_data_end ] start
-				 */
-
-				currentComponent = "tDBConnection_1";
-
-				/**
-				 * [tDBConnection_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tDBConnection_1 end ] start
-				 */
-
-				currentComponent = "tDBConnection_1";
-
-				ok_Hash.put("tDBConnection_1", true);
-				end_Hash.put("tDBConnection_1", System.currentTimeMillis());
-
-				/**
-				 * [tDBConnection_1 end ] stop
-				 */
-			} // end the resume
-
-			if (resumeEntryMethodName == null || globalResumeTicket) {
-				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBConnection_1:OnSubjobOk", "",
-						Thread.currentThread().getId() + "", "", "", "", "", "");
+				resourceMap = null;
 			}
-
-			if (execStat) {
-				runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
-			}
-
-			tDBInput_1Process(globalMap);
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDBConnection_1 finally ] start
-				 */
-
-				currentComponent = "tDBConnection_1";
-
-				/**
-				 * [tDBConnection_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
+		
 
 		globalMap.put("tDBConnection_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public static class OutStruct implements routines.system.IPersistableRow<OutStruct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
 
-		public int Num_consultation;
+public static class OutStruct implements routines.system.IPersistableRow<OutStruct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
 
-		public int getNum_consultation() {
-			return this.Num_consultation;
-		}
+	
+			    public int Num_consultation;
 
-		public java.util.Date Date;
-
-		public java.util.Date getDate() {
-			return this.Date;
-		}
-
-		public Long Heure_debut;
-
-		public Long getHeure_debut() {
-			return this.Heure_debut;
-		}
-
-		public Long Heure_fin;
-
-		public Long getHeure_fin() {
-			return this.Heure_fin;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac) {
-
-				try {
-
-					int length = 0;
-
-					this.Num_consultation = dis.readInt();
-
-					this.Date = readDate(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.Heure_debut = null;
-					} else {
-						this.Heure_debut = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.Heure_fin = null;
-					} else {
-						this.Heure_fin = dis.readLong();
-					}
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
+				public int getNum_consultation () {
+					return this.Num_consultation;
 				}
+				
+			    public java.util.Date Date;
 
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// int
-
-				dos.writeInt(this.Num_consultation);
-
-				// java.util.Date
-
-				writeDate(this.Date, dos);
-
-				// Long
-
-				if (this.Heure_debut == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Heure_debut);
+				public java.util.Date getDate () {
+					return this.Date;
 				}
+				
+			    public Long Heure_debut;
 
-				// Long
-
-				if (this.Heure_fin == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Heure_fin);
+				public Long getHeure_debut () {
+					return this.Heure_debut;
 				}
+				
+			    public Long Heure_fin;
 
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
+				public Long getHeure_fin () {
+					return this.Heure_fin;
+				}
+				
 
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("Num_consultation=" + String.valueOf(Num_consultation));
-			sb.append(",Date=" + String.valueOf(Date));
-			sb.append(",Heure_debut=" + String.valueOf(Heure_debut));
-			sb.append(",Heure_fin=" + String.valueOf(Heure_fin));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OutStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
-		static byte[] commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public int Num_consultation;
+    public void readData(ObjectInputStream dis) {
 
-		public int getNum_consultation() {
-			return this.Num_consultation;
-		}
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac) {
 
-		public java.util.Date Date;
+        	try {
 
-		public java.util.Date getDate() {
-			return this.Date;
-		}
-
-		public String Heure_debut;
-
-		public String getHeure_debut() {
-			return this.Heure_debut;
-		}
-
-		public String Heure_fin;
-
-		public String getHeure_fin() {
-			return this.Heure_fin;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BIGDATA_PROJECT_RDV_Extrac.length) {
-					if (length < 1024 && commonByteArray_BIGDATA_PROJECT_RDV_Extrac.length == 0) {
-						commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[1024];
-					} else {
-						commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BIGDATA_PROJECT_RDV_Extrac, 0, length);
-				strReturn = new String(commonByteArray_BIGDATA_PROJECT_RDV_Extrac, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac) {
-
-				try {
-
-					int length = 0;
-
-					this.Num_consultation = dis.readInt();
-
+        		int length = 0;
+		
+			        this.Num_consultation = dis.readInt();
+					
 					this.Date = readDate(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.Heure_debut = null;
+           				} else {
+           			    	this.Heure_debut = dis.readLong();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.Heure_fin = null;
+           				} else {
+           			    	this.Heure_fin = dis.readLong();
+           				}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.Num_consultation);
+					
+					// java.util.Date
+				
+						writeDate(this.Date,dos);
+					
+					// Long
+				
+						if(this.Heure_debut == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.Heure_debut);
+		            	}
+					
+					// Long
+				
+						if(this.Heure_fin == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.Heure_fin);
+		            	}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("Num_consultation="+String.valueOf(Num_consultation));
+		sb.append(",Date="+String.valueOf(Date));
+		sb.append(",Heure_debut="+String.valueOf(Heure_debut));
+		sb.append(",Heure_fin="+String.valueOf(Heure_fin));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OutStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
+    static byte[] commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[0];
+
+	
+			    public int Num_consultation;
+
+				public int getNum_consultation () {
+					return this.Num_consultation;
+				}
+				
+			    public java.util.Date Date;
+
+				public java.util.Date getDate () {
+					return this.Date;
+				}
+				
+			    public String Heure_debut;
+
+				public String getHeure_debut () {
+					return this.Heure_debut;
+				}
+				
+			    public String Heure_fin;
+
+				public String getHeure_fin () {
+					return this.Heure_fin;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_BIGDATA_PROJECT_RDV_Extrac.length) {
+				if(length < 1024 && commonByteArray_BIGDATA_PROJECT_RDV_Extrac.length == 0) {
+   					commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[1024];
+				} else {
+   					commonByteArray_BIGDATA_PROJECT_RDV_Extrac = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_BIGDATA_PROJECT_RDV_Extrac, 0, length);
+			strReturn = new String(commonByteArray_BIGDATA_PROJECT_RDV_Extrac, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_BIGDATA_PROJECT_RDV_Extrac) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.Num_consultation = dis.readInt();
+					
+					this.Date = readDate(dis);
+					
 					this.Heure_debut = readString(dis);
-
+					
 					this.Heure_fin = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
-				}
+        }
 
-			}
+		
 
-		}
+      }
 
-		public void writeData(ObjectOutputStream dos) {
-			try {
 
-				// int
+    }
 
-				dos.writeInt(this.Num_consultation);
+    public void writeData(ObjectOutputStream dos) {
+        try {
 
-				// java.util.Date
+		
+					// int
+				
+		            	dos.writeInt(this.Num_consultation);
+					
+					// java.util.Date
+				
+						writeDate(this.Date,dos);
+					
+					// String
+				
+						writeString(this.Heure_debut,dos);
+					
+					// String
+				
+						writeString(this.Heure_fin,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
 
-				writeDate(this.Date, dos);
 
-				// String
+    }
 
-				writeString(this.Heure_debut, dos);
 
-				// String
+    public String toString() {
 
-				writeString(this.Heure_fin, dos);
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("Num_consultation="+String.valueOf(Num_consultation));
+		sb.append(",Date="+String.valueOf(Date));
+		sb.append(",Heure_debut="+Heure_debut);
+		sb.append(",Heure_fin="+Heure_fin);
+	    sb.append("]");
 
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
+	    return sb.toString();
+    }
 
-		}
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
 
-		public String toString() {
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
 
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("Num_consultation=" + String.valueOf(Num_consultation));
-			sb.append(",Date=" + String.valueOf(Date));
-			sb.append(",Heure_debut=" + Heure_debut);
-			sb.append(",Heure_fin=" + Heure_fin);
-			sb.append("]");
 
-			return sb.toString();
-		}
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
 
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row1Struct other) {
+        return returnValue;
+    }
 
-			int returnValue = -1;
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
 
-			return returnValue;
-		}
 
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
+}
+public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
 
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				row1Struct row1 = new row1Struct();
-				OutStruct Out = new OutStruct();
 
-				/**
-				 * [tHDFSOutput_1 begin ] start
-				 */
 
-				ok_Hash.put("tHDFSOutput_1", false);
-				start_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
+		row1Struct row1 = new row1Struct();
+OutStruct Out = new OutStruct();
 
-				currentComponent = "tHDFSOutput_1";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Out");
-				}
 
-				int tos_count_tHDFSOutput_1 = 0;
 
-				String username_tHDFSOutput_1 = "";
-				org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
-				org.apache.hadoop.conf.Configuration conf_tHDFSOutput_1 = (org.apache.hadoop.conf.Configuration) globalMap
-						.get("conn_tHDFSConnection_1");
 
-				username_tHDFSOutput_1 = "cloudera";
-				if (username_tHDFSOutput_1 == null || "".equals(username_tHDFSOutput_1)) {
+	
+	/**
+	 * [tHDFSOutput_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tHDFSOutput_1", false);
+		start_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tHDFSOutput_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Out");
+					}
+				
+		int tos_count_tHDFSOutput_1 = 0;
+		
+
+	
+
+
+String username_tHDFSOutput_1 = "";
+org.apache.hadoop.fs.FileSystem fs_tHDFSOutput_1 = null;
+	org.apache.hadoop.conf.Configuration conf_tHDFSOutput_1 = (org.apache.hadoop.conf.Configuration)globalMap.get("conn_tHDFSConnection_1");
+						
+					username_tHDFSOutput_1 = "cloudera";
+				if(username_tHDFSOutput_1 == null || "".equals(username_tHDFSOutput_1)){
 					fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(conf_tHDFSOutput_1);
-				} else {
+				}else{
 					System.setProperty("HADOOP_USER_NAME", username_tHDFSOutput_1);
-					fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(
-							new java.net.URI(conf_tHDFSOutput_1.get("fs.default.name")), conf_tHDFSOutput_1,
-							username_tHDFSOutput_1);
-				}
+					fs_tHDFSOutput_1 = org.apache.hadoop.fs.FileSystem.get(new java.net.URI(conf_tHDFSOutput_1.get("fs.default.name")),conf_tHDFSOutput_1,username_tHDFSOutput_1);
+				}			  		
+		  	
 
-				org.apache.hadoop.fs.Path path_tHDFSOutput_1 = new org.apache.hadoop.fs.Path(context.HadoopHDFS_RDV);
-				int nb_line_tHDFSOutput_1 = 0;
+	
+	org.apache.hadoop.fs.Path path_tHDFSOutput_1 = new org.apache.hadoop.fs.Path(context.HadoopHDFS_RDV);
+	int nb_line_tHDFSOutput_1 = 0;
+				
+		org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_1 = null;
+		
+			fsDataOutputStream_tHDFSOutput_1 = fs_tHDFSOutput_1.create(path_tHDFSOutput_1, true);
+		
+		
+			java.io.Writer outtHDFSOutput_1 = null;
+			outtHDFSOutput_1=new java.io.BufferedWriter(new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_1));
+		
 
-				org.apache.hadoop.fs.FSDataOutputStream fsDataOutputStream_tHDFSOutput_1 = null;
+ 
 
-				fsDataOutputStream_tHDFSOutput_1 = fs_tHDFSOutput_1.create(path_tHDFSOutput_1, true);
 
-				java.io.Writer outtHDFSOutput_1 = null;
-				outtHDFSOutput_1 = new java.io.BufferedWriter(
-						new java.io.OutputStreamWriter(fsDataOutputStream_tHDFSOutput_1));
 
-				/**
-				 * [tHDFSOutput_1 begin ] stop
-				 */
+/**
+ * [tHDFSOutput_1 begin ] stop
+ */
 
-				/**
-				 * [tMap_1 begin ] start
-				 */
 
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
 
-				currentComponent = "tMap_1";
+	
+	/**
+	 * [tMap_1 begin ] start
+	 */
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
+	
 
-				int tos_count_tMap_1 = 0;
+	
+		
+		ok_Hash.put("tMap_1", false);
+		start_Hash.put("tMap_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
+		int tos_count_tMap_1 = 0;
+		
+
+
+
 
 // ###############################
 // # Lookup's keys initialization
@@ -1191,899 +1381,1235 @@ public class RDV_Extrac implements TalendJob {
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_1__Struct {
-					long Start;
-					long End;
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+class  Var__tMap_1__Struct  {
+	long Start;
+	long End;
+}
+Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				OutStruct Out_tmp = new OutStruct();
+OutStruct Out_tmp = new OutStruct();
 // ###############################
 
-				/**
-				 * [tMap_1 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tDBInput_1 begin ] start
-				 */
 
-				ok_Hash.put("tDBInput_1", false);
-				start_Hash.put("tDBInput_1", System.currentTimeMillis());
 
-				currentComponent = "tDBInput_1";
+        
 
-				int tos_count_tDBInput_1 = 0;
 
-				int nb_line_tDBInput_1 = 0;
-				java.sql.Connection conn_tDBInput_1 = null;
-				conn_tDBInput_1 = (java.sql.Connection) globalMap.get("conn_tDBConnection_1");
 
-				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-				String dbquery_tDBInput_1 = "SELECT \"Num_consultation\",\"Date\",\"Heure_debut\",\"Heure_fin\" FROM \"Consultation\" ";
 
-				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
-				java.sql.ResultSet rs_tDBInput_1 = null;
 
-				try {
-					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
-					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
-					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
 
-					String tmpContent_tDBInput_1 = null;
 
-					while (rs_tDBInput_1.next()) {
-						nb_line_tDBInput_1++;
 
-						if (colQtyInRs_tDBInput_1 < 1) {
-							row1.Num_consultation = 0;
-						} else {
+ 
 
-							row1.Num_consultation = rs_tDBInput_1.getInt(1);
-							if (rs_tDBInput_1.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 2) {
-							row1.Date = null;
-						} else {
 
-							row1.Date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 2);
-						}
-						if (colQtyInRs_tDBInput_1 < 3) {
-							row1.Heure_debut = null;
-						} else {
 
-							row1.Heure_debut = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 4) {
-							row1.Heure_fin = null;
-						} else {
+/**
+ * [tMap_1 begin ] stop
+ */
 
-							row1.Heure_fin = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
-						}
 
-						/**
-						 * [tDBInput_1 begin ] stop
-						 */
 
-						/**
-						 * [tDBInput_1 main ] start
-						 */
+	
+	/**
+	 * [tDBInput_1 begin ] start
+	 */
 
-						currentComponent = "tDBInput_1";
+	
 
-						tos_count_tDBInput_1++;
+	
+		
+		ok_Hash.put("tDBInput_1", false);
+		start_Hash.put("tDBInput_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_1";
 
-						/**
-						 * [tDBInput_1 main ] stop
-						 */
+	
+		int tos_count_tDBInput_1 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_1 = 0;
+		    java.sql.Connection conn_tDBInput_1 = null;
+				conn_tDBInput_1 = (java.sql.Connection)globalMap.get("conn_tDBConnection_1");
+				
+		    
+			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-						/**
-						 * [tDBInput_1 process_data_begin ] start
-						 */
+		    String dbquery_tDBInput_1 = "SELECT \"Num_consultation\",\"Date\",\"Heure_debut\",\"Heure_fin\" FROM \"Consultation\" ";
+			
 
-						currentComponent = "tDBInput_1";
+            	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
+		    java.sql.ResultSet rs_tDBInput_1 = null;
 
-						/**
-						 * [tDBInput_1 process_data_begin ] stop
-						 */
+		    try {
+		    	rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
+		    	int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
 
-						/**
-						 * [tMap_1 main ] start
-						 */
+		    String tmpContent_tDBInput_1 = null;
+		    
+		    
+		    while (rs_tDBInput_1.next()) {
+		        nb_line_tDBInput_1++;
+		        
+							if(colQtyInRs_tDBInput_1 < 1) {
+								row1.Num_consultation = 0;
+							} else {
+		                          
+            row1.Num_consultation = rs_tDBInput_1.getInt(1);
+            if(rs_tDBInput_1.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 2) {
+								row1.Date = null;
+							} else {
+										
+			row1.Date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 2);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 3) {
+								row1.Heure_debut = null;
+							} else {
+	                         		
+        	row1.Heure_debut = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 4) {
+								row1.Heure_fin = null;
+							} else {
+	                         		
+        	row1.Heure_fin = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
+		                    }
+					
 
-						currentComponent = "tMap_1";
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
-						}
+ 
 
-						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-						// ###############################
-						// # Input tables (lookups)
-						boolean rejectedInnerJoin_tMap_1 = false;
-						boolean mainRowRejected_tMap_1 = false;
 
-						// ###############################
-						{ // start of Var scope
+/**
+ * [tDBInput_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 main ] start
+	 */
 
-							// ###############################
-							// # Vars tables
+	
 
-							Var__tMap_1__Struct Var = Var__tMap_1;
-							Var.Start = Perso.DateToValue(row1.Heure_debut);
-							Var.End = Perso.DateToValue(row1.Heure_fin);// ###############################
-							// ###############################
-							// # Output tables
+	
+	
+	currentComponent="tDBInput_1";
 
-							Out = null;
+	
+
+ 
+
+
+	tos_count_tDBInput_1++;
+
+/**
+ * [tDBInput_1 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_1 = false;
+		  boolean mainRowRejected_tMap_1 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_1__Struct Var = Var__tMap_1;
+Var.Start = Perso.DateToValue(row1.Heure_debut) ;
+Var.End = Perso.DateToValue(row1.Heure_fin) ;// ###############################
+        // ###############################
+        // # Output tables
+
+Out = null;
+
 
 // # Output table : 'Out'
-							Out_tmp.Num_consultation = row1.Num_consultation;
-							Out_tmp.Date = row1.Date;
-							Out_tmp.Heure_debut = Var.Start;
-							Out_tmp.Heure_fin = Var.End;
-							Out = Out_tmp;
+Out_tmp.Num_consultation = row1.Num_consultation ;
+Out_tmp.Date = row1.Date ;
+Out_tmp.Heure_debut = Var.Start ;
+Out_tmp.Heure_fin = Var.End ;
+Out = Out_tmp;
 // ###############################
 
-						} // end of Var scope
+} // end of Var scope
 
-						rejectedInnerJoin_tMap_1 = false;
+rejectedInnerJoin_tMap_1 = false;
 
-						tos_count_tMap_1++;
 
-						/**
-						 * [tMap_1 main ] stop
-						 */
 
-						/**
-						 * [tMap_1 process_data_begin ] start
-						 */
 
-						currentComponent = "tMap_1";
 
-						/**
-						 * [tMap_1 process_data_begin ] stop
-						 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_1++;
+
+/**
+ * [tMap_1 main ] stop
+ */
+	
+	/**
+	 * [tMap_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_begin ] stop
+ */
 // Start of branch "Out"
-						if (Out != null) {
+if(Out != null) { 
 
-							/**
-							 * [tHDFSOutput_1 main ] start
-							 */
 
-							currentComponent = "tHDFSOutput_1";
 
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "Out");
-							}
+	
+	/**
+	 * [tHDFSOutput_1 main ] start
+	 */
 
-							StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
+	
 
-							sb_tHDFSOutput_1.append(
+	
+	
+	currentComponent="tHDFSOutput_1";
 
-									Out.Num_consultation
-
-							);
-
-							sb_tHDFSOutput_1.append(";");
-
-							if (Out.Date != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										FormatterUtils.format_Date(Out.Date, "yyyy-MM-dd")
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(";");
-
-							if (Out.Heure_debut != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										Out.Heure_debut
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append(";");
-
-							if (Out.Heure_fin != null) {
-
-								sb_tHDFSOutput_1.append(
-
-										Out.Heure_fin
-
-								);
-
-							}
-
-							sb_tHDFSOutput_1.append("\n");
-
-							outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
-
-							nb_line_tHDFSOutput_1++;
-
-							tos_count_tHDFSOutput_1++;
-
-							/**
-							 * [tHDFSOutput_1 main ] stop
-							 */
-
-							/**
-							 * [tHDFSOutput_1 process_data_begin ] start
-							 */
-
-							currentComponent = "tHDFSOutput_1";
-
-							/**
-							 * [tHDFSOutput_1 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tHDFSOutput_1 process_data_end ] start
-							 */
-
-							currentComponent = "tHDFSOutput_1";
-
-							/**
-							 * [tHDFSOutput_1 process_data_end ] stop
-							 */
-
-						} // End of branch "Out"
-
-						/**
-						 * [tMap_1 process_data_end ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Out");
 					}
-				} finally {
-					if (rs_tDBInput_1 != null) {
-						rs_tDBInput_1.close();
-					}
-					if (stmt_tDBInput_1 != null) {
-						stmt_tDBInput_1.close();
-					}
-				}
-				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
+					
 
-				ok_Hash.put("tDBInput_1", true);
-				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+	
+					StringBuilder sb_tHDFSOutput_1 = new StringBuilder();
+					
+					
+									sb_tHDFSOutput_1.append(
+										
+											Out.Num_consultation
+										
+									);
+												
+								sb_tHDFSOutput_1.append(";");
+							
+								if(Out.Date != null) {
+							
+									sb_tHDFSOutput_1.append(
+										
+											FormatterUtils.format_Date(Out.Date, "yyyy-MM-dd")
+										
+									);
+							
+								}
+												
+								sb_tHDFSOutput_1.append(";");
+							
+								if(Out.Heure_debut != null) {
+							
+									sb_tHDFSOutput_1.append(
+										
+											Out.Heure_debut
+										
+									);
+							
+								}
+												
+								sb_tHDFSOutput_1.append(";");
+							
+								if(Out.Heure_fin != null) {
+							
+									sb_tHDFSOutput_1.append(
+										
+											Out.Heure_fin
+										
+									);
+							
+								}
+							
+					sb_tHDFSOutput_1.append("\n");
+					
+						outtHDFSOutput_1.write(sb_tHDFSOutput_1.toString());
+					
+				nb_line_tHDFSOutput_1++;
+				
 
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
+	
+ 
+
+
+	tos_count_tHDFSOutput_1++;
+
+/**
+ * [tHDFSOutput_1 main ] stop
+ */
+	
+	/**
+	 * [tHDFSOutput_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSOutput_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tHDFSOutput_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSOutput_1 process_data_end ] stop
+ */
+
+} // End of branch "Out"
+
+
+
+
+	
+	/**
+	 * [tMap_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_1 != null) {
+		rs_tDBInput_1.close();
+	}
+	if (stmt_tDBInput_1 != null) {
+		stmt_tDBInput_1.close();
+	}
+}
+globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
+ 
+
+ok_Hash.put("tDBInput_1", true);
+end_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
 				}
 				tDBClose_1Process(globalMap);
 
-				/**
-				 * [tDBInput_1 end ] stop
-				 */
 
-				/**
-				 * [tMap_1 end ] start
-				 */
 
-				currentComponent = "tMap_1";
+/**
+ * [tDBInput_1 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
 
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				/**
-				 * [tMap_1 end ] stop
-				 */
 
-				/**
-				 * [tHDFSOutput_1 end ] start
-				 */
 
-				currentComponent = "tHDFSOutput_1";
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
 
-				if (outtHDFSOutput_1 != null) {
-					outtHDFSOutput_1.close();
-				}
+ok_Hash.put("tMap_1", true);
+end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "Out");
-				}
 
-				ok_Hash.put("tHDFSOutput_1", true);
-				end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
 
-				/**
-				 * [tHDFSOutput_1 end ] stop
-				 */
 
-			} // end the resume
+/**
+ * [tMap_1 end ] stop
+ */
 
-		} catch (java.lang.Exception e) {
+	
+	/**
+	 * [tHDFSOutput_1 end ] start
+	 */
 
-			TalendException te = new TalendException(e, currentComponent, globalMap);
+	
 
-			throw te;
-		} catch (java.lang.Error error) {
+	
+	
+	currentComponent="tHDFSOutput_1";
 
-			runStat.stopThreadStat();
+	
 
-			throw error;
-		} finally {
 
-			try {
-
-				/**
-				 * [tDBInput_1 finally ] start
-				 */
-
-				currentComponent = "tDBInput_1";
-
-				/**
-				 * [tDBInput_1 finally ] stop
-				 */
-
-				/**
-				 * [tMap_1 finally ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-				/**
-				 * [tMap_1 finally ] stop
-				 */
-
-				/**
-				 * [tHDFSOutput_1 finally ] start
-				 */
-
-				currentComponent = "tHDFSOutput_1";
-
-				/**
-				 * [tHDFSOutput_1 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
+		if(outtHDFSOutput_1!=null){
+			outtHDFSOutput_1.close();
 		}
+
+	
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Out");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tHDFSOutput_1", true);
+end_Hash.put("tHDFSOutput_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tHDFSOutput_1 end ] stop
+ */
+
+
+
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tHDFSOutput_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tHDFSOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tHDFSOutput_1 finally ] stop
+ */
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public void tDBClose_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBClose_1_SUBPROCESS_STATE", 0);
+public void tDBClose_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBClose_1_SUBPROCESS_STATE", 0);
 
-		final boolean execStat = this.execStat;
-
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				/**
-				 * [tDBClose_1 begin ] start
-				 */
 
-				ok_Hash.put("tDBClose_1", false);
-				start_Hash.put("tDBClose_1", System.currentTimeMillis());
 
-				currentComponent = "tDBClose_1";
 
-				int tos_count_tDBClose_1 = 0;
 
-				/**
-				 * [tDBClose_1 begin ] stop
-				 */
+	
+	/**
+	 * [tDBClose_1 begin ] start
+	 */
 
-				/**
-				 * [tDBClose_1 main ] start
-				 */
+	
 
-				currentComponent = "tDBClose_1";
+	
+		
+		ok_Hash.put("tDBClose_1", false);
+		start_Hash.put("tDBClose_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBClose_1";
 
-				java.sql.Connection conn_tDBClose_1 = (java.sql.Connection) globalMap.get("conn_tDBConnection_1");
-				if (conn_tDBClose_1 != null && !conn_tDBClose_1.isClosed()) {
-					conn_tDBClose_1.close();
+	
+		int tos_count_tDBClose_1 = 0;
+		
+
+ 
+
+
+
+/**
+ * [tDBClose_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+
+
+	java.sql.Connection conn_tDBClose_1 = (java.sql.Connection)globalMap.get("conn_tDBConnection_1");
+	if(conn_tDBClose_1 != null && !conn_tDBClose_1.isClosed())
+	{
+        conn_tDBClose_1.close();
+	}
+
+ 
+
+
+	tos_count_tDBClose_1++;
+
+/**
+ * [tDBClose_1 main ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBClose_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+ok_Hash.put("tDBClose_1", true);
+end_Hash.put("tDBClose_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBClose_1 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBClose_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBClose_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBClose_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
 				}
-
-				tos_count_tDBClose_1++;
-
-				/**
-				 * [tDBClose_1 main ] stop
-				 */
-
-				/**
-				 * [tDBClose_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tDBClose_1";
-
-				/**
-				 * [tDBClose_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tDBClose_1 process_data_end ] start
-				 */
-
-				currentComponent = "tDBClose_1";
-
-				/**
-				 * [tDBClose_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tDBClose_1 end ] start
-				 */
-
-				currentComponent = "tDBClose_1";
-
-				ok_Hash.put("tDBClose_1", true);
-				end_Hash.put("tDBClose_1", System.currentTimeMillis());
-
-				/**
-				 * [tDBClose_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDBClose_1 finally ] start
-				 */
-
-				currentComponent = "tDBClose_1";
-
-				/**
-				 * [tDBClose_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
+				resourceMap = null;
 			}
-			resourceMap = null;
-		}
+		
 
 		globalMap.put("tDBClose_1_SUBPROCESS_STATE", 1);
 	}
+	
+    public String resuming_logs_dir_path = null;
+    public String resuming_checkpoint_path = null;
+    public String parent_part_launcher = null;
+    private String resumeEntryMethodName = null;
+    private boolean globalResumeTicket = false;
 
-	public String resuming_logs_dir_path = null;
-	public String resuming_checkpoint_path = null;
-	public String parent_part_launcher = null;
-	private String resumeEntryMethodName = null;
-	private boolean globalResumeTicket = false;
+    public boolean watch = false;
+    // portStats is null, it means don't execute the statistics
+    public Integer portStats = null;
+    public int portTraces = 4334;
+    public String clientHost;
+    public String defaultClientHost = "localhost";
+    public String contextStr = "Default";
+    public boolean isDefaultContext = true;
+    public String pid = "0";
+    public String rootPid = null;
+    public String fatherPid = null;
+    public String fatherNode = null;
+    public long startTime = 0;
+    public boolean isChildJob = false;
+    public String log4jLevel = "";
+    
+    private boolean enableLogStash;
 
-	public boolean watch = false;
-	// portStats is null, it means don't execute the statistics
-	public Integer portStats = null;
-	public int portTraces = 4334;
-	public String clientHost;
-	public String defaultClientHost = "localhost";
-	public String contextStr = "Default";
-	public boolean isDefaultContext = true;
-	public String pid = "0";
-	public String rootPid = null;
-	public String fatherPid = null;
-	public String fatherNode = null;
-	public long startTime = 0;
-	public boolean isChildJob = false;
-	public String log4jLevel = "";
+    private boolean execStat = true;
 
-	private boolean enableLogStash;
+    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+        protected java.util.Map<String, String> initialValue() {
+            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
+            threadRunResultMap.put("errorCode", null);
+            threadRunResultMap.put("status", "");
+            return threadRunResultMap;
+        };
+    };
 
-	private boolean execStat = true;
 
-	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-		protected java.util.Map<String, String> initialValue() {
-			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
-			threadRunResultMap.put("errorCode", null);
-			threadRunResultMap.put("status", "");
-			return threadRunResultMap;
-		};
-	};
+    private PropertiesWithType context_param = new PropertiesWithType();
+    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
 
-	private PropertiesWithType context_param = new PropertiesWithType();
-	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+    public String status= "";
+    
 
-	public String status = "";
+    public static void main(String[] args){
+        final RDV_Extrac RDV_ExtracClass = new RDV_Extrac();
 
-	public static void main(String[] args) {
-		final RDV_Extrac RDV_ExtracClass = new RDV_Extrac();
+        int exitCode = RDV_ExtracClass.runJobInTOS(args);
 
-		int exitCode = RDV_ExtracClass.runJobInTOS(args);
+        System.exit(exitCode);
+    }
 
-		System.exit(exitCode);
-	}
 
-	public String[][] runJob(String[] args) {
+    public String[][] runJob(String[] args) {
 
-		int exitCode = runJobInTOS(args);
-		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+        int exitCode = runJobInTOS(args);
+        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
 
-		return bufferValue;
-	}
+        return bufferValue;
+    }
 
-	public boolean hastBufferOutputComponent() {
+    public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
+    	
+        return hastBufferOutput;
+    }
 
-		return hastBufferOutput;
-	}
+    public int runJobInTOS(String[] args) {
+	   	// reset status
+	   	status = "";
+	   	
+        String lastStr = "";
+        for (String arg : args) {
+            if (arg.equalsIgnoreCase("--context_param")) {
+                lastStr = arg;
+            } else if (lastStr.equals("")) {
+                evalParam(arg);
+            } else {
+                evalParam(lastStr + " " + arg);
+                lastStr = "";
+            }
+        }
+        enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
 
-	public int runJobInTOS(String[] args) {
-		// reset status
-		status = "";
+    	
+    	
 
-		String lastStr = "";
-		for (String arg : args) {
-			if (arg.equalsIgnoreCase("--context_param")) {
-				lastStr = arg;
-			} else if (lastStr.equals("")) {
-				evalParam(arg);
-			} else {
-				evalParam(lastStr + " " + arg);
-				lastStr = "";
-			}
-		}
-		enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
+        if(clientHost == null) {
+            clientHost = defaultClientHost;
+        }
 
-		if (clientHost == null) {
-			clientHost = defaultClientHost;
-		}
+        if(pid == null || "0".equals(pid)) {
+            pid = TalendString.getAsciiRandomString(6);
+        }
 
-		if (pid == null || "0".equals(pid)) {
-			pid = TalendString.getAsciiRandomString(6);
-		}
+        if (rootPid==null) {
+            rootPid = pid;
+        }
+        if (fatherPid==null) {
+            fatherPid = pid;
+        }else{
+            isChildJob = true;
+        }
 
-		if (rootPid == null) {
-			rootPid = pid;
-		}
-		if (fatherPid == null) {
-			fatherPid = pid;
-		} else {
-			isChildJob = true;
-		}
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
-		if (portStats != null) {
-			// portStats = -1; //for testing
-			if (portStats < 0 || portStats > 65535) {
-				// issue:10869, the portStats is invalid, so this client socket can't open
-				System.err.println("The statistics socket port " + portStats + " is invalid.");
-				execStat = false;
-			}
-		} else {
-			execStat = false;
-		}
+        try {
+            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
+            java.io.InputStream inContext = RDV_Extrac.class.getClassLoader().getResourceAsStream("bigdata_project/rdv_extrac_0_1/contexts/" + contextStr + ".properties");
+            if (inContext == null) {
+                inContext = RDV_Extrac.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
+            }
+            if (inContext != null) {
+                //defaultProps is in order to keep the original context value
+                if(context != null && context.isEmpty()) {
+	                defaultProps.load(inContext);
+	                context = new ContextProperties(defaultProps);
+                }
+                
+                inContext.close();
+            } else if (!isDefaultContext) {
+                //print info and job continue to run, for case: context_param is not empty.
+                System.err.println("Could not find the context " + contextStr);
+            }
 
-		try {
-			// call job/subjob with an existing context, like: --context=production. if
-			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = RDV_Extrac.class.getClassLoader()
-					.getResourceAsStream("bigdata_project/rdv_extrac_0_1/contexts/" + contextStr + ".properties");
-			if (inContext == null) {
-				inContext = RDV_Extrac.class.getClassLoader()
-						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
-			}
-			if (inContext != null) {
-				// defaultProps is in order to keep the original context value
-				if (context != null && context.isEmpty()) {
-					defaultProps.load(inContext);
-					context = new ContextProperties(defaultProps);
-				}
-
-				inContext.close();
-			} else if (!isDefaultContext) {
-				// print info and job continue to run, for case: context_param is not empty.
-				System.err.println("Could not find the context " + contextStr);
-			}
-
-			if (!context_param.isEmpty()) {
-				context.putAll(context_param);
-				// set types for params from parentJobs
-				for (Object key : context_param.keySet()) {
+            if(!context_param.isEmpty()) {
+                context.putAll(context_param);
+				//set types for params from parentJobs
+				for (Object key: context_param.keySet()){
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-			}
-			class ContextProcessing {
-				private void processContext_0() {
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-					context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy",
-							"id_String");
-					context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) context
-							.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-					context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
-					context.HadoopHDFS_HdfsFileSeparator = (String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
-					context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
-					context.HadoopHDFS_HdfsRowSeparator = (String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
-					context.setContextType("HadoopHDFS_HdfsUser", "id_String");
-					context.HadoopHDFS_HdfsUser = (String) context.getProperty("HadoopHDFS_HdfsUser");
-					context.setContextType("HadoopHDFS_RDV", "id_String");
-					context.HadoopHDFS_RDV = (String) context.getProperty("HadoopHDFS_RDV");
-					context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
-					context.ProjectHadoopCluster_NameNodeUri = (String) context
-							.getProperty("ProjectHadoopCluster_NameNodeUri");
-					context.setContextType("ProjectHadoopCluster_User", "id_String");
-					context.ProjectHadoopCluster_User = (String) context.getProperty("ProjectHadoopCluster_User");
-				}
+            }
+            class ContextProcessing {
+                private void processContext_0() {
+                        context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable", "id_String");
+                            context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable=(String) context.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
+                        context.setContextType("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy", "id_String");
+                            context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy=(String) context.getProperty("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+                        context.setContextType("HadoopHDFS_HdfsFileSeparator", "id_String");
+                            context.HadoopHDFS_HdfsFileSeparator=(String) context.getProperty("HadoopHDFS_HdfsFileSeparator");
+                        context.setContextType("HadoopHDFS_HdfsRowSeparator", "id_String");
+                            context.HadoopHDFS_HdfsRowSeparator=(String) context.getProperty("HadoopHDFS_HdfsRowSeparator");
+                        context.setContextType("HadoopHDFS_HdfsUser", "id_String");
+                            context.HadoopHDFS_HdfsUser=(String) context.getProperty("HadoopHDFS_HdfsUser");
+                        context.setContextType("HadoopHDFS_RDV", "id_String");
+                            context.HadoopHDFS_RDV=(String) context.getProperty("HadoopHDFS_RDV");
+                        context.setContextType("ProjectHadoopCluster_NameNodeUri", "id_String");
+                            context.ProjectHadoopCluster_NameNodeUri=(String) context.getProperty("ProjectHadoopCluster_NameNodeUri");
+                        context.setContextType("ProjectHadoopCluster_User", "id_String");
+                            context.ProjectHadoopCluster_User=(String) context.getProperty("ProjectHadoopCluster_User");
+                } 
+                public void processAllContext() {
+                        processContext_0();
+                }
+            }
 
-				public void processAllContext() {
-					processContext_0();
-				}
-			}
+            new ContextProcessing().processAllContext();
+        } catch (java.io.IOException ie) {
+            System.err.println("Could not load context "+contextStr);
+            ie.printStackTrace();
+        }
 
-			new ContextProcessing().processAllContext();
-		} catch (java.io.IOException ie) {
-			System.err.println("Could not load context " + contextStr);
-			ie.printStackTrace();
-		}
+        // get context value from parent directly
+        if (parentContextMap != null && !parentContextMap.isEmpty()) {if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable")) {
+                context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) parentContextMap.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
+            }if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
+                context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
+                context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsRowSeparator")) {
+                context.HadoopHDFS_HdfsRowSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsRowSeparator");
+            }if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
+                context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
+            }if (parentContextMap.containsKey("HadoopHDFS_RDV")) {
+                context.HadoopHDFS_RDV = (String) parentContextMap.get("HadoopHDFS_RDV");
+            }if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
+                context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap.get("ProjectHadoopCluster_NameNodeUri");
+            }if (parentContextMap.containsKey("ProjectHadoopCluster_User")) {
+                context.ProjectHadoopCluster_User = (String) parentContextMap.get("ProjectHadoopCluster_User");
+            }
+        }
 
-		// get context value from parent directly
-		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_enable");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy")) {
-				context.HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy = (String) parentContextMap
-						.get("HadoopHDFS_dfs_client_block_write_replace_datanode_on_failure_policy");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsFileSeparator")) {
-				context.HadoopHDFS_HdfsFileSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsFileSeparator");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsRowSeparator")) {
-				context.HadoopHDFS_HdfsRowSeparator = (String) parentContextMap.get("HadoopHDFS_HdfsRowSeparator");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_HdfsUser")) {
-				context.HadoopHDFS_HdfsUser = (String) parentContextMap.get("HadoopHDFS_HdfsUser");
-			}
-			if (parentContextMap.containsKey("HadoopHDFS_RDV")) {
-				context.HadoopHDFS_RDV = (String) parentContextMap.get("HadoopHDFS_RDV");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_NameNodeUri")) {
-				context.ProjectHadoopCluster_NameNodeUri = (String) parentContextMap
-						.get("ProjectHadoopCluster_NameNodeUri");
-			}
-			if (parentContextMap.containsKey("ProjectHadoopCluster_User")) {
-				context.ProjectHadoopCluster_User = (String) parentContextMap.get("ProjectHadoopCluster_User");
-			}
-		}
-
-		// Resume: init the resumeUtil
-		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+        //Resume: init the resumeUtil
+        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-		// Resume: jobStart
-		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
-				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
+        //Resume: jobStart
+        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
-		if (execStat) {
-			try {
-				runStat.openSocket(!isChildJob);
-				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-				runStat.startThreadStat(clientHost, portStats);
-				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-			} catch (java.io.IOException ioException) {
-				ioException.printStackTrace();
-			}
-		}
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
-		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-		globalMap.put("concurrentHashMap", concurrentHashMap);
 
-		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		long endUsedMemory = 0;
-		long end = 0;
 
-		startTime = System.currentTimeMillis();
+	
+	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+	    globalMap.put("concurrentHashMap", concurrentHashMap);
+	
 
-		this.globalResumeTicket = true;// to run tPreJob
+    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    long endUsedMemory = 0;
+    long end = 0;
 
-		this.globalResumeTicket = false;// to run others jobs
+    startTime = System.currentTimeMillis();
 
-		try {
-			errorCode = null;
-			tHDFSConnection_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tHDFSConnection_1) {
-			globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", -1);
 
-			e_tHDFSConnection_1.printStackTrace();
 
-		}
 
-		this.globalResumeTicket = true;// to run tPostJob
+this.globalResumeTicket = true;//to run tPreJob
 
-		end = System.currentTimeMillis();
 
-		if (watch) {
-			System.out.println((end - startTime) + " milliseconds");
-		}
 
-		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		if (false) {
-			System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : RDV_Extrac");
-		}
 
-		if (execStat) {
-			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-			runStat.stopThreadStat();
-		}
-		int returnCode = 0;
-		if (errorCode == null) {
-			returnCode = status != null && status.equals("failure") ? 1 : 0;
-		} else {
-			returnCode = errorCode.intValue();
-		}
-		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
-				"" + returnCode, "", "", "");
+this.globalResumeTicket = false;//to run others jobs
 
-		return returnCode;
+try {
+errorCode = null;tHDFSConnection_1Process(globalMap);
+if(!"failure".equals(status)) { status = "end"; }
+}catch (TalendException e_tHDFSConnection_1) {
+globalMap.put("tHDFSConnection_1_SUBPROCESS_STATE", -1);
 
-	}
+e_tHDFSConnection_1.printStackTrace();
 
-	// only for OSGi env
-	public void destroy() {
-		closeSqlDbConnections();
+}
 
-	}
+this.globalResumeTicket = true;//to run tPostJob
 
-	private void closeSqlDbConnections() {
-		try {
-			Object obj_conn;
-			obj_conn = globalMap.remove("conn_tDBConnection_1");
-			if (null != obj_conn) {
-				((java.sql.Connection) obj_conn).close();
-			}
-		} catch (java.lang.Exception e) {
-		}
-	}
 
-	private java.util.Map<String, Object> getSharedConnections4REST() {
-		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
-		connections.put("conn_tDBConnection_1", globalMap.get("conn_tDBConnection_1"));
 
-		return connections;
-	}
 
-	private void evalParam(String arg) {
-		if (arg.startsWith("--resuming_logs_dir_path")) {
-			resuming_logs_dir_path = arg.substring(25);
-		} else if (arg.startsWith("--resuming_checkpoint_path")) {
-			resuming_checkpoint_path = arg.substring(27);
-		} else if (arg.startsWith("--parent_part_launcher")) {
-			parent_part_launcher = arg.substring(23);
-		} else if (arg.startsWith("--watch")) {
-			watch = true;
-		} else if (arg.startsWith("--stat_port=")) {
-			String portStatsStr = arg.substring(12);
-			if (portStatsStr != null && !portStatsStr.equals("null")) {
-				portStats = Integer.parseInt(portStatsStr);
-			}
-		} else if (arg.startsWith("--trace_port=")) {
-			portTraces = Integer.parseInt(arg.substring(13));
-		} else if (arg.startsWith("--client_host=")) {
-			clientHost = arg.substring(14);
-		} else if (arg.startsWith("--context=")) {
-			contextStr = arg.substring(10);
-			isDefaultContext = false;
-		} else if (arg.startsWith("--father_pid=")) {
-			fatherPid = arg.substring(13);
-		} else if (arg.startsWith("--root_pid=")) {
-			rootPid = arg.substring(11);
-		} else if (arg.startsWith("--father_node=")) {
-			fatherNode = arg.substring(14);
-		} else if (arg.startsWith("--pid=")) {
-			pid = arg.substring(6);
-		} else if (arg.startsWith("--context_type")) {
-			String keyValue = arg.substring(15);
+        end = System.currentTimeMillis();
+
+        if (watch) {
+            System.out.println((end-startTime)+" milliseconds");
+        }
+
+        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        if (false) {
+            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : RDV_Extrac");
+        }
+
+
+
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
+    int returnCode = 0;
+    if(errorCode == null) {
+         returnCode = status != null && status.equals("failure") ? 1 : 0;
+    } else {
+         returnCode = errorCode.intValue();
+    }
+    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
+
+    return returnCode;
+
+  }
+
+    // only for OSGi env
+    public void destroy() {
+    closeSqlDbConnections();
+
+
+    }
+
+
+
+    private void closeSqlDbConnections() {
+        try {
+            Object obj_conn;
+            obj_conn = globalMap.remove("conn_tDBConnection_1");
+            if (null != obj_conn) {
+                ((java.sql.Connection) obj_conn).close();
+            }
+        } catch (java.lang.Exception e) {
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    private java.util.Map<String, Object> getSharedConnections4REST() {
+        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
+            connections.put("conn_tDBConnection_1", globalMap.get("conn_tDBConnection_1"));
+
+
+
+
+
+
+
+        return connections;
+    }
+
+    private void evalParam(String arg) {
+        if (arg.startsWith("--resuming_logs_dir_path")) {
+            resuming_logs_dir_path = arg.substring(25);
+        } else if (arg.startsWith("--resuming_checkpoint_path")) {
+            resuming_checkpoint_path = arg.substring(27);
+        } else if (arg.startsWith("--parent_part_launcher")) {
+            parent_part_launcher = arg.substring(23);
+        } else if (arg.startsWith("--watch")) {
+            watch = true;
+        } else if (arg.startsWith("--stat_port=")) {
+            String portStatsStr = arg.substring(12);
+            if (portStatsStr != null && !portStatsStr.equals("null")) {
+                portStats = Integer.parseInt(portStatsStr);
+            }
+        } else if (arg.startsWith("--trace_port=")) {
+            portTraces = Integer.parseInt(arg.substring(13));
+        } else if (arg.startsWith("--client_host=")) {
+            clientHost = arg.substring(14);
+        } else if (arg.startsWith("--context=")) {
+            contextStr = arg.substring(10);
+            isDefaultContext = false;
+        } else if (arg.startsWith("--father_pid=")) {
+            fatherPid = arg.substring(13);
+        } else if (arg.startsWith("--root_pid=")) {
+            rootPid = arg.substring(11);
+        } else if (arg.startsWith("--father_node=")) {
+            fatherNode = arg.substring(14);
+        } else if (arg.startsWith("--pid=")) {
+            pid = arg.substring(6);
+        } else if (arg.startsWith("--context_type")) {
+            String keyValue = arg.substring(15);
 			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.setContextType(keyValue.substring(0, index),
-							replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
 
-			}
+            }
 
 		} else if (arg.startsWith("--context_param")) {
-			String keyValue = arg.substring(16);
-			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
-			}
-		} else if (arg.startsWith("--log4jLevel=")) {
-			log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {// for trunjob call
-			final int equal = arg.indexOf('=');
+            String keyValue = arg.substring(16);
+            int index = -1;
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
+            }
+        } else if (arg.startsWith("--log4jLevel=")) {
+            log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {//for trunjob call
+		    final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-	}
+    }
+    
+    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
 
-	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
-
-	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
-			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
-
-	private String replaceEscapeChars(String keyValue) {
+    private final String[][] escapeChars = {
+        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
+        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
+        };
+    private String replaceEscapeChars (String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -2095,17 +2621,15 @@ public class RDV_Extrac implements TalendJob {
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0], currIndex);
-				if (index >= 0) {
+				index = keyValue.indexOf(strArray[0],currIndex);
+				if (index>=0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
-							strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the
-			// result
+			// if the left string doesn't include escape chars, append the left into the result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -2113,19 +2637,20 @@ public class RDV_Extrac implements TalendJob {
 		}
 
 		return result.toString();
-	}
+    }
 
-	public Integer getErrorCode() {
-		return errorCode;
-	}
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
-	public String getStatus() {
-		return status;
-	}
 
-	ResumeUtil resumeUtil = null;
+    public String getStatus() {
+        return status;
+    }
+
+    ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 64722 characters generated by Talend Open Studio for Big Data on the 17 mai
- * 2022 14:29:58 CEST
+ *     64722 characters generated by Talend Open Studio for Big Data 
+ *     on the 18 mai 2022 22:37:21 CEST
  ************************************************************************************************/

@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2022-05-17T12:09:27.974+0200"/>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2022-05-18T00:42:08.553+0200">
+  <deletedItems id="_vw-G0NTzEeyiFK0OGkCKEQ" path="" type="PROCESS"/>
+  <deletedItems id="_5xJxcNXnEey_cP3LWZvxoA" path="" type="CONTEXT"/>
+</recyclebin:RecycleBin>

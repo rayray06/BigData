@@ -43,6 +43,9 @@
     <module>jobs/process/Integrations/Prof/dim_prof_0.1</module>
     <module>jobs/process/Integrations/RDV/stage_rdv_0.1</module>
     <module>jobs/process/Integrations/RDV/dim_rdv_0.1</module>
+    <module>jobs/process/Views/view_sati_0.1</module>
+    <module>jobs/process/infos_0.1</module>
+    <module>jobs/process/endd_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BIGDATA_PROJECT</talend.project.name>

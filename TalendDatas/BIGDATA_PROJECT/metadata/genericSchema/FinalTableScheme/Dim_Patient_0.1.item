@@ -6,9 +6,7 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_0ZUlc9UIEeyiFK0OGkCKEQ" name="Id_patient" id="38561" label="Id_patient" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
         <initialValue xmi:id="_0ZUldNUIEeyiFK0OGkCKEQ" body=""/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_0ZUlddUIEeyiFK0OGkCKEQ" name="Age" id="38562" label="Age" length="10" sourceType="INT" talendType="id_Integer">
-        <initialValue xmi:id="_0ZUldtUIEeyiFK0OGkCKEQ" body=""/>
-      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zr7WQNY7EeyPfqgcbYpLrQ" name="Age" label="Age" length="-1" sourceType="INT" talendType="id_Integer"/>
     </ownedElement>
   </TalendMetadata:GenericPackage>
 </xmi:XMI>

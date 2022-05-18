@@ -28,9 +28,9 @@ public class Perso {
         return java.util.UUID.randomUUID().toString();
     }
     
-    public static java.lang.Double ToDouble(String dataS) 
+    public static java.lang.Float ToDouble(String dataS) 
     {
-    	return (dataS!=null)?Double.parseDouble(StringHandling.EREPLACE(dataS, ",", ".")) : null;
+    	return (dataS!=null)?Float.parseFloat(StringHandling.EREPLACE(dataS, ",", ".")) : null;
     }
     public static long DateToValue(String dataS) 
     {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_kvNQMNW8Eey_cP3LWZvxoA" comment="connectionComment" label="connectionLabel" dataPackage="_kvNQMdW8Eey_cP3LWZvxoA" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_kvNQMdW8Eey_cP3LWZvxoA" dataManager="_kvNQMNW8Eey_cP3LWZvxoA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_kvNQMtW8Eey_cP3LWZvxoA" id="_mH13ENW8Eey_cP3LWZvxoA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQM9W8Eey_cP3LWZvxoA" name="identifiant_organisation" id="13858" label="identifiant_organisation" length="9" sourceType="STRING" talendType="id_String" key="true" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_kvNQNNW8Eey_cP3LWZvxoA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cNpV0NYfEeyPfqgcbYpLrQ" name="cedex" label="cedex" length="30" sourceType="STRING" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQN9W8Eey_cP3LWZvxoA" name="Score_48_2020" id="13860" label="Score_48_2020" length="5" sourceType="FLOAT" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_kvNQONW8Eey_cP3LWZvxoA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

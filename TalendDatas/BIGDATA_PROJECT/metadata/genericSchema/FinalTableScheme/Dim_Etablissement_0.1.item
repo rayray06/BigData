@@ -6,10 +6,8 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQM9W8Eey_cP3LWZvxoA" name="identifiant_organisation" id="13858" label="identifiant_organisation" length="9" sourceType="STRING" talendType="id_String" key="true" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_kvNQNNW8Eey_cP3LWZvxoA"/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQNdW8Eey_cP3LWZvxoA" name="cedex" id="13859" label="cedex" length="30" sourceType="STRING" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
-        <initialValue xmi:id="_kvNQNtW8Eey_cP3LWZvxoA"/>
-      </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQN9W8Eey_cP3LWZvxoA" name="Score_48_2020" id="13860" label="Score_48_2020" length="-1" sourceType="DOUBLE" talendType="id_Double" pattern="&quot;dd-MM-yyyy&quot;">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cNpV0NYfEeyPfqgcbYpLrQ" name="cedex" label="cedex" length="30" sourceType="STRING" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_kvNQN9W8Eey_cP3LWZvxoA" name="Score_48_2020" id="13860" label="Score_48_2020" length="-1" sourceType="FLOAT" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;">
         <initialValue xmi:id="_kvNQONW8Eey_cP3LWZvxoA"/>
       </feature>
     </ownedElement>

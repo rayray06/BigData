@@ -6,9 +6,6 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaak9XIEey_cP3LWZvxoA" name="Num_consultation" id="20254" label="Num_consultation" length="10" sourceType="INT" talendType="id_Integer" key="true" nullable="false">
         <initialValue xmi:id="_GRaalNXIEey_cP3LWZvxoA" body=""/>
       </feature>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaaldXIEey_cP3LWZvxoA" name="Id_patient" id="20255" label="Id_patient" length="10" sourceType="INT" talendType="id_Integer">
-        <initialValue xmi:id="_GRaaltXIEey_cP3LWZvxoA" body=""/>
-      </feature>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaal9XIEey_cP3LWZvxoA" name="Code_diag" id="20256" label="Code_diag" length="2147483647" sourceType="STRING" talendType="id_String">
         <initialValue xmi:id="_GRaamNXIEey_cP3LWZvxoA"/>
       </feature>

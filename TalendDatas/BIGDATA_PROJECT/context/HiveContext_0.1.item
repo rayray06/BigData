@@ -19,4 +19,12 @@
   <contextParameter xmi:id="_xIXu0NXIEey_cP3LWZvxoA" comment="" name="ProfTable" prompt="ProfTable?" promptNeeded="false" type="id_String" value="&quot;Dim_Prof&quot;"/>
   <contextParameter xmi:id="_FC4qkNXLEey_cP3LWZvxoA" comment="" name="RDVStage" prompt="RDVStage?" promptNeeded="false" type="id_String" value="&quot;Stage_Rdv&quot;"/>
   <contextParameter xmi:id="_FC4qkdXLEey_cP3LWZvxoA" comment="" name="RDVTable" prompt="RDVTable?" promptNeeded="false" type="id_String" value="&quot;Fact_Rdv&quot;"/>
+  <contextParameter xmi:id="_JuOHkNXnEey_cP3LWZvxoA" comment="" name="SatiView" prompt="SatiView?" promptNeeded="false" type="id_String" value="&quot;View_Satis&quot;"/>
+  <contextParameter xmi:id="_oW66INYyEeyPfqgcbYpLrQ" comment="" name="HoscoView" prompt="HoscoView?" promptNeeded="false" type="id_String" value="&quot;View_Hosco&quot;"/>
+  <contextParameter xmi:id="_JP0W4NZAEeyPfqgcbYpLrQ" comment="" name="ConsuProView" prompt="ConsuProView?" promptNeeded="false" type="id_String" value="&quot;View_ConsuPro&quot;"/>
+  <contextParameter xmi:id="_Cypy0NbHEeygi-EOqX-i1A" comment="" name="HospiDiagView" prompt="HospiDiagView?" promptNeeded="false" type="id_String" value="&quot;View_HospiDiag&quot;"/>
+  <contextParameter xmi:id="_5F3SgNbIEeygi-EOqX-i1A" comment="" name="ConsuDiagView" prompt="ConsuDiagView?" promptNeeded="false" type="id_String" value="&quot;View_ConsuDiag&quot;"/>
+  <contextParameter xmi:id="_G-d64NbmEeygi-EOqX-i1A" comment="" name="HosView" prompt="HosView?" promptNeeded="false" type="id_String" value="&quot;View_Hosp&quot;"/>
+  <contextParameter xmi:id="_1gybsNboEeygi-EOqX-i1A" comment="" name="ConsEtabView" prompt="ConsEtabView?" promptNeeded="false" type="id_String" value="&quot;View_ConsEtab&quot;"/>
+  <contextParameter xmi:id="_wOTY8NbpEeygi-EOqX-i1A" comment="" name="DeathView" prompt="DeathView?" promptNeeded="false" type="id_String" value="&quot;View_Death&quot;"/>
 </talendfile:ContextType>

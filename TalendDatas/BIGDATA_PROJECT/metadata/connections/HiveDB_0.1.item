@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
-  <TalendMetadata:DatabaseConnection xmi:id="_ci4hwNIIEeyiFK0OGkCKEQ" name="HiveDB" id="_a4XgsNIIEeyiFK0OGkCKEQ" label="HiveDB" dataPackage="_hFxqcNUDEeyiFK0OGkCKEQ" DatabaseType="Hive" DriverClass="org.apache.hadoop.hive.jdbc.HiveDriver" URL="jdbc:hive2://group3.bigdata:10000/default" dbVersionString="STANDALONE" Port="10000" Username="cloudera" Password="enc:system.encryption.key.v1:HKSqeDBuRT5tL+pOfwKCTxeGoaMgq6E9h4UjqOc3CNAw2skx" ServerName="group3.bigdata" SID="default" SqlSynthax="" StringQuote="" NullChar="" DbmsId="hive_id" ProductId="HIVE" StandardSQL="true" SQLMode="false" UiSchema="default">
+  <TalendMetadata:DatabaseConnection xmi:id="_ci4hwNIIEeyiFK0OGkCKEQ" name="HiveDB" id="_a4XgsNIIEeyiFK0OGkCKEQ" label="HiveDB" dataPackage="_DV71MNX6Eey_cP3LWZvxoA" DatabaseType="Hive" DriverClass="org.apache.hadoop.hive.jdbc.HiveDriver" URL="jdbc:hive2://group3.bigdata:10000/default" dbVersionString="STANDALONE" Port="10000" Username="cloudera" Password="enc:system.encryption.key.v1:6ZZYyCogVNlx1CGOPDY0KGI4KwI63oo/pDW6pJDEg144ROSj" ServerName="group3.bigdata" SID="default" SqlSynthax="" StringQuote="" NullChar="" DbmsId="hive_id" ProductId="HIVE" StandardSQL="true" SQLMode="false" UiSchema="default">
     <taggedValue xmi:id="_ci4hwdIIEeyiFK0OGkCKEQ" tag="Is Conn Need Reload" value="false"/>
     <taggedValue xmi:id="_cjcicNIIEeyiFK0OGkCKEQ" tag="package filter" value=""/>
     <taggedValue xmi:id="_cjtoMNIIEeyiFK0OGkCKEQ" tag="Status" value=""/>
@@ -55,10 +55,10 @@
     <parameters xmi:id="_ci4h69IIEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_DISABLE_CBC_PROTECTION" value="false"/>
     <parameters xmi:id="_ci4h8NIIEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_HIVE_THRIFTPORT" value="9083"/>
     <parameters xmi:id="_4e5gsNIIEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_HIVE_JDBC_PROPERTIES" value="[{&quot;PROPERTY&quot;:&quot;hive.exec.dynamic.partition&quot;,&quot;VALUE&quot;:&quot;true&quot;},{&quot;PROPERTY&quot;:&quot;hive.exec.dynamic.partition.mode&quot;,&quot;VALUE&quot;:&quot;nonstrict&quot;},{&quot;PROPERTY&quot;:&quot;hive.enforce.bucketing&quot;,&quot;VALUE&quot;:&quot;true&quot;},{&quot;PROPERTY&quot;:&quot;hive.conf.validation&quot;,&quot;VALUE&quot;:&quot;false&quot;}]"/>
-    <parameters xmi:id="_bVNaANUDEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_SSL_TRUST_STORE_PATH" value=""/>
-    <parameters xmi:id="_bVNaAdUDEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_SSL_TRUST_STORE_PASSWORD" value=""/>
-    <parameters xmi:id="_bVOBENUDEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_SSL_KEY_STORE_PATH" value=""/>
-    <parameters xmi:id="_bVOBEdUDEeyiFK0OGkCKEQ" key="CONN_PARA_KEY_SSL_KEY_STORE_PASSWORD" value=""/>
+    <parameters xmi:id="_c0RtQNX5Eey_cP3LWZvxoA" key="CONN_PARA_KEY_SSL_TRUST_STORE_PATH" value=""/>
+    <parameters xmi:id="_c0RtQdX5Eey_cP3LWZvxoA" key="CONN_PARA_KEY_SSL_TRUST_STORE_PASSWORD" value=""/>
+    <parameters xmi:id="_c0RtQtX5Eey_cP3LWZvxoA" key="CONN_PARA_KEY_SSL_KEY_STORE_PATH" value=""/>
+    <parameters xmi:id="_c0RtQ9X5Eey_cP3LWZvxoA" key="CONN_PARA_KEY_SSL_KEY_STORE_PASSWORD" value=""/>
   </TalendMetadata:DatabaseConnection>
-  <orgomg.cwm.resource.relational:Schema xmi:id="_hFxqcNUDEeyiFK0OGkCKEQ" name="default" dataManager="_ci4hwNIIEeyiFK0OGkCKEQ"/>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_DV71MNX6Eey_cP3LWZvxoA" name="default" dataManager="_ci4hwNIIEeyiFK0OGkCKEQ"/>
 </xmi:XMI>

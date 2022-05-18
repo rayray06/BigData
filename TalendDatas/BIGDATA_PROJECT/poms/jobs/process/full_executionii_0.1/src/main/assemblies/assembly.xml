@@ -324,23 +324,34 @@
         <dependencySet>
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
-                <include>org.example.bigdata_project.job:Hospitalisation:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Prof_Extrac:jar:0.1.0</include>
-                <include>org.example.bigdata_project.job:Stage_Patient:jar:0.1.0</include>
-                <include>org.example.bigdata_project.job:Patient_Extrac:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Diag_Extrac:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:RDV_Extrac:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Staging_Visite:jar:0.1.0</include>
-                <include>org.example.bigdata_project.job:Death_Fetch:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Fact_Hosco:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Region_Extrac:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:HoscoNew:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Consu_Extrac:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Dim_Death:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Stage_Sati:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Hospitalisation:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Dim_Prof:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Stage_Patient:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Patient_Extrac:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Dim_Etablissement:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Death_Fetch:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Extract_Visite:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Etab_Extrac:jar:0.1.0</include>
-                <include>org.example.bigdata_project.job:HoscoNew:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Full_ExecutionII:jar:0.1.0</include>
-                <include>org.example.bigdata_project.job:Consu_Extrac:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:esatis_E:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Fact_Satisfaction:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Dim_Diagnostic:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Stage_RDV:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Dim_Patient:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Stage_Death:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Dim_RDV:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Dim_Region:jar:0.1.0</include>
+                <include>org.example.bigdata_project.job:Stage_Hosco:jar:0.1.0</include>
                 <include>org.example.bigdata_project.job:Visite:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
