@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_GRaakNXIEey_cP3LWZvxoA" comment="connectionComment" label="connectionLabel" dataPackage="_GRaakdXIEey_cP3LWZvxoA" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_GRaakdXIEey_cP3LWZvxoA" dataManager="_GRaakNXIEey_cP3LWZvxoA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_GRaaktXIEey_cP3LWZvxoA" id="_LMtP4NXIEey_cP3LWZvxoA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaak9XIEey_cP3LWZvxoA" name="Num_consultation" id="20254" label="Num_consultation" length="10" sourceType="INT" talendType="id_Integer" key="true" nullable="false">
+        <initialValue xmi:id="_GRaalNXIEey_cP3LWZvxoA" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaal9XIEey_cP3LWZvxoA" name="Code_diag" id="20256" label="Code_diag" length="2147483647" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_GRaamNXIEey_cP3LWZvxoA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaamdXIEey_cP3LWZvxoA" name="Id_prof_sante" id="20257" label="Id_prof_sante" length="2147483647" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_GRaamtXIEey_cP3LWZvxoA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_GRaam9XIEey_cP3LWZvxoA" name="identifiant_organisation" id="20258" label="identifiant_organisation" length="15" sourceType="STRING" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_GRaanNXIEey_cP3LWZvxoA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
