@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
-  <TalendMetadata:DatabaseConnection xmi:id="_4odZgM7gEeylS-_k4rIanw" name="ProstGreConnexion" id="_LZWNAM7eEeylS-_k4rIanw" label="ProstGreConnexion" dataPackage="_4p3uwM7gEeylS-_k4rIanw" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://172.20.16.11:5432/soins_medico_administratives?" dbVersionString="V9_X" Port="5432" Username="Group3User" Password="" ServerName="172.20.16.11" DatasourceName="" FileFieldName="" SID="soins_medico_administratives" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="public">
-    <taggedValue xmi:id="_4oenoM7gEeylS-_k4rIanw" tag="Is Conn Need Reload" value="false"/>
+  <TalendMetadata:DatabaseConnection xmi:id="_4odZgM7gEeylS-_k4rIanw" name="ProstGreConnexion" id="_LZWNAM7eEeylS-_k4rIanw" label="ProstGreConnexion" dataPackage="_6icRENd_EeybrfOHlI4Xug" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://localhost:5432/soins_medico_administratives?" dbVersionString="V9_X" Port="5432" Username="postgres" Password="enc:system.encryption.key.v1:5pfa41GB+YnAKIumYrvbOCPmZKmtKFfditWpkL+rGPs=" ServerName="localhost" DatasourceName="" FileFieldName="" SID="soins_medico_administratives" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="public">
+    <taggedValue xmi:id="_4oenoM7gEeylS-_k4rIanw" tag="Is Conn Need Reload" value="true"/>
     <taggedValue xmi:id="_4o3pMM7gEeylS-_k4rIanw" tag="package filter" value=""/>
     <taggedValue xmi:id="_4pEdgM7gEeylS-_k4rIanw" tag="Status" value=""/>
     <taggedValue xmi:id="_4pEdgc7gEeylS-_k4rIanw" tag="Version" value="0.1"/>
@@ -12,9 +12,10 @@
     <taggedValue xmi:id="_4pabwM7gEeylS-_k4rIanw" tag="DB ProductName" value="PostgreSQL"/>
     <taggedValue xmi:id="_4pabwc7gEeylS-_k4rIanw" tag="DB ProductVersion" value="14.1"/>
     <taggedValue xmi:id="_4pbC0M7gEeylS-_k4rIanw" tag="DB IdentifierQuoteString" value="&quot;"/>
-    <parameters xmi:id="_4oenoc7gEeylS-_k4rIanw" key="CONN_PARA_KEY_USERNAME" value="Group3User"/>
+    <parameters xmi:id="_4oenoc7gEeylS-_k4rIanw" key="CONN_PARA_KEY_USERNAME" value="postgres"/>
+    <parameters xmi:id="_3HMSMNd_EeybrfOHlI4Xug" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
   </TalendMetadata:DatabaseConnection>
-  <orgomg.cwm.resource.relational:Catalog xmi:id="_4p3uwM7gEeylS-_k4rIanw" name="soins_medico_administratives" dataManager="_4odZgM7gEeylS-_k4rIanw">
-    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_4p484M7gEeylS-_k4rIanw" name="public"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_6icRENd_EeybrfOHlI4Xug" name="soins_medico_administratives" dataManager="_4odZgM7gEeylS-_k4rIanw">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_6icREdd_EeybrfOHlI4Xug" name="public"/>
   </orgomg.cwm.resource.relational:Catalog>
 </xmi:XMI>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_Qhw1kNWzEey_cP3LWZvxoA" id="_QhvncNWzEey_cP3LWZvxoA" label="Dim_Death" version="0.1" statusCode="" item="_Qhw1ktWzEey_cP3LWZvxoA" displayName="Dim_Death">
+    <author href="../../../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+    <additionalProperties xmi:id="_Qhw1k9WzEey_cP3LWZvxoA" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_Qhw1lNWzEey_cP3LWZvxoA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_Qhw1ldWzEey_cP3LWZvxoA" key="created_date" value="2022-05-17T09:30:42.665+0200"/>
+    <additionalProperties xmi:id="_Qhw1ltWzEey_cP3LWZvxoA" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_Qhw1l9WzEey_cP3LWZvxoA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_Qhw1mNWzEey_cP3LWZvxoA" key="modified_date" value="2022-05-17T18:52:23.068+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_Qhw1kdWzEey_cP3LWZvxoA" path="Integrations/Death"/>
+  <TalendProperties:ProcessItem xmi:id="_Qhw1ktWzEey_cP3LWZvxoA" property="_Qhw1kNWzEey_cP3LWZvxoA" state="_Qhw1kdWzEey_cP3LWZvxoA">
+    <process href="Dim_Death_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

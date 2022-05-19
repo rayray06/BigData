@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_4ohD4M7gEeylS-_k4rIanw" id="_LZWNAM7eEeylS-_k4rIanw" label="ProstGreConnexion" version="0.1" statusCode="" item="_4ohD4s7gEeylS-_k4rIanw" displayName="ProstGreConnexion">
+    <author href="../../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+    <additionalProperties xmi:id="_4olVUM7gEeylS-_k4rIanw" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_4olVUc7gEeylS-_k4rIanw" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_4olVUs7gEeylS-_k4rIanw" key="created_date" value="2022-05-08T17:09:41.029+0200"/>
+    <additionalProperties xmi:id="_4olVU87gEeylS-_k4rIanw" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_4olVVM7gEeylS-_k4rIanw" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_4olVVc7gEeylS-_k4rIanw" key="modified_date" value="2022-05-19T16:27:26.526+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_4ohD4c7gEeylS-_k4rIanw" path="" locked="true" lockDate="2022-05-19T16:27:26.525+0200">
+    <locker href="../../talend.project#_ebNtsM7ZEeylS-_k4rIanw"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:DatabaseConnectionItem xmi:id="_4ohD4s7gEeylS-_k4rIanw" property="_4ohD4M7gEeylS-_k4rIanw" state="_4ohD4c7gEeylS-_k4rIanw" typeName="PostgreSQL">
+    <connection href="ProstGreConnexion_0.1.item#_4odZgM7gEeylS-_k4rIanw"/>
+  </TalendProperties:DatabaseConnectionItem>
+</xmi:XMI>

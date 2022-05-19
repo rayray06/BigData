@@ -3550,3 +3550,1046 @@ Caused by: org.eclipse.core.runtime.OperationCanceledException
 !ENTRY org.talend.platform.logging 1 0 2022-05-19 01:44:27.040
 !MESSAGE 2022-05-19 01:44:27,040 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/full_executionii_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.full_executionii_0_1.Full_ExecutionII --watch --context=Default --stat_port=3782 %*
 
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:48.483
+!MESSAGE 2022-05-19 09:20:48,483 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:48.725
+!MESSAGE 2022-05-19 09:20:48,723 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.125
+!MESSAGE 2022-05-19 09:20:49,123 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.126
+!MESSAGE 2022-05-19 09:20:49,125 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.129
+!MESSAGE 2022-05-19 09:20:49,128 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.131
+!MESSAGE 2022-05-19 09:20:49,131 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.570
+!MESSAGE 2022-05-19 09:20:49,570 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:49.948
+!MESSAGE 2022-05-19 09:20:49,947 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:20:50.186
+!MESSAGE 2022-05-19 09:20:50,185 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Integrations/RDV/dim_rdv_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.dim_rdv_0_1.Dim_RDV --watch --context=Default --stat_port=3903 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:31.671
+!MESSAGE 2022-05-19 09:21:31,669 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:31.818
+!MESSAGE 2022-05-19 09:21:31,818 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:32.085
+!MESSAGE 2022-05-19 09:21:32,085 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:32.086
+!MESSAGE 2022-05-19 09:21:32,086 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:32.099
+!MESSAGE 2022-05-19 09:21:32,099 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:32.102
+!MESSAGE 2022-05-19 09:21:32,101 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_DIM_RDV_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:32.433
+!MESSAGE 2022-05-19 09:21:32,432 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:33.086
+!MESSAGE 2022-05-19 09:21:33,086 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:21:33.318
+!MESSAGE 2022-05-19 09:21:33,317 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Integrations/RDV/dim_rdv_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.dim_rdv_0_1.Dim_RDV --watch --context=Default --stat_port=3796 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:23.644
+!MESSAGE 2022-05-19 09:37:23,644 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:24.091
+!MESSAGE 2022-05-19 09:37:24,090 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:24.741
+!MESSAGE 2022-05-19 09:37:24,740 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:24.742
+!MESSAGE 2022-05-19 09:37:24,741 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:24.746
+!MESSAGE 2022-05-19 09:37:24,746 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:24.750
+!MESSAGE 2022-05-19 09:37:24,747 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:25.283
+!MESSAGE 2022-05-19 09:37:25,280 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:25.765
+!MESSAGE 2022-05-19 09:37:25,763 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:37:26.021
+!MESSAGE 2022-05-19 09:37:26,021 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Views/view_sati_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.view_sati_0_1.View_Sati --watch --context=Default --stat_port=3598 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:23.637
+!MESSAGE 2022-05-19 09:42:23,636 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:23.911
+!MESSAGE 2022-05-19 09:42:23,911 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:24.334
+!MESSAGE 2022-05-19 09:42:24,332 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:24.335
+!MESSAGE 2022-05-19 09:42:24,334 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:24.346
+!MESSAGE 2022-05-19 09:42:24,345 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:24.347
+!MESSAGE 2022-05-19 09:42:24,346 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:24.648
+!MESSAGE 2022-05-19 09:42:24,643 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:25.019
+!MESSAGE 2022-05-19 09:42:25,017 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:42:25.414
+!MESSAGE 2022-05-19 09:42:25,414 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Views/view_sati_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.view_sati_0_1.View_Sati --watch --context=Default --stat_port=3916 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:01.095
+!MESSAGE 2022-05-19 09:45:01,095 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Administrateur.WIN-T87HKARVT4F\Documents\Data\BigData\TalendDatas\BIGDATA_PROJECT\poms
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:01.096
+!MESSAGE 2022-05-19 09:45:01,096 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -Dmaven.test.skip=true -DskipTests -s C:\TOS_BD-20200219_1130-V7.3.1\configuration\maven_user_settings.xml install -llr -T 1C -f build-aggregator.pom -P !packaging-and-assembly,!signature -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.361
+!MESSAGE 2022-05-19 09:45:09,358 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.671
+!MESSAGE 2022-05-19 09:45:09,671 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.683
+!MESSAGE 2022-05-19 09:45:09,682 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_PROF_EXTRAC_0.1: org.example.bigdata_project.job:Prof_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_PROF_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.685
+!MESSAGE 2022-05-19 09:45:09,683 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_DIAGNOSTIC_0.1: org.example.bigdata_project.job:Dim_Diagnostic:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_DIAGNOSTIC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.687
+!MESSAGE 2022-05-19 09:45:09,687 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_CONSU_EXTRAC_0.1: org.example.bigdata_project.job:Consu_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_CONSU_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.689
+!MESSAGE 2022-05-19 09:45:09,689 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_STAGE_HOSCO_0.1: org.example.bigdata_project.job:Stage_Hosco:0.1.0 with classifier  to /BIGDATA_PROJECT_STAGE_HOSCO_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.692
+!MESSAGE 2022-05-19 09:45:09,692 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_PROF_0.1: org.example.bigdata_project.job:Dim_Prof:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_PROF_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.693
+!MESSAGE 2022-05-19 09:45:09,692 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_ETABLISSEMENT_0.1: org.example.bigdata_project.job:Dim_Etablissement:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_ETABLISSEMENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.693
+!MESSAGE 2022-05-19 09:45:09,693 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_PATIENT_EXTRAC_0.1: org.example.bigdata_project.job:Patient_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_PATIENT_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.693
+!MESSAGE 2022-05-19 09:45:09,693 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_RDV_0.1: org.example.bigdata_project.job:Dim_RDV:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_RDV_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.696
+!MESSAGE 2022-05-19 09:45:09,693 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_PATIENT_0.1: org.example.bigdata_project.job:Dim_Patient:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_PATIENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.696
+!MESSAGE 2022-05-19 09:45:09,696 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_FACT_HOSCO_0.1: org.example.bigdata_project.job:Fact_Hosco:0.1.0 with classifier  to /BIGDATA_PROJECT_FACT_HOSCO_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.696
+!MESSAGE 2022-05-19 09:45:09,696 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_EXTRACT_VISITE_0.1: org.example.bigdata_project.job:Extract_Visite:0.1.0 with classifier  to /BIGDATA_PROJECT_EXTRACT_VISITE_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.697
+!MESSAGE 2022-05-19 09:45:09,696 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_STAGE_PATIENT_0.1: org.example.bigdata_project.job:Stage_Patient:0.1.0 with classifier  to /BIGDATA_PROJECT_STAGE_PATIENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.697
+!MESSAGE 2022-05-19 09:45:09,697 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ETAB_EXTRAC_0.1: org.example.bigdata_project.job:Etab_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_ETAB_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.697
+!MESSAGE 2022-05-19 09:45:09,697 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_HOSCONEW_0.1: org.example.bigdata_project.job:HoscoNew:0.1.0 with classifier  to /BIGDATA_PROJECT_HOSCONEW_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:09.697
+!MESSAGE 2022-05-19 09:45:09,697 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_HOSPITALISATION_0.1: org.example.bigdata_project.job:Hospitalisation:0.1.0 with classifier  to /BIGDATA_PROJECT_HOSPITALISATION_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:10.017
+!MESSAGE 2022-05-19 09:45:10,017 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_FULL_EXECUTIONII_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:10.020
+!MESSAGE 2022-05-19 09:45:10,019 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_FULL_EXECUTIONII_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:10.026
+!MESSAGE 2022-05-19 09:45:10,026 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_FULL_EXECUTIONII_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:10.028
+!MESSAGE 2022-05-19 09:45:10,026 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_FULL_EXECUTIONII_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:10.384
+!MESSAGE 2022-05-19 09:45:10,384 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.044
+!MESSAGE 2022-05-19 09:45:11,044 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.706
+!MESSAGE 2022-05-19 09:45:11,706 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.712
+!MESSAGE 2022-05-19 09:45:11,711 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_PROF_EXTRAC_0.1: org.example.bigdata_project.job:Prof_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_PROF_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.714
+!MESSAGE 2022-05-19 09:45:11,712 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_DIAGNOSTIC_0.1: org.example.bigdata_project.job:Dim_Diagnostic:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_DIAGNOSTIC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.716
+!MESSAGE 2022-05-19 09:45:11,714 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_CONSU_EXTRAC_0.1: org.example.bigdata_project.job:Consu_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_CONSU_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.719
+!MESSAGE 2022-05-19 09:45:11,717 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_STAGE_HOSCO_0.1: org.example.bigdata_project.job:Stage_Hosco:0.1.0 with classifier  to /BIGDATA_PROJECT_STAGE_HOSCO_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.720
+!MESSAGE 2022-05-19 09:45:11,720 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_PROF_0.1: org.example.bigdata_project.job:Dim_Prof:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_PROF_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.720
+!MESSAGE 2022-05-19 09:45:11,720 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_ETABLISSEMENT_0.1: org.example.bigdata_project.job:Dim_Etablissement:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_ETABLISSEMENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.723
+!MESSAGE 2022-05-19 09:45:11,723 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_PATIENT_EXTRAC_0.1: org.example.bigdata_project.job:Patient_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_PATIENT_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.723
+!MESSAGE 2022-05-19 09:45:11,723 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_RDV_0.1: org.example.bigdata_project.job:Dim_RDV:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_RDV_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.727
+!MESSAGE 2022-05-19 09:45:11,725 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_DIM_PATIENT_0.1: org.example.bigdata_project.job:Dim_Patient:0.1.0 with classifier  to /BIGDATA_PROJECT_DIM_PATIENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.727
+!MESSAGE 2022-05-19 09:45:11,727 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_FACT_HOSCO_0.1: org.example.bigdata_project.job:Fact_Hosco:0.1.0 with classifier  to /BIGDATA_PROJECT_FACT_HOSCO_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.727
+!MESSAGE 2022-05-19 09:45:11,727 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_EXTRACT_VISITE_0.1: org.example.bigdata_project.job:Extract_Visite:0.1.0 with classifier  to /BIGDATA_PROJECT_EXTRACT_VISITE_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.730
+!MESSAGE 2022-05-19 09:45:11,727 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_STAGE_PATIENT_0.1: org.example.bigdata_project.job:Stage_Patient:0.1.0 with classifier  to /BIGDATA_PROJECT_STAGE_PATIENT_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.730
+!MESSAGE 2022-05-19 09:45:11,730 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ETAB_EXTRAC_0.1: org.example.bigdata_project.job:Etab_Extrac:0.1.0 with classifier  to /BIGDATA_PROJECT_ETAB_EXTRAC_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.736
+!MESSAGE 2022-05-19 09:45:11,736 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_HOSCONEW_0.1: org.example.bigdata_project.job:HoscoNew:0.1.0 with classifier  to /BIGDATA_PROJECT_HOSCONEW_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:11.742
+!MESSAGE 2022-05-19 09:45:11,741 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_HOSPITALISATION_0.1: org.example.bigdata_project.job:Hospitalisation:0.1.0 with classifier  to /BIGDATA_PROJECT_HOSPITALISATION_0.1/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 09:45:12.141
+!MESSAGE 2022-05-19 09:45:12,139 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/full_executionii_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.full_executionii_0_1.Full_ExecutionII --watch --context=Default --stat_port=4078 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:29.564
+!MESSAGE 2022-05-19 10:00:29,563 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:30.010
+!MESSAGE 2022-05-19 10:00:30,009 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:30.760
+!MESSAGE 2022-05-19 10:00:30,760 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:30.760
+!MESSAGE 2022-05-19 10:00:30,760 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:30.765
+!MESSAGE 2022-05-19 10:00:30,760 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:30.768
+!MESSAGE 2022-05-19 10:00:30,767 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:31.081
+!MESSAGE 2022-05-19 10:00:31,079 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:31.488
+!MESSAGE 2022-05-19 10:00:31,488 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:00:31.696
+!MESSAGE 2022-05-19 10:00:31,695 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Views/view_sati_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.view_sati_0_1.View_Sati --watch --context=Default --stat_port=3448 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:03.917
+!MESSAGE 2022-05-19 10:02:03,917 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:04.137
+!MESSAGE 2022-05-19 10:02:04,137 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:04.619
+!MESSAGE 2022-05-19 10:02:04,617 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:04.620
+!MESSAGE 2022-05-19 10:02:04,619 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:04.623
+!MESSAGE 2022-05-19 10:02:04,623 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:04.624
+!MESSAGE 2022-05-19 10:02:04,624 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:05.053
+!MESSAGE 2022-05-19 10:02:05,053 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:05.511
+!MESSAGE 2022-05-19 10:02:05,511 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:02:05.911
+!MESSAGE 2022-05-19 10:02:05,908 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Views/view_sati_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.view_sati_0_1.View_Sati --watch --context=Default --stat_port=3471 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:25.070
+!MESSAGE 2022-05-19 10:04:25,070 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:25.640
+!MESSAGE 2022-05-19 10:04:25,638 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:26.336
+!MESSAGE 2022-05-19 10:04:26,335 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:26.336
+!MESSAGE 2022-05-19 10:04:26,336 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:26.415
+!MESSAGE 2022-05-19 10:04:26,413 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:26.416
+!MESSAGE 2022-05-19 10:04:26,415 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_VIEW_SATI_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:26.836
+!MESSAGE 2022-05-19 10:04:26,835 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:27.295
+!MESSAGE 2022-05-19 10:04:27,295 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/BIGDATA_PROJECT_ROUTINES: org.example.bigdata_project.code:routines:7.3.1 with classifier  to /BIGDATA_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 10:04:27.512
+!MESSAGE 2022-05-19 10:04:27,512 INFO  org.talend.designer.core.runprocess.Processor  - CommandLine: C:/Program Files/Java/jre1.8.0_321/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/TOS_BD-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/Administrateur.WIN-T87HKARVT4F/Documents/Data/BigData/TalendDatas/BIGDATA_PROJECT/poms/jobs/process/Views/view_sati_0.1/target/classpath.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1/6.0.0/hadoop-mapreduce-client-core-2.6.0-cdh5.12.1-6.0.0.jar;/C:/TOS_BD-20200219_1130-V7.3.1/configuration/.m2/repository/org/talend/libraries/hadoop-common-2.6.0-cdh5.12.1/6.0.0/hadoop-common-2.6.0-cdh5.12.1-6.0.0.jar; bigdata_project.view_sati_0_1.View_Sati --watch --context=Default --stat_port=3675 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.039
+!MESSAGE 2022-05-19 11:09:57,037 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.040
+!MESSAGE 2022-05-19 11:09:57,040 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.041
+!MESSAGE 2022-05-19 11:09:57,040 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.042
+!MESSAGE 2022-05-19 11:09:57,041 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.043
+!MESSAGE 2022-05-19 11:09:57,042 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.043
+!MESSAGE 2022-05-19 11:09:57,043 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.044
+!MESSAGE 2022-05-19 11:09:57,043 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.044
+!MESSAGE 2022-05-19 11:09:57,044 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.045
+!MESSAGE 2022-05-19 11:09:57,044 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.045
+!MESSAGE 2022-05-19 11:09:57,045 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.046
+!MESSAGE 2022-05-19 11:09:57,046 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.047
+!MESSAGE 2022-05-19 11:09:57,047 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.047
+!MESSAGE 2022-05-19 11:09:57,047 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.048
+!MESSAGE 2022-05-19 11:09:57,047 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.049
+!MESSAGE 2022-05-19 11:09:57,048 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.049
+!MESSAGE 2022-05-19 11:09:57,049 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.049
+!MESSAGE 2022-05-19 11:09:57,049 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.050
+!MESSAGE 2022-05-19 11:09:57,050 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.051
+!MESSAGE 2022-05-19 11:09:57,051 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.055
+!MESSAGE 2022-05-19 11:09:57,051 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.055
+!MESSAGE 2022-05-19 11:09:57,055 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 4 0 2022-05-19 11:09:57.056
+!MESSAGE 2022-05-19 11:09:57,056 ERROR org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener  - Could not update launch configuration
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.getLaunchConfiguration(MavenRuntimeClasspathProvider.java:385)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:376)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:777)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:921)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1336)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-19 11:09:57.087
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2022-05-19 15:53:39.712 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_321
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2022-05-19 15:53:41.484
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2022-05-19 15:53:41.486
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:53:49.226
+!MESSAGE 2022-05-19 15:53:49,210 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\TOS_BD-20200219_1130-V7.3.1\configuration\studio.keys
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-19 15:53:50.039
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:53:58.830
+!MESSAGE 2022-05-19 15:53:58,829 INFO  org.talend.repository.ui.login.LoginProjectPage  - validate updatesite...
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:54:12.284
+!MESSAGE 2022-05-19 15:54:12,278 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:25.760
+!MESSAGE 2022-05-19 15:54:25,759 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:25.761
+!MESSAGE 2022-05-19 15:54:25,761 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /BIGDATA_PROJECT_ROUTINES/src/main/java overlaps with sources folder /BIGDATA_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:25.773
+!MESSAGE 2022-05-19 15:54:25,772 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /BIGDATA_PROJECT_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:25.774
+!MESSAGE 2022-05-19 15:54:25,774 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /BIGDATA_PROJECT_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:33.172
+!MESSAGE 2022-05-19 15:54:33,171 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Administrateur.WIN-T87HKARVT4F\Documents\Data\BigData\TalendDatas\BIGDATA_PROJECT\poms\code\routines
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:33.176
+!MESSAGE 2022-05-19 15:54:33,175 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s C:\TOS_BD-20200219_1130-V7.3.1\configuration\maven_user_settings.xml install -llr -Dmaven.main.skip=true -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:38.811
+!MESSAGE 2022-05-19 15:54:38,811 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - ray-hann06@hotmail.fr connecté à BigData_Project
+
+
+!ENTRY org.talend.platform.logging 1 0 2022-05-19 15:54:41.322
+!MESSAGE 2022-05-19 15:54:41,321 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.729
+!MESSAGE 2022-05-19 15:55:04,728 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.733
+!MESSAGE 2022-05-19 15:55:04,733 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.750
+!MESSAGE 2022-05-19 15:55:04,750 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.767
+!MESSAGE 2022-05-19 15:55:04,767 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.770
+!MESSAGE 2022-05-19 15:55:04,769 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.775
+!MESSAGE 2022-05-19 15:55:04,774 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.778
+!MESSAGE 2022-05-19 15:55:04,778 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.858
+!MESSAGE 2022-05-19 15:55:04,858 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.913
+!MESSAGE 2022-05-19 15:55:04,913 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.943
+!MESSAGE 2022-05-19 15:55:04,943 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:04.994
+!MESSAGE 2022-05-19 15:55:04,994 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.001
+!MESSAGE 2022-05-19 15:55:05,000 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.018
+!MESSAGE 2022-05-19 15:55:05,017 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.023
+!MESSAGE 2022-05-19 15:55:05,022 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.036
+!MESSAGE 2022-05-19 15:55:05,036 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.042
+!MESSAGE 2022-05-19 15:55:05,040 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 15:55:05.045
+!MESSAGE 2022-05-19 15:55:05,045 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2022-05-19 16:22:40.716
+!MESSAGE 2022-05-19 16:22:40,715 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.postgresql.Driver.parseURL] JDBC URL invalid port number: localhost
+
+
+!ENTRY org.eclipse.ui 4 0 2022-05-19 16:29:41.517
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.dialogs.WizardExportResourcesPage.updateContentProviders(WizardExportResourcesPage.java:420)
+	at org.eclipse.ui.internal.wizards.datatransfer.WizardFileSystemResourceExportPage1.handleResolveLinkedResourcesCheckboxSelected(WizardFileSystemResourceExportPage1.java:373)
+	at org.eclipse.ui.internal.wizards.datatransfer.WizardFileSystemResourceExportPage1.handleEvent(WizardFileSystemResourceExportPage1.java:387)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3944)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3547)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:822)
+	at org.eclipse.jface.window.Window.open(Window.java:798)
+	at org.talend.repository.ui.actions.importproject.ExportProjectsAsAction.run(ExportProjectsAsAction.java:119)
+	at org.talend.repository.ui.actions.importproject.ExportProjectsAsAction.run(ExportProjectsAsAction.java:348)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:250)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:230)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:568)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:439)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3944)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3547)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.talend.rcp.intro.Application.start(Application.java:280)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
